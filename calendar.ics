@@ -1,0 +1,36 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//After Harvest//Membership Summit 2026//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:summit-day-1-2026@membershipsummit.co
+DTSTAMP:20260526T040000Z
+DTSTART:20260623T170000Z
+DTEND:20260623T183000Z
+SUMMARY:The Membership Summit — Day 1 (with Jay Clouse)
+DESCRIPTION:Day 1 of The Membership Summit with Jay Clouse.\n\nJoin link: https://event.webinarjam.com/ykz838/go/live/3g0757tni3srs5\n\nWe'll cover why memberships matter right now and the four reasons most of them quietly fall apart in year one — so you can avoid those pitfalls.
+LOCATION:https://event.webinarjam.com/ykz838/go/live/3g0757tni3srs5
+URL:https://event.webinarjam.com/ykz838/go/live/3g0757tni3srs5
+END:VEVENT
+BEGIN:VEVENT
+UID:summit-day-2-2026@membershipsummit.co
+DTSTAMP:20260526T040000Z
+DTSTART:20260624T170000Z
+DTEND:20260624T193000Z
+SUMMARY:The Membership Summit — Day 2 (with Jay Clouse + Chad Carson)
+DESCRIPTION:Day 2 of The Membership Summit with Jay Clouse.\n\nJoin link: https://event.webinarjam.com/ykz838/go/live/3g0757tni3srs5\n\nThe six things that actually decide whether someone renews — and in what order to focus on them. Plus a fireside with Chad Carson on the course-to-membership pivot.
+LOCATION:https://event.webinarjam.com/ykz838/go/live/3g0757tni3srs5
+URL:https://event.webinarjam.com/ykz838/go/live/3g0757tni3srs5
+END:VEVENT
+BEGIN:VEVENT
+UID:summit-day-3-2026@membershipsummit.co
+DTSTAMP:20260526T040000Z
+DTSTART:20260625T170000Z
+DTEND:20260625T190000Z
+SUMMARY:The Membership Summit — Day 3 (with Jay Clouse)
+DESCRIPTION:Day 3 of The Membership Summit with Jay Clouse.\n\nJoin link: https://event.webinarjam.com/ykz838/go/live/3g0757tni3srs5\n\nWalk out with The Roadmap — a 30/60/90 day plan for your membership, built across the three days from your own inputs.
+LOCATION:https://event.webinarjam.com/ykz838/go/live/3g0757tni3srs5
+URL:https://event.webinarjam.com/ykz838/go/live/3g0757tni3srs5
+END:VEVENT
+END:VCALENDAR
