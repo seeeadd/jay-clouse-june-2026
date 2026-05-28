@@ -8595,8 +8595,8 @@ function VipExitOverlay() {
   }
   function trySkip() { setConfirm(true); }
   function confirmSkip() {
-    /* Real skip destination. Update when you have the confirmation URL. */
-    window.location.href = '/registered';
+    /* Skip the VIP upgrade — send them to the regular (free) success page. */
+    window.location.href = 'https://www.membershipsummit.com/regular-success';
   }
 
   const m = Math.floor(secs / 60);
