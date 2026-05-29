@@ -9706,8 +9706,8 @@ function VipExitOverlay() {
   }
   function trySkip() { setConfirm(true); }
   function confirmSkip() {
-    /* Real skip destination. Update when you have the confirmation URL. */
-    window.location.href = '/registered';
+    /* Skip the VIP upgrade — send them to the regular (free) success page. */
+    window.location.href = 'https://www.membershipsummit.com/regular-success';
   }
 
   const m = Math.floor(secs / 60);
@@ -10761,10 +10761,8 @@ function VcToolkit() {
     {
       tag: "LIVE Q&A · ADDED",
       name: "Day 4 — Office Hours",
-      desc: "Friday, June 26 · 1pm ET · 90 min live. Bring one specific question — I stay in the room until the queue is empty. Can't make it live? Submit your question now and I'll answer it (recording lands permanent).",
-      btns: [
-        { label: "Submit your question", href: "#", primary: true, icon: "external" },
-      ],
+      desc: "Friday, June 26 at 1pm ET. 90 min live. Bring one specific question and I'll stay in the room until the queue is empty. Can't make it live? It's recorded and lands in your account permanently, same as the other days.",
+      btns: [],
       art: "cassette",
     },
   ];
@@ -10789,13 +10787,15 @@ function VcToolkit() {
                 <div className="vc-tk-tag">{it.tag}</div>
                 <div className="vc-tk-name">{it.name}</div>
                 <div className="vc-tk-desc">{it.desc}</div>
-                <div className="vc-tk-btns">
-                  {it.btns.map((b, j) => (
-                    <a key={j} href={b.href} className="vc-tk-btn">
-                      <BtnIcon name={b.icon} /> {b.label}
-                    </a>
-                  ))}
-                </div>
+                {it.btns.length > 0 && (
+                  <div className="vc-tk-btns">
+                    {it.btns.map((b, j) => (
+                      <a key={j} href={b.href} className="vc-tk-btn">
+                        <BtnIcon name={b.icon} /> {b.label}
+                      </a>
+                    ))}
+                  </div>
+                )}
               </div>
             </div>
           ))}
