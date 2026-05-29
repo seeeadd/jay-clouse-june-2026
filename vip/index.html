@@ -6163,9 +6163,11 @@ button.popup-cta,
   background: #000;
 }
 .vip-vsl-native .vsl-fake-progress { position: absolute; left: 0; right: 0; bottom: 0; height: 4px; background: rgba(255,255,255,0.14); z-index: 6; overflow: hidden; pointer-events: none; }
-.vip-vsl-native .vsl-fake-fill { height: 100%; width: 0; background: linear-gradient(90deg, var(--cs-ballpoint), var(--cs-cellotape), var(--cs-recording)); box-shadow: 0 0 8px rgba(0,97,255,0.45); animation: vipFakeProgress 240s linear forwards; animation-play-state: paused; }
+.vip-vsl-native .vsl-fake-fill { height: 100%; width: 0; background: linear-gradient(90deg, var(--cs-ballpoint), var(--cs-cellotape), var(--cs-recording)); box-shadow: 0 0 8px rgba(0,97,255,0.45); animation: vipFakeProgress 200s linear forwards; animation-play-state: paused; }
 .vip-vsl-native .vsl-frame.vsl-progress-on .vsl-fake-fill { animation-play-state: running; }
-@keyframes vipFakeProgress { 0% { width: 0%; } 4% { width: 40%; } 100% { width: 95%; } }
+/* Fast climb to nearly the end (~86%) in the first fifth of the time, then a
+   slow crawl the rest of the way. Matches the reg page player. */
+@keyframes vipFakeProgress { 0% { width: 0%; } 22% { width: 86%; } 100% { width: 98%; } }
 .vip-vsl-native .vsl-click-block { position: absolute; inset: 0; z-index: 2; background: transparent; cursor: default; pointer-events: auto; }
 .vip-vsl-native .vsl-poster {
   position: absolute; inset: 0; width: 100%; height: 100%; z-index: 5;
@@ -6185,7 +6187,7 @@ button.popup-cta,
   transition: transform .2s ease;
 }
 .vip-vsl-native .vsl-poster:hover .vsl-poster-play { transform: translate(-50%,-50%) scale(1.06); }
-.vip-vsl-native .vsl-poster-play svg { width: 42px; height: 42px; fill: #FFFCF7; margin-left: 0; }
+.vip-vsl-native .vsl-poster-play svg { width: 42px; height: 42px; fill: #FFFCF7; margin-left: -3px; }
 .vip-vsl-native .vsl-poster-label {
   position: absolute; left: 50%; transform: translateX(-50%);
   bottom: 22px;
@@ -7501,10 +7503,6 @@ function VipTopBar() {
     <div className="vip-topbar" role="status">
       <span className="vip-topbar-dot" aria-hidden/>
       <span>You're registered</span>
-      <span className="vip-topbar-divider" aria-hidden/>
-      <span className="vip-topbar-stamp">One optional upgrade</span>
-      <span className="vip-topbar-divider" aria-hidden/>
-      <span>Not required</span>
     </div>
   );
 }
