@@ -10747,37 +10747,36 @@ function RgWelcomeVideo() {
 }
 
 /* ─── Calendar ─── */
-/* Free summit = 3 days (Jun 23-25), 1-3 PM ET each, 15-min warm-up so each
-   block starts 12:45 PM ET (16:45 UTC, EDT=UTC-4) and ends 3:00 PM ET
-   (19:00 UTC). WJ join/register link rides in the description. */
+/* Free summit = 3 days (Jun 23-25), 1:00-2:30 PM ET each. Same times as VIP.
+   1:00 PM EDT = 17:00 UTC, 2:30 PM EDT = 18:30 UTC.
+   WJ join/register link rides in the description. */
 const RG_WJ_LINK = 'https://event.webinarjam.com/ykz838/register/3g0757tn';
-const RG_CAL_TITLE = 'Three Days With Jay';
+const RG_CAL_TITLE = 'The Membership Summit with Jay Clouse';
 const RG_CAL_DETAILS =
-  'Your seat for The Membership Summit with Jay Clouse. Three live days, ' +
-  'same time, same link each day. Watch your inbox for your personalized join ' +
-  'link the morning of each session. If you need to re-register: ' + RG_WJ_LINK;
+  '3 Days With Jay Clouse. Watch your inbox for your personalized join link ' +
+  'the morning of each session. If you need to re-register: ' + RG_WJ_LINK;
 const RG_GOOGLE_URL =
   'https://calendar.google.com/calendar/render?action=TEMPLATE' +
   '&text=' + encodeURIComponent(RG_CAL_TITLE) +
-  '&dates=20260623T164500Z/20260623T190000Z' +
+  '&dates=20260623T170000Z/20260623T183000Z' +
   '&recur=' + encodeURIComponent('RRULE:FREQ=DAILY;COUNT=3') +
   '&ctz=America/New_York' +
   '&location=' + encodeURIComponent(RG_WJ_LINK) +
   '&details=' + encodeURIComponent(RG_CAL_DETAILS);
 function rgBuildIcs() {
   const days = [
-    { n: 1, date: '20260623', label: 'Day 1: The Membership Summit with Jay' },
-    { n: 2, date: '20260624', label: 'Day 2: The Membership Summit with Jay' },
-    { n: 3, date: '20260625', label: 'Day 3: The Membership Summit with Jay' },
+    { n: 1, date: '20260623', label: 'Day 1: The Membership Summit with Jay Clouse' },
+    { n: 2, date: '20260624', label: 'Day 2: The Membership Summit with Jay Clouse' },
+    { n: 3, date: '20260625', label: 'Day 3: The Membership Summit with Jay Clouse' },
   ];
   const esc = (s) => s.replace(/\\/g, '\\\\').replace(/,/g, '\\,').replace(/;/g, '\\;').replace(/\n/g, '\\n');
-  let ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Jay Clouse//Membership Summit//EN\r\nCALSCALE:GREGORIAN\r\nMETHOD:PUBLISH\r\nX-WR-CALNAME:Three Days With Jay\r\n';
+  let ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Jay Clouse//Membership Summit//EN\r\nCALSCALE:GREGORIAN\r\nMETHOD:PUBLISH\r\nX-WR-CALNAME:The Membership Summit with Jay Clouse\r\n';
   for (const d of days) {
     ics += 'BEGIN:VEVENT\r\n';
     ics += `UID:day${d.n}-membership-summit-2026@jayclouse.com\r\n`;
     ics += 'DTSTAMP:20260528T000000Z\r\n';
-    ics += `DTSTART:${d.date}T164500Z\r\n`;
-    ics += `DTEND:${d.date}T190000Z\r\n`;
+    ics += `DTSTART:${d.date}T170000Z\r\n`;
+    ics += `DTEND:${d.date}T183000Z\r\n`;
     ics += `SUMMARY:${esc(d.label)}\r\n`;
     ics += `DESCRIPTION:${esc(RG_CAL_DETAILS)}\r\n`;
     ics += `URL:${RG_WJ_LINK}\r\n`;
@@ -10797,9 +10796,9 @@ function RgCalendar() {
     <section className="rg-calendar">
       <div className="rg-cal-card">
         <div className="rg-cal-step" style={{fontFamily: "'Caveat', cursive", fontSize: '38px', lineHeight: 1, paddingTop: '8px', color: 'var(--cs-ballpoint)'}}>★</div>
-        <h3 className="rg-cal-title">Block <em>Jun 23 → 25</em>, 1–3 PM ET on your calendar.</h3>
+        <h3 className="rg-cal-title">Block <em>Jun 23 → 25</em>, 1:00–2:30 PM ET on your calendar.</h3>
         <p className="rg-cal-sub">
-          One click adds all three days plus a 15-minute warm-up buffer.
+          One click adds all three days.
           The join link is already in the invite.
         </p>
         <div className="rg-cal-btns">
