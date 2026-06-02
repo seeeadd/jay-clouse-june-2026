@@ -11005,18 +11005,18 @@ function TkArt({ kind }) {
    so each block starts 12:45 PM ET (16:45 UTC, EDT=UTC-4) and ends 3:00 PM
    ET (19:00 UTC). The WJ join/register link rides in the description. */
 const VC_WJ_LINK = 'https://event.webinarjam.com/ykz838/register/3g0757tn';
-const VC_CAL_TITLE = 'Three Days With Jay (VIP)';
+const VC_CAL_TITLE = 'The Membership Summit with Jay Clouse (VIP)';
 const VC_CAL_DETAILS =
-  'Your VIP pass to The Membership Summit with Jay Clouse. Days 1-3 are the live summit, ' +
-  'Day 4 (Fri Jun 26) is the VIP-only Office Hours Q&A. Same time, same link each day. ' +
+  '4 Days With Jay Clouse (VIP). Days 1-3 live summit + Day 4 (Fri Jun 26) VIP-only Office Hours Q&A. ' +
   'Watch your inbox for your personalized join link the morning of each session. ' +
   'If you need to re-register: ' + VC_WJ_LINK;
 
-/* Single Google Calendar URL — recurring daily, 4 occurrences. */
+/* Single Google Calendar URL — recurring daily, 4 occurrences.
+   1:00 PM EDT = 17:00 UTC, 2:30 PM EDT = 18:30 UTC. Same times as Free. */
 const VC_GOOGLE_URL =
   'https://calendar.google.com/calendar/render?action=TEMPLATE' +
   '&text=' + encodeURIComponent(VC_CAL_TITLE) +
-  '&dates=20260623T164500Z/20260623T190000Z' +
+  '&dates=20260623T170000Z/20260623T183000Z' +
   '&recur=' + encodeURIComponent('RRULE:FREQ=DAILY;COUNT=4') +
   '&ctz=America/New_York' +
   '&location=' + encodeURIComponent(VC_WJ_LINK) +
@@ -11027,20 +11027,20 @@ const VC_GOOGLE_URL =
    natively; Google users can import it. */
 function vcBuildIcs() {
   const days = [
-    { n: 1, date: '20260623', label: 'Day 1: The Membership Summit (VIP)' },
-    { n: 2, date: '20260624', label: 'Day 2: The Membership Summit (VIP)' },
-    { n: 3, date: '20260625', label: 'Day 3: The Membership Summit (VIP)' },
-    { n: 4, date: '20260626', label: 'Day 4: VIP Office Hours Q&A with Jay' },
+    { n: 1, date: '20260623', label: 'Day 1: The Membership Summit with Jay Clouse (VIP)' },
+    { n: 2, date: '20260624', label: 'Day 2: The Membership Summit with Jay Clouse (VIP)' },
+    { n: 3, date: '20260625', label: 'Day 3: The Membership Summit with Jay Clouse (VIP)' },
+    { n: 4, date: '20260626', label: 'Day 4: The Membership Summit with Jay Clouse (VIP) - Office Hours Q&A' },
   ];
   const esc = (s) => s.replace(/\\/g, '\\\\').replace(/,/g, '\\,').replace(/;/g, '\\;').replace(/\n/g, '\\n');
   let ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Jay Clouse//Membership Summit VIP//EN\r\nCALSCALE:GREGORIAN\r\nMETHOD:PUBLISH\r\n';
-  ics += 'X-WR-CALNAME:Three Days With Jay (VIP)\r\n';
+  ics += 'X-WR-CALNAME:The Membership Summit with Jay Clouse (VIP)\r\n';
   for (const d of days) {
     ics += 'BEGIN:VEVENT\r\n';
     ics += `UID:vip-day${d.n}-membership-summit-2026@jayclouse.com\r\n`;
     ics += 'DTSTAMP:20260528T000000Z\r\n';
-    ics += `DTSTART:${d.date}T164500Z\r\n`;
-    ics += `DTEND:${d.date}T190000Z\r\n`;
+    ics += `DTSTART:${d.date}T170000Z\r\n`;
+    ics += `DTEND:${d.date}T183000Z\r\n`;
     ics += `SUMMARY:${esc(d.label)}\r\n`;
     ics += `DESCRIPTION:${esc(VC_CAL_DETAILS)}\r\n`;
     ics += `URL:${VC_WJ_LINK}\r\n`;
@@ -11061,9 +11061,9 @@ function VcCalendar() {
     <section className="vc-calendar">
       <div className="vc-cal-card">
         <div className="vc-cal-step">3</div>
-        <h3 className="vc-cal-title">Block Jun 23 → 26, 1–3 PM ET on your calendar.</h3>
+        <h3 className="vc-cal-title">Block Jun 23 → 26, 1:00–2:30 PM ET on your calendar.</h3>
         <p className="vc-cal-sub">
-          One click adds all four days plus a 15-minute warm-up buffer. The join link is already in the invite. Day 4 (the Q&amp;A) is Fri Jun 26, same time, same link, just for VIPs.
+          One click adds all four days. The join link is already in the invite. Day 4 (the Q&amp;A) is Fri Jun 26, same time, same link, just for VIPs.
         </p>
         <div className="vc-cal-btns">
           <a className="vc-cal-btn" href={VC_GOOGLE_URL} target="_blank" rel="noopener">
@@ -11346,15 +11346,15 @@ function VcNoteFromJay() {
           <img src="https://i.imgur.com/sONbA9L.png" alt="Jay" />
         </div>
         <div className="vc-note-body">
-          <p>Hey — quick note before we start.</p>
+          <p>Hey - quick note before we start.</p>
           <p>
-            VIP isn't a tier. It's a promise that I'll know your name, that I'll answer your
-            Day 4 question by name, and that you'll leave with three days that actually
-            <em> changed something</em>.
+            VIP is a promise that I'll recognize you by name, answer your questions on
+            day four, and that you'll leave after three days having actually
+            <em> learned something</em>.
           </p>
           <p>
             Do the three small steps above today. The rest can wait. And if anything's
-            unclear, just text the number — that thread is real, and I read every message.
+            unclear, just message the Telegram chat, that thread is real, and I read every message.
           </p>
           <p>See you Tuesday.</p>
           <span className="vc-note-sig">Jay</span>
