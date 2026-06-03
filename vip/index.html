@@ -8586,12 +8586,11 @@ function VipExitOverlay() {
     /* Direct ThriveCart checkout — no intermediate form popup. */
     window.location.href = 'https://pay.creatorscience.com/b/eVq8wQ3kwccTdEu8DleIw07';
   }
-  /* Direct skip — no secondary "Are you sure?" guilt-trip popup. If they
-     want to skip, they skip. */
-  function trySkip() {
+  function trySkip() { setConfirm(true); }
+  function confirmSkip() {
+    /* Skip the VIP upgrade — send them to the regular (free) success page. */
     window.location.href = 'https://www.membershipsummit.com/regular-success';
   }
-  function confirmSkip() { trySkip(); }
 
   const m = Math.floor(secs / 60);
   const s = secs % 60;
@@ -9029,7 +9028,26 @@ function VipExitOverlay() {
         </div>
       </div>
 
-      {/* Second "Are you sure?" confirm dialog removed — felt off-brand. */}
+      {/* Second confirm dialog — kept but softened. No ⚠, no "this can't be
+          undone", no countdown. Just a calm "you sure?" beat. */}
+      <div className={`jx-exit-confirm ${confirm ? 'is-open' : ''}`}
+           onClick={(e) => { if (e.target === e.currentTarget) setConfirm(false); }}>
+        <div className="jx-confirm-box" role="dialog" aria-modal="true">
+          <h4 className="jx-confirm-title">One more check?</h4>
+          <p className="jx-confirm-desc">
+            VIP is a fourth day live with me, permanent recordings, and a private Telegram chat through cart week. The $47 is launch pricing for this event.
+          </p>
+          <p className="jx-confirm-desc">
+            Want it or skip?
+          </p>
+          <button className="jx-confirm-stay" onClick={goVIP}>
+            Add VIP — $47
+          </button>
+          <button className="jx-confirm-go" onClick={confirmSkip}>
+            Skip, take me to my confirmation page
+          </button>
+        </div>
+      </div>
 
       {/* Scoped styles */}
       <style dangerouslySetInnerHTML={{__html: `
@@ -9278,7 +9296,10 @@ function VipExitOverlay() {
           transform: translate(2px, 2px);
           box-shadow: 2px 2px 0 #1E1E1E;
         }
-        /* No-thanks button — calm, just a normal text link feel */
+        /* No-thanks button — calm by default, on hover the "what's in VIP"
+           list gently highlights to remind users what they'd be skipping.
+           No jiggle, no red glow, no warning icons. Just a soft amber
+           tint + slight lift, like a polite "you sure?" */
         .jx-exit-no {
           width: 100%; padding: 14px 18px; margin-top: 10px;
           font-family: var(--font-serif);
@@ -9287,13 +9308,33 @@ function VipExitOverlay() {
           background: transparent;
           border: 1px solid rgba(255,255,255,0.12);
           cursor: pointer;
-          transition: color .2s, border-color .2s, background .2s;
+          transition: color .25s ease, border-color .25s ease, background .25s ease;
           line-height: 1.5; text-align: center;
         }
         .jx-exit-no:hover {
-          color: rgba(255,255,255,0.85);
-          border-color: rgba(255,255,255,0.25);
-          background: rgba(255,255,255,0.03);
+          color: rgba(255,255,255,0.92);
+          border-color: rgba(0,97,255,0.4);
+          background: rgba(0,97,255,0.06);
+        }
+        /* Sympathy reaction: hovering "No thanks" gently brightens the
+           "what's in VIP" list so users see what they'd skip. Pure CSS
+           via :has() — no JS, no animation panic. */
+        .jx-exit-modal:has(.jx-exit-no:hover) .jx-exit-lose {
+          border-color: rgba(0,97,255,0.35);
+          background: rgba(0,97,255,0.07);
+          transition: border-color .3s ease, background .3s ease;
+        }
+        .jx-exit-modal:has(.jx-exit-no:hover) .jx-exit-lose-title {
+          color: rgba(255,255,255,0.92);
+          transition: color .3s ease;
+        }
+        .jx-exit-modal:has(.jx-exit-no:hover) .jx-exit-lose-item {
+          color: rgba(255,255,255,0.95);
+          transition: color .3s ease;
+        }
+        .jx-exit-modal:has(.jx-exit-no:hover) .jx-exit-lose-item svg {
+          stroke: var(--cs-ballpoint, #0061FF);
+          transition: stroke .3s ease;
         }
 
         /* Timer panics — pulses faster, the countdown text shakes */
@@ -9324,68 +9365,62 @@ function VipExitOverlay() {
           transition: opacity .25s, visibility .25s;
         }
         .jx-exit-confirm.is-open { opacity: 1; pointer-events: auto; visibility: visible; }
+        /* Confirm dialog: toned down to match the calmer parent modal */
         .jx-confirm-box {
           background: linear-gradient(160deg, rgba(30,30,30,0.98), rgba(13,13,13,0.99));
           padding: 32px 28px;
           text-align: center;
           max-width: 420px; width: 100%;
           box-shadow: 0 24px 80px rgba(0,0,0,0.6);
-          border: 1px solid rgba(255,79,20,0.1);
+          border: 1px solid rgba(255,255,255,0.08);
           color: #fff;
         }
         .jx-confirm-title {
           font-family: var(--font-display);
-          font-size: 24px; font-weight: 700;
-          margin: 0 0 16px;
-        }
-        .jx-confirm-warn {
-          display: flex; align-items: center; justify-content: center; gap: 10px;
-          padding: 14px 20px;
-          background: rgba(255,79,20,0.08);
-          border: 1px solid rgba(255,79,20,0.18);
-          margin-bottom: 14px;
-          font-family: var(--font-display);
-          font-size: 13.5px; font-weight: 700;
-          color: var(--cs-recording);
+          font-size: 22px; font-weight: 700;
+          margin: 0 0 14px;
         }
         .jx-confirm-desc {
           font-family: var(--font-serif);
-          font-size: 14px; line-height: 1.5; font-style: italic;
-          color: rgba(255,255,255,0.7);
-          margin: 0 0 18px;
+          font-size: 14.5px; line-height: 1.55;
+          color: rgba(255,255,255,0.74);
+          margin: 0 0 14px;
         }
         .jx-confirm-stay {
-          display: flex; align-items: center; justify-content: center; gap: 10px;
-          width: 100%; padding: 18px;
+          width: 100%; padding: 14px;
           font-family: var(--font-display);
-          font-size: 15px; font-weight: 800;
-          color: #fff;
-          background: linear-gradient(135deg, var(--cs-recording), #ff6e3a);
-          border: none; cursor: pointer;
-          box-shadow: 0 4px 0 #b03612;
-          margin-bottom: 10px;
-          text-transform: uppercase; letter-spacing: 0.04em;
-          animation: jx-pulse 1.8s ease-in-out infinite;
-          transition: transform .2s;
+          font-size: 15px; font-weight: 700;
+          color: #FFFCF7;
+          background: var(--cs-ballpoint, #0061FF);
+          border: 1.5px solid #1E1E1E;
+          cursor: pointer;
+          box-shadow: 4px 4px 0 #1E1E1E;
+          margin: 8px 0 10px;
+          letter-spacing: 0;
+          transition: transform .15s ease, box-shadow .15s ease;
         }
-        .jx-confirm-stay:hover { transform: translateY(-2px); }
-        @keyframes jx-pulse {
-          0%, 100% { box-shadow: 0 4px 0 #b03612, 0 0 0 rgba(255,79,20,0); }
-          50%      { box-shadow: 0 4px 0 #b03612, 0 0 40px rgba(255,79,20,0.45); }
+        .jx-confirm-stay:hover {
+          transform: translate(-1px, -1px);
+          box-shadow: 5px 5px 0 #1E1E1E;
+        }
+        .jx-confirm-stay:active {
+          transform: translate(2px, 2px);
+          box-shadow: 2px 2px 0 #1E1E1E;
         }
         .jx-confirm-go {
           width: 100%; padding: 12px;
-          font-family: var(--font-serif); font-style: italic;
-          font-size: 12px; font-weight: 400;
-          color: rgba(255,255,255,0.4);
-          background: none; border: 1px solid transparent;
-          cursor: pointer; transition: all .2s;
+          font-family: var(--font-serif);
+          font-size: 13.5px; font-weight: 500;
+          color: rgba(255,255,255,0.5);
+          background: transparent;
+          border: 1px solid rgba(255,255,255,0.08);
+          cursor: pointer;
+          transition: color .2s ease, border-color .2s ease, background .2s ease;
         }
         .jx-confirm-go:hover {
-          color: #fff; font-weight: 700;
-          border-color: var(--cs-recording);
-          background: linear-gradient(135deg, rgba(139,30,5,0.85), rgba(255,79,20,0.7));
-          box-shadow: inset 0 0 30px rgba(139,30,5,0.3);
+          color: rgba(255,255,255,0.85);
+          border-color: rgba(255,255,255,0.22);
+          background: rgba(255,255,255,0.03);
         }
       `}}/>
     </React.Fragment>
