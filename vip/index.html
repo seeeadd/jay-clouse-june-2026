@@ -7827,7 +7827,7 @@ function IllusCalendar() {
         ))}
         {/* header strip */}
         <rect x="0" y="28" width="420" height="44" fill="var(--cs-static)"/>
-        <text x="210" y="58" fontFamily="var(--font-display)" fontSize="22" fontWeight="700" fill="var(--cs-notebook)" textAnchor="middle" letterSpacing="2">MAY . 2026</text>
+        <text x="210" y="58" fontFamily="var(--font-display)" fontSize="22" fontWeight="700" fill="var(--cs-notebook)" textAnchor="middle" letterSpacing="2">JUNE . 2026</text>
 
         {/* weekday labels */}
         {['SUN','MON','TUE','WED','THU','FRI','SAT'].map((d,i)=>(
@@ -7837,10 +7837,10 @@ function IllusCalendar() {
 
         {/* date grid */}
         {[0,1,2,3,4].map(r => [0,1,2,3,4,5,6].map(c => {
-          const day = r*7 + c - 4; // May 1 starts Friday(5)
-          if (day < 1 || day > 31) return null;
-          const isLive = day === 26 || day === 27 || day === 28;
-          const isVIP = day === 29;
+          const day = r*7 + c; // June 1, 2026 starts Monday (col 1)
+          if (day < 1 || day > 30) return null;
+          const isLive = day === 23 || day === 24 || day === 25; // Jun 23-25 live summit
+          const isVIP = day === 26;                              // Jun 26 VIP Office Hours
           const cx = 30 + c*58;
           const cy = 118 + r*32;
           return (
@@ -7859,7 +7859,7 @@ function IllusCalendar() {
                 fill={isVIP ? 'var(--cs-recording)' : isLive ? 'var(--cs-ballpoint)' : 'var(--cs-static)'}
                 textAnchor="middle">{day}</text>
               {isLive && (
-                <text x={cx} y={cy+10} fontFamily="var(--font-mono)" fontSize="6.5" fontWeight="700" fill="var(--cs-ballpoint)" textAnchor="middle" letterSpacing="1">DAY {day-25}</text>
+                <text x={cx} y={cy+10} fontFamily="var(--font-mono)" fontSize="6.5" fontWeight="700" fill="var(--cs-ballpoint)" textAnchor="middle" letterSpacing="1">DAY {day-22}</text>
               )}
               {isVIP && (
                 <text x={cx} y={cy+10} fontFamily="var(--font-mono)" fontSize="6.5" fontWeight="700" fill="var(--cs-recording)" textAnchor="middle" letterSpacing="1">VIP</text>
