@@ -8571,13 +8571,8 @@ function VipExitOverlay() {
     return () => document.removeEventListener('click', onClick);
   }, []);
 
-  /* 5-minute countdown that ticks only while the overlay is open. */
-  React.useEffect(() => {
-    if (!open) return;
-    if (secs <= 0) return;
-    const id = setInterval(() => setSecs(s => Math.max(0, s - 1)), 1000);
-    return () => clearInterval(id);
-  }, [open]);
+  /* Countdown timer removed — Jay's voice doesn't do fake urgency timers.
+     Whatever lived in `secs`/`timer` state stays mounted but unused. */
 
   /* Lock body scroll while open. */
   React.useEffect(() => {
@@ -8591,11 +8586,12 @@ function VipExitOverlay() {
     /* Direct ThriveCart checkout — no intermediate form popup. */
     window.location.href = 'https://pay.creatorscience.com/b/eVq8wQ3kwccTdEu8DleIw07';
   }
-  function trySkip() { setConfirm(true); }
-  function confirmSkip() {
-    /* Skip the VIP upgrade — send them to the regular (free) success page. */
+  /* Direct skip — no secondary "Are you sure?" guilt-trip popup. If they
+     want to skip, they skip. */
+  function trySkip() {
     window.location.href = 'https://www.membershipsummit.com/regular-success';
   }
+  function confirmSkip() { trySkip(); }
 
   const m = Math.floor(secs / 60);
   const s = secs % 60;
@@ -8629,10 +8625,7 @@ function VipExitOverlay() {
               <line x1="6" y1="6" x2="18" y2="18"/>
             </svg>
           </button>
-          <div className="jx-exit-timer-row">
-            <span className="jx-exit-timer-label">This offer disappears in</span>
-            <span className="jx-exit-timer">{timer}</span>
-          </div>
+          {/* Timer row removed — felt forced. Jay doesn't do fake countdowns. */}
 
           <div className="jx-exit-body">
           <div className="jx-exit-left">
@@ -9004,22 +8997,21 @@ function VipExitOverlay() {
           <div className="jx-exit-right">
 
           <div className="jx-exit-head">
-            <Warn/>
-            <h3>Hold on. Before you head to Day 1.</h3>
+            <h3>One last thing before Day 1.</h3>
           </div>
 
           <p className="jx-exit-desc">
-            The three days are free either way. But VIP is what you actually take home: a fourth day live with me, permanent recordings of everything we cover, and a private Telegram chat with me through cart week.
+            The three days are free either way. VIP is what you take home: a fourth day live with me, permanent recordings, and a private Telegram chat through cart week.
           </p>
           <p className="jx-exit-desc">
-            It's the difference between watching three days and <strong>building your membership while we're still live.</strong>
+            If that's not for you, totally fine. Just wanted to make sure you saw it before heading off.
           </p>
 
           <div className="jx-exit-lose">
-            <div className="jx-exit-lose-title"><Warn/> IF YOU LEAVE, YOU LOSE ACCESS TO:</div>
+            <div className="jx-exit-lose-title">What's in VIP:</div>
             {losing.map((item, i) => (
               <div key={i} className="jx-exit-lose-item">
-                <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="var(--cs-recording)" strokeWidth="2.5" strokeLinecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="var(--cs-ballpoint)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
                 {item}
               </div>
             ))}
@@ -9029,32 +9021,15 @@ function VipExitOverlay() {
           </div>{/* /jx-exit-body */}
 
           <button className="jx-exit-cta-main" onClick={goVIP}>
-            Yes, give me VIP access · $47
+            Add VIP — $47
           </button>
           <button className="jx-exit-no" onClick={trySkip}>
-            No thanks, Jay. I'm fine showing up live for the three days, taking my own notes, and walking away without the recordings or the Day 4 Q&amp;A. Just take me to my confirmation page.
+            No thanks, take me to my confirmation page.
           </button>
         </div>
       </div>
 
-      {/* Second confirm dialog */}
-      <div className={`jx-exit-confirm ${confirm ? 'is-open' : ''}`}
-           onClick={(e) => { if (e.target === e.currentTarget) setConfirm(false); }}>
-        <div className="jx-confirm-box" role="dialog" aria-modal="true">
-          <h4 className="jx-confirm-title">Are you sure?</h4>
-          <div className="jx-confirm-warn"><Warn/> Your $47 VIP pricing disappears the moment you close this tab.</div>
-          <p className="jx-confirm-desc">
-            This can't be undone. Cart closes Jul 1 and the recordings go with it. You sure you want to walk?
-          </p>
-          <button className="jx-confirm-stay" onClick={goVIP}>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M8 14l2 2 4-4"/></svg>
-            No, give me VIP access
-          </button>
-          <button className="jx-confirm-go" onClick={confirmSkip}>
-            Yes, I'm sure. Skip the upgrade.
-          </button>
-        </div>
-      </div>
+      {/* Second "Are you sure?" confirm dialog removed — felt off-brand. */}
 
       {/* Scoped styles */}
       <style dangerouslySetInnerHTML={{__html: `
@@ -9251,18 +9226,21 @@ function VipExitOverlay() {
           color: rgba(255,255,255,0.95); font-weight: 700;
         }
         .jx-exit-desc:last-of-type { margin-bottom: 14px; }
+        /* TONED-DOWN PALETTE — no orange flood, no panic mode. Lose-list is
+           now a positive "what's in VIP" list with blue checkmarks on a
+           neutral panel. */
         .jx-exit-lose {
-          background: rgba(255,79,20,0.05);
-          border: 1px solid rgba(255,79,20,0.14);
+          background: rgba(0,97,255,0.04);
+          border: 1px solid rgba(0,97,255,0.12);
           padding: 14px 16px;
           margin-bottom: 0;
         }
         .jx-exit-lose-title {
           display: flex; align-items: center; gap: 6px;
           font-family: var(--font-mono);
-          font-size: 11px; font-weight: 800;
+          font-size: 11px; font-weight: 700;
           letter-spacing: 0.16em; text-transform: uppercase;
-          color: rgba(255,255,255,0.7);
+          color: rgba(255,255,255,0.65);
           margin-bottom: 8px;
         }
         .jx-exit-lose-title svg { width: 14px; height: 14px; }
@@ -9270,165 +9248,52 @@ function VipExitOverlay() {
           display: flex; align-items: center; gap: 10px;
           padding: 8px 12px;
           margin-bottom: 4px;
-          background: rgba(255,79,20,0.03);
-          border: 1px solid rgba(255,79,20,0.06);
+          background: rgba(255,255,255,0.02);
+          border: 1px solid rgba(255,255,255,0.06);
           font-family: var(--font-display);
-          font-size: 14.5px; font-weight: 600;
-          color: rgba(255,255,255,0.62);
-          transition: all .25s;
+          font-size: 14.5px; font-weight: 500;
+          color: rgba(255,255,255,0.78);
+          transition: color .2s;
         }
-        .jx-exit-lose-item:last-child {
-          color: var(--cs-recording); font-weight: 700;
-          border-color: rgba(255,79,20,0.18);
-          background: rgba(255,79,20,0.08);
-        }
+        .jx-exit-lose-item:last-child { color: rgba(255,255,255,0.78); }
+        /* CTA: solid Jay blue, no orange gradient, no shimmer, no fake urgency */
         .jx-exit-cta-main {
-          width: 100%; padding: 18px;
+          width: 100%; padding: 16px;
           margin-top: 14px;
           font-family: var(--font-display);
-          font-size: clamp(17px, 1.7vw, 20px); font-weight: 800;
-          color: #fff;
-          background: linear-gradient(135deg, var(--cs-recording), #ff6e3a);
-          border: none; cursor: pointer;
-          text-transform: uppercase; letter-spacing: 0.05em;
-          box-shadow: 0 5px 0 #b03612, 0 7px 24px rgba(255,79,20,0.25);
-          transition: all .2s;
-          position: relative; overflow: hidden;
+          font-size: clamp(16px, 1.6vw, 18px); font-weight: 700;
+          color: #FFFCF7;
+          background: var(--cs-ballpoint, #0061FF);
+          border: 1.5px solid #1E1E1E;
+          cursor: pointer;
+          letter-spacing: 0;
+          box-shadow: 4px 4px 0 #1E1E1E;
+          transition: transform .15s ease, box-shadow .15s ease;
         }
         .jx-exit-cta-main:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 7px 0 #b03612, 0 10px 32px rgba(255,79,20,0.35);
+          transform: translate(-1px, -1px);
+          box-shadow: 5px 5px 0 #1E1E1E;
         }
-        .jx-exit-cta-main::before {
-          content: ''; position: absolute; top: 0; left: -100%;
-          width: 100%; height: 100%;
-          background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
-          animation: jx-shimmer 3s ease-in-out infinite;
+        .jx-exit-cta-main:active {
+          transform: translate(2px, 2px);
+          box-shadow: 2px 2px 0 #1E1E1E;
         }
-        @keyframes jx-shimmer { 0%, 60%, 100% { left: -100%; } 80% { left: 100%; } }
+        /* No-thanks button — calm, just a normal text link feel */
         .jx-exit-no {
-          width: 100%; padding: 18px 22px; margin-top: 12px;
+          width: 100%; padding: 14px 18px; margin-top: 10px;
           font-family: var(--font-serif);
-          font-size: 15.5px; font-weight: 500;
-          font-style: italic;
-          color: rgba(255,255,255,0.55);
-          background: rgba(255,255,255,0.02);
+          font-size: 14.5px; font-weight: 500;
+          color: rgba(255,255,255,0.58);
+          background: transparent;
           border: 1px solid rgba(255,255,255,0.12);
           cursor: pointer;
-          transition: all .2s;
-          line-height: 1.55; text-align: center;
+          transition: color .2s, border-color .2s, background .2s;
+          line-height: 1.5; text-align: center;
         }
-        /* ===== "DON'T LEAVE" HOVER PANIC MODE =====
-           When the user hovers the No thanks button, the whole modal goes
-           into iOS-uninstall-jiggle territory: the button shakes, red glow
-           pulses, ⚠ warning icons appear, and via :has() the lose-list,
-           value strip, mockup, and timer all react in sympathy. */
-        @keyframes jxJiggle {
-          0%, 100% { transform: rotate(-1.1deg) translateY(0); }
-          25%      { transform: rotate(1.1deg)  translateY(-1px); }
-          50%      { transform: rotate(-1.1deg) translateY(1px); }
-          75%      { transform: rotate(1.1deg)  translateY(-1px); }
-        }
-        @keyframes jxJiggleHard {
-          0%, 100% { transform: rotate(-1.6deg) translate(0, 0); }
-          20%      { transform: rotate(1.6deg)  translate(-1px, -1px); }
-          40%      { transform: rotate(-1.6deg) translate(1px, 1px); }
-          60%      { transform: rotate(1.6deg)  translate(-1px, 1px); }
-          80%      { transform: rotate(-1.6deg) translate(1px, -1px); }
-        }
-        @keyframes jxRedPulse {
-          0%, 100% { box-shadow: 0 0 0 0 rgba(255,79,20,0), 0 0 0 rgba(255,79,20,0); }
-          50%      { box-shadow: 0 0 48px 6px rgba(255,79,20,0.45), inset 0 0 30px rgba(255,79,20,0.18); }
-        }
-        @keyframes jxWarningBlink {
-          0%, 100%   { opacity: 1; transform: scale(1) rotate(var(--rot, 0deg)); }
-          50%        { opacity: 0.25; transform: scale(0.85) rotate(var(--rot, 0deg)); }
-        }
-        @keyframes jxTextShake {
-          0%, 100% { transform: translate(0, 0); }
-          20%      { transform: translate(-2px, 1px); }
-          40%      { transform: translate(2px, -1px); }
-          60%      { transform: translate(-1px, 2px); }
-          80%      { transform: translate(1px, -2px); }
-        }
-        @keyframes jxSirenFlash {
-          0%, 100% { background-color: rgba(255,79,20,0.08); }
-          50%      { background-color: rgba(255,79,20,0.28); }
-        }
-
-        /* Button itself: jiggle + red glow + brighter text */
-        .jx-exit-no { position: relative; }
         .jx-exit-no:hover {
-          animation: jxJiggle 0.22s linear infinite, jxRedPulse 0.7s ease-in-out infinite;
-          color: #fff !important;
-          font-style: normal !important;
-          font-weight: 700 !important;
-          background: linear-gradient(135deg, rgba(139,30,5,0.95), rgba(255,79,20,0.85)) !important;
-          border-color: #ff4f14 !important;
-          text-shadow: 0 0 10px rgba(255,79,20,0.7), 0 1px 2px rgba(0,0,0,0.6);
-          letter-spacing: 0.02em;
-        }
-        /* ⚠ warning icons that pop in at the corners on hover */
-        .jx-exit-no::before,
-        .jx-exit-no::after {
-          content: '⚠';
-          position: absolute;
-          font-size: 26px;
-          color: #ff4f14;
-          opacity: 0;
-          pointer-events: none;
-          transition: opacity 0.15s ease;
-          text-shadow: 0 0 12px rgba(255,79,20,0.7);
-        }
-        .jx-exit-no::before { --rot: -18deg; top: -14px; left: -10px; transform: rotate(-18deg); }
-        .jx-exit-no::after  { --rot: 18deg;  top: -14px; right: -10px; transform: rotate(18deg); }
-        .jx-exit-no:hover::before,
-        .jx-exit-no:hover::after {
-          opacity: 1;
-          animation: jxWarningBlink 0.45s ease-in-out infinite;
-        }
-
-        /* :has() sympathy reactions across the rest of the modal */
-        .jx-exit-modal:has(.jx-exit-no:hover) .jx-exit-lose {
-          animation: jxRedPulse 0.7s ease-in-out infinite, jxSirenFlash 0.5s linear infinite;
-          border-color: #ff4f14 !important;
-        }
-        .jx-exit-modal:has(.jx-exit-no:hover) .jx-exit-lose-title {
-          color: #ff4f14 !important;
-          animation: jxTextShake 0.18s linear infinite;
-          font-weight: 900 !important;
-        }
-        .jx-exit-modal:has(.jx-exit-no:hover) .jx-exit-lose-item {
-          animation: jxJiggleHard 0.2s linear infinite;
-          color: #ff4f14 !important;
-          background: rgba(255,79,20,0.14) !important;
-          border-color: rgba(255,79,20,0.65) !important;
-          font-weight: 700 !important;
-        }
-        .jx-exit-modal:has(.jx-exit-no:hover) .jx-exit-lose-item:nth-child(even) {
-          animation-delay: -0.1s;
-        }
-        .jx-exit-modal:has(.jx-exit-no:hover) .jx-exit-lose-item svg {
-          stroke: #ff4f14 !important;
-          filter: drop-shadow(0 0 4px rgba(255,79,20,0.7));
-        }
-
-        /* Left column reacts too */
-        .jx-exit-modal:has(.jx-exit-no:hover) .jx-exit-value {
-          background: linear-gradient(180deg, rgba(255,79,20,0.18), rgba(255,79,20,0.06)) !important;
-          border-color: #ff4f14 !important;
-          box-shadow: 0 0 24px rgba(255,79,20,0.3);
-        }
-        .jx-exit-modal:has(.jx-exit-no:hover) .jx-exit-value-num {
-          animation: jxTextShake 0.16s linear infinite;
-        }
-        .jx-exit-modal:has(.jx-exit-no:hover) .jx-exit-value-cell {
-          animation: jxJiggle 0.24s linear infinite;
-          border-color: rgba(255,79,20,0.4) !important;
-        }
-        .jx-exit-modal:has(.jx-exit-no:hover) .jx-exit-mockups {
-          border-color: #ff4f14 !important;
-          box-shadow: 0 0 40px rgba(255,79,20,0.35);
+          color: rgba(255,255,255,0.85);
+          border-color: rgba(255,255,255,0.25);
+          background: rgba(255,255,255,0.03);
         }
 
         /* Timer panics — pulses faster, the countdown text shakes */
