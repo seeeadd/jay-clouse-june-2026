@@ -9010,7 +9010,12 @@ function VipExitOverlay() {
             <div className="jx-exit-lose-title">What's in VIP:</div>
             {losing.map((item, i) => (
               <div key={i} className="jx-exit-lose-item">
-                <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="var(--cs-ballpoint)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                {/* Two icons stacked — check at rest, X on hover. CSS toggles
+                    opacity via the parent's :has(.jx-exit-no:hover) state. */}
+                <span className="jx-exit-lose-ico" aria-hidden>
+                  <svg className="ico-check" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="var(--cs-ballpoint)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                  <svg className="ico-x"     viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="#dc5a4b"             strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                </span>
                 {item}
               </div>
             ))}
@@ -9359,9 +9364,76 @@ function VipExitOverlay() {
         .jx-exit-modal:has(.jx-exit-no:hover) .jx-exit-lose-item:nth-child(even) {
           animation-delay: -0.35s;
         }
-        .jx-exit-modal:has(.jx-exit-no:hover) .jx-exit-lose-item svg {
+        /* Scoped to ONLY the check icon — the X gets its own red stroke
+           from the JSX, don't let this clobber it. */
+        .jx-exit-modal:has(.jx-exit-no:hover) .jx-exit-lose-item .ico-check {
           stroke: var(--cs-ballpoint, #0061FF);
           transition: stroke .3s ease;
+        }
+        /* Check ↔ X morph: stack both SVGs in the same slot, fade between
+           them based on the No-thanks hover. Soft red, not screaming. */
+        .jx-exit-lose-ico {
+          position: relative; display: inline-block;
+          width: 13px; height: 13px; flex-shrink: 0;
+        }
+        .jx-exit-lose-ico svg {
+          position: absolute; inset: 0;
+          transition: opacity .25s ease, transform .25s ease;
+        }
+        .jx-exit-lose-ico .ico-check { opacity: 1; }
+        .jx-exit-lose-ico .ico-x     { opacity: 0; transform: rotate(-45deg) scale(0.7); }
+        .jx-exit-modal:has(.jx-exit-no:hover) .jx-exit-lose-ico .ico-check {
+          opacity: 0; transform: rotate(45deg) scale(0.7);
+        }
+        .jx-exit-modal:has(.jx-exit-no:hover) .jx-exit-lose-ico .ico-x {
+          opacity: 1; transform: rotate(0deg) scale(1);
+        }
+        /* When the X is showing, item text picks up a soft red tint so the
+           swap reads as "you'd lose this." */
+        .jx-exit-modal:has(.jx-exit-no:hover) .jx-exit-lose-item {
+          color: #e89a91;
+        }
+
+        /* Graphics sympathy — the left column reacts too. Mockups SVG does a
+           slow, slight wobble (parent rotates as one unit so the laptop/phone/
+           replay scene shakes together). Value strip + cells each get a
+           gentle jiggle, staggered so they don't move in lockstep. All slower
+           + softer than the button itself — like aftershocks. */
+        @keyframes jxMockupShake {
+          0%, 100% { transform: rotate(-0.4deg) translateY(0); }
+          50%      { transform: rotate(0.4deg)  translateY(-1px); }
+        }
+        @keyframes jxCellJiggle {
+          0%, 100% { transform: rotate(-0.5deg) translate(0, 0); }
+          50%      { transform: rotate(0.5deg)  translate(0, -0.5px); }
+        }
+        @keyframes jxValueNumPulse {
+          0%, 100% { text-shadow: 0 0 0 rgba(242,229,185,0); }
+          50%      { text-shadow: 0 0 18px rgba(242,229,185,0.55); }
+        }
+        .jx-exit-modal:has(.jx-exit-no:hover) .jx-exit-mockups {
+          animation: jxMockupShake 0.9s ease-in-out infinite;
+          transform-origin: center center;
+          will-change: transform;
+        }
+        .jx-exit-modal:has(.jx-exit-no:hover) .jx-exit-value {
+          border-color: rgba(242,229,185,0.32);
+          background: rgba(242,229,185,0.06);
+          transition: border-color .3s ease, background .3s ease;
+        }
+        .jx-exit-modal:has(.jx-exit-no:hover) .jx-exit-value-num {
+          animation: jxValueNumPulse 1.6s ease-in-out infinite;
+          color: var(--cs-recording, #FF4F14);
+          transition: color .3s ease;
+        }
+        .jx-exit-modal:has(.jx-exit-no:hover) .jx-exit-value-cell {
+          animation: jxCellJiggle 0.85s ease-in-out infinite;
+        }
+        .jx-exit-modal:has(.jx-exit-no:hover) .jx-exit-value-cell:nth-child(2) {
+          animation-delay: -0.28s;
+        }
+        .jx-exit-modal:has(.jx-exit-no:hover) .jx-exit-value-cell:nth-child(3) {
+          animation-delay: -0.56s;
         }
 
         /* Timer panics — pulses faster, the countdown text shakes */
