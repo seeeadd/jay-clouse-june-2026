@@ -9296,11 +9296,13 @@ function VipExitOverlay() {
           transform: translate(2px, 2px);
           box-shadow: 2px 2px 0 #1E1E1E;
         }
-        /* No-thanks button — calm by default, on hover the "what's in VIP"
-           list gently highlights to remind users what they'd be skipping.
-           No jiggle, no red glow, no warning icons. Just a soft amber
-           tint + slight lift, like a polite "you sure?" */
+        /* No-thanks button — calm at rest. On hover: a SOFT iPhone-uninstall
+           jiggle + gentle warm pulse. Half the rotation, slower cadence,
+           warm cream/amber glow instead of red panic. The lose-list does a
+           gentle sympathy jiggle so users feel the "you'd be skipping this"
+           without it screaming. */
         .jx-exit-no {
+          position: relative;
           width: 100%; padding: 14px 18px; margin-top: 10px;
           font-family: var(--font-serif);
           font-size: 14.5px; font-weight: 500;
@@ -9311,26 +9313,51 @@ function VipExitOverlay() {
           transition: color .25s ease, border-color .25s ease, background .25s ease;
           line-height: 1.5; text-align: center;
         }
-        .jx-exit-no:hover {
-          color: rgba(255,255,255,0.92);
-          border-color: rgba(0,97,255,0.4);
-          background: rgba(0,97,255,0.06);
+
+        /* SOFT iPhone-uninstall jiggle — half the rotation of the original,
+           slower (0.45s vs 0.22s). Still recognizable, way less panicked. */
+        @keyframes jxJiggleSoft {
+          0%, 100% { transform: rotate(-0.45deg) translateY(0); }
+          25%      { transform: rotate(0.45deg)  translateY(-0.5px); }
+          50%      { transform: rotate(-0.45deg) translateY(0.5px); }
+          75%      { transform: rotate(0.45deg)  translateY(-0.5px); }
         }
-        /* Sympathy reaction: hovering "No thanks" gently brightens the
-           "what's in VIP" list so users see what they'd skip. Pure CSS
-           via :has() — no JS, no animation panic. */
+        /* Warm pulse — uses cellotape yellow + soft blue instead of red. */
+        @keyframes jxWarmPulse {
+          0%, 100% { box-shadow: 0 0 0 0 rgba(242,229,185,0); }
+          50%      { box-shadow: 0 0 28px 2px rgba(242,229,185,0.30),
+                                 0 0 0 1px rgba(0,97,255,0.12); }
+        }
+        .jx-exit-no:hover {
+          animation: jxJiggleSoft 0.45s ease-in-out infinite,
+                     jxWarmPulse  1.6s ease-in-out infinite;
+          color: rgba(255,255,255,0.95);
+          border-color: rgba(0,97,255,0.40);
+          background: rgba(0,97,255,0.05);
+        }
+
+        /* Sympathy reactions on the "What's in VIP" list — gentle jiggle,
+           gentle warm tint. No siren flash, no red flood. */
+        @keyframes jxJiggleSofter {
+          0%, 100% { transform: rotate(-0.3deg); }
+          50%      { transform: rotate(0.3deg); }
+        }
         .jx-exit-modal:has(.jx-exit-no:hover) .jx-exit-lose {
-          border-color: rgba(0,97,255,0.35);
-          background: rgba(0,97,255,0.07);
+          border-color: rgba(242,229,185,0.30);
+          background: rgba(242,229,185,0.05);
           transition: border-color .3s ease, background .3s ease;
         }
         .jx-exit-modal:has(.jx-exit-no:hover) .jx-exit-lose-title {
-          color: rgba(255,255,255,0.92);
+          color: rgba(255,255,255,0.95);
           transition: color .3s ease;
         }
         .jx-exit-modal:has(.jx-exit-no:hover) .jx-exit-lose-item {
           color: rgba(255,255,255,0.95);
+          animation: jxJiggleSofter 0.7s ease-in-out infinite;
           transition: color .3s ease;
+        }
+        .jx-exit-modal:has(.jx-exit-no:hover) .jx-exit-lose-item:nth-child(even) {
+          animation-delay: -0.35s;
         }
         .jx-exit-modal:has(.jx-exit-no:hover) .jx-exit-lose-item svg {
           stroke: var(--cs-ballpoint, #0061FF);
