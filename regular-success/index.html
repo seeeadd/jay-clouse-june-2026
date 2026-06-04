@@ -731,6 +731,49 @@ body { padding-top: 0; }
 .btn-cta-lg { padding: 20px 34px; font-size: 15px; box-shadow: 6px 6px 0 var(--cs-static); }
 .btn-cta-sm { padding: 12px 18px; font-size: 12px; box-shadow: 4px 4px 0 var(--cs-static); }
 
+/* ====================================================================
+   BUTTON LIFE — breathing glow + shimmer hover + micro tracking.
+   Layered over neo-brutalist hard shadow. Honors reduced-motion.
+   ==================================================================== */
+@keyframes cs-btn-breathe {
+  0%, 100% { filter: drop-shadow(0 0 0 rgba(46,91,255,0)); }
+  50%      { filter: drop-shadow(0 0 14px rgba(46,91,255,0.28)); }
+}
+@keyframes cs-btn-breathe-hot {
+  0%, 100% { filter: drop-shadow(0 0 0 rgba(255,79,20,0)); }
+  50%      { filter: drop-shadow(0 0 14px rgba(255,79,20,0.32)); }
+}
+.btn-cta, .cs-btn:not(.is-ghost), .popup-cta {
+  animation: cs-btn-breathe 2.8s ease-in-out infinite;
+  position: relative; overflow: hidden;
+  transition: transform .2s cubic-bezier(.4,1.5,.5,1), box-shadow .25s ease, filter .25s ease, background-color .2s ease, letter-spacing .25s ease;
+  will-change: transform, filter;
+}
+.cs-btn.is-hot, .btn-cta.is-hot, .popup-cta.is-hot { animation-name: cs-btn-breathe-hot; }
+.btn-cta::before, .cs-btn:not(.is-ghost)::before, .popup-cta::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(115deg, transparent 38%, rgba(255,255,255,.42) 50%, transparent 62%);
+  transform: translateX(-110%);
+  transition: transform .75s cubic-bezier(.25,.46,.45,.94);
+  pointer-events: none; z-index: 1;
+}
+.btn-cta > *, .cs-btn > *, .popup-cta > * { position: relative; z-index: 2; }
+.btn-cta:hover, .cs-btn:not(.is-ghost):hover, .popup-cta:hover {
+  animation-play-state: paused;
+  filter: drop-shadow(0 0 20px rgba(46,91,255,0.45)) brightness(1.06) saturate(1.05);
+  letter-spacing: 0.02em;
+}
+.cs-btn.is-hot:hover, .btn-cta.is-hot:hover, .popup-cta.is-hot:hover {
+  filter: drop-shadow(0 0 22px rgba(255,79,20,0.50)) brightness(1.06) saturate(1.08);
+}
+.btn-cta:hover::before, .cs-btn:not(.is-ghost):hover::before, .popup-cta:hover::before { transform: translateX(110%); }
+.sticky-pill-cta { transition: transform .22s cubic-bezier(.4,1.5,.5,1), filter .25s ease, box-shadow .25s ease; }
+.sticky-pill-cta:hover { filter: brightness(1.08) drop-shadow(0 0 18px rgba(46,91,255,0.50)); transform: translateY(-2px) scale(1.025); }
+@media (prefers-reduced-motion: reduce) {
+  .btn-cta, .cs-btn, .popup-cta, .sticky-pill-cta { animation: none !important; }
+  .btn-cta::before, .cs-btn::before, .popup-cta::before { display: none !important; }
+}
+
 /* =========================================================
    SECTIONS
    ========================================================= */
@@ -2483,6 +2526,49 @@ body { padding-top: 0; }
 .btn-cta:active { transform: translate(2px,2px); box-shadow: 0 0 0 var(--cs-static); }
 .btn-cta-lg { padding: 20px 34px; font-size: 15px; box-shadow: 6px 6px 0 var(--cs-static); }
 .btn-cta-sm { padding: 12px 18px; font-size: 12px; box-shadow: 4px 4px 0 var(--cs-static); }
+
+/* ====================================================================
+   BUTTON LIFE — breathing glow + shimmer hover + micro tracking.
+   Layered over neo-brutalist hard shadow. Honors reduced-motion.
+   ==================================================================== */
+@keyframes cs-btn-breathe {
+  0%, 100% { filter: drop-shadow(0 0 0 rgba(46,91,255,0)); }
+  50%      { filter: drop-shadow(0 0 14px rgba(46,91,255,0.28)); }
+}
+@keyframes cs-btn-breathe-hot {
+  0%, 100% { filter: drop-shadow(0 0 0 rgba(255,79,20,0)); }
+  50%      { filter: drop-shadow(0 0 14px rgba(255,79,20,0.32)); }
+}
+.btn-cta, .cs-btn:not(.is-ghost), .popup-cta {
+  animation: cs-btn-breathe 2.8s ease-in-out infinite;
+  position: relative; overflow: hidden;
+  transition: transform .2s cubic-bezier(.4,1.5,.5,1), box-shadow .25s ease, filter .25s ease, background-color .2s ease, letter-spacing .25s ease;
+  will-change: transform, filter;
+}
+.cs-btn.is-hot, .btn-cta.is-hot, .popup-cta.is-hot { animation-name: cs-btn-breathe-hot; }
+.btn-cta::before, .cs-btn:not(.is-ghost)::before, .popup-cta::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(115deg, transparent 38%, rgba(255,255,255,.42) 50%, transparent 62%);
+  transform: translateX(-110%);
+  transition: transform .75s cubic-bezier(.25,.46,.45,.94);
+  pointer-events: none; z-index: 1;
+}
+.btn-cta > *, .cs-btn > *, .popup-cta > * { position: relative; z-index: 2; }
+.btn-cta:hover, .cs-btn:not(.is-ghost):hover, .popup-cta:hover {
+  animation-play-state: paused;
+  filter: drop-shadow(0 0 20px rgba(46,91,255,0.45)) brightness(1.06) saturate(1.05);
+  letter-spacing: 0.02em;
+}
+.cs-btn.is-hot:hover, .btn-cta.is-hot:hover, .popup-cta.is-hot:hover {
+  filter: drop-shadow(0 0 22px rgba(255,79,20,0.50)) brightness(1.06) saturate(1.08);
+}
+.btn-cta:hover::before, .cs-btn:not(.is-ghost):hover::before, .popup-cta:hover::before { transform: translateX(110%); }
+.sticky-pill-cta { transition: transform .22s cubic-bezier(.4,1.5,.5,1), filter .25s ease, box-shadow .25s ease; }
+.sticky-pill-cta:hover { filter: brightness(1.08) drop-shadow(0 0 18px rgba(46,91,255,0.50)); transform: translateY(-2px) scale(1.025); }
+@media (prefers-reduced-motion: reduce) {
+  .btn-cta, .cs-btn, .popup-cta, .sticky-pill-cta { animation: none !important; }
+  .btn-cta::before, .cs-btn::before, .popup-cta::before { display: none !important; }
+}
 
 /* =========================================================
    SECTIONS
