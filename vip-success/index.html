@@ -10975,8 +10975,6 @@ function TkArt({ kind }) {
           {/* red top stripe + corner badge */}
           <rect width="160" height="20" fill="#dc5a4b"/>
           <text x="14" y="14" fontFamily="Space Mono" fontSize="9" fontWeight="700" letterSpacing="2.5" fill="#fffcf7">FRIDAY · JUN 26 · 2026</text>
-          {/* small dot on header */}
-          <circle cx="150" cy="10" r="2.5" fill="#fffcf7"/>
 
           {/* perforation line down right side — separates main + stub */}
           <line x1="120" y1="20" x2="120" y2="160" stroke="#3a342e" strokeWidth="0.8" strokeDasharray="3 3"/>
@@ -11036,25 +11034,8 @@ function TkArt({ kind }) {
           </circle>
         </g>
 
-        {/* "OPENS JUN 26" tag swinging from top right (parallels vault's hanging tag) */}
-        <g transform="translate(220 100) rotate(8)">
-          <line x1="0" y1="-30" x2="0" y2="0" stroke="#1e1e1e" strokeWidth="1"/>
-          <rect x="-20" y="0" width="40" height="22" fill="#fdf4d9" stroke="#1e1e1e" strokeWidth="1.2"/>
-          <circle cx="0" cy="-30" r="2" fill="#1e1e1e"/>
-          <text x="0" y="9" textAnchor="middle" fontFamily="Space Mono" fontSize="5.5" fontWeight="700" letterSpacing="1.5" fill="#dc5a4b">OPENS</text>
-          <text x="0" y="18" textAnchor="middle" fontFamily="Space Grotesk" fontSize="8" fontWeight="700" letterSpacing="0.4" fill="#1e1e1e">JUN 26</text>
-        </g>
-
-        {/* "LIVE" pulse indicator floating top-left */}
-        <g transform="translate(24 36)">
-          <circle r="5" fill="#dc5a4b">
-            <animate attributeName="opacity" values="1;0.35;1" dur="1.6s" repeatCount="indefinite"/>
-          </circle>
-          <text x="10" y="3" fontFamily="Space Mono" fontSize="8" fontWeight="700" letterSpacing="1.8" fill="#dc5a4b">LIVE</text>
-        </g>
-
-        {/* Caveat handwriting at bottom (parallels vault's "30 days, 90 days") */}
-        <text x="62" y="194" fontFamily="Caveat" fontSize="13" fill="var(--cs-ballpoint, #0061FF)" transform="rotate(-2 62 194)">90 min live, just for VIPs ↗</text>
+        {/* clean caption centered under the ticket */}
+        <text x="140" y="196" textAnchor="middle" fontFamily="Space Mono" fontSize="8" fontWeight="700" letterSpacing="1.5" fill="var(--cs-ballpoint, #0061FF)">90 MIN LIVE · VIP ONLY</text>
       </svg>
     );
   }
