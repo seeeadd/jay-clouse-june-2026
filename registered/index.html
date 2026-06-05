@@ -5,10 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>You're registered · The Membership Summit</title>
 <meta name="robots" content="noindex">
-<!-- Fallback redirect if JS is off -->
-<meta http-equiv="refresh" content="4;url=/vip">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+<!-- Warm up the VIP page while this shows, so the redirect is instant -->
+<link rel="prefetch" href="/vip">
+<link rel="preconnect" href="https://www.membershipsummit.com">
+<!-- No-JS fallback -->
+<meta http-equiv="refresh" content="2;url=/vip">
 <style>
   :root{ --blue:#0061FF; --orange:#FF4F14; --ink:#1E1E1E; --cream:#FFFCF7; }
   *{ box-sizing:border-box; margin:0; }
@@ -18,58 +19,50 @@
     font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
     display:flex; align-items:center; justify-content:center; padding:24px; text-align:center;
   }
-  .wrap{ max-width:480px; }
+  .wrap{ max-width:460px; }
   .eyebrow{
-    font-family:'Space Mono',monospace; font-size:11px; font-weight:700;
-    letter-spacing:.18em; text-transform:uppercase; color:rgba(30,30,30,.5);
-    margin-bottom:28px;
+    font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace; font-size:11px; font-weight:700;
+    letter-spacing:.16em; text-transform:uppercase; color:rgba(30,30,30,.5); margin-bottom:26px;
   }
   .badge{
-    width:78px; height:78px; border-radius:50%; background:var(--orange);
+    width:74px; height:74px; border-radius:50%; background:var(--orange);
     display:inline-flex; align-items:center; justify-content:center;
-    box-shadow:5px 5px 0 var(--ink); margin-bottom:26px;
-    animation:pop .45s cubic-bezier(.34,1.56,.64,1) both;
+    box-shadow:5px 5px 0 var(--ink); margin-bottom:24px;
+    animation:pop .4s cubic-bezier(.34,1.56,.64,1) both;
   }
   @keyframes pop{ 0%{ transform:scale(.4); opacity:0; } 100%{ transform:scale(1); opacity:1; } }
-  .badge svg{ width:38px; height:38px; }
-  h1{ font-size:clamp(30px,7vw,44px); line-height:1.05; letter-spacing:-.02em; color:var(--blue); margin-bottom:14px; }
-  .sub{ font-size:17px; line-height:1.5; color:rgba(30,30,30,.78); margin-bottom:30px; }
+  .badge svg{ width:36px; height:36px; }
+  h1{ font-size:clamp(28px,7vw,42px); line-height:1.05; letter-spacing:-.02em; color:var(--blue); margin-bottom:12px; }
+  .sub{ font-size:16px; line-height:1.5; color:rgba(30,30,30,.78); }
   .sub b{ color:var(--ink); }
-  .next{
-    font-family:'Space Mono',monospace; font-size:11px; font-weight:700;
-    letter-spacing:.12em; text-transform:uppercase; color:rgba(30,30,30,.55);
-    display:inline-flex; align-items:center; gap:10px;
-  }
-  .spinner{ width:14px; height:14px; border:2px solid rgba(30,30,30,.2); border-top-color:var(--blue); border-radius:50%; animation:spin .8s linear infinite; }
+  .next{ margin-top:24px; font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace; font-size:10.5px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:rgba(30,30,30,.5); display:inline-flex; align-items:center; gap:9px; }
+  .spinner{ width:13px; height:13px; border:2px solid rgba(30,30,30,.2); border-top-color:var(--blue); border-radius:50%; animation:spin .8s linear infinite; }
   @keyframes spin{ to{ transform:rotate(360deg); } }
-  .go{ display:block; margin-top:26px; font-family:'Space Mono',monospace; font-size:12px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--blue); text-decoration:none; }
-  .go:hover{ text-decoration:underline; }
+  .go{ display:inline-block; margin-top:8px; font-size:0; }
   @media (prefers-reduced-motion:reduce){ .badge,.spinner{ animation:none; } }
 </style>
+<script>
+  // Fire ASAP, before paint finishes — carry utm/ref through to /vip.
+  (function(){
+    var dest = '/vip' + (location.search || '');
+    // prefetch in JS too (covers browsers that ignore <link rel=prefetch>)
+    try { var l=document.createElement('link'); l.rel='prefetch'; l.href=dest; document.head.appendChild(l); } catch(e){}
+    setTimeout(function(){ location.replace(dest); }, 1400);
+  })();
+</script>
 </head>
 <body>
   <div class="wrap">
     <div class="eyebrow">The 3-Day Membership Summit</div>
     <div class="badge" aria-hidden="true">
-      <svg viewBox="0 0 24 24" fill="none" stroke="#FFFCF7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M4 12.5 L10 18 L20 6"/>
-      </svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="#FFFCF7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5 L10 18 L20 6"/></svg>
     </div>
     <h1>You're registered.</h1>
-    <p class="sub">See you live, <b>June 23&ndash;25</b> &middot; 1:00 PM ET.<br>Watch your inbox for the reminders.</p>
-    <div class="next"><span class="spinner" aria-hidden="true"></span> Taking you to one optional upgrade</div>
-    <a class="go" id="go" href="/vip">Go now &rarr;</a>
+    <p class="sub">See you live, <b>June 23&ndash;25</b> &middot; 1:00 PM ET.</p>
+    <div class="next"><span class="spinner" aria-hidden="true"></span> One quick thing for you&hellip;</div>
+    <a class="go" href="/vip" aria-label="Continue">&nbsp;</a>
   </div>
-  <script>
-    (function(){
-      // Carry any query string (utm/ref) through to the VIP page, then redirect.
-      var dest = '/vip' + (location.search || '');
-      document.getElementById('go').setAttribute('href', dest);
-      setTimeout(function(){ location.replace(dest); }, 2600);
-    })();
-  </script>
-  <!-- Fathom - beautiful, simple website analytics -->
+  <!-- Fathom -->
   <script src="https://cdn.usefathom.com/script.js" data-site="ZGQSKPLP" defer></script>
-  <!-- / Fathom -->
 </body>
 </html>
