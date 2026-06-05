@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>You're registered · The Membership Summit</title>
+<meta name="robots" content="noindex">
+<!-- Warm up the VIP page while this shows so the redirect feels instant -->
+<link rel="prefetch" href="/vip">
+<!-- No-JS / failed-JS fallback -->
+<meta http-equiv="refresh" content="2;url=/vip">
+<style>
+  * { -webkit-box-sizing: border-box; box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; }
+  body {
+    background: #FFFCF7; color: #1E1E1E;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    text-align: center; min-height: 100%; padding: 24px;
+    display: -webkit-box; display: -webkit-flex; display: flex;
+    -webkit-box-pack: center; -webkit-justify-content: center; justify-content: center;
+    -webkit-box-align: center; -webkit-align-items: center; align-items: center;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { width: 100%; max-width: 460px; }
+  .eyebrow {
+    font-family: "Courier New", Courier, monospace; font-size: 11px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase; color: #8a8783; margin-bottom: 24px;
+  }
+  .badge {
+    width: 72px; height: 72px; margin: 0 auto 22px; border-radius: 50%; background: #FF4F14;
+    -webkit-box-shadow: 5px 5px 0 #1E1E1E; box-shadow: 5px 5px 0 #1E1E1E;
+    display: -webkit-box; display: -webkit-flex; display: flex;
+    -webkit-box-pack: center; -webkit-justify-content: center; justify-content: center;
+    -webkit-box-align: center; -webkit-align-items: center; align-items: center;
+    -webkit-animation: pop .4s ease both; animation: pop .4s ease both;
+  }
+  .badge svg { width: 34px; height: 34px; display: block; }
+  h1 {
+    color: #0061FF; line-height: 1.05; letter-spacing: -0.5px; margin-bottom: 12px;
+    font-size: 34px;                      /* fallback for browsers without clamp() */
+    font-size: clamp(28px, 7vw, 42px);
+  }
+  .sub { font-size: 16px; line-height: 1.5; color: #4a4845; }
+  .sub b { color: #1E1E1E; }
+  .next {
+    margin-top: 22px; font-family: "Courier New", Courier, monospace; font-size: 11px;
+    font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #908d89;
+  }
+  .spin {
+    display: inline-block; width: 12px; height: 12px; margin-right: 8px; vertical-align: middle;
+    border: 2px solid rgba(30,30,30,.2); border-top-color: #0061FF; border-radius: 50%;
+    -webkit-animation: rot .8s linear infinite; animation: rot .8s linear infinite;
+  }
+  @-webkit-keyframes pop { 0% { -webkit-transform: scale(.5); opacity: 0; } 100% { -webkit-transform: scale(1); opacity: 1; } }
+  @keyframes pop { 0% { transform: scale(.5); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+  @-webkit-keyframes rot { to { -webkit-transform: rotate(360deg); } }
+  @keyframes rot { to { transform: rotate(360deg); } }
+  @media (prefers-reduced-motion: reduce) { .badge, .spin { -webkit-animation: none; animation: none; } }
+</style>
+<script>
+  /* ES5 only — safe on old phones. Redirect to /vip, carrying utm/ref. */
+  (function () {
+    var dest = "/vip" + (window.location.search || "");
+    try {
+      var l = document.createElement("link");
+      l.rel = "prefetch"; l.href = dest;
+      document.getElementsByTagName("head")[0].appendChild(l);
+    } catch (e) {}
+    setTimeout(function () { window.location.replace(dest); }, 1400);
+  })();
+</script>
+</head>
+<body>
+  <div class="wrap">
+    <div class="eyebrow">The 3-Day Membership Summit</div>
+    <div class="badge">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#FFFCF7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5 L10 18 L20 6"/></svg>
+    </div>
+    <h1>You're registered.</h1>
+    <p class="sub">See you live, <b>June 23&ndash;25</b> &middot; 1:00 PM ET.</p>
+    <p class="next"><span class="spin"></span>One quick thing for you&hellip;</p>
+  </div>
+  <!-- Fathom -->
+  <script src="https://cdn.usefathom.com/script.js" data-site="ZGQSKPLP" defer></script>
+</body>
+</html>
