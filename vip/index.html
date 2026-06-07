@@ -9163,29 +9163,8 @@ function VipExitOverlay() {
           <button className="jx-exit-cta-main" onClick={goVIP}>
             Add VIP — $47
           </button>
-          <button className="jx-exit-no" onClick={trySkip}>
+          <button className="jx-exit-no" onClick={confirmSkip}>
             No thanks, take me to my confirmation page.
-          </button>
-        </div>
-      </div>
-
-      {/* Second confirm dialog — kept but softened. No ⚠, no "this can't be
-          undone", no countdown. Just a calm "you sure?" beat. */}
-      <div className={`jx-exit-confirm ${confirm ? 'is-open' : ''}`}
-           onClick={(e) => { if (e.target === e.currentTarget) setConfirm(false); }}>
-        <div className="jx-confirm-box" role="dialog" aria-modal="true">
-          <h4 className="jx-confirm-title">One more check?</h4>
-          <p className="jx-confirm-desc">
-            VIP is a fourth day live with me, permanent recordings, and a private Telegram chat through cart week. The $47 is launch pricing for this event.
-          </p>
-          <p className="jx-confirm-desc">
-            Want it or skip?
-          </p>
-          <button className="jx-confirm-stay" onClick={goVIP}>
-            Add VIP — $47
-          </button>
-          <button className="jx-confirm-go" onClick={confirmSkip}>
-            Skip, take me to my confirmation page
           </button>
         </div>
       </div>
