@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>The Summit Toolkit · Membership Summit</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='1' y='1' width='22' height='22' rx='4' fill='%230061FF'/%3E%3Cpath d='M7 8h10M7 12h10M7 16h4.5' fill='none' stroke='%23FFFCF7' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M14.5 16.2l1.6 1.6 2.9-2.9' fill='none' stroke='%23FF4F14' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="toolkit.css">
+<style>
+.hero-row{display:flex;gap:32px;align-items:flex-start}
+.hero-txt{flex:1;min-width:0}
+.tubey-card{flex:none;width:158px;background:var(--cs-notebook);border:2px solid var(--cs-static);border-radius:4px;padding:10px 10px 6px;transform:rotate(2.5deg);box-shadow:6px 6px 0 var(--cs-static);margin-top:40px}
+.tubey-card img{width:100%;display:block;border:1.5px solid var(--cs-static-10)}
+@media(max-width:680px){.tubey-card{display:none}}
+.hello{font-family:var(--font-display);font-style:italic;font-weight:600;color:var(--cs-ballpoint);font-size:20px;margin-top:20px;letter-spacing:var(--tracking-display)}
+.snap{margin-top:36px;border:2px solid var(--cs-ballpoint);border-radius:4px;background:var(--cs-notebook);padding:24px 26px;box-shadow:6px 6px 0 var(--cs-ballpoint);position:relative}
+.snap-tape{position:absolute;top:-12px;left:28px;width:86px;height:22px;background:var(--cs-cellotape);opacity:.85;transform:rotate(-2deg);border:1px solid rgba(30,30,30,.12)}
+.snap-title{font-family:var(--font-display);font-weight:600;font-size:22px;margin-bottom:4px}
+.snap-empty{color:var(--cs-static-60);font-size:16.5px}
+.snap-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:18px;margin-top:16px}
+.snap-cell .l{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--cs-static-60)}
+.snap-cell .v{font-family:var(--font-display);font-weight:600;font-size:22px;line-height:1.25;margin-top:4px}
+.snap-cell .v a{color:var(--cs-static);text-decoration:none;border-bottom:2.5px solid var(--cs-ballpoint)}
+.snap-cell .v a:hover{color:var(--cs-ballpoint)}
+.snap-cell .v .na{color:var(--cs-static-30);font-weight:400;font-size:16px;font-family:var(--font-text)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:18px}
+.tool{position:relative;display:flex;flex-direction:column;background:var(--cs-notebook);border:2px solid var(--cs-static);border-radius:4px;padding:20px 20px 18px;text-decoration:none;color:var(--cs-static);transition:transform .15s,box-shadow .15s}
+a.tool:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--cs-static)}
+.tool .day{font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--cs-ballpoint)}
+.tool h3{font-family:var(--font-display);font-weight:600;font-size:23px;margin:8px 0 5px;line-height:1.15}
+.tool p{font-size:15px;color:var(--cs-static-60);line-height:1.5;max-width:none}
+.tool .st{margin-top:auto;padding-top:14px;display:flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--cs-static-60)}
+.logs{margin-top:22px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.log{background:var(--cs-notebook);border:2px solid var(--cs-static);border-radius:4px;padding:20px 22px;box-shadow:5px 5px 0 var(--cs-static)}
+.log .t{font-family:var(--font-display);font-weight:600;font-size:19px}
+.log p{font-size:15px;color:var(--cs-static-60);margin:5px 0 16px;max-width:none}
+.row{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.wheel-note{margin-top:20px;font-family:var(--font-display);font-style:italic;font-weight:600;font-size:17px;line-height:1.45;color:var(--cs-static);background:var(--cs-cellotape);border:2px solid var(--cs-static);border-radius:4px;padding:14px 18px;max-width:680px;letter-spacing:var(--tracking-display)}
+.vip{border:2px solid var(--cs-static);border-radius:4px;background:var(--cs-notebook);padding:8px 24px}
+.vip .perk{display:flex;justify-content:space-between;gap:14px;align-items:baseline;padding:13px 0;border-bottom:1.5px solid var(--cs-static-10);font-size:16px;flex-wrap:wrap}
+.vip .perk:last-child{border-bottom:none}
+.vip .perk a{color:var(--cs-ballpoint);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.vip .soon{font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--cs-static-30);font-weight:700}
+</style>
+</head>
+<body>
+<div class="bar"></div>
+<nav class="tk-nav"><div class="tk-in">
+  <a class="tk-home" href="index.html"><svg class="lg" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><rect x="1.25" y="1.25" width="21.5" height="21.5" rx="3.5" fill="#0061FF" stroke="#1E1E1E" stroke-width="1.5"></rect><path d="M7 8h10M7 12h10M7 16h4.5" fill="none" stroke="#FFFCF7" stroke-width="2" stroke-linecap="round"></path><path d="M14.5 16.2l1.6 1.6 2.9-2.9" fill="none" stroke="#FF4F14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Summit Toolkit</a>
+  <div class="tk-links">
+    <a href="lab-audit.html" data-tool="audit"><span class="dot"></span>Lab Audit</a>
+    <a href="mechanics-diagnostic.html" data-tool="diag"><span class="dot"></span>Diagnostic</a>
+    <a href="pricing-worksheet.html" data-tool="pricing"><span class="dot"></span>Pricing</a>
+    <a href="roadmap.html" data-tool="roadmap"><span class="dot"></span>30/60/90</a>
+    <a href="retention-checklist.html" data-tool="retention"><span class="dot"></span>Retention</a>
+    <a href="review.html" class="onep">One-Pager</a>
+  </div>
+</div></nav>
+<div class="wrap">
+
+  <div class="kicker-row">
+    <div class="kicker">Membership Summit <b>·</b> June 23–25</div>
+    <div class="tag" id="hubTag">Your toolkit</div>
+  </div>
+
+  <div class="hero-row">
+    <div class="hero-txt">
+      <h1>The Summit Toolkit</h1>
+      <div class="sub">Five working tools, <span class="annotate">one thread</span>. What you type in one flows into the next, and everything stays in your browser.</div>
+      <div class="hello" id="hello">Hello, my friend.</div>
+    </div>
+    <div class="tubey-card taped"><img src="tubey.png" alt="Tubey, the Creator Science mascot, waving"></div>
+  </div>
+
+  <div class="snap" id="snap">
+    <span class="snap-tape"></span>
+    <div class="snap-title">Your snapshot</div>
+    <div class="snap-empty" id="snapEmpty">This builds itself as you work. Start with the Day 1 Lab Audit.</div>
+    <div class="snap-grid" id="snapGrid" style="display:none">
+      <div class="snap-cell"><div class="l">Your roadmap page</div><div class="v" id="sArch"><span class="na">From the Lab Audit</span></div></div>
+      <div class="snap-cell"><div class="l">Weakest mechanic</div><div class="v" id="sWeak"><span class="na">From the Diagnostic</span></div></div>
+      <div class="snap-cell"><div class="l">Recurring target</div><div class="v" id="sMrr"><span class="na">From the Pricing sheet</span></div></div>
+      <div class="snap-cell"><div class="l">Retention pre-flight</div><div class="v" id="sRet"><span class="na">From the Checklist</span></div></div>
+    </div>
+    <div class="row" style="margin-top:22px;display:flex;align-items:center;gap:16px;flex-wrap:wrap"><a class="btn ghost" href="review.html">My one-pager</a><span class="hint">Everything you've typed, on one page. Copy it or print it.</span></div>
+  </div>
+
+  <div class="sec-h"><span class="no">1.0</span> How it works</div>
+  <div class="steps">
+    <div class="step"><div class="n">STEP 01</div><div class="t">Work the day's tool</div><p>One drops each day of the Summit. Everything autosaves in your browser as you type.</p></div>
+    <div class="step"><div class="n">STEP 02</div><div class="t">Log your two inputs</div><p>The Lab Audit and the Diagnostic each end in a short form. The forms are what feed your roadmap.</p></div>
+    <div class="step"><div class="n">STEP 03</div><div class="t">Get your roadmap</div><p>Log both by Thursday night and your personalized 30/60/90 lands in your inbox within 24 hours of Day 3.</p></div>
+  </div>
+
+  <div class="sec-h"><span class="no">2.0</span> The five tools</div>
+  <div class="grid">
+    <a class="tool" href="lab-audit.html" data-tool="audit">
+      <span class="ticon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"></rect><path d="M9 4.5V3.5A1.5 1.5 0 0 1 10.5 2h3A1.5 1.5 0 0 1 15 3.5v1"></path><path d="M9 12.5l2.2 2.2 4.3-4.4"></path></svg></span><div class="day">Day 1 · Tue Jun 23 · Input #1</div><h3>The Lab Audit</h3>
+      <p>Where you actually are. Ten minutes, two parts. Picks your roadmap page for you.</p>
+      <div class="st"><span class="dot"></span><span class="stx">Not started</span></div>
+    </a>
+    <a class="tool" href="mechanics-diagnostic.html" data-tool="diag">
+      <span class="ticon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 20v-5"></path><path d="M9.3 20V9"></path><path d="M14.7 20v-8"></path><path d="M20 20V4"></path></svg></span><div class="day">Day 2 · Wed Jun 24 · Input #2</div><h3>The Mechanics Diagnostic</h3>
+      <p>Six mechanics, scored honestly. Finds the one that leaks.</p>
+      <div class="st"><span class="dot"></span><span class="stx">Not started</span></div>
+    </a>
+    <a class="tool" href="pricing-worksheet.html" data-tool="pricing">
+      <span class="ticon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.6 2.6A2 2 0 0 0 11.2 2H4a2 2 0 0 0-2 2v7.2a2 2 0 0 0 .6 1.4l8.7 8.7a2.4 2.4 0 0 0 3.4 0l6.6-6.6a2.4 2.4 0 0 0 0-3.4z"></path><circle cx="7.5" cy="7.5" r="1.4"></circle></svg></span><div class="day">Day 2 · Wed Jun 24</div><h3>The Pricing Worksheet</h3>
+      <p>Price for renewal, not for the launch spike. The math runs itself here.</p>
+      <div class="st"><span class="dot"></span><span class="stx">Not started</span></div>
+    </a>
+    <a class="tool" href="roadmap.html" data-tool="roadmap">
+      <span class="ticon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="2.6"></circle><circle cx="18" cy="5" r="2.6"></circle><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"></path></svg></span><div class="day">Days 2–3</div><h3>Your 30/60/90 Roadmap</h3>
+      <p>Your first three months on one page, built around your audit and your weakest mechanic.</p>
+      <div class="st"><span class="dot"></span><span class="stx">Not started</span></div>
+    </a>
+    <a class="tool" href="retention-checklist.html" data-tool="retention">
+      <span class="ticon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-2.6-6.4"></path><path d="M21 3v6h-6"></path></svg></span><div class="day">Day 3 · Thu Jun 25</div><h3>The Retention Checklist</h3>
+      <p>Months 4–6 are where memberships quietly die. This is the pre-flight for that stretch.</p>
+      <div class="st"><span class="dot"></span><span class="stx">Not started</span></div>
+    </a>
+    <div class="tool" style="cursor:default">
+      <span class="ticon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7.5l9 6 9-6"></path></svg></span><div class="day">Within 24 hours of Day 3</div><h3>Your personalized roadmap</h3>
+      <p>Built from your logged inputs #1 and #2, written for your exact situation, sent to your inbox. Yours free, regardless of what you decide next.</p>
+      <div class="st"><span class="dot"></span><span class="stx" id="synthSt">Log both inputs to get it</span></div>
+    </div>
+  </div>
+
+  <div class="sec-h"><span class="no">3.0</span> Log your two inputs</div>
+
+  <div class="synth">
+    <div class="t">Two of these need logging.</div>
+    <p>This page is your worksheet. The roadmap synthesis reads the forms. Log input #1 and input #2 by <b>Thursday night</b> and your personalized 30/60/90 lands in your inbox within 24 hours of Day 3.</p>
+  </div>
+
+  <div class="logs">
+    <div class="log">
+      <div class="t">Input #1 · The Lab Audit</div>
+      <p>Two minutes if you copy your answers from the audit page.</p>
+      <div class="row">
+        <a class="btn" href="https://membershipsummit.com/lab-audit" target="_blank" rel="noopener">Log input #1</a>
+        <label class="chkl"><input type="checkbox" id="logA"><span class="bx"></span>I logged it</label>
+      </div>
+    </div>
+    <div class="log">
+      <div class="t">Input #2 · The Diagnostic</div>
+      <p>One question. Thirty seconds, exactly as promised.</p>
+      <div class="row">
+        <a class="btn" href="https://membershipsummit.com/diagnostic" target="_blank" rel="noopener">Log input #2</a>
+        <label class="chkl"><input type="checkbox" id="logD"><span class="bx"></span>I logged it</label>
+      </div>
+    </div>
+  </div>
+  <div class="wheel-note">Want a shot at one of the four live audits on Day 3? Check the wheel box on the Lab Audit form. Jay picks live. Pool locks Thu 12pm ET.</div>
+
+  <div id="vipWrap" style="display:none">
+    <div class="sec-h"><span class="no">4.0</span> VIP</div>
+    <div class="vip">
+      <div class="perk"><span>Permanent recording · Day 1</span><a data-cfg="REPLAY_D1" target="_blank" rel="noopener">Watch</a><span class="soon" data-soon="REPLAY_D1">Lands here after Day 1</span></div>
+      <div class="perk"><span>Permanent recording · Day 2</span><a data-cfg="REPLAY_D2" target="_blank" rel="noopener">Watch</a><span class="soon" data-soon="REPLAY_D2">Lands here after Day 2</span></div>
+      <div class="perk"><span>Permanent recording · Day 3</span><a data-cfg="REPLAY_D3" target="_blank" rel="noopener">Watch</a><span class="soon" data-soon="REPLAY_D3">Lands here after Day 3</span></div>
+      <div class="perk"><span>Day 4 private Q&amp;A · Friday June 26</span><a data-cfg="VIP_QA" target="_blank" rel="noopener">Join</a><span class="soon" data-soon="VIP_QA">Link lands here before Friday</span></div>
+      <div class="perk"><span>The two-way VIP Telegram</span><a data-cfg="VIP_TG" target="_blank" rel="noopener">Open</a><span class="soon" data-soon="VIP_TG">Invite link in your VIP email</span></div>
+    </div>
+  </div>
+
+  <div class="foot"><span>A Creator Science event · creatorscience.com</span><img src="cs-seal.png" alt="Creator Science"><span>membershipsummit.com</span></div>
+  <div class="privacy" id="privacy">Your answers live in this browser only. Nothing leaves this page until you log a form yourself.</div>
+</div>
+
+<script src="toolkit-config.js"></script>
+<script src="shared.js"></script>
+<script src="native.js"></script>
+<script>
+const CONFIG=(window.MS&&MS.VIP)||{SHOW_VIP:false};
+const LBL={"":"Not started",part:"In progress",full:"Done"};
+function paint(){
+  const st=statuses(),s=store.all();
+  document.querySelectorAll("[data-tool]").forEach(el=>{
+    const k=el.dataset.tool,d=el.querySelector(".dot"),t=el.querySelector(".stx");
+    if(d)d.className="dot "+(st[k]||"");
+    if(t)t.textContent=LBL[st[k]||""];
+  });
+  if(s.name){
+    document.getElementById("hello").textContent="Hello, "+s.name+".";
+    document.getElementById("hubTag").textContent="Built for "+s.name;
+  }
+  const a=s.audit||{},dg=s.diag||{},p=s.pricing||{};
+  const arch=ARCH(a.stage,a.sells);
+  const weak=dg.weakest||null;
+  const mrr=(p.members&&p.price)?(+String(p.members).replace(/[^0-9.]/g,"")*+String(p.price).replace(/[^0-9.]/g,"")):null;
+  const ret=(s.retention&&s.retention.checks)?s.retention.checks.filter(Boolean).length:null;
+  const any=arch||weak||mrr||ret!==null;
+  if(any){
+    document.getElementById("snapEmpty").style.display="none";
+    document.getElementById("snapGrid").style.display="";
+    if(arch)document.getElementById("sArch").innerHTML='<a href="roadmap.html">'+arch+'</a>';
+    if(weak)document.getElementById("sWeak").innerHTML='<a href="mechanics-diagnostic.html">'+weak+'</a>';
+    if(mrr)document.getElementById("sMrr").innerHTML='<a href="pricing-worksheet.html">$'+mrr.toLocaleString()+'/mo</a>';
+    if(ret!==null&&ret>0)document.getElementById("sRet").innerHTML='<a href="retention-checklist.html">'+ret+' / 11</a>';
+  }
+  const la=document.getElementById("logA"),ld=document.getElementById("logD");
+  la.checked=!!a.logged; ld.checked=!!(dg.logged);
+  const both=la.checked&&ld.checked;
+  document.getElementById("synthSt").textContent=both?"On its way within 24 hours of Day 3":"Log both inputs to get it";
+}
+document.getElementById("logA").addEventListener("change",e=>{store.set("audit",{logged:e.target.checked});paint()});
+document.getElementById("logD").addEventListener("change",e=>{store.set("diag",{logged:e.target.checked});paint()});
+if(CONFIG.SHOW_VIP){
+  document.getElementById("vipWrap").style.display="";
+  document.querySelectorAll("[data-cfg]").forEach(a=>{
+    const v=CONFIG[a.dataset.cfg];
+    if(v){a.href=v}else{a.style.display="none"}
+  });
+  document.querySelectorAll("[data-soon]").forEach(sp=>{ if(CONFIG[sp.dataset.soon])sp.style.display="none" });
+}
+paint();
+</script>
+</body>
+</html>

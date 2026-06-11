@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>My One-Pager · The Summit Toolkit</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='1' y='1' width='22' height='22' rx='4' fill='%230061FF'/%3E%3Cpath d='M7 8h10M7 12h10M7 16h4.5' fill='none' stroke='%23FFFCF7' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M14.5 16.2l1.6 1.6 2.9-2.9' fill='none' stroke='%23FF4F14' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="toolkit.css">
+<style>
+.sheet{margin-top:34px;background:var(--cs-notebook);border:2px solid var(--cs-static);border-radius:4px;box-shadow:6px 6px 0 var(--cs-static);padding:8px 28px 24px}
+.sh{font-family:var(--font-mono);font-size:12px;letter-spacing:var(--tracking-caps);text-transform:uppercase;font-weight:700;color:var(--cs-static);display:flex;align-items:center;gap:12px;margin:28px 0 6px}
+.sh .no{color:var(--cs-recording-600)}
+.sh:after{content:"";flex:1;height:1.5px;background:var(--cs-static-10)}
+.row2{display:flex;gap:14px;padding:9px 0;border-bottom:1px solid var(--cs-static-10);flex-wrap:wrap}
+.row2:last-child{border-bottom:none}
+.row2 .k{flex:0 0 280px;font-size:14.5px;color:var(--cs-static-60)}
+.row2 .v{flex:1;min-width:200px;font-size:16px;color:var(--cs-ballpoint);font-weight:500;white-space:pre-wrap}
+.row2 .v.dim{color:var(--cs-static-30);font-weight:400}
+.emptyline{font-size:15px;color:var(--cs-static-60);padding:8px 0}
+.emptyline a{color:var(--cs-ballpoint)}
+@media(max-width:640px){.row2 .k{flex-basis:100%}}
+@media print{.sheet{box-shadow:none;border-width:1.5px}}
+</style>
+</head>
+<body>
+<div class="bar"></div>
+<nav class="tk-nav"><div class="tk-in">
+  <a class="tk-home" href="index.html"><svg class="lg" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><rect x="1.25" y="1.25" width="21.5" height="21.5" rx="3.5" fill="#0061FF" stroke="#1E1E1E" stroke-width="1.5"></rect><path d="M7 8h10M7 12h10M7 16h4.5" fill="none" stroke="#FFFCF7" stroke-width="2" stroke-linecap="round"></path><path d="M14.5 16.2l1.6 1.6 2.9-2.9" fill="none" stroke="#FF4F14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Summit Toolkit</a>
+  <div class="tk-links">
+    <a href="lab-audit.html" data-tool="audit"><span class="dot"></span>Lab Audit</a>
+    <a href="mechanics-diagnostic.html" data-tool="diag"><span class="dot"></span>Diagnostic</a>
+    <a href="pricing-worksheet.html" data-tool="pricing"><span class="dot"></span>Pricing</a>
+    <a href="roadmap.html" data-tool="roadmap"><span class="dot"></span>30/60/90</a>
+    <a href="retention-checklist.html" data-tool="retention"><span class="dot"></span>Retention</a>
+    <a href="review.html" class="onep cur">One-Pager</a>
+  </div>
+</div></nav>
+<div class="wrap narrow">
+
+  <div class="kicker-row">
+    <div class="kicker">Membership Summit <b>·</b> June 23–25</div>
+    <div class="tag">My one-pager</div>
+  </div>
+
+  <div class="h1row"><h1>My One-Pager</h1><span class="picon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="12" height="12" rx="2"></rect><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"></path></svg></span></div>
+  <div class="sub">Everything you've typed, <span class="annotate">on one page</span>.</div>
+  <p class="intro">Print it, or copy it as plain text to keep with your notes. It reads in order: who you are, where you are, what leaks, your number, your ninety days.</p>
+
+  <div class="actions" style="margin-top:24px">
+    <button class="btn" id="copyAll">Copy everything</button>
+    <button class="btn ghost" onclick="window.print()">Print this page</button>
+  </div>
+
+  <div class="sheet" id="sheet"></div>
+
+  <div class="next">Back to <a href="index.html">your Toolkit</a>.</div>
+
+  <div class="foot"><span>A Creator Science event · creatorscience.com</span><img src="cs-seal.png" alt="Creator Science"><span>membershipsummit.com</span></div>
+  <div class="privacy" id="privacy">Your answers live in this browser only.</div>
+</div>
+
+<script src="toolkit-config.js"></script>
+<script src="shared.js"></script>
+<script>
+const RET_ITEMS=[
+ "Promise specific enough to say in one sentence",
+ "New members meet 2–3 members by name in 30 days",
+ "A small-room structure exists, not just one big feed",
+ "Value arrives without a new platform",
+ "Someone would notice a member going quiet",
+ "Cadence sustainable for me at month 9",
+ "I know what I'll stop shipping",
+ "A ritual members would genuinely miss",
+ "Renewal framed on what compounds",
+ "Member-led activity that doesn't route through me",
+ "Five-question survey asked in the last 90 days"
+];
+const RM_LBL={
+ "A.promise":"Promise (transformation contract)","A.surveyDay":"Survey replies in hand by day","A.overlap":"Overlap: love to run × pay to stay","A.platform":"Platform","A.cap":"Founding cap","A.price":"Price $/mo","A.waitlistDay":"First 10 waitlist names by day","A.launchDay":"Founding launch day","A.ritual":"First recurring ritual","A.done30":"Promise survived three conversations","A.done90":"Members talking without me in the thread","A.notes":"Notes",
+ "B.weakest":"Weakest mechanic","B.category":"Category check","B.sentence":"The sentence I keep hearing","B.change":"One concrete change","B.kill":"Killed because it isn't earning its load","B.reonboardDay":"Re-onboard day","B.churnThen":"Churn 90 days ago","B.churnNow":"Churn now","B.done90":"A member described the value using the room","B.notes":"Notes",
+ "C.load":"Routes through me weekly","C.identity":"Identity layer","C.structure":"Member-led structure","C.pricing":"Pricing reviewed against renewal","C.stop":"Stopped doing permanently","C.done90":"Room produced value I didn't make","C.notes":"Notes",
+ "D.stays":"Stays from the course business","D.cut":"Gets cut","D.path":"Customers' path into the membership","D.floor":"Revenue floor $/mo","D.floorFrom":"Floor comes from","D.invite":"Buyers invited","D.inviteDay":"Invited by day","D.price":"Price $/mo","D.retention":"Month-3 retention %","D.moment":"First member-to-member moment","D.done90":"Course buyer stayed for the room","D.notes":"Notes"
+};
+const esc=t=>String(t).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+const num=v=>{const n=parseFloat(String(v||"").replace(/[^0-9.]/g,""));return isNaN(n)?0:n};
+
+function build(){
+  const s=store.all(),a=s.audit||{},d=s.diag||{},p=s.pricing||{},r=s.roadmap||{},c=s.retention||{};
+  const sections=[];/* [header, rows[[k,v]], emptyMsg] */
+  sections.push(["0 · Who",[["Name",s.name],["Email",s.email],["Roadmap page",ARCH(a.stage,a.sells)]],null]);
+  sections.push(["1 · The Lab Audit · input #1"+(a.logged?" · logged":""),[
+    ["Where you are",a.stage],["Running for",a.months],["Audience size",a.audience],["Currently sells",a.sells],
+    ["Last month's revenue",a.revenue],["Biggest blocker",a.blocker],["Live audit wheel",a.wheel?"Yes, spin me in":""],["Notes from Day 1",a.notes]
+  ],'Nothing here yet. Open <a href="lab-audit.html">the Lab Audit</a>.']);
+  const sc=d.scores||{};
+  sections.push(["2 · The Mechanics Diagnostic · input #2"+(d.logged?" · logged":""),[
+    ["Promise",sc["Promise"]],["Friend-Making",sc["Friend-Making"]],["Onboarding",sc["Onboarding"]],
+    ["Masterminds",sc["Masterminds"]],["Design Constraints",sc["Design Constraints"]],["Pricing",sc["Pricing"]],
+    ["Weakest mechanic",d.weakest],["Notes from Day 2",d.notes]
+  ],'Nothing here yet. Open <a href="mechanics-diagnostic.html">the Diagnostic</a>.']);
+  const mrr=(num(p.members)&&num(p.price))?num(p.members)*num(p.price):0;
+  sections.push(["3 · The Pricing Worksheet",[
+    ["Value sentence: a six-month member will have",p.value],["Month 9 vs month 1",p.month9],
+    ["Members × price",p.members&&p.price?p.members+" × $"+p.price+"/mo":""],
+    ["Recurring, every month",mrr?"$"+mrr.toLocaleString():""],["Across a year",mrr?"$"+(mrr*12).toLocaleString():""],
+    ["One launch nets",p.launchNet?"$"+p.launchNet:""],["Launch costs",p.launchWeeks?p.launchWeeks+" weeks":""],
+    ["Renewal test",p.renew],["Starting point",[p.startMo?"$"+p.startMo+"/mo":"",p.startYr?"$"+p.startYr+"/yr":"",p.tiers?p.tiers+" tier(s)":""].filter(Boolean).join(" · ")]
+  ],'Nothing here yet. Open <a href="pricing-worksheet.html">the Pricing Worksheet</a>.']);
+  const f=r.fields||{};
+  const rmRows=Object.keys(RM_LBL).filter(k=>f[k]&&String(f[k]).trim()).map(k=>[RM_LBL[k]+"  ["+k.charAt(0)+"]",f[k]==="yes"&&k.indexOf("done")>-1?"Done":f[k]]);
+  sections.push(["4 · Your 30/60/90 Roadmap"+(r.arch?" · page: "+r.arch:""),rmRows,'Nothing here yet. Open <a href="roadmap.html">your 30/60/90</a>.']);
+  const checks=Array.isArray(c.checks)?c.checks:[];
+  const n=checks.filter(Boolean).length;
+  const retRows=RET_ITEMS.map((t,i)=>[t,checks[i]?"✓":"leak"]);
+  sections.push(["5 · The Retention Checklist · "+n+" / 11",n?retRows:[],'Nothing here yet. Open <a href="retention-checklist.html">the Retention Checklist</a>.']);
+  return sections;
+}
+function render(){
+  const el=document.getElementById("sheet");
+  el.innerHTML=build().map(([h,rows,empty])=>{
+    const live=rows.filter(([,v])=>v&&String(v).trim());
+    let body;
+    if(!live.length)body='<div class="emptyline">'+(empty||"Nothing yet.")+'</div>';
+    else body=live.map(([k,v])=>'<div class="row2"><div class="k">'+esc(k)+'</div><div class="v'+(v==="leak"?" dim":"")+'">'+esc(v)+'</div></div>').join("");
+    return '<div class="sh"><span class="no">'+esc(h.split(" · ")[0])+'</span>'+esc(h.split(" · ").slice(1).join(" · "))+'</div>'+body;
+  }).join("");
+}
+function plain(){
+  const out=["THE SUMMIT TOOLKIT · MY ONE-PAGER","Membership Summit · June 23–25",""];
+  build().forEach(([h,rows])=>{
+    const live=rows.filter(([,v])=>v&&String(v).trim());
+    out.push(h.toUpperCase());
+    if(!live.length)out.push("(nothing yet)");
+    else live.forEach(([k,v])=>out.push(k+": "+v));
+    out.push("");
+  });
+  return out.join("\n");
+}
+document.getElementById("copyAll").addEventListener("click",()=>{
+  navigator.clipboard.writeText(plain()).then(()=>{
+    const b=document.getElementById("copyAll");b.textContent="Copied";setTimeout(()=>b.textContent="Copy everything",1400);
+  });
+});
+render();paintNav();
+</script>
+</body>
+</html>

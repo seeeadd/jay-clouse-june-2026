@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>The Pricing Worksheet · Membership Summit</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='1' y='1' width='22' height='22' rx='4' fill='%230061FF'/%3E%3Cpath d='M7 8h10M7 12h10M7 16h4.5' fill='none' stroke='%23FFFCF7' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M14.5 16.2l1.6 1.6 2.9-2.9' fill='none' stroke='%23FF4F14' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="toolkit.css">
+</head>
+<body>
+<div class="bar"></div>
+<nav class="tk-nav"><div class="tk-in">
+  <a class="tk-home" href="index.html"><svg class="lg" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><rect x="1.25" y="1.25" width="21.5" height="21.5" rx="3.5" fill="#0061FF" stroke="#1E1E1E" stroke-width="1.5"></rect><path d="M7 8h10M7 12h10M7 16h4.5" fill="none" stroke="#FFFCF7" stroke-width="2" stroke-linecap="round"></path><path d="M14.5 16.2l1.6 1.6 2.9-2.9" fill="none" stroke="#FF4F14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Summit Toolkit</a>
+  <div class="tk-links">
+    <a href="lab-audit.html" data-tool="audit"><span class="dot"></span>Lab Audit</a>
+    <a href="mechanics-diagnostic.html" data-tool="diag"><span class="dot"></span>Diagnostic</a>
+    <a href="pricing-worksheet.html" class="cur" data-tool="pricing"><span class="dot"></span>Pricing</a>
+    <a href="roadmap.html" data-tool="roadmap"><span class="dot"></span>30/60/90</a>
+    <a href="retention-checklist.html" data-tool="retention"><span class="dot"></span>Retention</a>
+    <a href="review.html" class="onep">One-Pager</a>
+  </div>
+</div></nav>
+<div class="wrap narrow">
+
+  <div class="kicker-row">
+    <div class="kicker">Membership Summit <b>·</b> June 23–25</div>
+    <div class="tag">Day 2</div>
+  </div>
+
+  <div class="h1row"><h1>The Pricing Worksheet</h1><span class="picon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.6 2.6A2 2 0 0 0 11.2 2H4a2 2 0 0 0-2 2v7.2a2 2 0 0 0 .6 1.4l8.7 8.7a2.4 2.4 0 0 0 3.4 0l6.6-6.6a2.4 2.4 0 0 0 0-3.4z"></path><circle cx="7.5" cy="7.5" r="1.4"></circle></svg></span></div>
+  <div class="sub">Price for <span class="annotate">renewal</span>, not for the launch spike.</div>
+
+  <div class="frame taped">"Recurring revenue requires recurring value." (Me, to myself, a lot.) The price isn't what someone pays to join. It's what they re-decide, every single month, is still worth it.</div>
+  <div class="base" id="base">From your Lab Audit: <b id="baseAud"></b> reachable · last month <b id="baseRev"></b></div>
+
+  <div style="margin-top:16px">
+    <div class="q"><div class="qn">1</div><div class="qb">
+      <div class="qt">The value sentence</div>
+      <div class="qd">Finish it: <em>"A member who stays six months will have</em> <input type="text" class="inline w" id="value"> <em>that they couldn't get anywhere else."</em></div>
+      <div class="qh">If you can't finish this, the problem isn't price.</div>
+    </div></div>
+
+    <div class="q"><div class="qn">2</div><div class="qb">
+      <div class="qt">The month-9 test</div>
+      <div class="qd">What does your member get in month 9 that they didn't get in month 1?<textarea id="month9" style="margin-top:8px"></textarea></div>
+      <div class="qh">If your honest answer is "the same thing, slightly more polished," that's the leak. Members aren't paying for slightly-more-polished. They're paying for what compounds.</div>
+    </div></div>
+
+    <div class="q"><div class="qn">3</div><div class="qb">
+      <div class="qt">The recurring math</div>
+      <div class="qd"><input type="text" class="inline s" id="members" inputmode="numeric" placeholder="50"> members × $<input type="text" class="inline s" id="price" inputmode="numeric" placeholder="49">/month</div>
+      <div class="math">
+        <div class="row"><span class="lab">Predictable, every month</span><span class="out" id="mrr">$ ···</span></div>
+        <div class="row"><span class="lab">Across a year</span><span class="out dim" id="arr">$ ···</span></div>
+      </div>
+      <div class="qd" style="margin-top:16px">Now your launch math: one launch nets $<input type="text" class="inline s" id="launchNet" inputmode="numeric"> and costs <input type="text" class="inline s" id="launchWeeks" inputmode="numeric"> weeks of your year.</div>
+      <div class="qh">Neither is wrong. They're different shapes of business. Which shape are you building?</div>
+    </div></div>
+
+    <div class="q"><div class="qn">4</div><div class="qb">
+      <div class="qt">The renewal test</div>
+      <div class="qd">Would the member from Q1 re-buy at this price in month 6, with no discount, no bonus, no launch push?</div>
+      <div class="rchips" id="renew">
+        <button class="chip">Yes</button><button class="chip">Not sure</button><button class="chip">No</button>
+      </div>
+      <div class="verdict" id="verdict"></div>
+    </div></div>
+
+    <div class="q"><div class="qn">5</div><div class="qb">
+      <div class="qt">Your starting point</div>
+      <div class="qd">$<input type="text" class="inline s" id="startMo" inputmode="numeric">/month &nbsp;or&nbsp; $<input type="text" class="inline s" id="startYr" inputmode="numeric">/year &nbsp;·&nbsp; Tiers: <input type="text" class="inline s" id="tiers" inputmode="numeric" placeholder="1"></div>
+      <div class="qh">Start with fewer tiers than you think you need. Adding later is easy, removing is painful. Your starting price flows into your 30/60/90 roadmap.</div>
+    </div></div>
+  </div>
+
+  <div class="actions">
+    <button class="btn ghost" onclick="window.print()">Print this sheet</button>
+  </div>
+  <p class="hint" style="margin-top:14px">Your pricing answers feed the Day 3 work. Bring this page tomorrow. Inputs #1 and #2 live at membershipsummit.com/lab-audit and /diagnostic.</p>
+
+  <div class="next">Next: <a href="roadmap.html">Your 30/60/90 Roadmap</a></div>
+
+  <div class="foot"><span>A Creator Science event · creatorscience.com</span><img src="cs-seal.png" alt="Creator Science"><span>membershipsummit.com</span></div>
+  <div class="privacy" id="privacy">Your answers live in this browser only.</div>
+</div>
+<div class="saveflag" id="saveflag"><span class="sq"></span>Saved in this browser</div>
+
+<script src="toolkit-config.js"></script>
+<script src="shared.js"></script>
+<script>
+const num=v=>{const n=parseFloat(String(v||"").replace(/[^0-9.]/g,""));return isNaN(n)?0:n};
+function math(){
+  const p=store.all().pricing||{};
+  const m=num(p.members),pr=num(p.price);
+  document.getElementById("mrr").innerHTML=(m&&pr)?"$"+(m*pr).toLocaleString()+" <span>/month, predictable</span>":"$ ···";
+  document.getElementById("arr").innerHTML=(m&&pr)?"$"+(m*pr*12).toLocaleString()+" <span>/year</span>":"$ ···";
+}
+const FIELDS=["value","month9","members","price","launchNet","launchWeeks","startMo","startYr","tiers"];
+FIELDS.forEach(id=>{
+  document.getElementById(id).addEventListener("input",e=>{
+    store.set("pricing",{[id]:e.target.value.trim()});math();paintNav();
+  });
+});
+/* renewal chips */
+const VERDICT={
+  "Yes":"Then the number holds. Write it in Q5 and stop second-guessing it.",
+  "Not sure":"Sit with Q2 again. The month-9 answer usually settles this one.",
+  "No":"If it's not yes, the fix is value design, not a lower number."
+};
+document.getElementById("renew").addEventListener("click",e=>{
+  const b=e.target.closest(".chip");if(!b)return;
+  document.querySelectorAll("#renew .chip").forEach(x=>x.classList.toggle("on",x===b));
+  store.set("pricing",{renew:b.textContent});
+  const v=document.getElementById("verdict");v.style.display="block";v.textContent=VERDICT[b.textContent];
+  paintNav();
+});
+/* restore */
+(function(){
+  const s=store.all(),p=s.pricing||{},a=s.audit||{};
+  FIELDS.forEach(id=>{if(p[id])document.getElementById(id).value=p[id]});
+  if(p.renew){document.querySelectorAll("#renew .chip").forEach(x=>x.classList.toggle("on",x.textContent===p.renew));
+    const v=document.getElementById("verdict");v.style.display="block";v.textContent=VERDICT[p.renew];}
+  if(a.audience||a.revenue){
+    document.getElementById("base").style.display="block";
+    document.getElementById("baseAud").textContent=a.audience||"···";
+    document.getElementById("baseRev").textContent=a.revenue||"···";
+  }
+  math();paintNav();
+})();
+</script>
+</body>
+</html>

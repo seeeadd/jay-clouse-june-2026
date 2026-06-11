@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>The Pulse · Summit Toolkit (team only)</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='1' y='1' width='22' height='22' rx='4' fill='%231E1E1E'/%3E%3Cpath d='M4 13h4l2-5 3 8 2-3h5' fill='none' stroke='%23FF4F14' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="toolkit.css">
+<style>
+.rec{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--cs-recording-600)}
+.rec .dot2{width:9px;height:9px;border-radius:50%;background:var(--cs-recording);animation:blink 1.6s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+.statgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px;margin-top:8px}
+.stat{background:var(--cs-notebook);border:2px solid var(--cs-static);border-radius:4px;padding:18px 20px;box-shadow:5px 5px 0 var(--cs-static)}
+.stat .l{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--cs-static-60)}
+.stat .v{font-family:var(--font-display);font-weight:600;font-size:44px;line-height:1.05;margin-top:6px;letter-spacing:var(--tracking-display)}
+.stat.hot{border-color:var(--cs-recording);box-shadow:5px 5px 0 var(--cs-recording)}
+.stat.hot .v{color:var(--cs-recording-600)}
+.stat.blue .v{color:var(--cs-ballpoint)}
+.pbars{margin-top:8px;background:var(--cs-notebook);border:2px solid var(--cs-static);border-radius:4px;padding:20px 24px;box-shadow:5px 5px 0 var(--cs-static)}
+.pbrow{display:flex;align-items:center;gap:12px;margin-bottom:9px}
+.pbname{flex:0 0 230px;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.04em;font-weight:700;text-align:right;color:var(--cs-static-60);text-transform:uppercase}
+.pbtrack{flex:1;height:16px;background:var(--cs-static-10);overflow:hidden}
+.pbfill{height:100%;background:var(--cs-ballpoint);transition:width .4s}
+.pbrow.top .pbfill{background:var(--cs-recording)}
+.pbval{flex:0 0 26px;font-family:var(--font-mono);font-size:12px;font-weight:700;color:var(--cs-static-60)}
+.list{margin-top:8px;background:var(--cs-notebook);border:2px solid var(--cs-static);border-radius:4px;overflow:hidden}
+.li{display:flex;gap:14px;padding:11px 18px;border-bottom:1px solid var(--cs-static-10);font-size:15px;flex-wrap:wrap}
+.li:last-child{border-bottom:none}
+.li .who{font-weight:500;min-width:140px}
+.li .em{color:var(--cs-ballpoint);font-size:14px}
+.li .meta{margin-left:auto;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--cs-static-60);font-weight:700}
+.setup{margin-top:30px;max-width:620px;padding:24px 26px}
+.setup .row{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
+.setup input{border:1.5px solid var(--cs-static-30);border-radius:4px;padding:10px 12px;background:var(--cs-notebook)}
+.stamp{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--cs-static-60)}
+.errbox{margin-top:20px;font-size:15px;color:var(--cs-recording-600)}
+</style>
+</head>
+<body>
+<div class="bar" style="background:var(--cs-static)"></div>
+<nav class="tk-nav"><div class="tk-in">
+  <a class="tk-home" href="index.html"><svg class="lg" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><rect x="1.25" y="1.25" width="21.5" height="21.5" rx="3.5" fill="#0061FF" stroke="#1E1E1E" stroke-width="1.5"></rect><path d="M7 8h10M7 12h10M7 16h4.5" fill="none" stroke="#FFFCF7" stroke-width="2" stroke-linecap="round"></path><path d="M14.5 16.2l1.6 1.6 2.9-2.9" fill="none" stroke="#FF4F14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Summit Toolkit</a>
+  <div class="tk-links"><span class="rec"><span class="dot2"></span>Team only</span></div>
+</div></nav>
+<div class="wrap">
+
+  <div class="kicker-row">
+    <div class="kicker">Membership Summit <b>·</b> June 23–25</div>
+    <div class="tag">The Pulse</div>
+  </div>
+
+  <h1>The Pulse</h1>
+  <div class="sub">Where the room actually is, live. For Jay and the team, not for attendees.</div>
+
+  <div class="setup card paper" id="setup" style="display:none">
+    <div class="nl-t" style="font-family:var(--font-display);font-weight:600;font-size:21px">Team key</div>
+    <p class="hint" style="margin-top:6px;max-width:none" id="setupHint">Paste the team key (TEAM_TOKEN from the script). Better: bookmark this page as pulse.html?key=YOURKEY and you'll never see this card.</p>
+    <div class="row">
+      <input type="text" id="cfgUrl" placeholder="https://script.google.com/macros/s/…/exec" style="flex:1;min-width:280px">
+      <input type="text" id="cfgTok" placeholder="Team key" style="width:200px">
+      <button class="btn" id="cfgGo">Connect</button>
+      <button class="btn ghost" id="cfgDemo">See it with demo data</button>
+    </div>
+  </div>
+
+  <div id="live" style="display:none">
+    <div class="sec-h"><span class="no">1.0</span> Lane 1 · The toolkit (passive sync) <span class="stamp" id="stamp"></span></div>
+    <div class="statgrid">
+      <div class="stat"><div class="l">Toolkit users</div><div class="v" id="vUsers">·</div></div>
+      <div class="stat"><div class="l">Audits filled</div><div class="v" id="vAF">·</div></div>
+      <div class="stat blue"><div class="l">…and logged input #1</div><div class="v" id="vAL">·</div></div>
+      <div class="stat"><div class="l">Diagnostics filled</div><div class="v" id="vDF">·</div></div>
+      <div class="stat blue"><div class="l">…and logged input #2</div><div class="v" id="vDL">·</div></div>
+      <div class="stat hot"><div class="l">Chase list (filled, not logged)</div><div class="v" id="vChase">·</div></div>
+    </div>
+
+    <div class="sec-h"><span class="no">2.0</span> Lane 2 · In-toolkit submissions <span class="light" id="lockNote"></span></div>
+    <div class="statgrid">
+      <div class="stat"><div class="l">Audit submitted</div><div class="v" id="vSA">·</div></div>
+      <div class="stat"><div class="l">Diagnostic submitted</div><div class="v" id="vSD">·</div></div>
+      <div class="stat blue"><div class="l">Wheel pool</div><div class="v" id="vWheel">·</div></div>
+    </div>
+
+    <div class="sec-h"><span class="no">3.0</span> Weakest mechanic, the room</div>
+    <div class="pbars" id="weakBars"></div>
+
+    <div class="sec-h"><span class="no">4.0</span> Where the room is, lifecycle</div>
+    <div class="pbars" id="lifeBars"></div>
+
+    <div class="sec-h"><span class="no">5.0</span> Chase list <span class="light">nudge these in Telegram before Thursday night</span></div>
+    <div class="list" id="chaseList"></div>
+
+    <div class="sec-h"><span class="no">6.0</span> Latest submissions</div>
+    <div class="list" id="recentList"></div>
+
+    <div class="sec-h"><span class="no">7.0</span> Full context lookup <span class="light">one attendee, every answer, ready for the AI</span></div>
+    <div class="setup card paper" style="margin-top:8px;max-width:none">
+      <div class="row">
+        <input type="text" id="lkEmail" inputmode="email" placeholder="attendee@example.com" style="flex:1;min-width:240px">
+        <button class="btn" id="lkGo">Pull their sheet</button>
+        <button class="btn ghost" id="lkCopy" style="display:none">Copy for AI</button>
+      </div>
+      <div class="hint" id="lkMsg" style="margin-top:10px"></div>
+      <div id="lkOut"></div>
+    </div>
+
+    <div class="actions">
+      <button class="btn ghost" id="refresh">Refresh now</button>
+      <span class="hint">Auto-refreshes every 60 seconds. The full data lives in the "Summit Toolkit Responses" sheet.</span>
+    </div>
+  </div>
+
+  <div class="errbox" id="err" style="display:none"></div>
+
+  <div class="foot"><span>A Creator Science event · creatorscience.com</span><img src="cs-seal.png" alt="Creator Science"><span>team only · do not share this link</span></div>
+</div>
+
+<script src="toolkit-config.js"></script>
+<script>
+const CFG_KEY="ms_pulse_cfg";
+const cfg=()=>{try{return JSON.parse(localStorage.getItem(CFG_KEY))||{}}catch(e){return{}}};
+const MECH_ORDER=["Promise","Friend-Making","Onboarding","Masterminds","Design Constraints","Pricing"];
+const LIFE_ORDER=["No membership yet — considering one","Launched — struggling with retention","Sustainable — working on growth","Scaling — multi-tier or multi-cohort","Mature — looking at next-decade questions"];
+const $=id=>document.getElementById(id);
+const DEMO_MODE=new URLSearchParams(location.search).get("demo")==="1";
+const mins=m=>new Date(Date.now()-m*60000).toISOString();
+const DEMO={ok:true,ts:new Date().toISOString(),wheelLock:"2026-06-25T16:00:00Z",wheelLocked:false,
+  sync:{users:412,auditFilled:287,auditLogged:203,diagFilled:241,diagLogged:188,chaseCount:84},
+  native:{auditSubmitted:203,diagSubmitted:188,wheelPool:61},
+  weakest:{"Onboarding":67,"Promise":54,"Friend-Making":41,"Masterminds":33,"Pricing":28,"Design Constraints":18},
+  lifecycle:{"No membership yet — considering one":124,"Launched — struggling with retention":89,"Sustainable — working on growth":47,"Scaling — multi-tier or multi-cohort":21,"Mature — looking at next-decade questions":6},
+  chase:[{name:"Maya",email:"maya@example.com"},{name:"Devon",email:"devon@example.com"},{name:"Priya",email:"priya@example.com"},{name:"Sam",email:""},{name:"Lena",email:"lena@example.com"}],
+  recent:[{form:"Audit",name:"Maya",email:"maya@example.com",at:mins(3)},{form:"Diagnostic",name:"Devon",email:"devon@example.com",at:mins(11)},{form:"Audit",name:"Priya",email:"priya@example.com",at:mins(26)},{form:"Diagnostic",name:"Lena",email:"lena@example.com",at:mins(42)}]};
+
+function init(){
+  if(DEMO_MODE){
+    $("setup").style.display="none";
+    document.querySelector(".tag").textContent="Demo data";
+    paint(DEMO);
+    $("stamp").textContent="demo data · not connected";
+    const a=document.createElement("a");a.className="btn ghost";a.href=location.pathname;a.textContent="Exit demo";
+    document.querySelector(".actions").prepend(a);
+    return;
+  }
+  /* bookmark flow: pulse.html?key=TOKEN connects with zero typing */
+  const qs=new URLSearchParams(location.search);
+  if(qs.get("key")){
+    const c=cfg();
+    localStorage.setItem(CFG_KEY,JSON.stringify({url:c.url||(window.MS&&MS.SYNC_URL)||"",token:qs.get("key")}));
+    history.replaceState(null,"",location.pathname);
+  }
+  const c=cfg(), url=c.url||(window.MS&&MS.SYNC_URL)||"";
+  if(url&&c.token){$("setup").style.display="none";poll();return}
+  $("setup").style.display="";
+  /* once SYNC_URL is set in toolkit-config.js, the URL field disappears: only the key is asked */
+  if(window.MS&&MS.SYNC_URL){$("cfgUrl").style.display="none"}
+  else{$("setupHint").textContent="Nothing is deployed yet. Once SYNC_URL is filled in toolkit-config.js, this card only asks for the team key (or use pulse.html?key=YOURKEY and skip it entirely)."}
+  if(url)$("cfgUrl").value=url;
+  if(c.token)$("cfgTok").value=c.token;
+}
+$("cfgGo").addEventListener("click",()=>{
+  localStorage.setItem(CFG_KEY,JSON.stringify({url:($("cfgUrl").value.trim()||(window.MS&&MS.SYNC_URL)||""),token:$("cfgTok").value.trim()}));
+  init();
+});
+$("cfgDemo").addEventListener("click",()=>{location.search="?demo=1"});
+function bars(el,data,order){
+  const entries=order.filter(k=>data[k]).map(k=>[k,data[k]]);
+  Object.keys(data).forEach(k=>{if(order.indexOf(k)<0)entries.push([k,data[k]])});
+  if(!entries.length){el.innerHTML='<div class="hint">Nothing yet. This fills as the room works.</div>';return}
+  const max=Math.max(...entries.map(e=>e[1]));
+  el.innerHTML=entries.map(([k,v])=>'<div class="pbrow'+(v===max?' top':'')+'"><div class="pbname">'+k+'</div><div class="pbtrack"><div class="pbfill" style="width:'+(v/max*100)+'%"></div></div><div class="pbval">'+v+'</div></div>').join("");
+}
+function paint(r){
+  $("err").style.display="none";$("live").style.display="";
+  $("stamp").textContent="updated "+new Date(r.ts).toLocaleTimeString();
+  $("vUsers").textContent=r.sync.users; $("vAF").textContent=r.sync.auditFilled; $("vAL").textContent=r.sync.auditLogged;
+  $("vDF").textContent=r.sync.diagFilled; $("vDL").textContent=r.sync.diagLogged; $("vChase").textContent=r.sync.chaseCount;
+  $("vSA").textContent=r.native.auditSubmitted; $("vSD").textContent=r.native.diagSubmitted; $("vWheel").textContent=r.native.wheelPool;
+  $("lockNote").textContent=r.wheelLocked?"wheel pool LOCKED":"wheel pool locks Thu 12pm ET";
+  bars($("weakBars"),r.weakest||{},MECH_ORDER);
+  bars($("lifeBars"),r.lifecycle||{},LIFE_ORDER);
+  $("chaseList").innerHTML=(r.chase&&r.chase.length)?r.chase.map(p=>'<div class="li"><span class="who">'+(p.name||"(no name)")+'</span><span class="em">'+(p.email||"no email yet")+'</span><span class="meta">filled · not logged</span></div>').join(""):'<div class="li"><span class="hint">Empty. Everyone who filled has logged.</span></div>';
+  $("recentList").innerHTML=(r.recent&&r.recent.length)?r.recent.map(p=>'<div class="li"><span class="who">'+(p.name||"(no name)")+'</span><span class="em">'+p.email+'</span><span class="meta">'+p.form+' · '+new Date(p.at).toLocaleTimeString()+'</span></div>').join(""):'<div class="li"><span class="hint">No in-toolkit submissions. (Expected while CAPTURE is "forms".)</span></div>';
+}
+async function poll(){
+  if(DEMO_MODE)return;
+  const c=cfg(), url=c.url||(window.MS&&MS.SYNC_URL)||"";
+  try{
+    const r=await fetch(url+"?token="+encodeURIComponent(c.token)+"&t="+Date.now()).then(x=>x.json());
+    if(!r.ok)throw new Error(r.error==="no_access"?"Token rejected. Check TEAM_TOKEN in the script (and redeploy).":(r.error||"error"));
+    paint(r);
+  }catch(e){
+    $("err").style.display="";$("err").textContent=String(e.message||e);
+    $("setup").style.display="";
+  }
+}
+$("refresh").addEventListener("click",poll);
+/* full-context lookup */
+let lkText="";
+$("lkGo").addEventListener("click",async()=>{
+  if(DEMO_MODE){
+    $("lkMsg").textContent="";$("lkCopy").style.display="";
+    const demo={"Audit":{Email:"maya@example.com",Name:"Maya",Stage:"Launched — struggling with retention",Months:"7–12 months",Audience:"1–5K",Sells:"A course and a paid newsletter",Revenue:"$1–5K",Blocker:"People join for the content and drift after month two. I can't tell what would make them stay.","Wheel opt-in":"TRUE"},"Diagnostic":{Weakest:"Onboarding"},"Pricing":{Members:"50",Price:"39",MRR:"1950","Start $/mo":"39"},"Retention":{"Score /11":"4"}};
+    let html="";const lines=["FULL CONTEXT · maya@example.com (demo)",""];
+    Object.keys(demo).forEach(tab=>{html+='<div class="sec-h" style="margin:22px 0 8px"><span class="no">'+tab+'</span></div><div class="list">';lines.push(tab.toUpperCase());
+      Object.keys(demo[tab]).forEach(k=>{html+='<div class="li"><span class="who" style="min-width:200px;color:var(--cs-static-60)">'+k+'</span><span style="color:var(--cs-ballpoint);font-weight:500">'+demo[tab][k]+'</span></div>';lines.push(k+": "+demo[tab][k])});
+      html+='</div>';lines.push("")});
+    $("lkOut").innerHTML=html;lkText=lines.join("\n");return;
+  }
+  const c=cfg(), url=c.url||(window.MS&&MS.SYNC_URL)||"";
+  const email=$("lkEmail").value.trim().toLowerCase();
+  if(!email){$("lkMsg").textContent="Type an email first.";return}
+  $("lkMsg").textContent="Pulling…";$("lkOut").innerHTML="";$("lkCopy").style.display="none";
+  try{
+    const r=await fetch(url+"?token="+encodeURIComponent(c.token)+"&email="+encodeURIComponent(email)+"&t="+Date.now()).then(x=>x.json());
+    if(!r.ok)throw new Error(r.error==="not_found"?"No rows for that email. Check spelling, or they typed a different address (or none).":(r.error||"error"));
+    const lines=["FULL CONTEXT · "+email,"Membership Summit · June 23–25",""];
+    let html="";
+    Object.keys(r.tools).forEach(tab=>{
+      const obj=r.tools[tab];
+      html+='<div class="sec-h" style="margin:22px 0 8px"><span class="no">'+tab+'</span></div><div class="list">';
+      lines.push(tab.toUpperCase());
+      Object.keys(obj).forEach(k=>{
+        html+='<div class="li"><span class="who" style="min-width:200px;color:var(--cs-static-60)">'+k+'</span><span style="color:var(--cs-ballpoint);font-weight:500;white-space:pre-wrap">'+String(obj[k]).replace(/&/g,"&amp;").replace(/</g,"&lt;")+'</span></div>';
+        lines.push(k+": "+obj[k]);
+      });
+      html+='</div>';lines.push("");
+    });
+    $("lkOut").innerHTML=html;lkText=lines.join("\n");
+    $("lkMsg").textContent="";$("lkCopy").style.display="";
+  }catch(e){$("lkMsg").textContent=String(e.message||e)}
+});
+$("lkCopy").addEventListener("click",()=>{
+  navigator.clipboard.writeText(lkText).then(()=>{$("lkCopy").textContent="Copied";setTimeout(()=>$("lkCopy").textContent="Copy for AI",1400)});
+});
+setInterval(()=>{if(cfg().token)poll()},60000);
+init();
+</script>
+</body>
+</html>
