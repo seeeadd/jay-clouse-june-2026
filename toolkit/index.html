@@ -67,7 +67,7 @@ a.tool:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--cs-static
   <div class="hero-row">
     <div class="hero-txt">
       <h1>The Summit Toolkit</h1>
-      <div class="sub">Five working tools, <span class="annotate">one thread</span>. What you type in one flows into the next, and everything stays in your browser.</div>
+      <div class="sub">Five working tools, <span class="annotate">one thread</span>. What you type in one carries into the next, autosaves here, and comes to me as you go. It’s how I shape the sessions around where the room actually is.</div>
       <div class="hello" id="hello">Hello, my friend.</div>
     </div>
     <div class="tubey-card taped"><img src="tubey.png" alt="Tubey, the Creator Science mascot, waving"></div>
@@ -89,8 +89,8 @@ a.tool:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--cs-static
   <div class="sec-h"><span class="no">1.0</span> How it works</div>
   <div class="steps">
     <div class="step"><div class="n">STEP 01</div><div class="t">Work the day's tool</div><p>One drops each day of the Summit. Everything autosaves in your browser as you type.</p></div>
-    <div class="step"><div class="n">STEP 02</div><div class="t">Log your two inputs</div><p>The Lab Audit and the Diagnostic each end in a short form. The forms are what feed your roadmap.</p></div>
-    <div class="step"><div class="n">STEP 03</div><div class="t">Get your roadmap</div><p>Log both by Thursday night and your personalized 30/60/90 lands in your inbox within 24 hours of Day 3.</p></div>
+    <div class="step"><div class="n">STEP 02</div><div class="t">Log your two inputs</div><p>The Lab Audit and the Diagnostic each end in one tap. Those two are what feed your roadmap (and the wheel).</p></div>
+    <div class="step"><div class="n">STEP 03</div><div class="t">Your roadmap unlocks</div><p>Log both and your 30/60/90 opens right here. Built from your own answers. No inbox, no waiting.</p></div>
   </div>
 
   <div class="sec-h"><span class="no">2.0</span> The five tools</div>
@@ -121,9 +121,9 @@ a.tool:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--cs-static
       <div class="st"><span class="dot"></span><span class="stx">Not started</span></div>
     </a>
     <div class="tool" style="cursor:default">
-      <span class="ticon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7.5l9 6 9-6"></path></svg></span><div class="day">Within 24 hours of Day 3</div><h3>Your personalized roadmap</h3>
-      <p>Built from your logged inputs #1 and #2, written for your exact situation, sent to your inbox. Yours free, regardless of what you decide next.</p>
-      <div class="st"><span class="dot"></span><span class="stx" id="synthSt">Log both inputs to get it</span></div>
+      <span class="ticon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg></span><div class="day">Unlocks the moment both are logged</div><h3>Your roadmap, unlocked</h3>
+      <p>Log both inputs and your 30/60/90 opens on the spot. Built from your own answers. Yours free, whatever you decide next.</p>
+      <div class="st"><span class="dot"></span><span class="stx" id="synthSt">Log both inputs to unlock</span></div>
     </div>
   </div>
 
@@ -131,28 +131,28 @@ a.tool:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--cs-static
 
   <div class="synth">
     <div class="t">Two of these need logging.</div>
-    <p>This page is your worksheet. The roadmap synthesis reads the forms. Log input #1 and input #2 by <b>Thursday night</b> and your personalized 30/60/90 lands in your inbox within 24 hours of Day 3.</p>
+    <p>This page is your worksheet. Log input #1 and input #2 by <b>Thursday night</b>. The wheel reads them, I read them, and your 30/60/90 opens the moment both are in.</p>
   </div>
 
   <div class="logs">
     <div class="log">
       <div class="t">Input #1 · The Lab Audit</div>
-      <p>Two minutes if you copy your answers from the audit page.</p>
+      <p>One tap at the bottom of the Lab Audit. No form, no paste.</p>
       <div class="row">
-        <a class="btn" href="https://membershipsummit.com/lab-audit" target="_blank" rel="noopener">Log input #1</a>
+        <a class="btn" href="lab-audit.html">Log input #1</a>
         <label class="chkl"><input type="checkbox" id="logA"><span class="bx"></span>I logged it</label>
       </div>
     </div>
     <div class="log">
       <div class="t">Input #2 · The Diagnostic</div>
-      <p>One question. Thirty seconds, exactly as promised.</p>
+      <p>One tap once your six scores are in. Thirty seconds, exactly as promised.</p>
       <div class="row">
-        <a class="btn" href="https://membershipsummit.com/diagnostic" target="_blank" rel="noopener">Log input #2</a>
+        <a class="btn" href="mechanics-diagnostic.html">Log input #2</a>
         <label class="chkl"><input type="checkbox" id="logD"><span class="bx"></span>I logged it</label>
       </div>
     </div>
   </div>
-  <div class="wheel-note">Want a shot at one of the four live audits on Day 3? Check the wheel box on the Lab Audit form. Jay picks live. Pool locks Thu 12pm ET.</div>
+  <div class="wheel-note">Want a shot at one of the four live audits on Day 3? Check the wheel box on the Lab Audit, then log input #1. I pick live. Pool locks Thu 12pm ET.</div>
 
   <div id="vipWrap" style="display:none">
     <div class="sec-h"><span class="no">4.0</span> VIP</div>
@@ -182,12 +182,19 @@ function paint(){
     if(d)d.className="dot "+(st[k]||"");
     if(t)t.textContent=LBL[st[k]||""];
   });
+  /* drip locks paint LAST so the labels win over the progress text */
+  ["diag","pricing","retention"].forEach(tool=>{
+    const card=document.querySelector('.tool[data-tool="'+tool+'"]');if(!card)return;
+    const ds=dripState(tool),t=card.querySelector('.stx');
+    if(ds.locked&&t){t.textContent='Opens '+dripLabel(ds.when);card.style.opacity=.66}
+    else if(card.style.opacity)card.style.opacity='';
+  });
   if(s.name){
     document.getElementById("hello").textContent="Hello, "+s.name+".";
     document.getElementById("hubTag").textContent="Built for "+s.name;
   }
   const a=s.audit||{},dg=s.diag||{},p=s.pricing||{};
-  const arch=ARCH(a.stage,a.sells);
+  const arch=ARCH(a.stage,a.sells,a.months);
   const weak=dg.weakest||null;
   const mrr=(p.members&&p.price)?(+String(p.members).replace(/[^0-9.]/g,"")*+String(p.price).replace(/[^0-9.]/g,"")):null;
   const ret=(s.retention&&s.retention.checks)?s.retention.checks.filter(Boolean).length:null;
@@ -203,7 +210,7 @@ function paint(){
   const la=document.getElementById("logA"),ld=document.getElementById("logD");
   la.checked=!!a.logged; ld.checked=!!(dg.logged);
   const both=la.checked&&ld.checked;
-  document.getElementById("synthSt").textContent=both?"On its way within 24 hours of Day 3":"Log both inputs to get it";
+  document.getElementById("synthSt").innerHTML=both?'<a href="roadmap.html" style="color:var(--cs-ballpoint)">Unlocked. Open your roadmap</a>':"Log both inputs to unlock";
 }
 document.getElementById("logA").addEventListener("change",e=>{store.set("audit",{logged:e.target.checked});paint()});
 document.getElementById("logD").addEventListener("change",e=>{store.set("diag",{logged:e.target.checked});paint()});

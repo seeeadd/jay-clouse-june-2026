@@ -2,11 +2,25 @@
 window.MS = {
 
   /* Capture mode for the two "Log it" inputs.
-     "forms"  = the locked launch plan: Log It opens the Google Form (prefilled if FORM1/FORM2 are set).
-     "native" = no Google Forms: Log It verifies the attendee's email with a 6-digit code
-                and submits inside the toolkit (needs SYNC_URL set + apps-script-Code.gs v2 deployed).
-     Flip ONLY with the team's sign-off — the wheel + synthesis must read the matching tabs. */
-  CAPTURE: "forms",
+     "page"   = the Jun 10 pivot (current): logging happens IN the toolkit, one tap.
+                The passive sync writes the row server-side (Audit tab: stage, email,
+                wheel opt-in, logged flag) — that is the wheel's capture. Re-logging is allowed
+     and expected ("fill it again with the box checked"); the WheelPool and Buckets
+     tabs dedupe to latest-per-email. Forms 1+2 retired from the attendee path.
+     "forms"  = legacy: Log It opens the Google Form (prefilled if FORM1/FORM2 are set).
+     "native" = legacy experiment: in-toolkit submit with 6-digit email verification. */
+  CAPTURE: "page",
+
+  /* Drip unlock — fixed ET timestamps (UTC here; shown to attendees in their local time).
+     Tools unlock forward and never re-lock. Lab Audit + 30/60/90 + One-Pager have no
+     calendar lock (the 30/60/90 gates on the two inputs instead).
+     Team preview: open any page with ?preview=1 once to bypass locks in that browser. */
+  DRIP: {
+    enabled: false,   /* UNLOCKED for review/approval. Flip to true before Day 1 so the drip schedule below goes live. */
+    diag:      "2026-06-24T20:00:00Z",   /* Wed Jun 24 · 4:00pm ET, after the Day 2 teaching */
+    pricing:   "2026-06-24T20:00:00Z",   /* Wed Jun 24 · 4:00pm ET */
+    retention: "2026-06-25T19:15:00Z"    /* Thu Jun 25 · 3:15pm ET, after the Day 3 close */
+  },
 
   /* Response capture (Jay's data). Paste the Apps Script web-app /exec URL from
      apps-script-Code.gs deployment. Empty = capture off, toolkit stays browser-only
@@ -14,17 +28,17 @@ window.MS = {
      "Summit Toolkit Responses" sheet as people type, and the privacy line updates. */
   SYNC_URL: "https://script.google.com/macros/s/AKfycbxBmBJjqXCDWP6U-488_XyEXZcBCgUkGGv0OXW0qXzy7WxESasdgYaIPeLxhF1fmwNZtg/exec",
 
-  /* Form 1 prefill (Lab Audit). Open the form → ⋮ → "Get pre-filled link" → answer
-     everything with dummy text → copy link. Paste the docs.google.com/.../viewform
-     part as base, and each entry.NNNNNNN number next to its field.
-     Empty base = the Log It button opens the plain short link, same as the PDFs. */
+  /* Form 1 prefill (Lab Audit) — LEGACY, inert while CAPTURE is "page".
+     NOTE: Form 3, the Build Plan buyer intake, is deliberately NOT in this file.
+     It stays a Google Form in the BUYER path (confirmation-email link), gated by
+     its own accepting-responses toggle. Never link it from the toolkit. */
   FORM1: {
     base: "",
     entries: { first:"", stage:"", months:"", audience:"", sells:"", revenue:"", blocker:"", wheel:"" },
     wheelOption: "Want a shot at one of the four live audits on Day 3? Jay picks live — wheel spin, no pre-curation. Pool locks Thu 12pm ET."
   },
 
-  /* Form 2 prefill (Diagnostic) — same drill, one entry ID. */
+  /* Form 2 prefill (Diagnostic) — legacy, same deal. */
   FORM2: {
     base: "",
     entries: { weakest:"" }

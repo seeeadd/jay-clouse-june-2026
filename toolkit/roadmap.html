@@ -7,8 +7,85 @@
 <title>Your 30/60/90 Roadmap · Membership Summit</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='1' y='1' width='22' height='22' rx='4' fill='%230061FF'/%3E%3Cpath d='M7 8h10M7 12h10M7 16h4.5' fill='none' stroke='%23FFFCF7' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M14.5 16.2l1.6 1.6 2.9-2.9' fill='none' stroke='%23FF4F14' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="toolkit.css">
+<style>
+/* per-archetype themes: same brand, four inks */
+.panel[data-p="Just Starting"]{--acc:#0061FF;--acc-d:#0042AE}
+.panel[data-p="Recently Launched"]{--acc:#E23E07;--acc-d:#B53104}
+.panel[data-p="Scaling"]{--acc:#1E1E1E;--acc-d:#1E1E1E}
+.panel[data-p="Pivoting From Courses"]{--acc:#8A6A1B;--acc-d:#6E5413}
+#tabs .tab[data-a="Just Starting"] .ltr{color:#0061FF}
+#tabs .tab[data-a="Recently Launched"] .ltr{color:#E23E07}
+#tabs .tab[data-a="Scaling"] .ltr{color:#1E1E1E}
+#tabs .tab[data-a="Pivoting From Courses"] .ltr{color:#8A6A1B}
+#tabs .tab[data-a="Just Starting"].on{background:#0061FF}
+#tabs .tab[data-a="Recently Launched"].on{background:#E23E07}
+#tabs .tab[data-a="Scaling"].on{background:#1E1E1E}
+#tabs .tab[data-a="Pivoting From Courses"].on{background:#8A6A1B}
+#tabs .tab.on .ltr{color:var(--cs-notebook)}
+/* archetype masthead: flat accent + the brand's static-noise texture */
+.ahead{position:relative;overflow:hidden;border:2px solid var(--cs-static);border-radius:4px;background:var(--acc);color:var(--cs-notebook);padding:20px 24px;box-shadow:6px 6px 0 var(--cs-static);margin-bottom:24px}
+.ahead:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.45;mix-blend-mode:multiply;background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.12  0 0 0 0 0.12  0 0 0 0 0.12  0 0 0 0.35 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+.ahead>*{position:relative}
+.ahead .arow{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap}
+.ahead .al{font-family:var(--font-display);font-weight:600;font-size:46px;line-height:1}
+.ahead .an{font-family:var(--font-mono);font-weight:700;font-size:12px;letter-spacing:var(--tracking-caps);text-transform:uppercase}
+.ahead .at{font-family:var(--font-display);font-style:italic;font-weight:600;font-size:20px;letter-spacing:var(--tracking-display);margin-top:4px;color:rgba(255,252,247,.9)}
+/* theme the working parts off the same ink */
+.panel .youare{border-color:var(--acc);box-shadow:4px 4px 0 var(--acc)}
+.panel .rph .ph{color:var(--acc-d)}
+.panel .rlist{border-left:6px solid var(--acc)}
+.panel .rlist li.on .bx{background:var(--acc)}
+.panel .rlist li:hover{background:color-mix(in srgb,var(--acc) 8%,var(--cs-notebook))}
+.panel .closer{border-color:var(--acc);box-shadow:4px 4px 0 var(--acc)}
+.panel .closer .wk,.panel .youare .wk{color:var(--acc-d)}
+.panel[data-p="Scaling"] .closer .wk,.panel[data-p="Scaling"] .youare .wk{color:#0061FF}
+.panel .rt{color:var(--acc-d)}
+.panel[data-p="Scaling"] .rt{color:#0061FF}
+.goal{font-size:16px;line-height:1.5;color:var(--cs-static-60);margin:4px 0 0;max-width:700px}
+.goal b{font-family:var(--font-mono);font-weight:700;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--acc-d);margin-right:6px}
+.chk2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+@media(max-width:760px){.chk2{grid-template-columns:1fr}}
+.chk2>div{border:1.5px solid var(--cs-static);border-radius:4px;padding:12px 16px;font-size:14.5px;line-height:1.5;background:var(--cs-notebook)}
+.chk2 b{display:block;font-family:var(--font-mono);font-weight:700;font-size:10px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px}
+.chk2 .mst b{color:var(--acc-d)}
+.chk2 .wsg{background:var(--cs-cellotape)}
+.chk2 .wsg b{color:var(--cs-recording-600)}
+.panel[data-p="Scaling"] .goal b,.panel[data-p="Scaling"] .chk2 .mst b{color:#0061FF}
+.rph{font-family:var(--font-display);font-weight:600;font-size:23px;letter-spacing:var(--tracking-display);margin:34px 0 4px}
+.rph .ph{display:block;font-family:var(--font-mono);font-weight:700;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--cs-recording-600);margin-bottom:6px}
+.rlist{list-style:none;margin-top:10px;background:var(--cs-notebook);border:2px solid var(--cs-static);border-radius:4px;box-shadow:5px 5px 0 var(--cs-static);overflow:hidden}
+.rlist li{display:flex;gap:14px;align-items:flex-start;padding:15px 18px;border-bottom:1.5px solid var(--cs-static-10);cursor:pointer;transition:background .15s;font-size:16px;line-height:1.55}
+.rlist li:last-child{border-bottom:none}
+.rlist li:hover{background:var(--cs-ballpoint-100)}
+.rlist li .bx{flex:none;width:17px;height:17px;border:2px solid var(--cs-static);border-radius:4px;margin-top:4px;position:relative;background:var(--cs-notebook);transition:.15s}
+.rlist li.on .bx{background:var(--cs-ballpoint)}
+.rlist li.on .bx:after{content:"✓";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:10.5px;font-weight:700;color:var(--cs-notebook)}
+.rlist li.on span{color:var(--cs-static-60)}
+.rlist li b{font-weight:600}
+.closer{margin-top:30px;font-family:var(--font-display);font-style:italic;font-weight:600;font-size:18px;line-height:1.45;background:var(--cs-cellotape);border:2px solid var(--cs-static);border-radius:4px;padding:16px 20px;max-width:700px;letter-spacing:var(--tracking-display)}
+.closer .wk,.youare .wk{color:var(--cs-ballpoint)}
+.rt{color:var(--cs-ballpoint);font-weight:700;font-style:normal;font-family:var(--font-mono);font-size:.85em}
+.panel textarea{margin-top:8px}
+.rlist li.ins{background:color-mix(in srgb,var(--acc) 7%,var(--cs-notebook))}
+.instag{display:inline-block;font-family:var(--font-mono);font-weight:700;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--acc-d);border:1.5px solid var(--acc);border-radius:4px;padding:2px 8px;margin:0 8px 4px 0;vertical-align:2px}
+/* snapshot strip: the payoff line */
+.snap{background:var(--cs-static);color:var(--cs-notebook);border-radius:4px;padding:16px 20px;margin-top:8px}
+.snap .snaprow{display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center}
+.snap .sg{font-family:var(--font-mono);font-weight:700;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,252,247,.55)}
+.snap .sg b{display:block;font-size:13.5px;letter-spacing:.04em;color:var(--cs-notebook);margin-top:3px}
+.snap .sg.hot b{color:#FF8A5C}
+.snap .fold{margin-left:auto;background:none;border:1.5px solid rgba(255,252,247,.4);color:var(--cs-notebook);border-radius:4px;font-family:var(--font-mono);font-weight:700;font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:7px 12px;cursor:pointer}
+.snap .fold:hover{border-color:var(--cs-notebook)}
+.snapsub{font-size:13px;color:rgba(255,252,247,.7);margin-top:10px}
+@media print{.snap .fold{display:none}}
+.endline{font-family:var(--font-display);font-style:italic;font-weight:600;font-size:19px;letter-spacing:var(--tracking-display);margin-top:22px}
+.bp{margin-top:18px;max-width:640px}
+.bp summary{cursor:pointer;font-family:var(--font-mono);font-weight:700;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--cs-static-60)}
+.bp p{font-size:15px;color:var(--cs-static-60);margin-top:8px;max-width:none}
+@media print{.rlist{box-shadow:none}.bp{display:none}}
+</style>
 </head>
-<body>
+<body data-theme="roadmap">
 <div class="bar"></div>
 <nav class="tk-nav"><div class="tk-in">
   <a class="tk-home" href="index.html"><svg class="lg" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><rect x="1.25" y="1.25" width="21.5" height="21.5" rx="3.5" fill="#0061FF" stroke="#1E1E1E" stroke-width="1.5"></rect><path d="M7 8h10M7 12h10M7 16h4.5" fill="none" stroke="#FFFCF7" stroke-width="2" stroke-linecap="round"></path><path d="M14.5 16.2l1.6 1.6 2.9-2.9" fill="none" stroke="#FF4F14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Summit Toolkit</a>
@@ -25,13 +102,39 @@
 
   <div class="kicker-row">
     <div class="kicker">Membership Summit <b>·</b> June 23–25</div>
-    <div class="tag">Input #3</div>
+    <div class="tag">Free · unlocks with inputs #1 + #2</div>
   </div>
 
   <div class="h1row"><h1>Your 30/60/90 Roadmap</h1><span class="picon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="2.6"></circle><circle cx="18" cy="5" r="2.6"></circle><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"></path></svg></span></div>
-  <div class="sub">A fill-in plan for your first three months. <span class="annotate">Pick your page</span>. Your personalized version, built from your Day 1 + Day 2 inputs, lands in your inbox within 24 hours.</div>
+  <div class="sub">Your first ninety days on one page. It opens <span class="annotate">the moment</span> both inputs are logged. Built from your own answers. Yours free, whatever you decide next.</div>
 
-  <div class="banner" id="banner">Built from your Lab Audit: <b id="bArch"></b>. Not where you are? Pick another page below.</div>
+  <div class="card blue-edge" id="gate" style="display:none;margin-top:30px;padding:26px 28px;max-width:680px">
+    <div style="display:flex;align-items:baseline;gap:14px;flex-wrap:wrap"><div style="font-family:var(--font-display);font-weight:600;font-size:24px;letter-spacing:var(--tracking-display)">Your roadmap assembles right here.</div><span id="gProg" style="font-family:var(--font-mono);font-weight:700;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--cs-recording-600);border:1.5px solid var(--cs-recording-600);border-radius:4px;padding:4px 9px">0 of 2 logged</span></div>
+    <p class="hint" id="gMsg" style="margin-top:6px;max-width:none"></p>
+    <div class="fr" style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;border-bottom:1.5px solid var(--cs-static-10)">
+      <b style="flex:1;min-width:170px">Input #1 · The Lab Audit</b>
+      <a class="btn ghost" id="g1go" href="lab-audit.html">Open it</a>
+      <label class="chkl"><input type="checkbox" id="g1"><span class="bx"></span>I logged it</label>
+    </div>
+    <div class="fr" style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+      <b style="flex:1;min-width:170px">Input #2 · The Diagnostic</b>
+      <a class="btn ghost" id="g2go" href="mechanics-diagnostic.html">Open it</a>
+      <label class="chkl"><input type="checkbox" id="g2"><span class="bx"></span>I logged it</label>
+    </div>
+  </div>
+
+  <div id="rmBody">
+  <div class="snap" id="snap">
+    <div class="snaprow">
+      <span class="sg">Your roadmap<b id="sArch"></b></span>
+      <span class="sg hot">Weakest mechanic<b id="sWeak"></b></span>
+      <span class="sg">Recurring target<b id="sTarget"></b></span>
+      <span class="sg">Retention<b id="sRet"></b></span>
+      <button class="fold" id="fold">Collapse</button>
+    </div>
+    <div class="snapsub">Built from your own answers. Yours, free, whatever you decide next. Not where you are? Pick another page below.</div>
+  </div>
+  <div id="rmGuts">
 
   <div class="sec-h" style="margin-top:36px"><span class="no">01</span> Pick your page</div>
   <div class="tabs" id="tabs" style="margin-top:0">
@@ -41,114 +144,208 @@
     <button class="tab" data-a="Pivoting From Courses"><span class="ltr">D</span>Pivoting From Courses</button>
   </div>
 
-  <div class="sec-h"><span class="no">02</span> Fill your ninety days, one phase at a time</div>
+  <div class="sec-h"><span class="no">02</span> Your ninety days <span class="light">tap a step when it ships</span></div>
 
   <!-- A · JUST STARTING -->
   <div class="panel" data-p="Just Starting">
-    <div class="youare taped">You are here: the audience exists, the membership doesn't. The risk isn't building it wrong. It's building before the Promise is real.</div>
-    <div class="cols">
-      <div class="col"><h3><span class="ph">Phase 1 · Days 1–30</span>Concept</h3>
-        <div class="p">Write your Promise as a transformation contract. What they <em>become</em>, not what they get:<textarea data-k="A.promise"></textarea></div>
-        <div class="p">Send the five-question survey to your audience; replies in hand by day <input type="text" class="inl" data-k="A.surveyDay">.</div>
-        <div class="p">The overlap between what I'd love to run and what they'd pay to stay for:<textarea data-k="A.overlap"></textarea></div>
-        <div class="done" data-k="A.done30"><span class="bx"></span>Done when your Promise survives three real conversations.</div>
-      </div>
-      <div class="col"><h3><span class="ph">Phase 2 · Days 31–60</span>Pre-launch</h3>
-        <div class="p">Pick the platform in one afternoon. It's a 30-minute decision once the Promise is clear:<input type="text" class="full" data-k="A.platform"></div>
-        <div class="p">Smallest viable room: founding cap <input type="text" class="inl" data-k="A.cap">, price $<input type="text" class="inl" data-k="A.price" data-pre="startMo">/mo.</div>
-        <div class="p">Waitlist open; first 10 names by day <input type="text" class="inl" data-k="A.waitlistDay">.</div>
-      </div>
-      <div class="col"><h3><span class="ph">Phase 3 · Days 61–90</span>Launch</h3>
-        <div class="p">Founding-member launch to the waitlist on day <input type="text" class="inl" data-k="A.launchDay">.</div>
-        <div class="p">Every founding member introduced to 2–3 names in week one.</div>
-        <div class="p">First recurring ritual on the calendar:<input type="text" class="full" data-k="A.ritual"></div>
-        <div class="done" data-k="A.done90"><span class="bx"></span>Done when founding members are talking to each other without you in the thread.</div>
-      </div>
+    <div class="ahead"><div class="arow"><span class="al">A</span><div><div class="an">Roadmap 1 · Just Starting</div><div class="at">From promise to founding launch.</div></div></div></div>
+    <div class="youare taped">You have an audience and an idea. You don't have a membership problem yet. You have a promise problem and a launch problem. Ninety days solves both and opens the doors with real founding members. The order matters: concept, then pre-launch, then launch. Don't skip ahead.</div>
+    <h3 class="rph"><span class="ph">Phase 1 · Days 1–30</span>Lock the concept</h3>
+    <p class="goal"><b>Goal</b>A Promise so clear a stranger could read it and know what they'd become, and proof your audience actually wants it.</p>
+    <ul class="rlist" data-ck="A1">
+      <li><span class="bx"></span><span><b>Write your Promise in one sentence.</b> One verb, one outcome, a recurring frame. "A community for [niche]" is a category, not a promise. Rewrite it until it names what a member <em>becomes</em>, not what room they're in.</span></li>
+      <li><span class="bx"></span><span><b>Send the five-question survey to your audience this week.</b> What they want help with, what would make a room worth joining, what they've tried that didn't stick, what it's worth monthly, whether they'd take a five-minute call. Even three replies beats three months of guessing.</span></li>
+      <li><span class="bx"></span><span><b>Book three of those five-minute calls.</b> Listen for the exact words people use for their problem. Those words become your page later.</span></li>
+      <li><span class="bx"></span><span><b>Decide what this is NOT.</b> Not a course, not a content vault. Shared, not parallel. Members do things together or it isn't a membership.</span></li>
+      <li><span class="bx"></span><span><b>Choose your smallest viable room and cap it on purpose.</b> Belonging happens in rooms of eight to fifteen. Design for that, not for scale.</span></li>
+    </ul>
+    <div class="chk2">
+      <div class="mst"><b>Done when</b>You can say your Promise in one sentence and at least five people have told you, in their words, they'd pay for it.</div>
+      <div class="wsg"><b>You'll know it's working when</b>People you didn't prompt start describing their problem back to you in your Promise language.</div>
     </div>
+    <h3 class="rph"><span class="ph">Phase 2 · Days 31–60</span>Pre-launch</h3>
+    <p class="goal"><b>Goal</b>A real waitlist, a price built for renewal, and a first-week experience designed before anyone's inside.</p>
+    <ul class="rlist" data-ck="A2">
+      <li><span class="bx"></span><span><b>Set your price for renewal, not the launch spike.</b> The number a member happily pays in month seven. <span class="iftarget">Your Pricing tool puts the target at <span class="rt"></span>. Work backward from members × price, not from hope.</span></span></li>
+      <li><span class="bx"></span><span><b>Open a waitlist with the Promise on it.</b> Real names, real emails. Aim for a number that makes a founding launch feel alive, not empty.</span></li>
+      <li><span class="bx"></span><span><b>Map a new member's first seven days before you build anything.</b> First action, first win, first person they meet. "Here's your login, welcome" is how memberships quietly die.</span></li>
+      <li><span class="bx"></span><span><b>Design your one recurring ritual.</b> The thing members can count on every week. Cadence beats volume. Pick something you can sustain for a year.</span></li>
+      <li><span class="bx"></span><span><b>Pick the platform last.</b> Platform paralysis is usually an authority question in a tech costume. Once the Promise and the first-week map are clear, the tool decision gets easy.</span></li>
+    </ul>
+    <div class="chk2">
+      <div class="mst"><b>Done when</b>The waitlist is live and filling, the price is set, and the first-seven-days map is written start to finish.</div>
+      <div class="wsg"><b>You'll know it's working when</b>A waitlist signup comes from a share you didn't make. Someone passed it on.</div>
+    </div>
+    <h3 class="rph"><span class="ph">Phase 3 · Days 61–90</span>Founding launch</h3>
+    <p class="goal"><b>Goal</b>Doors open, founding members in, the first ritual running.</p>
+    <ul class="rlist" data-ck="A3">
+      <li><span class="bx"></span><span><b>Launch to the waitlist as founding members.</b> Small on purpose, clear promise, real close date. No urgency theater. The close date is real, not manufactured.</span></li>
+      <li><span class="bx"></span><span><b>Onboard every single member through the first-seven-days map.</b> Not "most." Every one. Someone notices when a new member goes quiet.</span></li>
+      <li><span class="bx"></span><span><b>Run the first recurring ritual in week one, then repeat it before you add anything new.</b> One thing they can count on outweighs five they can't.</span></li>
+      <li><span class="bx"></span><span><b>Engineer the first member-to-member connection on purpose.</b> A pairing, an intro thread, a small group. They joined because of you; they stay because of each other.</span></li>
+      <li><span class="bx"></span><span><b>Day 90: audit yourself against this page.</b> What shipped, what drifted, what members actually said. That's the real test of the first quarter.</span></li>
+    </ul>
+    <div class="chk2">
+      <div class="mst"><b>Done when</b>The founding cohort is in, onboarded, and the ritual has run at least twice.</div>
+      <div class="wsg"><b>You'll know it's working when</b>A member shows up for the ritual without a reminder. The room has its own pulse.</div>
+    </div>
+    <div class="closer mcall"></div>
+    <div class="endline"></div>
     <div class="sec-h"><span class="no">A</span> Notes</div><textarea data-k="A.notes" style="min-height:80px"></textarea>
   </div>
 
   <!-- B · RECENTLY LAUNCHED -->
   <div class="panel" data-p="Recently Launched">
-    <div class="youare taped">You are here: it's live, retention leaks. The fix is structural, not more content.</div>
-    <div class="cols">
-      <div class="col"><h3><span class="ph">Phase 1 · Days 1–30</span>Diagnose</h3>
-        <div class="p">Weakest mechanic (from your Diagnostic): <span class="pre" id="weakPre"></span><input type="text" class="full" data-k="B.weakest"></div>
-        <div class="p">Category check: am I actually running a membership, or a paid newsletter / content library / peer group wearing its clothes?<textarea data-k="B.category"></textarea></div>
-        <div class="p">Talk to 5 current members + 3 who left. The sentence I keep hearing:<textarea data-k="B.sentence"></textarea></div>
-      </div>
-      <div class="col"><h3><span class="ph">Phase 2 · Days 31–60</span>Rebuild</h3>
-        <div class="p">One concrete change to my weakest mechanic:<textarea data-k="B.change"></textarea></div>
-        <div class="p">One thing I kill because it isn't earning its load:<input type="text" class="full" data-k="B.kill"></div>
-        <div class="p">Re-onboard existing members into the new structure on day <input type="text" class="inl" data-k="B.reonboardDay">.</div>
-      </div>
-      <div class="col"><h3><span class="ph">Phase 3 · Days 61–90</span>Re-found</h3>
-        <div class="p">Re-state the Promise to the room, plainly.</div>
-        <div class="p">Renewals / churn this month vs. 90 days ago: <input type="text" class="inl" data-k="B.churnThen"> → <input type="text" class="inl" data-k="B.churnNow"></div>
-        <div class="done" data-k="B.done90"><span class="bx"></span>Done when a member describes the value using the room, not the content.</div>
-      </div>
+    <div class="ahead"><div class="arow"><span class="al">B</span><div><div class="an">Roadmap 2 · Recently Launched</div><div class="at">Stop the leak. Re-found the room.</div></div></div></div>
+    <div class="youare taped">You launched. The launch high faded. That's design, not failure. Months four to six are won with mechanics, not more content. Your ninety days runs a cycle: diagnose, rebuild, re-found. You're not relaunching from scratch. You're fixing the leaks and re-founding the room around what actually makes people stay.</div>
+    <h3 class="rph"><span class="ph">Phase 1 · Days 1–30</span>Diagnose</h3>
+    <p class="goal"><b>Goal</b>Know exactly where members are leaking and which mechanic is the cause, before you build anything new.</p>
+    <ul class="rlist" data-ck="B1">
+      <li><span class="bx"></span><span><b>Start with your weakest mechanic: <span class="wk"></span>.</b> Fix order matters. Don't polish a strong mechanic while the weak one leaks members.</span></li>
+      <li><span class="bx"></span><span><b>Re-test your Promise against reality.</b> Does a member's first week match what the page promised? If not, the page is writing checks the room doesn't cash.</span></li>
+      <li><span class="bx"></span><span><b>Talk to three members who renewed and two who left.</b> Ask what the value actually was. Month-six members say different things than launch-week members. Their words are the diagnosis.</span></li>
+      <li><span class="bx"></span><span><b>Count true activity, not vanity.</b> Who showed up twice in the last thirty days. That's your real room. Everything else is a mailing list.</span></li>
+      <li><span class="bx"></span><span><b>Map where new members go quiet in their first week.</b> That drop-off point is your biggest leak. Mark it.</span></li>
+    </ul>
+    <div class="chk2">
+      <div class="mst"><b>Done when</b>You can name your weakest mechanic, your first-week drop-off point, and the gap between promise and experience.</div>
+      <div class="wsg"><b>You'll know it's working when</b>The churned-member conversations keep surfacing the same one or two reasons. You've found the pattern.</div>
     </div>
+    <h3 class="rph"><span class="ph">Phase 2 · Days 31–60</span>Rebuild</h3>
+    <p class="goal"><b>Goal</b>Fix the leaks at the structural level: onboarding, friend-making, and what you ship.</p>
+    <ul class="rlist" data-ck="B2">
+      <li><span class="bx"></span><span><b>Kill the hamster wheel.</b> List everything you ship. Cut the bottom half. Year two doesn't renew on fresh content. It renews on identity.</span></li>
+      <li><span class="bx"></span><span><b>Rebuild onboarding as a map, not a sandbox.</b> First action, first win, first friend, inside seven days, for every join, automatically.</span></li>
+      <li><span class="bx"></span><span><b>Install one friend-making structure.</b> Small-group pairings, a standing thread, a mastermind pod. Members stay for each other.</span></li>
+      <li><span class="bx"></span><span><b>Re-price if the math says so, for renewal, not optics.</b> <span class="iftarget">Your Pricing tool's target: <span class="rt"></span>. If the current price can't get there with a room you can actually serve, the price is the problem.</span></span></li>
+      <li><span class="bx"></span><span><b>Set a founder cadence you can hold for a year.</b> Speed-to-response kills memberships quietly. Pick a rhythm and keep it.</span></li>
+    </ul>
+    <div class="chk2">
+      <div class="mst"><b>Done when</b>The new onboarding is live, the bottom-half content is cut, and one friend-making structure is running.</div>
+      <div class="wsg"><b>You'll know it's working when</b>A new member hits their first win inside week one without you personally walking them there.</div>
+    </div>
+    <h3 class="rph"><span class="ph">Phase 3 · Days 61–90</span>Re-found</h3>
+    <p class="goal"><b>Goal</b>Relaunch the room to your existing members and lock in the new shape.</p>
+    <ul class="rlist" data-ck="B3">
+      <li><span class="bx"></span><span><b>Re-onboard your existing members like a relaunch.</b> The new map, the new ritual, said out loud: "here's what this room is now." Members forgive drift; they don't forgive silence about it.</span></li>
+      <li><span class="bx"></span><span><b>Make founder presence sustainable.</b> The cadence you set in the rebuild, now a habit, not a sprint.</span></li>
+      <li><span class="bx"></span><span><b>Watch renewals cohort by cohort, not as one churn number.</b> Month-six renewal is the real test, not launch week.</span></li>
+      <li><span class="bx"></span><span><b>Double down on the one structure that's working.</b> Quietly retire what isn't. Evidence over attachment.</span></li>
+      <li><span class="bx"></span><span><b>Day 90: audit against this page.</b> The drift either stopped or it didn't. Both are data you can act on.</span></li>
+    </ul>
+    <div class="chk2">
+      <div class="mst"><b>Done when</b>Existing members have been re-onboarded into the new shape and you're tracking renewal by cohort.</div>
+      <div class="wsg"><b>You'll know it's working when</b>A member who was drifting re-engages after the re-onboarding. The room pulled them back.</div>
+    </div>
+    <div class="closer mcall"></div>
+    <div class="endline"></div>
     <div class="sec-h"><span class="no">B</span> Notes</div><textarea data-k="B.notes" style="min-height:80px"></textarea>
   </div>
 
   <!-- C · SCALING -->
   <div class="panel" data-p="Scaling">
-    <div class="youare taped">You are here: it works. The question is what compounds without more of you in it.</div>
-    <div class="cols">
-      <div class="col"><h3><span class="ph">Phase 1 · Days 1–30</span>Audit the load</h3>
-        <div class="p">Everything that routes through me weekly:<textarea data-k="C.load"></textarea></div>
-        <div class="p">Circle what only I can do.</div>
-        <div class="p">The identity layer: what do members say they <em>are</em> because of this room?<textarea data-k="C.identity"></textarea></div>
-      </div>
-      <div class="col"><h3><span class="ph">Phase 2 · Days 31–60</span>Delegate to design</h3>
-        <div class="p">One member-led structure launched (pods, chapters, member-run sessions):<textarea data-k="C.structure"></textarea></div>
-        <div class="p">Pricing reviewed against renewal, not acquisition:<input type="text" class="full" data-k="C.pricing"></div>
-      </div>
-      <div class="col"><h3><span class="ph">Phase 3 · Days 61–90</span>Compound</h3>
-        <div class="p">Year-two renewal frame shipped. Identity, not novelty.</div>
-        <div class="p">One thing I stop doing permanently:<input type="text" class="full" data-k="C.stop"></div>
-        <div class="done" data-k="C.done90"><span class="bx"></span>Done when the room produced value last month that I didn't personally make.</div>
-      </div>
+    <div class="ahead"><div class="arow"><span class="al">C</span><div><div class="an">Roadmap 3 · Scaling</div><div class="at">Design beats more of you.</div></div></div></div>
+    <div class="youare taped">It works. The question is what compounds without more of you, because more of you is not a strategy. Ninety days moves the membership from depending on your hours to running on design. Audit the load, delegate to design, compound. The goal at day 90 isn't more revenue this month. It's a room that grows when you're not in it.</div>
+    <h3 class="rph"><span class="ph">Phase 1 · Days 1–30</span>Audit the load</h3>
+    <p class="goal"><b>Goal</b>See exactly where the membership leans on you, and find the room inside the room.</p>
+    <ul class="rlist" data-ck="C1">
+      <li><span class="bx"></span><span><b>Write down every hour the membership takes from you in a typical week.</b> Mark what only you can do. Everything else is a design problem, not a workload problem.</span></li>
+      <li><span class="bx"></span><span><b>Score the six mechanics as systems, not vibes.</b> <span class="wk"></span> is where the structure leans on you hardest. That's the first redesign.</span></li>
+      <li><span class="bx"></span><span><b>Find your most active eight to fifteen members.</b> They're not your best customers. They're your next layer of structure.</span></li>
+      <li><span class="bx"></span><span><b>Stop shipping the bottom half of what you produce.</b> A membership is a resource, not a task. That applies to you too.</span></li>
+      <li><span class="bx"></span><span><b>Pick the one ritual that, if members ran it, would free the most of your time.</b> That's your first hand-off candidate.</span></li>
+    </ul>
+    <div class="chk2">
+      <div class="mst"><b>Done when</b>You have a written list of your weekly hours, what only you can do, and your top eight to fifteen members named.</div>
+      <div class="wsg"><b>You'll know it's working when</b>You spot at least two rituals that don't actually need you in the room.</div>
     </div>
+    <h3 class="rph"><span class="ph">Phase 2 · Days 31–60</span>Delegate to design</h3>
+    <p class="goal"><b>Goal</b>Hand rituals to members and document the mechanics so they run without you.</p>
+    <ul class="rlist" data-ck="C2">
+      <li><span class="bx"></span><span><b>Hand one ritual to members to run.</b> The strongest memberships reach the point where members run rooms the founder just visits. That's friend-making in its year-three form: the membership becomes infrastructure, not content.</span></li>
+      <li><span class="bx"></span><span><b>Document the mechanics.</b> Onboarding, cadence, rituals, written so they run without you in the room. The soul stays yours. The mechanics shouldn't need you.</span></li>
+      <li><span class="bx"></span><span><b>Name a second layer of leaders from your active eight to fifteen.</b> Brief them. Then get out of the way, publicly, so the room knows it's real.</span></li>
+      <li><span class="bx"></span><span><b>Re-check pricing against what the room delivers now.</b> <span class="iftarget">Target from your Pricing tool: <span class="rt"></span>. Mature rooms usually undercharge out of habit.</span></span></li>
+      <li><span class="bx"></span><span><b>Build one member-led structure that creates belonging without you.</b> A chapter, a pod, a recurring member-hosted session.</span></li>
+    </ul>
+    <div class="chk2">
+      <div class="mst"><b>Done when</b>At least one ritual is member-run, the core mechanics are documented, and a second leadership layer exists.</div>
+      <div class="wsg"><b>You'll know it's working when</b>A member-run session happens and is good. And you didn't have to be there.</div>
+    </div>
+    <h3 class="rph"><span class="ph">Phase 3 · Days 61–90</span>Compound</h3>
+    <p class="goal"><b>Goal</b>Shift your time from production to presence and design for year-two renewal.</p>
+    <ul class="rlist" data-ck="C3">
+      <li><span class="bx"></span><span><b>Move your reclaimed hours from making things to being in the room where it counts.</b> Fewer deliverables, more presence.</span></li>
+      <li><span class="bx"></span><span><b>Design the year-two renewal around identity, not novelty.</b> What does a member become by staying, and where do they see that progress?</span></li>
+      <li><span class="bx"></span><span><b>Let the room recruit.</b> Referral happens when belonging is real. Measure it, don't force it.</span></li>
+      <li><span class="bx"></span><span><b>Set the metric that matters now.</b> Not new content shipped. Member-to-member activity and renewal rate.</span></li>
+      <li><span class="bx"></span><span><b>Day 90: audit against this page, specifically the weekly-hours number from day one.</b> It should have moved.</span></li>
+    </ul>
+    <div class="chk2">
+      <div class="mst"><b>Done when</b>Your founder hours are down, member-led structures are carrying the room, and you're tracking renewal and member activity over output.</div>
+      <div class="wsg"><b>You'll know it's working when</b>The room runs a full week at full energy on a week you were barely in it.</div>
+    </div>
+    <div class="closer mcall"></div>
+    <div class="endline"></div>
     <div class="sec-h"><span class="no">C</span> Notes</div><textarea data-k="C.notes" style="min-height:80px"></textarea>
   </div>
 
   <!-- D · PIVOTING FROM COURSES -->
   <div class="panel" data-p="Pivoting From Courses">
-    <div class="youare taped">You are here: the course math worked, and now you're restructuring around recurring. The bridge year feels longest. Plan for it.</div>
-    <div class="cols">
-      <div class="col"><h3><span class="ph">Phase 1 · Days 1–30</span>The bridge plan</h3>
-        <div class="p">What stays from the course business:<input type="text" class="full" data-k="D.stays"></div>
-        <div class="p">What gets cut:<input type="text" class="full" data-k="D.cut"></div>
-        <div class="p">Existing customers' path into the membership:<input type="text" class="full" data-k="D.path"></div>
-        <div class="p">Revenue floor during the bridge: $<input type="text" class="inl" data-k="D.floor">/mo from <input type="text" class="inl" data-k="D.floorFrom" style="width:110px"></div>
-      </div>
-      <div class="col"><h3><span class="ph">Phase 2 · Days 31–60</span>The room becomes the front door</h3>
-        <div class="p">Courses become benefits <em>inside</em> the membership, not the main product.</div>
-        <div class="p">Founding cohort from your buyer list: invite <input type="text" class="inl" data-k="D.invite"> buyers by day <input type="text" class="inl" data-k="D.inviteDay">.</div>
-        <div class="p">Price for staying, not for the drop: $<input type="text" class="inl" data-k="D.price" data-pre="startMo">/mo.</div>
-      </div>
-      <div class="col"><h3><span class="ph">Phase 3 · Days 61–90</span>First renewal cycle</h3>
-        <div class="p">Month-3 retention: <input type="text" class="inl" data-k="D.retention">%</div>
-        <div class="p">The first member-to-member moment happened when:<textarea data-k="D.moment"></textarea></div>
-        <div class="done" data-k="D.done90"><span class="bx"></span>Done when a member who came for the course stays for the room.</div>
-      </div>
+    <div class="ahead"><div class="arow"><span class="al">D</span><div><div class="an">Roadmap 4 · Pivoting From Courses</div><div class="at">Change the front door, keep the house.</div></div></div></div>
+    <div class="youare taped">The course math worked. The model is what's tired: transactional, launch to launch, no compounding relationship. You're not abandoning the courses. You're changing what the front door is. Ninety days builds the bridge: the room becomes the product, the courses become benefits inside it.</div>
+    <h3 class="rph"><span class="ph">Phase 1 · Days 1–30</span>The bridge plan</h3>
+    <p class="goal"><b>Goal</b>A recurring Promise and a clear map of which assets move inside the room.</p>
+    <ul class="rlist" data-ck="D1">
+      <li><span class="bx"></span><span><b>Write the recurring Promise.</b> What a member becomes over twelve months, not what they finish in a six-week course. Recurring revenue requires recurring value.</span></li>
+      <li><span class="bx"></span><span><b>Map your assets.</b> Which courses become benefits inside the room, which get sunset. The room is the product. The courses are no longer the front door.</span></li>
+      <li><span class="bx"></span><span><b>Survey your buyer list with the five questions.</b> Your course buyers are the warmest waitlist you'll ever have. Treat them like one.</span></li>
+      <li><span class="bx"></span><span><b>Price for staying, not the drop.</b> Launch-spike pricing is the course habit talking. <span class="iftarget">Sanity-check against your Pricing tool's <span class="rt"></span>.</span></span></li>
+      <li><span class="bx"></span><span><b>Decide your bridge.</b> How the course revenue keeps running while you build the recurring engine, so you're not betting the business on month one.</span></li>
+    </ul>
+    <div class="chk2">
+      <div class="mst"><b>Done when</b>The recurring Promise is written, the asset map is done (keep, fold, sunset), and your buyer-list waitlist has started.</div>
+      <div class="wsg"><b>You'll know it's working when</b>Past buyers reply to your survey saying they'd want an ongoing room, not just another course.</div>
     </div>
+    <h3 class="rph"><span class="ph">Phase 2 · Days 31–60</span>The room becomes the front door</h3>
+    <p class="goal"><b>Goal</b>Open the smallest viable room with founding members pulled from your buyer list.</p>
+    <ul class="rlist" data-ck="D2">
+      <li><span class="bx"></span><span><b>Build the smallest viable room and invite past buyers first.</b> Founding members, capped on purpose, with a real close date.</span></li>
+      <li><span class="bx"></span><span><b>Design week one around doing, not consuming.</b> Your buyers have already consumed plenty. The scarcity is doing alongside other people: belonging and becoming, not another module.</span></li>
+      <li><span class="bx"></span><span><b>Fold the kept courses in as member benefits.</b> Positioned as part of the room, not the reason to join.</span></li>
+      <li><span class="bx"></span><span><b>Set a cadence you can keep while the course business still runs.</b> Async by default. A resource, not a task, for them and for you.</span></li>
+      <li><span class="bx"></span><span><b>Keep one launch muscle.</b> A founding window with a clear close. After it closes, no theater.</span></li>
+    </ul>
+    <div class="chk2">
+      <div class="mst"><b>Done when</b>The room is open, founding members from your buyer list are in, and the kept courses live inside it as benefits.</div>
+      <div class="wsg"><b>You'll know it's working when</b>A past course buyer joins the room and says it's what they actually wanted from the courses.</div>
+    </div>
+    <h3 class="rph"><span class="ph">Phase 3 · Days 61–90</span>First renewal cycle</h3>
+    <p class="goal"><b>Goal</b>Prove the recurring engine is real and start retiring the old model deliberately.</p>
+    <ul class="rlist" data-ck="D3">
+      <li><span class="bx"></span><span><b>Ship the first month-three checkpoint where members see their own progress.</b> Members renew on visible progress. Build the moment they feel it.</span></li>
+      <li><span class="bx"></span><span><b>Watch the bridge-year math honestly.</b> The stretch between the old model and the new one feels longest from the inside. The curve climbs before the feeling does. That gap is normal. It is not a verdict.</span></li>
+      <li><span class="bx"></span><span><b>Sunset or fold each remaining course deliberately.</b> Every course either feeds the room or distracts from it. Decide one by one.</span></li>
+      <li><span class="bx"></span><span><b>Run your first renewal conversation with founding members.</b> What made them stay, what almost made them leave. That's your retention blueprint.</span></li>
+      <li><span class="bx"></span><span><b>Day 90: audit against this page.</b> The question isn't "did it replace course revenue yet." It's "is the recurring engine real and growing."</span></li>
+    </ul>
+    <div class="chk2">
+      <div class="mst"><b>Done when</b>The first renewal cycle has run, the month-three checkpoint shipped, and every course has a deliberate keep, fold, or sunset status.</div>
+      <div class="wsg"><b>You'll know it's working when</b>A founding member renews. The first recurring dollar that didn't require a new launch.</div>
+    </div>
+    <div class="closer mcall"></div>
+    <div class="endline"></div>
     <div class="sec-h"><span class="no">D</span> Notes</div><textarea data-k="D.notes" style="min-height:80px"></textarea>
   </div>
 
-  <div class="synth">
-    <div class="t">This page is the generic version. Yours is coming.</div>
-    <p>Log inputs #1 + #2 by <b>Thursday night</b> and your personalized roadmap, written for your stage, your numbers, your blocker, lands in your inbox within 24 hours of Day 3.</p>
-    <div class="row">
-      <a class="btn" href="https://membershipsummit.com/lab-audit" target="_blank" rel="noopener">Log input #1</a>
-      <a class="btn ghost" href="https://membershipsummit.com/diagnostic" target="_blank" rel="noopener">Log input #2</a>
-    </div>
-  </div>
+  </div><!-- /rmGuts -->
+  </div><!-- /rmBody -->
 
   <div class="actions">
+    <a class="btn ghost" href="review.html">My One-Pager</a>
     <button class="btn ghost" onclick="window.print()">Print my page</button>
   </div>
+  <details class="bp"><summary>What’s the Build Plan?</summary><p>This roadmap is the what. The Build Plan is the how: the same ninety days, written step by step for your business, built during the cohort. Buyers get it. This page is yours either way.</p></details>
 
   <div class="next">Next: <a href="retention-checklist.html">The Retention Checklist · Day 3</a></div>
 
@@ -162,52 +359,156 @@
 <script src="native.js"></script>
 <script>
 const R=()=>store.all().roadmap||{};
+/* unlock gate: both inputs logged = the page is open */
+function gatePaint(){
+  const s=store.all(),a=!!((s.audit||{}).logged),d=!!((s.diag||{}).logged),both=a&&d;
+  document.getElementById("gate").style.display=both?"none":"block";
+  document.getElementById("rmBody").style.display=both?"":"none";
+  document.getElementById("g1").checked=a;document.getElementById("g2").checked=d;
+  document.getElementById("g1go").style.display=a?"none":"";
+  document.getElementById("g2go").style.display=d?"none":"";
+  document.getElementById("gProg").textContent=((a?1:0)+(d?1:0))+" of 2 logged";
+  document.getElementById("gMsg").textContent=!a&&!d
+    ?"Your 30/60/90 Roadmap assembles here the moment you log the Lab Audit and the Diagnostic. Two minutes each, then this opens on the spot."
+    :"One more input. Log the "+(a?"Diagnostic":"Lab Audit")+" and your roadmap builds itself right here.";
+  if(both)snapPaint();
+}
+function snapPaint(){
+  const s=store.all(),d=s.diag||{},p=s.pricing||{},rc=(s.retention||{}).checks||[];
+  const num=v=>{const n=parseFloat(String(v||"").replace(/[^0-9.]/g,""));return isNaN(n)?0:n};
+  const mrr=num(p.members)*num(p.price);
+  const on=document.querySelector(".panel.on");
+  document.getElementById("sArch").textContent=on?on.dataset.p:"";
+  document.getElementById("sWeak").textContent=d.weakest||"log the Diagnostic";
+  document.getElementById("sTarget").textContent=mrr>0?"$"+mrr.toLocaleString()+"/mo":"not set yet";
+  document.getElementById("sRet").textContent=rc.filter(Boolean).length+"/11";
+}
+document.getElementById("fold").addEventListener("click",()=>{
+  const g=document.getElementById("rmGuts"),c=g.style.display==="none";
+  g.style.display=c?"":"none";
+  document.getElementById("fold").textContent=c?"Collapse":"Expand";
+});
+document.getElementById("g1").addEventListener("change",e=>{store.set("audit",{logged:e.target.checked});gatePaint();paintNav()});
+document.getElementById("g2").addEventListener("change",e=>{store.set("diag",{logged:e.target.checked});gatePaint();paintNav()});
+/* archetype tabs */
 function show(arch,manual){
   document.querySelectorAll(".tab").forEach(t=>t.classList.toggle("on",t.dataset.a===arch));
   document.querySelectorAll(".panel").forEach(p=>p.classList.toggle("on",p.dataset.p===arch));
   const r=R();
   if(r.arch!==arch||manual)store.set("roadmap",{arch:arch,manual:!!manual||r.manual});
+  snapPaint();
   paintNav();
 }
 document.getElementById("tabs").addEventListener("click",e=>{
   const t=e.target.closest(".tab");if(t)show(t.dataset.a,true);
 });
-/* field wiring */
+/* dynamic tokens: weakest mechanic + recurring target */
+function tokens(){
+  const s=store.all(),d=s.diag||{},p=s.pricing||{};
+  const num=v=>{const n=parseFloat(String(v||"").replace(/[^0-9.]/g,""));return isNaN(n)?0:n};
+  const mrr=num(p.members)*num(p.price);
+  document.querySelectorAll(".wk").forEach(el=>el.textContent=d.weakest||"your weakest mechanic");
+  document.querySelectorAll(".iftarget").forEach(el=>{
+    if(mrr>0){el.style.display="";const rt=el.querySelector(".rt");if(rt)rt.textContent="$"+mrr.toLocaleString()+"/mo"}
+    else el.style.display="none";
+  });
+}
+/* ---- the insert layer: one extra move per phase, picked by the weakest mechanic ---- */
+const L2={"Just Starting":"A","Recently Launched":"B","Scaling":"C","Pivoting From Courses":"D"};
+const INSERTS={
+"Promise":{
+p1:'<b>Write your Promise in one sentence and pressure-test it this week.</b> One verb, one outcome, a recurring frame. "A community for [niche]" is a category. A member should read your Promise and know what they\u2019ll <em>become</em>, not what room they\u2019re in.',
+p2:'<b>Put the Promise on everything before you build the room.</b> Waitlist page, first email, the pitch. If you can\u2019t say it in a sentence, the room isn\u2019t ready to open. The Promise is the spine. Design around it, not the reverse.',
+p3:'<b>At day 90, ask three members to say your Promise back to you in their words.</b> If their version matches yours, it\u2019s landing. If it drifts, the Promise, not the content, is what to fix first.'},
+"Friend-Making":{
+p1:'<b>Design one structure where members meet each other, not just you.</b> They join because of you; they stay because of each other. Decide now how two members who should know each other actually will.',
+p2:'<b>Build the first friend-making ritual into week one of membership.</b> A pairing, an intro thread, a small group. Don\u2019t leave connection to chance. The rooms that retain engineer the first relationship on purpose.',
+p3:'<b>By day 90, count how many members know at least one other member by name.</b> That number, not your content output, predicts month-six retention. Grow it deliberately.'},
+"Onboarding":{
+p1:'<b>Map a new member\u2019s first seven days before you open anything.</b> First action, first win, first person they meet. "Here\u2019s your login, welcome" is the most common way memberships quietly die.',
+p2:'<b>Build the onboarding as a real sequence, not a welcome post.</b> A map out of the sandbox. Every join runs the same first-week path, automatically, whether you\u2019re watching or not.',
+p3:'<b>At day 90, watch where new members go quiet in their first week.</b> That drop-off point is your onboarding leak. Fix the step right before it.'},
+"Masterminds":{
+p1:'<b>Plan one recurring small-group session, not just broadcasts.</b> Masterminds are where members do the work alongside each other. The becoming layer, not the knowing layer. Sketch the format now.',
+p2:'<b>Run your first working session in week one or two and keep it on a fixed cadence.</b> Consistency beats polish. A session they can count on outweighs a better one they can\u2019t.',
+p3:'<b>By day 90, start handing one session to members to run.</b> The strongest memberships reach the point where members lead the room and you just show up. That\u2019s where it stops depending on you.'},
+"Design Constraints":{
+p1:'<b>Pick your constraints on purpose.</b> Small room, capped size, one platform, a cadence you can hold for a year. Optionality with low effort beats an everything-membership you can\u2019t sustain.',
+p2:'<b>Cut the scope before you launch, not after.</b> List everything you\u2019re tempted to include and remove the bottom half. A membership is a resource, not a task, for the member and for you.',
+p3:'<b>At day 90, audit what you\u2019re shipping against what members actually use.</b> Kill the unused. The constraint that protects your energy is what lets the room survive year two.'},
+"Pricing":{
+p1:'<b>Set your price for renewal, not the launch spike.</b> The number a member would happily pay in month seven. <span class="iftarget">Your Pricing tool puts the target at <span class="rt"></span>. Work backward from members \u00d7 price, not from hope.</span>',
+p2:'<b>Stress-test the price against the room you can actually serve.</b> <span class="iftarget"><span class="rt"></span> is only real if the member count behind it is a room you can show up for. </span>Underpricing out of fear kills more memberships than charging too much.',
+p3:'<b>At day 90, look at who renewed and what they\u2019d pay again.</b> Price tracks delivered value over time. If the value compounds, the price can too. <span class="iftarget">Re-check against <span class="rt"></span>.</span>'}
+};
+const CALLOUTS={
+"Promise":'Your weakest mechanic is <b>Promise</b>. Everything else compounds on it. A strong room with a fuzzy promise still leaks members. Fix this first; the rest gets easier.',
+"Friend-Making":'Your weakest mechanic is <b>Friend-Making</b>. Members stay for each other, not for you. Until they\u2019re connected, every other improvement is renting retention you don\u2019t own.',
+"Onboarding":'Your weakest mechanic is <b>Onboarding</b>. The first seven days decide month six. A great room nobody can find their way into still churns.',
+"Masterminds":'Your weakest mechanic is <b>Masterminds</b>. Knowing is abundant; doing-together is scarce. This is the layer that makes a membership feel different from a content feed.',
+"Design Constraints":'Your weakest mechanic is <b>Design Constraints</b>. Without them you\u2019ll out-build your own capacity by month four. The constraint is what keeps you in the room for year two.',
+"Pricing":'Your weakest mechanic is <b>Pricing</b>. Priced for the launch instead of the renewal, the math quietly stops working right when the room is finally good. Fix the number for month seven, not week one.'
+};
+const WKARCH={
+"Just Starting":"Where you are, over-build it from day one. Strong everywhere else won't cover a leak there.",
+"Recently Launched":"Fix it first. The rest of the rebuild compounds on it.",
+"Scaling":"It's where the structure leans on you hardest. Redesign it first and the rest of the hand-off gets easier.",
+"Pivoting From Courses":"It's the one course-sellers most often skip, because courses never needed it. The room does. Build it deliberately."
+};
+const CLOSERS={
+"Just Starting":"Small on purpose. Shipped on purpose. That\u2019s the whole first year, compressed into ninety days.",
+"Recently Launched":"Mechanics first. The soul was always yours.",
+"Scaling":"Less of you in the machine. More of you in the room.",
+"Pivoting From Courses":"The bridge year feels longest from the inside. Walk it anyway."
+};
+(function assemble(){
+  const w=(store.all().diag||{}).weakest;
+  document.querySelectorAll(".panel").forEach(p=>{
+    const arch=p.dataset.p,ltr=L2[arch];
+    const end=p.querySelector(".endline");if(end)end.textContent=CLOSERS[arch];
+    const mc=p.querySelector(".mcall");
+    if(w&&INSERTS[w]){
+      ["1","2","3"].forEach(ph=>{
+        const ul=p.querySelector('.rlist[data-ck="'+ltr+ph+'"]');if(!ul)return;
+        const li=document.createElement("li");li.className="ins";
+        li.innerHTML='<span class="bx"></span><span><span class="instag">Your weak spot \u00b7 '+w+'</span>'+INSERTS[w]["p"+ph]+'</span>';
+        ul.appendChild(li);
+      });
+      if(mc)mc.innerHTML=CALLOUTS[w]+' '+WKARCH[arch];
+    }else if(mc){mc.style.display="none"}
+  });
+})();
+/* step checkmarks, saved per panel list */
+document.querySelectorAll(".rlist").forEach(ul=>{
+  const id=ul.dataset.ck;
+  ul.addEventListener("click",e=>{
+    const li=e.target.closest("li");if(!li)return;
+    const idx=[...ul.children].indexOf(li);
+    li.classList.toggle("on");
+    const r=R(),ck=Object.assign({},r.checks);
+    ck[id]=[...ul.children].map(x=>x.classList.contains("on"));
+    store.set("roadmap",{checks:ck});paintNav();
+  });
+});
+/* notes */
 document.querySelectorAll("[data-k]").forEach(el=>{
-  if(el.classList.contains("done")){
-    el.addEventListener("click",()=>{
-      const on=!el.classList.contains("on");el.classList.toggle("on",on);
-      const r=R(),f=Object.assign({},r.fields);f[el.dataset.k]=on?"yes":"";
-      store.set("roadmap",{fields:f});paintNav();
-    });
-  }else{
-    el.addEventListener("input",()=>{
-      const r=R(),f=Object.assign({},r.fields);f[el.dataset.k]=el.value;
-      store.set("roadmap",{fields:f});paintNav();
-    });
-  }
+  el.addEventListener("input",()=>{
+    const r=R(),f=Object.assign({},r.fields);f[el.dataset.k]=el.value;
+    store.set("roadmap",{fields:f});paintNav();
+  });
 });
 /* restore */
 (function(){
-  const s=store.all(),r=s.roadmap||{},f=r.fields||{},a=s.audit||{},d=s.diag||{},p=s.pricing||{};
-  document.querySelectorAll("[data-k]").forEach(el=>{
-    const v=f[el.dataset.k];
-    if(el.classList.contains("done")){if(v)el.classList.add("on")}
-    else if(v)el.value=v;
+  const s=store.all(),r=s.roadmap||{},f=r.fields||{},ck=r.checks||{},a=s.audit||{};
+  document.querySelectorAll("[data-k]").forEach(el=>{if(f[el.dataset.k])el.value=f[el.dataset.k]});
+  document.querySelectorAll(".rlist").forEach(ul=>{
+    const arr=ck[ul.dataset.ck]||[];
+    [...ul.children].forEach((li,i)=>{if(arr[i])li.classList.add("on")});
   });
-  /* prefills that flow from the other tools */
-  if(p.startMo)document.querySelectorAll('[data-pre="startMo"]').forEach(el=>{if(!el.value)el.placeholder=p.startMo});
-  if(d.weakest){
-    document.getElementById("weakPre").textContent="from your diagnostic: "+d.weakest;
-    const w=document.querySelector('[data-k="B.weakest"]');if(w&&!w.value)w.placeholder=d.weakest;
-  }
-  /* pick the page */
-  const auto=ARCH(a.stage,a.sells);
-  if(auto){
-    document.getElementById("banner").style.display="block";
-    document.getElementById("bArch").textContent=auto;
-  }
+  const auto=ARCH(a.stage,a.sells,a.months);
   show(r.arch||auto||"Just Starting");
+  tokens();
+  gatePaint();
 })();
 </script>
 </body>

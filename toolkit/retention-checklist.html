@@ -8,7 +8,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='1' y='1' width='22' height='22' rx='4' fill='%230061FF'/%3E%3Cpath d='M7 8h10M7 12h10M7 16h4.5' fill='none' stroke='%23FFFCF7' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M14.5 16.2l1.6 1.6 2.9-2.9' fill='none' stroke='%23FF4F14' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="toolkit.css">
 </head>
-<body>
+<body data-theme="retention">
 <div class="bar"></div>
 <nav class="tk-nav"><div class="tk-in">
   <a class="tk-home" href="index.html"><svg class="lg" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><rect x="1.25" y="1.25" width="21.5" height="21.5" rx="3.5" fill="#0061FF" stroke="#1E1E1E" stroke-width="1.5"></rect><path d="M7 8h10M7 12h10M7 16h4.5" fill="none" stroke="#FFFCF7" stroke-width="2" stroke-linecap="round"></path><path d="M14.5 16.2l1.6 1.6 2.9-2.9" fill="none" stroke="#FF4F14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Summit Toolkit</a>
@@ -31,6 +31,7 @@
   <div class="h1row"><h1>The Retention Checklist</h1><span class="picon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-2.6-6.4"></path><path d="M21 3v6h-6"></path></svg></span></div>
   <div class="sub">Months 4–6 are where memberships <span class="annotate">quietly die</span>. This is the pre-flight for that stretch.</div>
 
+  <div id="toolBody">
   <div class="frame taped">Year one runs on founder energy. Year two renews on identity. The switch gets built in months 4–6, or it doesn't.</div>
 
   <div class="scorebar">
@@ -65,9 +66,10 @@
   <div class="actions">
     <button class="btn ghost" onclick="window.print()">Print my pre-flight</button>
   </div>
-  <p class="hint" style="margin-top:14px">Pairs with your 30/60/90 Roadmap. Both live pinned in the Summit Telegram. Personalized roadmap lands within 24 hours of Day 3.</p>
+  <p class="hint" style="margin-top:14px">Pairs with your 30/60/90 Roadmap. Both live pinned in the Summit Telegram.</p>
 
   <div class="next">Done for the day? <a href="review.html">My One-Pager</a> collects everything you've typed, ready to copy or print. Your snapshot is waiting on <a href="index.html">your Toolkit</a>.</div>
+  </div><!-- /toolBody -->
 
   <div class="foot"><span>A Creator Science event · creatorscience.com</span><img src="cs-seal.png" alt="Creator Science"><span>membershipsummit.com</span></div>
   <div class="privacy" id="privacy">Your answers live in this browser only.</div>
@@ -111,6 +113,7 @@ document.getElementById("cl").addEventListener("click",e=>{
   store.set("retention",{checks});paint();
 });
 paint();
+mountDrip("retention","toolBody","The pre-flight opens after the Day 3 close. It\u2019s the last thing you do at the Summit, and the first thing you use after it.");
 </script>
 </body>
 </html>

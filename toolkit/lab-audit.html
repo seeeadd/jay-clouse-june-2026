@@ -8,7 +8,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='1' y='1' width='22' height='22' rx='4' fill='%230061FF'/%3E%3Cpath d='M7 8h10M7 12h10M7 16h4.5' fill='none' stroke='%23FFFCF7' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M14.5 16.2l1.6 1.6 2.9-2.9' fill='none' stroke='%23FF4F14' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="toolkit.css">
 </head>
-<body>
+<body data-theme="audit">
 <div class="bar"></div>
 <nav class="tk-nav"><div class="tk-in">
   <a class="tk-home" href="index.html"><svg class="lg" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><rect x="1.25" y="1.25" width="21.5" height="21.5" rx="3.5" fill="#0061FF" stroke="#1E1E1E" stroke-width="1.5"></rect><path d="M7 8h10M7 12h10M7 16h4.5" fill="none" stroke="#FFFCF7" stroke-width="2" stroke-linecap="round"></path><path d="M14.5 16.2l1.6 1.6 2.9-2.9" fill="none" stroke="#FF4F14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Summit Toolkit</a>
@@ -30,16 +30,11 @@
 
   <div class="h1row"><h1>The Lab Audit</h1><span class="picon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"></rect><path d="M9 4.5V3.5A1.5 1.5 0 0 1 10.5 2h3A1.5 1.5 0 0 1 15 3.5v1"></path><path d="M9 12.5l2.2 2.2 4.3-4.4"></path></svg></span></div>
   <div class="sub">One page, two parts, <span class="annotate">ten minutes</span>.</div>
-  <p class="intro">Where you actually are, not where the playbooks assume you are. This becomes input #1 for the personalized 30/60/90 roadmap that lands in your inbox within 24 hours of Day 3.</p>
+  <p class="intro">Where you actually are, not where the playbooks assume you are. This is input #1. Log it and you’re halfway to your 30/60/90 Roadmap.</p>
 
-  <div class="steps" style="margin-top:26px">
-    <div class="step"><div class="n">STEP 01</div><div class="t">Answer both parts</div><p>Ten minutes. Autosaves as you type.</p></div>
-    <div class="step"><div class="n">STEP 02</div><div class="t">Log it on the form</div><p>The button below carries your answers over.</p></div>
-    <div class="step"><div class="n">STEP 03</div><div class="t">You're set</div><p>Your personalized roadmap reads the form.</p></div>
-  </div>
 
   <div class="fr" style="max-width:380px;margin-top:26px"><b>First name</b><input type="text" id="fname" autocomplete="given-name"></div>
-  <div class="fr" style="max-width:480px"><b>Email</b><span class="req">Required</span> <span class="hint">Use the one you'll log the forms with, so your toolkit and your roadmap match up.</span><input type="text" id="email" autocomplete="email" inputmode="email"></div>
+  <div class="fr" style="max-width:480px"><b>Email</b><span class="req">Required</span> <span class="hint">One email for everything here. It’s how your audit, your roadmap, and the wheel stay matched to you.</span><input type="text" id="email" autocomplete="email" inputmode="email"></div>
 
   <div class="sec-h"><span class="no">1.1</span> Part 1 · The Lifecycle Ladder <span class="light">mark where you are</span></div>
 
@@ -87,19 +82,19 @@
 
   <div class="wheel" id="wheel">
     <span class="bx"></span>
-    <p>Want a shot at one of the four live audits on Day 3? Jay picks live. Wheel spin, no pre-curation. Pool locks Thu 12pm ET.
-    <span class="hint">Tick this on the form too. The form is what feeds the wheel.</span></p>
+    <p>Want a shot at one of the four live audits on Day 3? I pick live. Wheel spin, no pre-curation. Pool locks Thu 12pm ET.
+    <span class="hint">Logging input #1 below is what enters you. The spin happens live on Day 3.</span></p>
   </div>
 
   <div class="sec-h"><span class="no">1.3</span> Notes from Day 1</div>
   <textarea id="notes" style="min-height:90px"></textarea>
 
   <div class="actions">
-    <a class="btn" id="logBtn" href="https://membershipsummit.com/lab-audit" target="_blank" rel="noopener">Log it on the form</a>
+    <a class="btn" id="logBtn" href="#">Log input #1</a>
     <button class="btn ghost" id="copyBtn">Copy my answers</button>
     <label class="chkl"><input type="checkbox" id="logged"><span class="bx"></span>I logged it</label>
   </div>
-  <p class="hint" style="margin-top:14px">Logging the form is what feeds your personalized roadmap. Copy your answers, open the form, paste.</p>
+  <p class="hint" style="margin-top:14px">One tap. It comes straight to me. It’s half of your roadmap, and it’s what the wheel reads.</p>
 
   <div class="next">Next: <a href="mechanics-diagnostic.html">The Mechanics Diagnostic · Day 2</a></div>
 
@@ -121,7 +116,7 @@ const YOU={
 };
 const A=()=>store.all().audit||{};
 function paintRead(){
-  const a=A(),arch=ARCH(a.stage,a.sells);
+  const a=A(),arch=ARCH(a.stage,a.sells,a.months);
   document.getElementById("readEmpty").style.display=arch?"none":"";
   document.getElementById("readFull").style.display=arch?"":"none";
   if(arch){document.getElementById("readArch").textContent=arch;document.getElementById("readYou").textContent=YOU[arch]}

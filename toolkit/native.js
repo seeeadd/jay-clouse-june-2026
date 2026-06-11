@@ -26,7 +26,7 @@
   logBtn.style.display = "none";
   const hintP = document.querySelector(".actions + .hint");
   if (hintP) hintP.textContent = form === "audit"
-    ? "No form needed. Verify your email below and submit. Your personalized roadmap reads this submission."
+    ? "No form needed. Verify your email below and submit. Your roadmap unlocks the moment input #2 is logged too."
     : "No form needed. One submit below, 30 seconds. That's input #2.";
 
   const panel = document.createElement("div");

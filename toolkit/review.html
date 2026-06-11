@@ -76,19 +76,15 @@ const RET_ITEMS=[
  "Member-led activity that doesn't route through me",
  "Five-question survey asked in the last 90 days"
 ];
-const RM_LBL={
- "A.promise":"Promise (transformation contract)","A.surveyDay":"Survey replies in hand by day","A.overlap":"Overlap: love to run × pay to stay","A.platform":"Platform","A.cap":"Founding cap","A.price":"Price $/mo","A.waitlistDay":"First 10 waitlist names by day","A.launchDay":"Founding launch day","A.ritual":"First recurring ritual","A.done30":"Promise survived three conversations","A.done90":"Members talking without me in the thread","A.notes":"Notes",
- "B.weakest":"Weakest mechanic","B.category":"Category check","B.sentence":"The sentence I keep hearing","B.change":"One concrete change","B.kill":"Killed because it isn't earning its load","B.reonboardDay":"Re-onboard day","B.churnThen":"Churn 90 days ago","B.churnNow":"Churn now","B.done90":"A member described the value using the room","B.notes":"Notes",
- "C.load":"Routes through me weekly","C.identity":"Identity layer","C.structure":"Member-led structure","C.pricing":"Pricing reviewed against renewal","C.stop":"Stopped doing permanently","C.done90":"Room produced value I didn't make","C.notes":"Notes",
- "D.stays":"Stays from the course business","D.cut":"Gets cut","D.path":"Customers' path into the membership","D.floor":"Revenue floor $/mo","D.floorFrom":"Floor comes from","D.invite":"Buyers invited","D.inviteDay":"Invited by day","D.price":"Price $/mo","D.retention":"Month-3 retention %","D.moment":"First member-to-member moment","D.done90":"Course buyer stayed for the room","D.notes":"Notes"
-};
+const RM_LBL={"A.notes":"Notes (Just Starting)","B.notes":"Notes (Recently Launched)","C.notes":"Notes (Scaling)","D.notes":"Notes (Pivoting From Courses)"};
+const RM_PHASE={"1":"Phase 1 · Days 1–30","2":"Phase 2 · Days 31–60","3":"Phase 3 · Days 61–90"};
 const esc=t=>String(t).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
 const num=v=>{const n=parseFloat(String(v||"").replace(/[^0-9.]/g,""));return isNaN(n)?0:n};
 
 function build(){
   const s=store.all(),a=s.audit||{},d=s.diag||{},p=s.pricing||{},r=s.roadmap||{},c=s.retention||{};
   const sections=[];/* [header, rows[[k,v]], emptyMsg] */
-  sections.push(["0 · Who",[["Name",s.name],["Email",s.email],["Roadmap page",ARCH(a.stage,a.sells)]],null]);
+  sections.push(["0 · Who",[["Name",s.name],["Email",s.email],["Roadmap page",ARCH(a.stage,a.sells,a.months)]],null]);
   sections.push(["1 · The Lab Audit · input #1"+(a.logged?" · logged":""),[
     ["Where you are",a.stage],["Running for",a.months],["Audience size",a.audience],["Currently sells",a.sells],
     ["Last month's revenue",a.revenue],["Biggest blocker",a.blocker],["Live audit wheel",a.wheel?"Yes, spin me in":""],["Notes from Day 1",a.notes]
@@ -107,8 +103,16 @@ function build(){
     ["One launch nets",p.launchNet?"$"+p.launchNet:""],["Launch costs",p.launchWeeks?p.launchWeeks+" weeks":""],
     ["Renewal test",p.renew],["Starting point",[p.startMo?"$"+p.startMo+"/mo":"",p.startYr?"$"+p.startYr+"/yr":"",p.tiers?p.tiers+" tier(s)":""].filter(Boolean).join(" · ")]
   ],'Nothing here yet. Open <a href="pricing-worksheet.html">the Pricing Worksheet</a>.']);
-  const f=r.fields||{};
-  const rmRows=Object.keys(RM_LBL).filter(k=>f[k]&&String(f[k]).trim()).map(k=>[RM_LBL[k]+"  ["+k.charAt(0)+"]",f[k]==="yes"&&k.indexOf("done")>-1?"Done":f[k]]);
+  const f=r.fields||{},ck=r.checks||{};
+  const rmRows=[];
+  if(r.arch){
+    const ltr=({"Just Starting":"A","Recently Launched":"B","Scaling":"C","Pivoting From Courses":"D"})[r.arch];
+    ["1","2","3"].forEach(ph=>{
+      const n=((ck[ltr+ph]||[]).filter(Boolean)).length;
+      if(n)rmRows.push([RM_PHASE[ph]+" steps shipped",n+" / 4"]);
+    });
+  }
+  Object.keys(RM_LBL).forEach(k=>{if(f[k]&&String(f[k]).trim())rmRows.push([RM_LBL[k],f[k]])});
   sections.push(["4 · Your 30/60/90 Roadmap"+(r.arch?" · page: "+r.arch:""),rmRows,'Nothing here yet. Open <a href="roadmap.html">your 30/60/90</a>.']);
   const checks=Array.isArray(c.checks)?c.checks:[];
   const n=checks.filter(Boolean).length;

@@ -1,0 +1,14 @@
+{
+  "redirects": [
+    { "source": "/lab-audit", "destination": "/toolkit/lab-audit.html", "statusCode": 301 },
+    { "source": "/diagnostic", "destination": "/toolkit/mechanics-diagnostic.html", "statusCode": 301 }
+  ],
+  "headers": [
+    {
+      "source": "/toolkit/(.*)",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
+      ]
+    }
+  ]
+}

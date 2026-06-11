@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>The Build Plan · builder (team only)</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='1' y='1' width='22' height='22' rx='4' fill='%231E1E1E'/%3E%3Cpath d='M7 8h10M7 12h7' stroke='%23FFFCF7' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M7 16h4' stroke='%23FF4F14' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="toolkit.css">
+<style>
+body{--page:#1E1E1E;--page-d:#1E1E1E}
+.rec{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--cs-recording-600)}
+.rec .dot2{width:9px;height:9px;border-radius:50%;background:var(--cs-recording);animation:blink 1.6s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+.cols2{display:grid;grid-template-columns:minmax(300px,5fr) minmax(380px,7fr);gap:28px;margin-top:34px;align-items:start}
+@media(max-width:900px){.cols2{grid-template-columns:1fr}}
+.intake{background:var(--cs-notebook);border:2px solid var(--cs-static);border-radius:4px;padding:22px 24px;box-shadow:4px 4px 0 var(--cs-static)}
+.intake .qt2{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--cs-static-60);margin:16px 0 4px}
+.intake .qt2:first-child{margin-top:0}
+.intake textarea{min-height:54px;font-size:15.5px}
+.intake input[type=text]{font-size:15.5px}
+.opts{display:flex;flex-direction:column;gap:6px;margin-top:6px}
+.opt{display:flex;gap:10px;align-items:flex-start;font-size:14px;line-height:1.45;cursor:pointer;border:1.5px solid var(--cs-static-30);border-radius:4px;padding:8px 12px;background:var(--cs-notebook)}
+.opt:hover{border-color:var(--cs-static)}
+.opt.on{border:2px solid var(--cs-static);background:var(--cs-cellotape);padding:7px 11px}
+.opt .rd{flex:none;width:14px;height:14px;border:2px solid var(--cs-static);border-radius:50%;margin-top:3px;background:var(--cs-notebook)}
+.opt.on .rd{background:var(--cs-recording)}
+.plan{background:var(--cs-notebook);border:2px solid var(--cs-static);border-radius:4px;box-shadow:4px 4px 0 var(--cs-static);padding:28px 32px}
+.plan .subj{font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;font-weight:700;color:var(--cs-static-60);padding-bottom:14px;border-bottom:1.5px solid var(--cs-static-10);margin-bottom:18px}
+.plan .subj b{color:var(--cs-static)}
+.plan p{font-size:15.5px;line-height:1.6;margin-bottom:14px;max-width:none}
+.plan .ph2{font-family:var(--font-mono);font-size:11px;letter-spacing:var(--tracking-caps);text-transform:uppercase;font-weight:700;color:var(--cs-recording-600);margin:22px 0 8px}
+.plan .stp{display:flex;gap:10px;margin-bottom:12px;font-size:15.5px;line-height:1.55}
+.plan .stp .ar{flex:none;color:var(--cs-recording-600);font-weight:700}
+.plan .how{display:block;font-size:13.5px;color:var(--cs-static-60);margin-top:2px}
+.plan .how b{color:var(--cs-static);font-weight:600;font-family:var(--font-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;margin-right:6px}
+[contenteditable][data-ph]:empty:before{content:attr(data-ph);color:var(--cs-static-30);font-style:italic}
+[contenteditable]{outline:none;border-bottom:1.5px dashed var(--cs-static-30);transition:border-color .15s}
+[contenteditable]:hover{border-color:var(--cs-recording)}
+[contenteditable]:focus{border-bottom:1.5px solid var(--cs-recording);background:color-mix(in srgb,var(--cs-cellotape) 50%,var(--cs-notebook))}
+.tok{color:var(--cs-recording-600);font-style:italic}
+.onething{background:var(--cs-cellotape);border:2px solid var(--cs-static);border-radius:4px;padding:14px 18px;font-family:var(--font-display);font-style:italic;font-weight:600;font-size:17px;letter-spacing:var(--tracking-display);margin:20px 0}
+.onething .l{font-family:var(--font-mono);font-style:normal;font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--cs-recording-600);display:block;margin-bottom:6px}
+.plan .sig{font-size:15.5px;margin-top:18px}
+.empty2{color:var(--cs-static-60);font-size:15.5px;padding:30px 0;text-align:center;font-family:var(--font-display);font-style:italic;font-weight:600;font-size:18px}
+.gateline{margin-top:18px;font-size:14px;color:var(--cs-static-60);background:var(--cs-cellotape);border:1.5px solid var(--cs-static);border-radius:4px;padding:10px 16px;max-width:760px}
+.gateline b{color:var(--cs-static)}
+@media print{.tk-nav,.bar,.intake,.actions,.gateline,.kicker-row{display:none!important}.cols2{display:block}.plan{box-shadow:none;border:none;padding:0}}
+</style>
+</head>
+<body>
+<div class="bar" style="background:var(--cs-static)"></div>
+<nav class="tk-nav"><div class="tk-in">
+  <a class="tk-home" href="index.html"><svg class="lg" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><rect x="1.25" y="1.25" width="21.5" height="21.5" rx="3.5" fill="#0061FF" stroke="#1E1E1E" stroke-width="1.5"></rect><path d="M7 8h10M7 12h10M7 16h4.5" fill="none" stroke="#FFFCF7" stroke-width="2" stroke-linecap="round"></path><path d="M14.5 16.2l1.6 1.6 2.9-2.9" fill="none" stroke="#FF4F14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Summit Toolkit</a>
+  <div class="tk-links"><a href="pulse.html">The Pulse</a><span class="rec"><span class="dot2"></span>Team only</span></div>
+</div></nav>
+<div class="wrap">
+
+  <div class="kicker-row">
+    <div class="kicker">Build A Beloved Membership <b>·</b> cohort</div>
+    <div class="tag">The Build Plan · builder</div>
+  </div>
+
+  <h1>The Build Plan</h1>
+  <div class="sub">Live-buyer bonus, built by hand. Paste the intake, the skeleton assembles, Jay edits the WHAT lines and writes the one thing. Under ten minutes.</div>
+  <div class="gateline"><b>The gate:</b> Form 3 closes the moment the Day 2 broadcast ends. Buyer's inbox within <b>72 hours</b> of purchase. Kickoff is Friday July 3, 1pm ET.</div>
+
+  <div class="cols2">
+    <div class="intake">
+      <div class="qt2">Q1 · Name</div><input type="text" id="q1">
+      <div class="qt2">Q2 · Best email</div><input type="text" id="q2" inputmode="email">
+      <div class="qt2">Q3 · Where are you right now?</div>
+      <div class="opts" id="q3">
+        <div class="opt" data-a="A"><span class="rd"></span><span>I have an audience but no membership yet</span></div>
+        <div class="opt" data-a="B"><span class="rd"></span><span>I launched a membership in the last year — retention's shaky</span></div>
+        <div class="opt" data-a="C"><span class="rd"></span><span>I'm running a membership that works — I want it to scale without more of me</span></div>
+        <div class="opt" data-a="D"><span class="rd"></span><span>I run courses and I'm pivoting to a membership</span></div>
+      </div>
+      <div class="qt2">Q4 · The membership they're building (their words)</div><textarea id="q4"></textarea>
+      <div class="qt2">Q5 · #1 goal for the first 30 days</div><textarea id="q5"></textarea>
+      <div class="qt2">Q6 · The one thing most in the way</div>
+      <div class="opts" id="q6">
+        <div class="opt" data-c="Time"><span class="rd"></span><span>Time</span></div>
+        <div class="opt" data-c="Tech / platform"><span class="rd"></span><span>Tech / platform</span></div>
+        <div class="opt" data-c="Audience clarity"><span class="rd"></span><span>Audience clarity (do they even want this)</span></div>
+        <div class="opt" data-c="Pricing"><span class="rd"></span><span>Pricing</span></div>
+        <div class="opt" data-c="Confidence / authority"><span class="rd"></span><span>Confidence / authority</span></div>
+      </div>
+      <div class="qt2">Q7 · Audience size</div><input type="text" id="q7">
+      <div class="qt2">Q8 · Anything else (optional)</div><textarea id="q8"></textarea>
+      <div class="actions" style="margin-top:22px">
+        <button class="btn ghost" id="resetBtn">Clear intake</button>
+      </div>
+    </div>
+
+    <div>
+      <div class="plan" id="plan">
+        <div class="empty2" id="planEmpty">Pick Q3 and the skeleton assembles here.</div>
+        <div id="planBody" style="display:none">
+          <div class="subj">Subject: <b><span id="pName">Name</span>, your Build Plan</b></div>
+          <p><span id="pName2">Name</span>,</p>
+          <p>You bought during the live broadcast, so this one is built for you by hand. Your free Roadmap tells you what to do across your first 90 days. This shows you how. Every step below is wired to the exact session in the cohort that teaches it.</p>
+          <div class="ph2">Where you are</div>
+          <p contenteditable="true" id="pWhere" data-ph="Two sentences in their words: concept, stage, goal."></p>
+          <p>Your biggest constraint right now is <b id="pCon">…</b>. Here's the honest version: <span id="pConLine">…</span></p>
+          <div id="pPhases"></div>
+          <div class="onething"><span class="l">The one thing</span><span contenteditable="true" id="pOne" data-ph="Jay's single closing priority for this buyer. One line."></span></div>
+          <p>Every how above lives inside the cohort you just joined. Kickoff is <b>Friday July 3, 1pm ET</b>. Bring your Days 1–30 section. That's where we start.</p>
+          <p class="sig">— Jay</p>
+        </div>
+      </div>
+      <div class="actions">
+        <button class="btn" id="copyBtn">Copy as email</button>
+        <button class="btn ghost" onclick="window.print()">Print</button>
+        <span class="hint">WHAT lines and dotted fields are editable. Click and type.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot"><span>A Creator Science event · creatorscience.com</span><img src="cs-seal.png" alt="Creator Science"><span>team only · do not share this link</span></div>
+</div>
+
+<script>
+/* ---- the HOW inventory, by archetype (deck-verified) ---- */
+const PLANS={
+A:{phases:[
+ {n:"Days 1–30 · Concept",steps:[
+  {w:'Lock the Promise for <span class="tok">{their concept}</span>.',h:"Kickoff + Week 1 Concept-Cracking Worksheet, with live feedback Thursday."},
+  {w:'Run the five-question survey to <span class="tok">{their audience}</span>.',h:"The survey play is taught Week 2; the copy is in the Day 2 materials."}]},
+ {n:"Days 31–60 · Pre-launch",steps:[
+  {w:"Design the smallest viable room.",h:"Week 2: smallest viable room + waitlist mechanics."},
+  {w:"Set the founding price and the cap.",h:'Thursday working session for the <span class="tok">{constraint}</span> call.'}]},
+ {n:"Days 61–90 · Launch",steps:[
+  {w:"Run the founding-member launch.",h:"Week 3: founding launch."},
+  {w:"Onboard the first cohort with a real first-week map.",h:"Week 4: first 30-day onboarding design. Lab Basic carries months 4+."}]}]},
+B:{phases:[
+ {n:"Days 1–30 · Diagnose",steps:[
+  {w:'Re-test the Promise of <span class="tok">{their membership}</span> against what month-one members actually got.',h:"Kickoff + Week 1 (re-crack the Promise). MemberBot for the category-vs-promise check."},
+  {w:"Pull the churn data.",h:"Thursday working session: bring the churn data."}]},
+ {n:"Days 31–60 · Rebuild",steps:[
+  {w:"Fix the weakest mechanic.",h:"Week 4 sessions (the weakest-mechanic fix), via recordings if needed."},
+  {w:"Cut the bottom half of what you ship.",h:"Week 4 (what to stop shipping) + Week 2 for the structure rebuild."}]},
+ {n:"Days 61–90 · Re-found",steps:[
+  {w:"Re-onboard existing members like a relaunch.",h:"Week 3: re-onboarding is a relaunch."},
+  {w:"Set a founder cadence you can keep.",h:"Lab Basic for the comparison months."}]}]},
+C:{phases:[
+ {n:"Days 1–30 · Audit the load",steps:[
+  {w:'Map every hour <span class="tok">{their membership}</span> takes you in a week.',h:"Week 4: the stop-shipping list."},
+  {w:"Mark what only you can do. Everything else is a design problem.",h:"The Premium operator subspace is the honest fit here."}]},
+ {n:"Days 31–60 · Delegate to design",steps:[
+  {w:"Hand one ritual to members.",h:"Week 2: design constraints + structure."},
+  {w:"Document the mechanics so they run without you.",h:"Chad's member-led-chapter model (Day 2 session recording)."}]},
+ {n:"Days 61–90 · Compound",steps:[
+  {w:"Shift hours from production to presence.",h:"Week 4: the year-two identity frame."},
+  {w:"Design the year-two renewal.",h:"The Lab Standard conversation."}]}]},
+D:{phases:[
+ {n:"Days 1–30 · Bridge plan",steps:[
+  {w:"Write the recurring Promise.",h:"Kickoff + Week 1 (price for staying, not the drop)."},
+  {w:"Decide which courses become benefits inside the room.",h:"Thursday working session: the keep/cut list."}]},
+ {n:"Days 31–60 · The room becomes the front door",steps:[
+  {w:"Build the smallest viable room.",h:"Week 2: courses as benefits inside the room."},
+  {w:"Invite past buyers as founding members.",h:"Week 2: the founding cohort from your buyer list."}]},
+ {n:"Days 61–90 · First renewal cycle",steps:[
+  {w:"Ship the month-three checkpoint.",h:"Week 3 launch + Week 4 retention."},
+  {w:"Sunset or fold each course deliberately.",h:"Chad's session recording (the same pivot)."}]}]}
+};
+const CONS={
+"Time":"Two live hours a week, async by default, recordings forever. Built around busy.",
+"Tech / platform":"Week 1 makes the platform call with you; MemberBot answers setup questions 24/7.",
+"Audience clarity":"The five-question survey (Week 2) settles whether they want it, before you build.",
+"Pricing":"Week 1 covers price-for-renewal; bring your number to the Thursday session.",
+"Confidence / authority":"Authority is clarity on what you deliver. That's exactly what Week 1 locks."};
+
+const BKEY="ms_buildplan";
+const D2=()=>{try{return JSON.parse(localStorage.getItem(BKEY))||{}}catch(e){return{}}};
+const save=(k,v)=>{const d=D2();d[k]=v;localStorage.setItem(BKEY,JSON.stringify(d))};
+const $=id=>document.getElementById(id);
+
+function render(){
+  const d=D2();
+  $("planEmpty").style.display=d.q3?"none":"";
+  $("planBody").style.display=d.q3?"":"none";
+  if(!d.q3)return;
+  const name=(d.q1||"Name").trim().split(/\s+/)[0];
+  $("pName").textContent=name;$("pName2").textContent=name;
+  /* where-you-are draft from Q4/Q5, only if Jay hasn't edited it */
+  if(!d.whereEdited){
+    const draft=[(d.q4||"").trim(),(d.q5||"").trim()?("Your 30-day goal is "+(d.q5||"").trim().replace(/\.$/,"")+"."):""].filter(Boolean).join(" ");
+    $("pWhere").textContent=draft;
+  }
+  $("pCon").textContent=(d.q6||"…");
+  $("pConLine").textContent=CONS[d.q6]||"…";
+  /* phases, preserving Jay's per-combo edits */
+  const edits=(d.edits||{})[d.q3]||{};
+  $("pPhases").innerHTML=PLANS[d.q3].phases.map((p,pi)=>
+    '<div class="ph2">'+p.n+'</div>'+p.steps.map((s,si)=>{
+      const k=pi+"_"+si;
+      return '<div class="stp"><span class="ar">→</span><span><span contenteditable="true" class="wline" data-k="'+k+'">'+(edits[k]||s.w)+'</span><span class="how"><b>How</b>'+s.h+'</span></span></div>';
+    }).join("")).join("");
+  document.querySelectorAll(".wline").forEach(el=>{
+    el.addEventListener("input",()=>{
+      const d2=D2();d2.edits=d2.edits||{};d2.edits[d2.q3]=d2.edits[d2.q3]||{};
+      d2.edits[d2.q3][el.dataset.k]=el.innerHTML;
+      localStorage.setItem(BKEY,JSON.stringify(d2));
+    });
+  });
+}
+/* intake wiring */
+[["q1","q1"],["q2","q2"],["q4","q4"],["q5","q5"],["q7","q7"],["q8","q8"]].forEach(([id,k])=>{
+  $(id).addEventListener("input",e=>{save(k,e.target.value);render()});
+});
+$("q3").addEventListener("click",e=>{
+  const o=e.target.closest(".opt");if(!o)return;
+  document.querySelectorAll("#q3 .opt").forEach(x=>x.classList.toggle("on",x===o));
+  save("q3",o.dataset.a);render();
+});
+$("q6").addEventListener("click",e=>{
+  const o=e.target.closest(".opt");if(!o)return;
+  document.querySelectorAll("#q6 .opt").forEach(x=>x.classList.toggle("on",x===o));
+  save("q6",o.dataset.c);render();
+});
+$("pWhere").addEventListener("input",()=>{save("whereEdited",true);save("where",$("pWhere").textContent)});
+$("pOne").addEventListener("input",()=>save("one",$("pOne").textContent));
+$("resetBtn").addEventListener("click",()=>{localStorage.removeItem(BKEY);location.reload()});
+/* copy as plain-text email */
+$("copyBtn").addEventListener("click",()=>{
+  const d=D2();if(!d.q3)return;
+  const name=(d.q1||"Name").trim().split(/\s+/)[0];
+  const strip=h=>{const t=document.createElement("div");t.innerHTML=h;return t.textContent};
+  const edits=(d.edits||{})[d.q3]||{};
+  const lines=["Subject: "+name+", your Build Plan","",name+",","",
+   "You bought during the live broadcast, so this one is built for you by hand. Your free Roadmap tells you what to do across your first 90 days. This shows you how. Every step below is wired to the exact session in the cohort that teaches it.","",
+   "WHERE YOU ARE",$("pWhere").textContent.trim(),
+   "Your biggest constraint right now is "+(d.q6||"")+". Here's the honest version: "+(CONS[d.q6]||""),""];
+  PLANS[d.q3].phases.forEach((p,pi)=>{
+    lines.push(p.n.toUpperCase());
+    p.steps.forEach((s,si)=>{lines.push("-> "+strip(edits[pi+"_"+si]||s.w)+"  ·  How: "+strip(s.h))});
+    lines.push("");
+  });
+  lines.push("THE ONE THING",($("pOne").textContent.trim()||"{write the one thing}"),"",
+   "Every how above lives inside the cohort you just joined. Kickoff is Friday July 3, 1pm ET. Bring your Days 1-30 section. That's where we start.","","— Jay");
+  navigator.clipboard.writeText(lines.join("\n")).then(()=>{
+    $("copyBtn").textContent="Copied";setTimeout(()=>$("copyBtn").textContent="Copy as email",1400);
+  });
+});
+/* restore */
+(function(){
+  const d=D2();
+  [["q1","q1"],["q2","q2"],["q4","q4"],["q5","q5"],["q7","q7"],["q8","q8"]].forEach(([id,k])=>{if(d[k])$(id).value=d[k]});
+  if(d.q3)document.querySelectorAll("#q3 .opt").forEach(x=>x.classList.toggle("on",x.dataset.a===d.q3));
+  if(d.q6)document.querySelectorAll("#q6 .opt").forEach(x=>x.classList.toggle("on",x.dataset.c===d.q6));
+  render();
+  if(d.whereEdited&&d.where)$("pWhere").textContent=d.where;
+  if(d.one)$("pOne").textContent=d.one;
+})();
+</script>
+</body>
+</html>

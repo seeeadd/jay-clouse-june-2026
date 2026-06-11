@@ -8,7 +8,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='1' y='1' width='22' height='22' rx='4' fill='%230061FF'/%3E%3Cpath d='M7 8h10M7 12h10M7 16h4.5' fill='none' stroke='%23FFFCF7' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M14.5 16.2l1.6 1.6 2.9-2.9' fill='none' stroke='%23FF4F14' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="toolkit.css">
 </head>
-<body>
+<body data-theme="diag">
 <div class="bar"></div>
 <nav class="tk-nav"><div class="tk-in">
   <a class="tk-home" href="index.html"><svg class="lg" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><rect x="1.25" y="1.25" width="21.5" height="21.5" rx="3.5" fill="#0061FF" stroke="#1E1E1E" stroke-width="1.5"></rect><path d="M7 8h10M7 12h10M7 16h4.5" fill="none" stroke="#FFFCF7" stroke-width="2" stroke-linecap="round"></path><path d="M14.5 16.2l1.6 1.6 2.9-2.9" fill="none" stroke="#FF4F14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Summit Toolkit</a>
@@ -32,11 +32,7 @@
   <div class="sub">Six mechanics. Score yourself 1–5. Be <span class="annotate">honest</span>, especially on the one that feels embarrassing.</div>
   <div class="key"><b>Score key:</b> 1 = doesn't exist · 3 = exists but leaks · 5 = working and compounding</div>
 
-  <div class="steps" style="margin-top:24px">
-    <div class="step"><div class="n">STEP 01</div><div class="t">Score all six</div><p>Tap a number on each row.</p></div>
-    <div class="step"><div class="n">STEP 02</div><div class="t">See the leak</div><p>Your weakest mechanic surfaces below.</p></div>
-    <div class="step"><div class="n">STEP 03</div><div class="t">Log it</div><p>One question on the form, 30 seconds. That's input #2.</p></div>
-  </div>
+  <div id="toolBody">
 
   <div id="mechs" style="margin-top:14px">
     <div class="mrow" data-m="Promise">
@@ -80,20 +76,21 @@
 
   <div class="callout" id="callout" style="display:none">
     <div class="big">Your weakest mechanic: <span id="weakName"></span></div>
-    <div class="feed">This flows into your 30/60/90 roadmap and gets flagged on the Retention Checklist. Log it on the form and the personalized synthesis plugs it straight into your plan.</div>
+    <div class="feed">This flows into your 30/60/90 and gets flagged on the Retention Checklist. Log it and your roadmap starts from the leak.</div>
   </div>
 
   <div class="sec-h"><span class="no">2.1</span> Notes from Day 2</div>
   <textarea id="notes"></textarea>
 
   <div class="actions">
-    <a class="btn" id="logBtn" href="https://membershipsummit.com/diagnostic" target="_blank" rel="noopener">Log it (30 seconds)</a>
+    <a class="btn" id="logBtn" href="#">Log input #2</a>
     <button class="btn ghost" id="copyBtn">Copy my answer</button>
     <label class="chkl"><input type="checkbox" id="logged"><span class="bx"></span>I logged it</label>
   </div>
-  <p class="hint" style="margin-top:14px">One question on the form: your weakest mechanic. The roadmap synthesis reads the form, not this page.</p>
+  <p class="hint" style="margin-top:14px">One tap sends me your weakest mechanic. The second half of your roadmap.</p>
 
   <div class="next">Next: <a href="pricing-worksheet.html">The Pricing Worksheet · Day 2</a></div>
+  </div><!-- /toolBody -->
 
   <div class="foot"><span>A Creator Science event · creatorscience.com</span><img src="cs-seal.png" alt="Creator Science"><span>membershipsummit.com</span></div>
   <div class="privacy" id="privacy">Your answers live in this browser only. Nothing leaves this page until you log the form yourself.</div>
@@ -108,13 +105,11 @@ const FORM=(window.MS&&MS.FORM2)||{base:"",entries:{}};
 const MECHS=["Promise","Friend-Making","Onboarding","Masterminds","Design Constraints","Pricing"];
 const D=()=>store.all().diag||{};
 
-function weakestOf(scores,pick){
-  const ks=Object.keys(scores);if(!ks.length)return{weak:null,ties:[]};
-  const min=Math.min(...ks.map(k=>scores[k]));
-  const ties=ks.filter(k=>scores[k]===min);
-  if(ties.length===1)return{weak:ties[0],ties:[]};
-  if(pick&&ties.includes(pick))return{weak:pick,ties};
-  return{weak:null,ties};
+function weakestOf(scores){
+  /* deterministic: needs all six; ties resolve to the lowest-numbered mechanic */
+  if(MECHS.some(m=>!scores[m]))return null;
+  const min=Math.min(...MECHS.map(m=>scores[m]));
+  return MECHS.find(m=>scores[m]===min);
 }
 function paint(){
   const d=D(),scores=d.scores||{};
@@ -122,19 +117,13 @@ function paint(){
   /* bars */
   const chart=document.getElementById("chart");
   chart.style.display=n?"block":"none";
-  const{weak,ties}=weakestOf(scores,d.pick);
+  const weak=weakestOf(scores);
   if(n){
     const bars=document.getElementById("bars");
     bars.innerHTML=MECHS.filter(m=>scores[m]).map(m=>
       '<div class="brow'+((weak===m)?" weak":"")+'"><div class="bname">'+m+'</div><div class="btrack"><div class="bfill" data-w="'+(scores[m]/5*100)+'"></div></div><div class="bval">'+scores[m]+'</div></div>').join("");
     requestAnimationFrame(()=>bars.querySelectorAll(".bfill").forEach(b=>b.style.width=b.dataset.w+"%"));
   }
-  /* tie chips */
-  const tie=document.getElementById("tie");
-  if(ties.length>1&&!weak&&n>=6){
-    tie.style.display="";
-    document.getElementById("tieChips").innerHTML=ties.map(t=>'<button class="chip'+(d.pick===t?' on':'')+'" data-t="'+t+'">'+t+'</button>').join("");
-  }else tie.style.display="none";
   /* callout */
   const co=document.getElementById("callout");
   co.style.display=weak?"":"none";
@@ -150,11 +139,6 @@ document.getElementById("mechs").addEventListener("click",e=>{
   row.querySelectorAll(".sc").forEach(x=>x.classList.toggle("on",x===b));
   const d=D(),scores=Object.assign({},d.scores);scores[m]=+b.textContent;
   store.set("diag",{scores});paint();
-});
-/* tie pick */
-document.getElementById("tieChips").addEventListener("click",e=>{
-  const b=e.target.closest("button");if(!b)return;
-  store.set("diag",{pick:b.dataset.t});paint();
 });
 /* notes + logged + copy */
 document.getElementById("notes").addEventListener("input",e=>store.set("diag",{notes:e.target.value}));
@@ -184,6 +168,7 @@ document.getElementById("copyBtn").addEventListener("click",()=>{
   document.getElementById("logged").checked=!!d.logged;
   paint();
 })();
+mountDrip("diag","toolBody","The Day 2 teaching comes first. Score yourself right after you\u2019ve heard what the six mechanics actually are.");
 </script>
 </body>
 </html>

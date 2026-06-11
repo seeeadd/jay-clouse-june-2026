@@ -8,7 +8,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='1' y='1' width='22' height='22' rx='4' fill='%230061FF'/%3E%3Cpath d='M7 8h10M7 12h10M7 16h4.5' fill='none' stroke='%23FFFCF7' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M14.5 16.2l1.6 1.6 2.9-2.9' fill='none' stroke='%23FF4F14' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="toolkit.css">
 </head>
-<body>
+<body data-theme="pricing">
 <div class="bar"></div>
 <nav class="tk-nav"><div class="tk-in">
   <a class="tk-home" href="index.html"><svg class="lg" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><rect x="1.25" y="1.25" width="21.5" height="21.5" rx="3.5" fill="#0061FF" stroke="#1E1E1E" stroke-width="1.5"></rect><path d="M7 8h10M7 12h10M7 16h4.5" fill="none" stroke="#FFFCF7" stroke-width="2" stroke-linecap="round"></path><path d="M14.5 16.2l1.6 1.6 2.9-2.9" fill="none" stroke="#FF4F14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Summit Toolkit</a>
@@ -31,6 +31,7 @@
   <div class="h1row"><h1>The Pricing Worksheet</h1><span class="picon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.6 2.6A2 2 0 0 0 11.2 2H4a2 2 0 0 0-2 2v7.2a2 2 0 0 0 .6 1.4l8.7 8.7a2.4 2.4 0 0 0 3.4 0l6.6-6.6a2.4 2.4 0 0 0 0-3.4z"></path><circle cx="7.5" cy="7.5" r="1.4"></circle></svg></span></div>
   <div class="sub">Price for <span class="annotate">renewal</span>, not for the launch spike.</div>
 
+  <div id="toolBody">
   <div class="frame taped">"Recurring revenue requires recurring value." (Me, to myself, a lot.) The price isn't what someone pays to join. It's what they re-decide, every single month, is still worth it.</div>
   <div class="base" id="base">From your Lab Audit: <b id="baseAud"></b> reachable · last month <b id="baseRev"></b></div>
 
@@ -77,9 +78,10 @@
   <div class="actions">
     <button class="btn ghost" onclick="window.print()">Print this sheet</button>
   </div>
-  <p class="hint" style="margin-top:14px">Your pricing answers feed the Day 3 work. Bring this page tomorrow. Inputs #1 and #2 live at membershipsummit.com/lab-audit and /diagnostic.</p>
+  <p class="hint" style="margin-top:14px">Your pricing answers feed the Day 3 work. Bring this page tomorrow.</p>
 
   <div class="next">Next: <a href="roadmap.html">Your 30/60/90 Roadmap</a></div>
+  </div><!-- /toolBody -->
 
   <div class="foot"><span>A Creator Science event · creatorscience.com</span><img src="cs-seal.png" alt="Creator Science"><span>membershipsummit.com</span></div>
   <div class="privacy" id="privacy">Your answers live in this browser only.</div>
@@ -128,6 +130,7 @@ document.getElementById("renew").addEventListener("click",e=>{
   }
   math();paintNav();
 })();
+mountDrip("pricing","toolBody","Pricing lands after the Day 2 teaching. The math only makes sense once you\u2019ve heard it.");
 </script>
 </body>
 </html>
