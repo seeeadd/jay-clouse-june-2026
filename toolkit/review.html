@@ -28,7 +28,7 @@
 <nav class="tk-nav"><div class="tk-in">
   <a class="tk-home" href="index.html"><svg class="lg" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><rect x="1.25" y="1.25" width="21.5" height="21.5" rx="3.5" fill="#0061FF" stroke="#1E1E1E" stroke-width="1.5"></rect><path d="M7 8h10M7 12h10M7 16h4.5" fill="none" stroke="#FFFCF7" stroke-width="2" stroke-linecap="round"></path><path d="M14.5 16.2l1.6 1.6 2.9-2.9" fill="none" stroke="#FF4F14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Summit Toolkit</a>
   <div class="tk-links">
-    <a href="lab-audit.html" data-tool="audit"><span class="dot"></span>Lab Audit</a>
+    <a href="lab-audit.html" data-tool="audit"><span class="dot"></span>Membership Audit</a>
     <a href="mechanics-diagnostic.html" data-tool="diag"><span class="dot"></span>Diagnostic</a>
     <a href="pricing-worksheet.html" data-tool="pricing"><span class="dot"></span>Pricing</a>
     <a href="roadmap.html" data-tool="roadmap"><span class="dot"></span>30/60/90</a>
@@ -85,14 +85,14 @@ function build(){
   const s=store.all(),a=s.audit||{},d=s.diag||{},p=s.pricing||{},r=s.roadmap||{},c=s.retention||{};
   const sections=[];/* [header, rows[[k,v]], emptyMsg] */
   sections.push(["0 · Who",[["Name",s.name],["Email",s.email],["Roadmap page",ARCH(a.stage,a.sells,a.months)]],null]);
-  sections.push(["1 · The Lab Audit · input #1"+(a.logged?" · logged":""),[
+  sections.push(["1 · The Membership Audit · input #1"+(a.logged?" · logged":""),[
     ["Where you are",a.stage],["Running for",a.months],["Audience size",a.audience],["Currently sells",a.sells],
     ["Last month's revenue",a.revenue],["Biggest blocker",a.blocker],["Live audit wheel",a.wheel?"Yes, spin me in":""],["Notes from Day 1",a.notes]
-  ],'Nothing here yet. Open <a href="lab-audit.html">the Lab Audit</a>.']);
+  ],'Nothing here yet. Open <a href="lab-audit.html">the Membership Audit</a>.']);
   const sc=d.scores||{};
   sections.push(["2 · The Mechanics Diagnostic · input #2"+(d.logged?" · logged":""),[
     ["Promise",sc["Promise"]],["Friend-Making",sc["Friend-Making"]],["Onboarding",sc["Onboarding"]],
-    ["Masterminds",sc["Masterminds"]],["Design Constraints",sc["Design Constraints"]],["Pricing",sc["Pricing"]],
+    ["Small Group Experiences",sc["Small Group Experiences"]],["Optionality",sc["Optionality"]],["Pricing",sc["Pricing"]],
     ["Weakest mechanic",d.weakest],["Notes from Day 2",d.notes]
   ],'Nothing here yet. Open <a href="mechanics-diagnostic.html">the Diagnostic</a>.']);
   const mrr=(num(p.members)&&num(p.price))?num(p.members)*num(p.price):0;

@@ -90,7 +90,7 @@
 <nav class="tk-nav"><div class="tk-in">
   <a class="tk-home" href="index.html"><svg class="lg" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><rect x="1.25" y="1.25" width="21.5" height="21.5" rx="3.5" fill="#0061FF" stroke="#1E1E1E" stroke-width="1.5"></rect><path d="M7 8h10M7 12h10M7 16h4.5" fill="none" stroke="#FFFCF7" stroke-width="2" stroke-linecap="round"></path><path d="M14.5 16.2l1.6 1.6 2.9-2.9" fill="none" stroke="#FF4F14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Summit Toolkit</a>
   <div class="tk-links">
-    <a href="lab-audit.html" data-tool="audit"><span class="dot"></span>Lab Audit</a>
+    <a href="lab-audit.html" data-tool="audit"><span class="dot"></span>Membership Audit</a>
     <a href="mechanics-diagnostic.html" data-tool="diag"><span class="dot"></span>Diagnostic</a>
     <a href="pricing-worksheet.html" data-tool="pricing"><span class="dot"></span>Pricing</a>
     <a href="roadmap.html" class="cur" data-tool="roadmap"><span class="dot"></span>30/60/90</a>
@@ -112,7 +112,7 @@
     <div style="display:flex;align-items:baseline;gap:14px;flex-wrap:wrap"><div style="font-family:var(--font-display);font-weight:600;font-size:24px;letter-spacing:var(--tracking-display)">Your roadmap assembles right here.</div><span id="gProg" style="font-family:var(--font-mono);font-weight:700;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--cs-recording-600);border:1.5px solid var(--cs-recording-600);border-radius:4px;padding:4px 9px">0 of 2 logged</span></div>
     <p class="hint" id="gMsg" style="margin-top:6px;max-width:none"></p>
     <div class="fr" style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;border-bottom:1.5px solid var(--cs-static-10)">
-      <b style="flex:1;min-width:170px">Input #1 · The Lab Audit</b>
+      <b style="flex:1;min-width:170px">Input #1 · The Membership Audit</b>
       <a class="btn ghost" id="g1go" href="lab-audit.html">Open it</a>
       <label class="chkl"><input type="checkbox" id="g1"><span class="bx"></span>I logged it</label>
     </div>
@@ -154,10 +154,10 @@
     <p class="goal"><b>Goal</b>A Promise so clear a stranger could read it and know what they'd become, and proof your audience actually wants it.</p>
     <ul class="rlist" data-ck="A1">
       <li><span class="bx"></span><span><b>Write your Promise in one sentence.</b> One verb, one outcome, a recurring frame. "A community for [niche]" is a category, not a promise. Rewrite it until it names what a member <em>becomes</em>, not what room they're in.</span></li>
-      <li><span class="bx"></span><span><b>Send the five-question survey to your audience this week.</b> What they want help with, what would make a room worth joining, what they've tried that didn't stick, what it's worth monthly, whether they'd take a five-minute call. Even three replies beats three months of guessing.</span></li>
+      <li><span class="bx"></span><span><b>Send the three-question survey to your audience this week.</b> What they want help with, what they've tried that didn't stick, whether they'd take a five-minute call. Even three replies beats three months of guessing.</span></li>
       <li><span class="bx"></span><span><b>Book three of those five-minute calls.</b> Listen for the exact words people use for their problem. Those words become your page later.</span></li>
       <li><span class="bx"></span><span><b>Decide what this is NOT.</b> Not a course, not a content vault. Shared, not parallel. Members do things together or it isn't a membership.</span></li>
-      <li><span class="bx"></span><span><b>Choose your smallest viable room and cap it on purpose.</b> Belonging happens in rooms of eight to fifteen. Design for that, not for scale.</span></li>
+      <li><span class="bx"></span><span><b>Choose your smallest viable room and set that as your launch target.</b> Belonging happens in rooms of eight to fifteen. Design for that, not for scale.</span></li>
     </ul>
     <div class="chk2">
       <div class="mst"><b>Done when</b>You can say your Promise in one sentence and at least five people have told you, in their words, they'd pay for it.</div>
@@ -299,7 +299,7 @@
     <ul class="rlist" data-ck="D1">
       <li><span class="bx"></span><span><b>Write the recurring Promise.</b> What a member becomes over twelve months, not what they finish in a six-week course. Recurring revenue requires recurring value.</span></li>
       <li><span class="bx"></span><span><b>Map your assets.</b> Which courses become benefits inside the room, which get sunset. The room is the product. The courses are no longer the front door.</span></li>
-      <li><span class="bx"></span><span><b>Survey your buyer list with the five questions.</b> Your course buyers are the warmest waitlist you'll ever have. Treat them like one.</span></li>
+      <li><span class="bx"></span><span><b>Survey your buyer list with the three questions.</b> Your course buyers are the warmest waitlist you'll ever have. Treat them like one.</span></li>
       <li><span class="bx"></span><span><b>Price for staying, not the drop.</b> Launch-spike pricing is the course habit talking. <span class="iftarget">Sanity-check against your Pricing tool's <span class="rt"></span>.</span></span></li>
       <li><span class="bx"></span><span><b>Decide your bridge.</b> How the course revenue keeps running while you build the recurring engine, so you're not betting the business on month one.</span></li>
     </ul>
@@ -369,18 +369,19 @@ function gatePaint(){
   document.getElementById("g2go").style.display=d?"none":"";
   document.getElementById("gProg").textContent=((a?1:0)+(d?1:0))+" of 2 logged";
   document.getElementById("gMsg").textContent=!a&&!d
-    ?"Your 30/60/90 Roadmap assembles here the moment you log the Lab Audit and the Diagnostic. Two minutes each, then this opens on the spot."
-    :"One more input. Log the "+(a?"Diagnostic":"Lab Audit")+" and your roadmap builds itself right here.";
+    ?"Your 30/60/90 Roadmap assembles here the moment you log the Membership Audit and the Diagnostic. Two minutes each, then this opens on the spot."
+    :"One more input. Log the "+(a?"Diagnostic":"Membership Audit")+" and your roadmap builds itself right here.";
   if(both)snapPaint();
 }
 function snapPaint(){
   const s=store.all(),d=s.diag||{},p=s.pricing||{},rc=(s.retention||{}).checks||[];
   const num=v=>{const n=parseFloat(String(v||"").replace(/[^0-9.]/g,""));return isNaN(n)?0:n};
-  const mrr=num(p.members)*num(p.price);
+  const PM={Monthly:1,Quarterly:3,Biannually:6,Annually:12};
+  const mrr=num(p.members)*num(p.price)/(PM[p.period]||1);
   const on=document.querySelector(".panel.on");
   document.getElementById("sArch").textContent=on?on.dataset.p:"";
   document.getElementById("sWeak").textContent=d.weakest||"log the Diagnostic";
-  document.getElementById("sTarget").textContent=mrr>0?"$"+mrr.toLocaleString()+"/mo":"not set yet";
+  document.getElementById("sTarget").textContent=mrr>0?"$"+Math.round(mrr).toLocaleString()+"/mo":"not set yet";
   document.getElementById("sRet").textContent=rc.filter(Boolean).length+"/11";
 }
 document.getElementById("fold").addEventListener("click",()=>{
@@ -406,10 +407,11 @@ document.getElementById("tabs").addEventListener("click",e=>{
 function tokens(){
   const s=store.all(),d=s.diag||{},p=s.pricing||{};
   const num=v=>{const n=parseFloat(String(v||"").replace(/[^0-9.]/g,""));return isNaN(n)?0:n};
-  const mrr=num(p.members)*num(p.price);
+  const PM={Monthly:1,Quarterly:3,Biannually:6,Annually:12},months=PM[p.period]||1;
+  const price=num(p.price)/months; /* per-member price, normalized to monthly — not the MRR */
   document.querySelectorAll(".wk").forEach(el=>el.textContent=d.weakest||"your weakest mechanic");
   document.querySelectorAll(".iftarget").forEach(el=>{
-    if(mrr>0){el.style.display="";const rt=el.querySelector(".rt");if(rt)rt.textContent="$"+mrr.toLocaleString()+"/mo"}
+    if(price>0){el.style.display="";const rt=el.querySelector(".rt");if(rt)rt.textContent="$"+Math.round(price).toLocaleString()+"/mo"}
     else el.style.display="none";
   });
 }
@@ -428,11 +430,11 @@ p3:'<b>By day 90, count how many members know at least one other member by name.
 p1:'<b>Map a new member\u2019s first seven days before you open anything.</b> First action, first win, first person they meet. "Here\u2019s your login, welcome" is the most common way memberships quietly die.',
 p2:'<b>Build the onboarding as a real sequence, not a welcome post.</b> A map out of the sandbox. Every join runs the same first-week path, automatically, whether you\u2019re watching or not.',
 p3:'<b>At day 90, watch where new members go quiet in their first week.</b> That drop-off point is your onboarding leak. Fix the step right before it.'},
-"Masterminds":{
-p1:'<b>Plan one recurring small-group session, not just broadcasts.</b> Masterminds are where members do the work alongside each other. The becoming layer, not the knowing layer. Sketch the format now.',
+"Small Group Experiences":{
+p1:'<b>Plan one recurring small-group session, not just broadcasts.</b> Small Group Experiences are where members do the work alongside each other. The becoming layer, not the knowing layer. Sketch the format now.',
 p2:'<b>Run your first working session in week one or two and keep it on a fixed cadence.</b> Consistency beats polish. A session they can count on outweighs a better one they can\u2019t.',
 p3:'<b>By day 90, start handing one session to members to run.</b> The strongest memberships reach the point where members lead the room and you just show up. That\u2019s where it stops depending on you.'},
-"Design Constraints":{
+"Optionality":{
 p1:'<b>Pick your constraints on purpose.</b> Small room, capped size, one platform, a cadence you can hold for a year. Optionality with low effort beats an everything-membership you can\u2019t sustain.',
 p2:'<b>Cut the scope before you launch, not after.</b> List everything you\u2019re tempted to include and remove the bottom half. A membership is a resource, not a task, for the member and for you.',
 p3:'<b>At day 90, audit what you\u2019re shipping against what members actually use.</b> Kill the unused. The constraint that protects your energy is what lets the room survive year two.'},
@@ -445,8 +447,8 @@ const CALLOUTS={
 "Promise":'Your weakest mechanic is <b>Promise</b>. Everything else compounds on it. A strong room with a fuzzy promise still leaks members. Fix this first; the rest gets easier.',
 "Friend-Making":'Your weakest mechanic is <b>Friend-Making</b>. Members stay for each other, not for you. Until they\u2019re connected, every other improvement is renting retention you don\u2019t own.',
 "Onboarding":'Your weakest mechanic is <b>Onboarding</b>. The first seven days decide month six. A great room nobody can find their way into still churns.',
-"Masterminds":'Your weakest mechanic is <b>Masterminds</b>. Knowing is abundant; doing-together is scarce. This is the layer that makes a membership feel different from a content feed.',
-"Design Constraints":'Your weakest mechanic is <b>Design Constraints</b>. Without them you\u2019ll out-build your own capacity by month four. The constraint is what keeps you in the room for year two.',
+"Small Group Experiences":'Your weakest mechanic is <b>Small Group Experiences</b>. Knowing is abundant; doing-together is scarce. This is the layer that makes a membership feel different from a content feed.',
+"Optionality":'Your weakest mechanic is <b>Optionality</b>. Without them you\u2019ll out-build your own capacity by month four. The constraint is what keeps you in the room for year two.',
 "Pricing":'Your weakest mechanic is <b>Pricing</b>. Priced for the launch instead of the renewal, the math quietly stops working right when the room is finally good. Fix the number for month seven, not week one.'
 };
 const WKARCH={

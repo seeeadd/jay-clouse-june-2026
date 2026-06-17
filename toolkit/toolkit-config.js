@@ -12,11 +12,11 @@ window.MS = {
   CAPTURE: "page",
 
   /* Drip unlock — fixed ET timestamps (UTC here; shown to attendees in their local time).
-     Tools unlock forward and never re-lock. Lab Audit + 30/60/90 + One-Pager have no
+     Tools unlock forward and never re-lock. Membership Audit + 30/60/90 + One-Pager have no
      calendar lock (the 30/60/90 gates on the two inputs instead).
      Team preview: open any page with ?preview=1 once to bypass locks in that browser. */
   DRIP: {
-    enabled: false,   /* UNLOCKED for review/approval. Flip to true before Day 1 so the drip schedule below goes live. */
+    enabled: true,    /* LIVE: Diagnostic + Pricing open Wed Jun 24 4pm ET, Retention Thu Jun 25 3:15pm ET. Reviewers append ?review=1 (or ?preview=1) to bypass. */
     diag:      "2026-06-24T20:00:00Z",   /* Wed Jun 24 · 4:00pm ET, after the Day 2 teaching */
     pricing:   "2026-06-24T20:00:00Z",   /* Wed Jun 24 · 4:00pm ET */
     retention: "2026-06-25T19:15:00Z"    /* Thu Jun 25 · 3:15pm ET, after the Day 3 close */
@@ -28,7 +28,7 @@ window.MS = {
      "Summit Toolkit Responses" sheet as people type, and the privacy line updates. */
   SYNC_URL: "https://script.google.com/macros/s/AKfycbxBmBJjqXCDWP6U-488_XyEXZcBCgUkGGv0OXW0qXzy7WxESasdgYaIPeLxhF1fmwNZtg/exec",
 
-  /* Form 1 prefill (Lab Audit) — LEGACY, inert while CAPTURE is "page".
+  /* Form 1 prefill (Membership Audit) — LEGACY, inert while CAPTURE is "page".
      NOTE: Form 3, the Build Plan buyer intake, is deliberately NOT in this file.
      It stays a Google Form in the BUYER path (confirmation-email link), gated by
      its own accepting-responses toggle. Never link it from the toolkit. */

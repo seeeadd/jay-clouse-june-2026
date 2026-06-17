@@ -121,7 +121,7 @@
 <script>
 const CFG_KEY="ms_pulse_cfg";
 const cfg=()=>{try{return JSON.parse(localStorage.getItem(CFG_KEY))||{}}catch(e){return{}}};
-const MECH_ORDER=["Promise","Friend-Making","Onboarding","Masterminds","Design Constraints","Pricing"];
+const MECH_ORDER=["Promise","Friend-Making","Onboarding","Small Group Experiences","Optionality","Pricing"];
 const LIFE_ORDER=["No membership yet — considering one","Launched — struggling with retention","Sustainable — working on growth","Scaling — multi-tier or multi-cohort","Mature — looking at next-decade questions"];
 const $=id=>document.getElementById(id);
 const DEMO_MODE=new URLSearchParams(location.search).get("demo")==="1";
@@ -129,7 +129,7 @@ const mins=m=>new Date(Date.now()-m*60000).toISOString();
 const DEMO={ok:true,ts:new Date().toISOString(),wheelLock:"2026-06-25T16:00:00Z",wheelLocked:false,
   sync:{users:412,auditFilled:287,auditLogged:203,diagFilled:241,diagLogged:188,chaseCount:84},
   native:{auditSubmitted:203,diagSubmitted:188,wheelPool:61},
-  weakest:{"Onboarding":67,"Promise":54,"Friend-Making":41,"Masterminds":33,"Pricing":28,"Design Constraints":18},
+  weakest:{"Onboarding":67,"Promise":54,"Friend-Making":41,"Small Group Experiences":33,"Pricing":28,"Optionality":18},
   lifecycle:{"No membership yet — considering one":124,"Launched — struggling with retention":89,"Sustainable — working on growth":47,"Scaling — multi-tier or multi-cohort":21,"Mature — looking at next-decade questions":6},
   chase:[{name:"Maya",email:"maya@example.com"},{name:"Devon",email:"devon@example.com"},{name:"Priya",email:"priya@example.com"},{name:"Sam",email:""},{name:"Lena",email:"lena@example.com"}],
   recent:[{form:"Audit",name:"Maya",email:"maya@example.com",at:mins(3)},{form:"Diagnostic",name:"Devon",email:"devon@example.com",at:mins(11)},{form:"Audit",name:"Priya",email:"priya@example.com",at:mins(26)},{form:"Diagnostic",name:"Lena",email:"lena@example.com",at:mins(42)}]};

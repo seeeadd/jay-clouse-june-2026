@@ -13,7 +13,7 @@
 <nav class="tk-nav"><div class="tk-in">
   <a class="tk-home" href="index.html"><svg class="lg" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><rect x="1.25" y="1.25" width="21.5" height="21.5" rx="3.5" fill="#0061FF" stroke="#1E1E1E" stroke-width="1.5"></rect><path d="M7 8h10M7 12h10M7 16h4.5" fill="none" stroke="#FFFCF7" stroke-width="2" stroke-linecap="round"></path><path d="M14.5 16.2l1.6 1.6 2.9-2.9" fill="none" stroke="#FF4F14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Summit Toolkit</a>
   <div class="tk-links">
-    <a href="lab-audit.html" data-tool="audit"><span class="dot"></span>Lab Audit</a>
+    <a href="lab-audit.html" data-tool="audit"><span class="dot"></span>Membership Audit</a>
     <a href="mechanics-diagnostic.html" data-tool="diag"><span class="dot"></span>Diagnostic</a>
     <a href="pricing-worksheet.html" class="cur" data-tool="pricing"><span class="dot"></span>Pricing</a>
     <a href="roadmap.html" data-tool="roadmap"><span class="dot"></span>30/60/90</a>
@@ -33,7 +33,7 @@
 
   <div id="toolBody">
   <div class="frame taped">"Recurring revenue requires recurring value." (Me, to myself, a lot.) The price isn't what someone pays to join. It's what they re-decide, every single month, is still worth it.</div>
-  <div class="base" id="base">From your Lab Audit: <b id="baseAud"></b> reachable · last month <b id="baseRev"></b></div>
+  <div class="base" id="base">From your Membership Audit: <b id="baseAud"></b> reachable · last month <b id="baseRev"></b></div>
 
   <div style="margin-top:16px">
     <div class="q"><div class="qn">1</div><div class="qb">
@@ -50,7 +50,10 @@
 
     <div class="q"><div class="qn">3</div><div class="qb">
       <div class="qt">The recurring math</div>
-      <div class="qd"><input type="text" class="inline s" id="members" inputmode="numeric" placeholder="50"> members × $<input type="text" class="inline s" id="price" inputmode="numeric" placeholder="49">/month</div>
+      <div class="qd"><input type="text" class="inline s" id="members" inputmode="numeric" placeholder="50"> members × $<input type="text" class="inline s" id="price" inputmode="numeric" placeholder="49"> per <span id="perUnit">month</span></div>
+      <div class="rchips" id="period" style="margin-top:10px">
+        <button class="chip">Monthly</button><button class="chip">Quarterly</button><button class="chip">Biannually</button><button class="chip">Annually</button>
+      </div>
       <div class="math">
         <div class="row"><span class="lab">Predictable, every month</span><span class="out" id="mrr">$ ···</span></div>
         <div class="row"><span class="lab">Across a year</span><span class="out dim" id="arr">$ ···</span></div>
@@ -92,11 +95,15 @@
 <script src="shared.js"></script>
 <script>
 const num=v=>{const n=parseFloat(String(v||"").replace(/[^0-9.]/g,""));return isNaN(n)?0:n};
+const PM={Monthly:1,Quarterly:3,Biannually:6,Annually:12};
+const PUNIT={Monthly:"month",Quarterly:"quarter",Biannually:"6 months",Annually:"year"};
 function math(){
   const p=store.all().pricing||{};
-  const m=num(p.members),pr=num(p.price);
-  document.getElementById("mrr").innerHTML=(m&&pr)?"$"+(m*pr).toLocaleString()+" <span>/month, predictable</span>":"$ ···";
-  document.getElementById("arr").innerHTML=(m&&pr)?"$"+(m*pr*12).toLocaleString()+" <span>/year</span>":"$ ···";
+  const m=num(p.members),pr=num(p.price),mo=PM[p.period]||1;
+  const monthly=(m&&pr)?m*pr/mo:0;
+  document.getElementById("perUnit").textContent=PUNIT[p.period]||"month";
+  document.getElementById("mrr").innerHTML=monthly?"$"+Math.round(monthly).toLocaleString()+" <span>/month, predictable</span>":"$ ···";
+  document.getElementById("arr").innerHTML=monthly?"$"+Math.round(monthly*12).toLocaleString()+" <span>/year</span>":"$ ···";
 }
 const FIELDS=["value","month9","members","price","launchNet","launchWeeks","startMo","startYr","tiers"];
 FIELDS.forEach(id=>{
@@ -117,12 +124,19 @@ document.getElementById("renew").addEventListener("click",e=>{
   const v=document.getElementById("verdict");v.style.display="block";v.textContent=VERDICT[b.textContent];
   paintNav();
 });
+/* billing period */
+document.getElementById("period").addEventListener("click",e=>{
+  const b=e.target.closest(".chip");if(!b)return;
+  document.querySelectorAll("#period .chip").forEach(x=>x.classList.toggle("on",x===b));
+  store.set("pricing",{period:b.textContent});math();paintNav();
+});
 /* restore */
 (function(){
   const s=store.all(),p=s.pricing||{},a=s.audit||{};
   FIELDS.forEach(id=>{if(p[id])document.getElementById(id).value=p[id]});
   if(p.renew){document.querySelectorAll("#renew .chip").forEach(x=>x.classList.toggle("on",x.textContent===p.renew));
     const v=document.getElementById("verdict");v.style.display="block";v.textContent=VERDICT[p.renew];}
+  if(p.period)document.querySelectorAll("#period .chip").forEach(x=>x.classList.toggle("on",x.textContent===p.period));
   if(a.audience||a.revenue){
     document.getElementById("base").style.display="block";
     document.getElementById("baseAud").textContent=a.audience||"···";

@@ -28,7 +28,7 @@ var CODE_FROM_NAME = "Jay Clouse · Membership Summit";
 
 var TABS = {
   Audit:      ["CID","Email","Name","Stage","Months","Audience","Sells","Revenue","Blocker","Wheel opt-in","Logged form","Notes","Updated","Link","Wants me to look at","Offer now","Tried (didn't work)","Promise"],
-  Diagnostic: ["CID","Email","Name","Promise","Friend-Making","Onboarding","Masterminds","Design Constraints","Pricing","Weakest","Logged form","Updated"],
+  Diagnostic: ["CID","Email","Name","Promise","Friend-Making","Onboarding","Small Group Experiences","Optionality","Pricing","Weakest","Logged form","Updated"],
   Pricing:    ["CID","Email","Name","Value sentence","Month 9","Members","Price","MRR","Launch net","Launch weeks","Renewal test","Start $/mo","Start $/yr","Tiers","Updated"],
   Roadmap:    ["CID","Email","Name","Archetype","Fields filled","Fields JSON","Updated"],
   Retention:  ["CID","Email","Name","Score /11","Checked items","Updated"],
@@ -50,7 +50,7 @@ function setup() {
     ["PULSE — live room snapshot (auto-updates)", ""],
     ["", ""],
     ["Toolkit users (any tool)", "=COUNTA(Audit!A2:A)+COUNTIF(Diagnostic!A2:A,\"<>\")-SUMPRODUCT(COUNTIF(Audit!A2:A,Diagnostic!A2:A))"],
-    ["Filled the Lab Audit", "=COUNTIF(Audit!D2:D,\"<>\")"],
+    ["Filled the Membership Audit", "=COUNTIF(Audit!D2:D,\"<>\")"],
     ["…and logged Form 1", "=COUNTIF(Audit!K2:K,TRUE)"],
     ["Filled the Diagnostic", "=COUNTIF(Diagnostic!J2:J,\"<>\")"],
     ["…and logged Form 2", "=COUNTIF(Diagnostic!K2:K,TRUE)"],
@@ -65,8 +65,8 @@ function setup() {
     ["Promise", "=COUNTIF(Diagnostic!J2:J,\"Promise\")"],
     ["Friend-Making", "=COUNTIF(Diagnostic!J2:J,\"Friend-Making\")"],
     ["Onboarding", "=COUNTIF(Diagnostic!J2:J,\"Onboarding\")"],
-    ["Masterminds", "=COUNTIF(Diagnostic!J2:J,\"Masterminds\")"],
-    ["Design Constraints", "=COUNTIF(Diagnostic!J2:J,\"Design Constraints\")"],
+    ["Small Group Experiences", "=COUNTIF(Diagnostic!J2:J,\"Small Group Experiences\")"],
+    ["Optionality", "=COUNTIF(Diagnostic!J2:J,\"Optionality\")"],
     ["Pricing", "=COUNTIF(Diagnostic!J2:J,\"Pricing\")"],
     ["", ""],
     ["WHERE THE ROOM IS — lifecycle", ""],
@@ -148,7 +148,7 @@ function syncState(d) {
   if ((dg.scores && Object.keys(dg.scores).length) || dg.weakest) {
     var sc = dg.scores || {};
     upsert("Diagnostic", d.cid, [d.cid, d.email || "", d.name || "", sc["Promise"] || "", sc["Friend-Making"] || "",
-      sc["Onboarding"] || "", sc["Masterminds"] || "", sc["Design Constraints"] || "", sc["Pricing"] || "",
+      sc["Onboarding"] || "", sc["Small Group Experiences"] || "", sc["Optionality"] || "", sc["Pricing"] || "",
       dg.weakest || "", !!dg.logged, ts]);
   }
 

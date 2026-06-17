@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<title>The Lab Audit · Membership Summit</title>
+<title>The Membership Audit · Membership Summit</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='1' y='1' width='22' height='22' rx='4' fill='%230061FF'/%3E%3Cpath d='M7 8h10M7 12h10M7 16h4.5' fill='none' stroke='%23FFFCF7' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M14.5 16.2l1.6 1.6 2.9-2.9' fill='none' stroke='%23FF4F14' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="toolkit.css">
 </head>
@@ -13,7 +13,7 @@
 <nav class="tk-nav"><div class="tk-in">
   <a class="tk-home" href="index.html"><svg class="lg" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><rect x="1.25" y="1.25" width="21.5" height="21.5" rx="3.5" fill="#0061FF" stroke="#1E1E1E" stroke-width="1.5"></rect><path d="M7 8h10M7 12h10M7 16h4.5" fill="none" stroke="#FFFCF7" stroke-width="2" stroke-linecap="round"></path><path d="M14.5 16.2l1.6 1.6 2.9-2.9" fill="none" stroke="#FF4F14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Summit Toolkit</a>
   <div class="tk-links">
-    <a href="lab-audit.html" class="cur" data-tool="audit"><span class="dot"></span>Lab Audit</a>
+    <a href="lab-audit.html" class="cur" data-tool="audit"><span class="dot"></span>Membership Audit</a>
     <a href="mechanics-diagnostic.html" data-tool="diag"><span class="dot"></span>Diagnostic</a>
     <a href="pricing-worksheet.html" data-tool="pricing"><span class="dot"></span>Pricing</a>
     <a href="roadmap.html" data-tool="roadmap"><span class="dot"></span>30/60/90</a>
@@ -28,7 +28,7 @@
     <div class="tag">Input #1 · Day 1</div>
   </div>
 
-  <div class="h1row"><h1>The Lab Audit</h1><span class="picon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"></rect><path d="M9 4.5V3.5A1.5 1.5 0 0 1 10.5 2h3A1.5 1.5 0 0 1 15 3.5v1"></path><path d="M9 12.5l2.2 2.2 4.3-4.4"></path></svg></span></div>
+  <div class="h1row"><h1>The Membership Audit</h1><span class="picon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"></rect><path d="M9 4.5V3.5A1.5 1.5 0 0 1 10.5 2h3A1.5 1.5 0 0 1 15 3.5v1"></path><path d="M9 12.5l2.2 2.2 4.3-4.4"></path></svg></span></div>
   <div class="sub">One page, two parts, <span class="annotate">ten minutes</span>.</div>
   <p class="intro">Where you actually are, not where the playbooks assume you are. This is input #1. Log it and you’re halfway to your 30/60/90 Roadmap.</p>
 
@@ -83,7 +83,7 @@
 
   <div class="wheel" id="wheel">
     <span class="bx"></span>
-    <p>Want a shot at one of the four live audits on Day 3? I pick live. Wheel spin, no pre-curation. Pool locks Thu 12pm ET. Works best if you've already got a membership running or a concept you've fully planned out. That's what makes a live audit useful.
+    <p>Want a shot at one of the four live audits on Day 3? I'll choose at random by spinning a wheel, live! Check this box before Thursday at 12pm ET for your chance. Works best if you've already got a membership running or a concept you've fully planned out. That's what makes a live audit useful.
     <span class="hint">Logging input #1 below is what enters you. The spin happens live on Day 3.</span></p>
   </div>
 
@@ -180,7 +180,7 @@ document.getElementById("logBtn").addEventListener("click",e=>{
 /* copy answers */
 document.getElementById("copyBtn").addEventListener("click",()=>{
   const a=A(),s=store.all();
-  const lines=["The Lab Audit · my answers",
+  const lines=["The Membership Audit · my answers",
    "First name: "+(s.name||""),
    "Where are you right now?: "+(a.stage||""),
    ...(a.stage&&a.stage.indexOf("No membership yet")!==0?["How long has it been running?: "+(a.months||"")]:[]),

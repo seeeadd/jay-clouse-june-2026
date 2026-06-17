@@ -13,7 +13,7 @@ if(REVIEW&&!localStorage.getItem(KEY)){
       sells:"A course and a paid newsletter",revenue:"$1\u20135K",
       blocker:"People join for the content and drift after month two. I can't tell what would make them stay.",
       wheel:true,logged:true,notes:""},
-    diag:{scores:{"Promise":3,"Friend-Making":3,"Onboarding":2,"Masterminds":4,"Design Constraints":4,"Pricing":3},weakest:"Onboarding",logged:true},
+    diag:{scores:{"Promise":3,"Friend-Making":3,"Onboarding":2,"Small Group Experiences":4,"Optionality":4,"Pricing":3},weakest:"Onboarding",logged:true},
     pricing:{value:"a working onboarding system and five real peers",month9:"A room that runs its own rituals",members:"50",price:"49",renew:"Not sure",startMo:"49",tiers:"1"},
     roadmap:{arch:"Recently Launched"},
     retention:{checks:[true,false,true,false,false,true,false,false,false,false,true]}
@@ -61,12 +61,10 @@ let ft;
 function flag() { const f = document.getElementById("saveflag"); if (!f) return; f.classList.add("on"); clearTimeout(ft); ft = setTimeout(() => f.classList.remove("on"), 1100) }
 
 /* archetype mapping. Reads the verbatim form strings, never display copy */
-const ARCH = (stage, sells, months) => {
+const ARCH = (stage) => {
   if (!stage) return null;
-  if (stage.indexOf("No membership yet") === 0) return /course/i.test(sells || "") ? "Pivoting From Courses" : "Just Starting";
+  if (stage.indexOf("No membership yet") === 0) return "Just Starting";
   if (stage.indexOf("Launched") === 0) return "Recently Launched";
-  /* sustainable-or-better but running under ~12 months still reads as Recently Launched */
-  if (/^(0\u20133|4\u20136|7\u201312)/.test(months || "")) return "Recently Launched";
   return "Scaling";
 };
 
