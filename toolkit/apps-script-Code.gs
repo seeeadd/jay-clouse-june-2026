@@ -27,7 +27,7 @@ var WHEEL_LOCK_ISO = "2026-06-25T16:00:00Z";      // Thu Jun 25, 12pm ET (EDT = 
 var CODE_FROM_NAME = "Jay Clouse · Membership Summit";
 
 var TABS = {
-  Audit:      ["CID","Email","Name","Stage","Months","Audience","Sells","Revenue","Blocker","Wheel opt-in","Logged form","Notes","Updated"],
+  Audit:      ["CID","Email","Name","Stage","Months","Audience","Sells","Revenue","Blocker","Wheel opt-in","Logged form","Notes","Updated","Link","Wants me to look at","Offer now","Tried (didn't work)","Promise"],
   Diagnostic: ["CID","Email","Name","Promise","Friend-Making","Onboarding","Masterminds","Design Constraints","Pricing","Weakest","Logged form","Updated"],
   Pricing:    ["CID","Email","Name","Value sentence","Month 9","Members","Price","MRR","Launch net","Launch weeks","Renewal test","Start $/mo","Start $/yr","Tiers","Updated"],
   Roadmap:    ["CID","Email","Name","Archetype","Fields filled","Fields JSON","Updated"],
@@ -140,9 +140,10 @@ function syncState(d) {
   var ts = d.ts || new Date().toISOString();
   var a = s.audit || {}, dg = s.diag || {}, p = s.pricing || {}, r = s.roadmap || {}, c = s.retention || {};
 
-  if (hasAny(a, ["stage", "audience", "sells", "revenue", "blocker"]))
+  if (hasAny(a, ["stage", "audience", "sells", "revenue", "blocker", "link"]))
     upsert("Audit", d.cid, [d.cid, d.email || "", d.name || "", a.stage || "", a.months || "", a.audience || "",
-      a.sells || "", a.revenue || "", a.blocker || "", !!a.wheel, !!a.logged, a.notes || "", ts]);
+      a.sells || "", a.revenue || "", a.blocker || "", !!a.wheel, !!a.logged, a.notes || "", ts,
+      a.link || "", a.wheelLook || "", a.offerNow || "", a.tried || "", a.promise || ""]);
 
   if ((dg.scores && Object.keys(dg.scores).length) || dg.weakest) {
     var sc = dg.scores || {};

@@ -60,6 +60,7 @@
     </div>
   </div>
   <div class="fr"><b>What do you currently sell?</b><input type="text" id="sells"></div>
+  <div class="fr"><b>Link to your membership, sales page, or site</b><span class="rec">Recommended</span> <span class="hint">If you're picked for a live audit on Day 3, this is what I pull up. Drop your membership page, landing page, or site.</span><input type="text" id="link" inputmode="url" placeholder="https://..."></div>
   <div class="fr"><b>Last month's revenue</b>
     <div class="chips" data-set="revenue">
       <button class="chip">$0</button><button class="chip">Under $1K</button><button class="chip">$1–5K</button>
@@ -82,8 +83,17 @@
 
   <div class="wheel" id="wheel">
     <span class="bx"></span>
-    <p>Want a shot at one of the four live audits on Day 3? I pick live. Wheel spin, no pre-curation. Pool locks Thu 12pm ET.
+    <p>Want a shot at one of the four live audits on Day 3? I pick live. Wheel spin, no pre-curation. Pool locks Thu 12pm ET. Works best if you've already got a membership running or a concept you've fully planned out. That's what makes a live audit useful.
     <span class="hint">Logging input #1 below is what enters you. The spin happens live on Day 3.</span></p>
+  </div>
+
+  <div id="wheelExtra" class="card blue-edge" style="display:none;padding:6px 22px 14px;margin-top:18px">
+    <div class="wx-h">If you're picked for a live audit</div>
+    <p class="hint" style="margin:0 0 4px">If the wheel lands on you, this is what I read from on the spot, no talking required. The more you give me, the sharper the audit. All optional.</p>
+    <div class="fr"><b>If you're picked, what's the one thing you'd want me to look at?</b><input type="text" id="wheelLook"></div>
+    <div class="fr"><b>What does your membership or offer look like right now?</b> <span class="hint">Price, format, what's included, member count if you have one.</span><textarea id="offerNow" style="min-height:70px"></textarea></div>
+    <div class="fr"><b>What have you already tried that hasn't worked?</b><textarea id="tried" style="min-height:70px"></textarea></div>
+    <div class="fr"><b>Your Promise in one sentence, who it's for and what they get</b><input type="text" id="promise"></div>
   </div>
 
   <div class="sec-h"><span class="no">1.3</span> Notes from Day 1</div>
@@ -147,9 +157,11 @@ const bind=(id,key,top)=>{const el=document.getElementById(id);el.addEventListen
   if(id==="sells")paintRead();else paintNav();
 })};
 bind("fname","name",true);bind("email","email",true);bind("sells","sells");bind("blocker","blocker");bind("notes","notes");
+bind("link","link");bind("wheelLook","wheelLook");bind("offerNow","offerNow");bind("tried","tried");bind("promise","promise");
 /* wheel */
 const wheel=document.getElementById("wheel");
-wheel.addEventListener("click",()=>{const on=!wheel.classList.contains("on");wheel.classList.toggle("on",on);store.set("audit",{wheel:on});paintNav()});
+const wheelExtra=document.getElementById("wheelExtra");
+wheel.addEventListener("click",()=>{const on=!wheel.classList.contains("on");wheel.classList.toggle("on",on);store.set("audit",{wheel:on});wheelExtra.style.display=on?"":"none";paintNav()});
 /* logged */
 document.getElementById("logged").addEventListener("change",e=>store.set("audit",{logged:e.target.checked}));
 /* prefilled form link */
@@ -174,9 +186,16 @@ document.getElementById("copyBtn").addEventListener("click",()=>{
    ...(a.stage&&a.stage.indexOf("No membership yet")!==0?["How long has it been running?: "+(a.months||"")]:[]),
    "Audience size (email + social, total reachable): "+(a.audience||""),
    "What do you currently sell?: "+(a.sells||""),
+   "Link: "+(a.link||""),
    "Last month's revenue: "+(a.revenue||""),
    "Biggest blocker: "+(a.blocker||""),
-   "Live audit wheel: "+(a.wheel?"yes, spin me in":"no")];
+   "Live audit wheel: "+(a.wheel?"yes, spin me in":"no"),
+   ...(a.wheel?[
+     "One thing to look at: "+(a.wheelLook||""),
+     "Offer right now: "+(a.offerNow||""),
+     "Already tried (didn't work): "+(a.tried||""),
+     "Promise in one sentence: "+(a.promise||"")
+   ]:[])];
   navigator.clipboard.writeText(lines.join("\n")).then(()=>{
     const b=document.getElementById("copyBtn");b.textContent="Copied";setTimeout(()=>b.textContent="Copy my answers",1400);
   });
@@ -190,9 +209,14 @@ document.getElementById("copyBtn").addEventListener("click",()=>{
     document.getElementById("monthsWrap").style.display=a.stage.indexOf("No membership yet")===0?"none":"";}
   document.querySelectorAll(".chips").forEach(g=>{const v=a[g.dataset.set];if(v)g.querySelectorAll(".chip").forEach(c=>c.classList.toggle("on",c.textContent===v))});
   if(a.sells)document.getElementById("sells").value=a.sells;
+  if(a.link)document.getElementById("link").value=a.link;
   if(a.blocker){document.getElementById("blocker").value=a.blocker;document.getElementById("blockCount").textContent=a.blocker.length+" / 280"}
   if(a.notes)document.getElementById("notes").value=a.notes;
-  if(a.wheel)wheel.classList.add("on");
+  if(a.wheelLook)document.getElementById("wheelLook").value=a.wheelLook;
+  if(a.offerNow)document.getElementById("offerNow").value=a.offerNow;
+  if(a.tried)document.getElementById("tried").value=a.tried;
+  if(a.promise)document.getElementById("promise").value=a.promise;
+  if(a.wheel){wheel.classList.add("on");wheelExtra.style.display=""}
   document.getElementById("logged").checked=!!a.logged;
   paintRead();
 })();

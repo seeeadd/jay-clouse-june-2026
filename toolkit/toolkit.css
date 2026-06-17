@@ -211,6 +211,8 @@ textarea{resize:vertical;min-height:72px;line-height:1.55}
 
 /* ---- roadmap ---- */
 .req{font-family:var(--font-mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--cs-recording-600);border:1.5px solid var(--cs-recording);border-radius:4px;padding:2px 8px;vertical-align:2px;margin-left:6px;white-space:nowrap}
+.rec{font-family:var(--font-mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--page);border:1.5px solid var(--page);border-radius:4px;padding:2px 8px;vertical-align:2px;margin-left:6px;white-space:nowrap}
+.wx-h{font-family:var(--font-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--page);margin:12px 0 2px}
 .banner{display:none;margin-top:24px;font-size:15.5px;color:var(--cs-static-60);background:var(--cs-cellotape);border:2px solid var(--cs-static);border-radius:4px;padding:12px 18px}
 .banner b{color:var(--cs-static);font-weight:600}
 .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-top:26px}
