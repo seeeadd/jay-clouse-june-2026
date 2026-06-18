@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Redirect test — The Membership Summit</title>
+  <style>
+    :root {
+      --ink: #1b2440;
+      --muted: #6b7494;
+      --ok: #1f9d57;
+      --ok-soft: #e6f6ed;
+      --fail: #c4453a;
+      --fail-soft: #fdecea;
+      --accent: #2f6bff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: radial-gradient(1200px 600px at 50% -10%, #eef3ff 0%, #f6f8fc 55%, #eef1f7 100%);
+      display: flex; align-items: center; justify-content: center;
+      padding: 24px; color: var(--ink);
+    }
+    .card {
+      background: #fff; width: 100%; max-width: 480px;
+      border-radius: 20px; padding: 40px 34px 34px; text-align: center;
+      box-shadow: 0 20px 50px rgba(27,36,64,0.10), 0 2px 6px rgba(27,36,64,0.06);
+    }
+    .badge {
+      width: 60px; height: 60px; margin: 0 auto 20px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 28px; font-weight: 700;
+    }
+    body.ok .badge { background: var(--ok-soft); color: var(--ok); }
+    body.fail .badge { background: var(--fail-soft); color: var(--fail); }
+    h1 { font-size: 22px; font-weight: 700; letter-spacing: -0.02em; }
+    body.ok h1 { color: var(--ok); }
+    body.fail h1 { color: var(--fail); }
+    .sub { margin-top: 12px; color: var(--muted); font-size: 15px; line-height: 1.55; }
+    .sub b { color: var(--ink); }
+    .countdown {
+      margin-top: 18px; font-size: 13px; font-weight: 600;
+      color: var(--muted); letter-spacing: 0.01em;
+    }
+    .btn {
+      display: none; margin-top: 22px; padding: 12px 24px;
+      background: var(--accent); color: #fff; text-decoration: none;
+      border-radius: 10px; font-weight: 600; font-size: 15px;
+    }
+    .debug {
+      margin-top: 26px; text-align: left; background: #f4f6fb;
+      border: 1px solid #e6e9f2; border-radius: 10px; padding: 14px 16px;
+    }
+    .debug-label {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--muted); margin-bottom: 8px;
+    }
+    pre {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 12px; line-height: 1.5; color: #303a59;
+      white-space: pre-wrap; word-break: break-all;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="badge" id="badge">…</div>
+    <h1 id="status">Checking…</h1>
+    <p class="sub" id="sub"></p>
+    <div class="countdown" id="countdown"></div>
+    <a class="btn" id="enterBtn" href="#">Enter the room</a>
+
+    <div class="debug">
+      <div class="debug-label">Parameters WebinarJam sent</div>
+      <pre id="debug"></pre>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      // Generic direct link to Jay's webinar — last-resort fallback only
+      var FALLBACK = "https://event.webinarjam.com/ykz838/go/live/3g0757tni3srs5";
+
+      var params = new URLSearchParams(window.location.search);
+      var roomUrl = params.get("wj_lead_unique_link_live_room");
+      var valid = roomUrl && roomUrl.indexOf("http") === 0;
+
+      // List every parameter received, for debugging
+      var entries = [];
+      params.forEach(function (v, k) { entries.push(k + " = " + (v || "(empty)")); });
+      document.getElementById("debug").textContent =
+        entries.length ? entries.join("\n") : "(no URL parameters received)";
+
+      var badge = document.getElementById("badge");
+      var statusEl = document.getElementById("status");
+      var subEl = document.getElementById("sub");
+      var btn = document.getElementById("enterBtn");
+      var countdownEl = document.getElementById("countdown");
+
+      if (valid) {
+        document.body.classList.add("ok");
+        badge.textContent = "✓";
+        statusEl.textContent = "Unique link received";
+        subEl.innerHTML = "It works. This is your personal room link — sending you in now.";
+        btn.href = roomUrl;
+        btn.style.display = "inline-block";
+
+        var n = 6;
+        countdownEl.textContent = "Redirecting in " + n + "s…";
+        var t = setInterval(function () {
+          n--;
+          if (n <= 0) { clearInterval(t); window.location.replace(roomUrl); }
+          else { countdownEl.textContent = "Redirecting in " + n + "s…"; }
+        }, 1000);
+      } else {
+        document.body.classList.add("fail");
+        badge.textContent = "✗";
+        statusEl.textContent = "No unique link received";
+        subEl.innerHTML = "WebinarJam didn't pass the room link. In WebinarJam &rarr; <b>Thank You</b> step, make sure <b>\u201CSend register information and webinar information\u201D</b> is toggled <b>ON</b>, then re-test. (Auto-redirect is paused so you can read this.)";
+        btn.href = FALLBACK;
+        btn.textContent = "Enter via fallback link";
+        btn.style.display = "inline-block";
+      }
+    })();
+  </script>
+</body>
+</html>
