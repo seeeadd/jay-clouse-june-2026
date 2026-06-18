@@ -1,81 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Redirect test — The Membership Summit</title>
-  <style>
-    :root {
-      --ink: #1b2440;
-      --muted: #6b7494;
-      --ok: #1f9d57;
-      --ok-soft: #e6f6ed;
-      --fail: #c4453a;
-      --fail-soft: #fdecea;
-      --accent: #2f6bff;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body { height: 100%; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background: radial-gradient(1200px 600px at 50% -10%, #eef3ff 0%, #f6f8fc 55%, #eef1f7 100%);
-      display: flex; align-items: center; justify-content: center;
-      padding: 24px; color: var(--ink);
-    }
-    .card {
-      background: #fff; width: 100%; max-width: 480px;
-      border-radius: 20px; padding: 40px 34px 34px; text-align: center;
-      box-shadow: 0 20px 50px rgba(27,36,64,0.10), 0 2px 6px rgba(27,36,64,0.06);
-    }
-    .badge {
-      width: 60px; height: 60px; margin: 0 auto 20px; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 28px; font-weight: 700;
-    }
-    body.ok .badge { background: var(--ok-soft); color: var(--ok); }
-    body.fail .badge { background: var(--fail-soft); color: var(--fail); }
-    h1 { font-size: 22px; font-weight: 700; letter-spacing: -0.02em; }
-    body.ok h1 { color: var(--ok); }
-    body.fail h1 { color: var(--fail); }
-    .sub { margin-top: 12px; color: var(--muted); font-size: 15px; line-height: 1.55; }
-    .sub b { color: var(--ink); }
-    .countdown {
-      margin-top: 18px; font-size: 13px; font-weight: 600;
-      color: var(--muted); letter-spacing: 0.01em;
-    }
-    .btn {
-      display: none; margin-top: 22px; padding: 12px 24px;
-      background: var(--accent); color: #fff; text-decoration: none;
-      border-radius: 10px; font-weight: 600; font-size: 15px;
-    }
-    .debug {
-      margin-top: 26px; text-align: left; background: #f4f6fb;
-      border: 1px solid #e6e9f2; border-radius: 10px; padding: 14px 16px;
-    }
-    .debug-label {
-      font-size: 11px; font-weight: 700; letter-spacing: 0.08em;
-      text-transform: uppercase; color: var(--muted); margin-bottom: 8px;
-    }
-    pre {
-      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      font-size: 12px; line-height: 1.5; color: #303a59;
-      white-space: pre-wrap; word-break: break-all;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>You&rsquo;re in &mdash; The Membership Summit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&family=Space+Mono:wght@400;700&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#faf4ea;
+    --ink:#1b1b18;
+    --muted:#716c61;
+    --blue:#1b4dff;
+    --orange:#fb531c;
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html,body{ height:100%; }
+  body{
+    min-height:100vh; min-height:100dvh;
+    background:var(--paper); color:var(--ink);
+    font-family:"Hanken Grotesk", system-ui, sans-serif;
+    display:flex; align-items:center; justify-content:center;
+    padding:32px; position:relative; overflow:hidden;
+  }
+  /* Soft warm vignette */
+  body::before{
+    content:""; position:absolute; inset:0; pointer-events:none;
+    background:radial-gradient(120% 120% at 50% 42%, rgba(0,0,0,0) 58%, rgba(120,92,40,0.08) 100%);
+  }
+  /* Paper grain */
+  .grain{
+    position:fixed; inset:0; z-index:2; pointer-events:none;
+    opacity:0.045; mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='150'%20height='150'%3E%3Cfilter%20id='n'%3E%3CfeTurbulence%20type='fractalNoise'%20baseFrequency='0.8'%20numOctaves='2'%20stitchTiles='stitch'/%3E%3C/filter%3E%3Crect%20width='100%25'%20height='100%25'%20filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .stage{ position:relative; z-index:3; text-align:center; max-width:620px; }
+
+  .kicker{
+    font-family:"Space Mono", ui-monospace, monospace; font-weight:700;
+    font-size:clamp(10.5px, 2.5vw, 12px); letter-spacing:0.18em; text-transform:uppercase;
+    color:var(--ink); display:inline-flex; align-items:center; gap:9px; margin-bottom:30px;
+  }
+  .kicker .dot{ color:var(--orange); font-size:0.62em; transform:translateY(-1px); }
+
+  .headline{
+    font-family:"Hanken Grotesk", system-ui, sans-serif; font-weight:800;
+    font-size:clamp(48px, 15vw, 108px); line-height:0.92; letter-spacing:-0.035em;
+    color:var(--ink);
+  }
+  .headline .u{ position:relative; display:inline-block; }
+  .headline .u svg{
+    position:absolute; left:-6%; bottom:-0.12em; width:112%; height:0.3em; overflow:visible;
+  }
+  .headline .u path{
+    fill:none; stroke:var(--orange); stroke-width:6; stroke-linecap:round;
+  }
+
+  .script{
+    font-family:"Caveat", cursive; font-weight:700;
+    font-size:clamp(30px, 8vw, 44px); color:var(--blue);
+    margin-top:16px; line-height:1; transform:rotate(-2.5deg);
+  }
+  .script .sparkle{ font-size:0.8em; margin-left:3px; }
+
+  .entering{
+    font-family:"Space Mono", ui-monospace, monospace; font-weight:700;
+    font-size:11px; letter-spacing:0.16em; text-transform:uppercase;
+    color:var(--muted); margin-top:46px;
+  }
+  .track{
+    margin:14px auto 0; width:min(260px, 72vw); height:4px;
+    background:rgba(27,27,24,0.10); border-radius:99px; overflow:hidden;
+  }
+  .fill{
+    display:block; height:100%; width:100%; border-radius:99px;
+    background:linear-gradient(90deg, var(--blue), var(--orange));
+  }
+
+  .manual{
+    display:inline-block; margin-top:32px; opacity:0; pointer-events:none;
+    font-family:"Space Mono", ui-monospace, monospace; font-weight:700;
+    font-size:13px; letter-spacing:0.08em; text-transform:uppercase;
+    color:var(--paper); background:var(--blue); text-decoration:none;
+    padding:13px 22px; border-radius:7px; box-shadow:4px 4px 0 var(--ink);
+    transition:transform .12s ease, box-shadow .12s ease;
+  }
+  .manual:hover{ transform:translate(-1px,-1px); box-shadow:5px 5px 0 var(--ink); }
+  .manual:active{ transform:translate(2px,2px); box-shadow:1px 1px 0 var(--ink); }
+  .manual.show{ opacity:1; pointer-events:auto; transition:opacity .55s ease; }
+
+  @keyframes rise{ from{ opacity:0; transform:translateY(16px); } to{ opacity:1; transform:translateY(0); } }
+  @keyframes scriptIn{ from{ opacity:0; transform:translateY(10px) rotate(-2.5deg); } to{ opacity:1; transform:translateY(0) rotate(-2.5deg); } }
+  @keyframes drawLine{ to{ stroke-dashoffset:0; } }
+  @keyframes fillUp{ from{ width:0; } to{ width:100%; } }
+
+  @media (prefers-reduced-motion: no-preference){
+    .kicker{ animation:rise .7s cubic-bezier(.2,.7,.2,1) both; animation-delay:.05s; }
+    .headline{ animation:rise .9s cubic-bezier(.2,.7,.2,1) both; animation-delay:.2s; }
+    .headline .u path{ stroke-dasharray:200; stroke-dashoffset:200; animation:drawLine .6s ease .95s forwards; }
+    .script{ animation:scriptIn .7s cubic-bezier(.2,.7,.2,1) both; animation-delay:1.25s; }
+    .entering{ animation:rise .6s ease both; animation-delay:1.5s; }
+    .track{ animation:rise .6s ease both; animation-delay:1.55s; }
+    .fill{ animation:fillUp 1700ms cubic-bezier(.5,.1,.3,1) forwards; animation-delay:800ms; }
+  }
+</style>
 </head>
 <body>
-  <div class="card">
-    <div class="badge" id="badge">…</div>
-    <h1 id="status">Checking…</h1>
-    <p class="sub" id="sub"></p>
-    <div class="countdown" id="countdown"></div>
-    <a class="btn" id="enterBtn" href="#">Enter the room</a>
+  <div class="grain"></div>
+  <main class="stage">
+    <p class="kicker"><span class="dot">&#9679;</span> The Membership Summit &middot; June 23&ndash;25</p>
+    <h1 class="headline">You&rsquo;re <span class="u">in<svg viewBox="0 0 120 16" preserveAspectRatio="none"><path d="M3,11 C 26,6 46,13 66,9 C 86,5 103,12 117,7" /></svg></span>.</h1>
+    <p class="script">see you inside<span class="sparkle">&#10035;</span></p>
+    <p class="entering">Taking you into the room</p>
+    <div class="track"><span class="fill"></span></div>
+    <a class="manual" id="manual" href="#">Enter the room &rarr;</a>
+  </main>
 
-    <div class="debug">
-      <div class="debug-label">Parameters WebinarJam sent</div>
-      <pre id="debug"></pre>
+  <noscript>
+    <div style="position:relative; z-index:3; text-align:center; margin-top:20px;">
+      <a href="https://event.webinarjam.com/ykz838/go/live/3g0757tni3srs5" style="color:#1b4dff; font-family:monospace;">Enter the live room &rarr;</a>
     </div>
-  </div>
+  </noscript>
 
   <script>
     (function () {
@@ -84,44 +130,16 @@
 
       var params = new URLSearchParams(window.location.search);
       var roomUrl = params.get("wj_lead_unique_link_live_room");
-      var valid = roomUrl && roomUrl.indexOf("http") === 0;
+      var target = (roomUrl && roomUrl.indexOf("http") === 0) ? roomUrl : FALLBACK;
 
-      // List every parameter received, for debugging
-      var entries = [];
-      params.forEach(function (v, k) { entries.push(k + " = " + (v || "(empty)")); });
-      document.getElementById("debug").textContent =
-        entries.length ? entries.join("\n") : "(no URL parameters received)";
+      var manual = document.getElementById("manual");
+      manual.href = target;
 
-      var badge = document.getElementById("badge");
-      var statusEl = document.getElementById("status");
-      var subEl = document.getElementById("sub");
-      var btn = document.getElementById("enterBtn");
-      var countdownEl = document.getElementById("countdown");
+      // Reveal the fallback button only if the redirect hasn't carried them off
+      setTimeout(function () { manual.classList.add("show"); }, 2700);
 
-      if (valid) {
-        document.body.classList.add("ok");
-        badge.textContent = "✓";
-        statusEl.textContent = "Unique link received";
-        subEl.innerHTML = "It works. This is your personal room link — sending you in now.";
-        btn.href = roomUrl;
-        btn.style.display = "inline-block";
-
-        var n = 6;
-        countdownEl.textContent = "Redirecting in " + n + "s…";
-        var t = setInterval(function () {
-          n--;
-          if (n <= 0) { clearInterval(t); window.location.replace(roomUrl); }
-          else { countdownEl.textContent = "Redirecting in " + n + "s…"; }
-        }, 1000);
-      } else {
-        document.body.classList.add("fail");
-        badge.textContent = "✗";
-        statusEl.textContent = "No unique link received";
-        subEl.innerHTML = "WebinarJam didn't pass the room link. In WebinarJam &rarr; <b>Thank You</b> step, make sure <b>\u201CSend register information and webinar information\u201D</b> is toggled <b>ON</b>, then re-test. (Auto-redirect is paused so you can read this.)";
-        btn.href = FALLBACK;
-        btn.textContent = "Enter via fallback link";
-        btn.style.display = "inline-block";
-      }
+      // Hand them into the room
+      setTimeout(function () { window.location.replace(target); }, 2400);
     })();
   </script>
 </body>
