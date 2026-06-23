@@ -142,11 +142,28 @@ function plain(){
   return out.join("\n");
 }
 document.getElementById("copyAll").addEventListener("click",()=>{
-  navigator.clipboard.writeText(plain()).then(()=>{
+  msCopyText(plain()).then(()=>{
     const b=document.getElementById("copyAll");b.textContent="Copied";setTimeout(()=>b.textContent="Copy everything",1400);
   });
 });
 render();paintNav();
+</script>
+<script>
+/* clipboard with execCommand fallback (clipboard API needs a secure context) */
+function msCopyText(txt){
+  return new Promise(function(res){
+    function fb(){
+      var ta=document.createElement("textarea");ta.value=txt;ta.setAttribute("readonly","");
+      ta.style.cssText="position:fixed;left:-9999px;top:0";document.body.appendChild(ta);
+      ta.select();try{ta.setSelectionRange(0,txt.length)}catch(e){}
+      var ok=false;try{ok=document.execCommand("copy")}catch(e){}
+      document.body.removeChild(ta);res(ok);
+    }
+    if(navigator.clipboard&&navigator.clipboard.writeText&&window.isSecureContext){
+      navigator.clipboard.writeText(txt).then(function(){res(true)},fb);
+    }else fb();
+  });
+}
 </script>
 </body>
 </html>

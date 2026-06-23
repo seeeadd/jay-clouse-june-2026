@@ -30,19 +30,19 @@
 
   <div class="h1row"><h1>The Mechanics Diagnostic</h1><span class="picon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 20v-5"></path><path d="M9.3 20V9"></path><path d="M14.7 20v-8"></path><path d="M20 20V4"></path></svg></span></div>
   <div class="sub">Six mechanics. Score yourself 1–5. Be <span class="annotate">honest</span>, especially on the one that feels embarrassing.</div>
-  <div class="key"><b>Score key:</b> 1 = doesn't exist · 3 = exists but weak · 5 = working and compounding</div>
+  <div class="key"><b>Score key:</b> 1 = doesn't exist · 3 = exists but leaks · 5 = working and compounding</div>
 
   <div id="toolBody">
 
   <div id="mechs" style="margin-top:14px">
     <div class="mrow" data-m="Promise">
       <div class="mname">Promise</div>
-      <div class="mwhy">The overall expectation you set for why someone should join. This is where most memberships fail before they ever launch.</div>
+      <div class="mwhy">The specific thing members are staying for beyond the moment of joining. It's where most memberships fail before they ever launch.</div>
       <div class="scores"><button class="sc">1</button><button class="sc">2</button><button class="sc">3</button><button class="sc">4</button><button class="sc">5</button></div>
     </div>
     <div class="mrow" data-m="Friend-Making">
       <div class="mname">Friend-Making</div>
-      <div class="mwhy">How well people meet and connect with others within the space. Are people building relationships without you being involved?</div>
+      <div class="mwhy">They join because of you. They stay because of each other.</div>
       <div class="scores"><button class="sc">1</button><button class="sc">2</button><button class="sc">3</button><button class="sc">4</button><button class="sc">5</button></div>
     </div>
     <div class="mrow" data-m="Onboarding">
@@ -57,12 +57,12 @@
     </div>
     <div class="mrow" data-m="Optionality">
       <div class="mname">Optionality</div>
-      <div class="mwhy">How you design the experience for time-starved members.</div>
+      <div class="mwhy">What you deliberately don't do. If joining means a fifth app and a sixth password, the design is fighting itself.</div>
       <div class="scores"><button class="sc">1</button><button class="sc">2</button><button class="sc">3</button><button class="sc">4</button><button class="sc">5</button></div>
     </div>
     <div class="mrow" data-m="Pricing">
       <div class="mname">Pricing</div>
-      <div class="mwhy">How do you rate your member retention? Retention is a direct reflection of pricing. Recurring revenue requires recurring value.</div>
+      <div class="mwhy">Priced for renewal, not just for joining. Recurring revenue requires recurring value. It's a contract, not a phrase.</div>
       <div class="scores"><button class="sc">1</button><button class="sc">2</button><button class="sc">3</button><button class="sc">4</button><button class="sc">5</button></div>
     </div>
   </div>
@@ -153,7 +153,7 @@ document.getElementById("logBtn").addEventListener("click",e=>{
 });
 document.getElementById("copyBtn").addEventListener("click",()=>{
   const d=D();
-  navigator.clipboard.writeText("Your weakest mechanic: "+(d.weakest||"")).then(()=>{
+  msCopyText("Your weakest mechanic: "+(d.weakest||"")).then(()=>{
     const b=document.getElementById("copyBtn");b.textContent="Copied";setTimeout(()=>b.textContent="Copy my answer",1400);
   });
 });
@@ -169,6 +169,23 @@ document.getElementById("copyBtn").addEventListener("click",()=>{
   paint();
 })();
 mountDrip("diag","toolBody","The Day 2 teaching comes first. Score yourself right after you\u2019ve heard what the six mechanics actually are.");
+</script>
+<script>
+/* clipboard with execCommand fallback (clipboard API needs a secure context) */
+function msCopyText(txt){
+  return new Promise(function(res){
+    function fb(){
+      var ta=document.createElement("textarea");ta.value=txt;ta.setAttribute("readonly","");
+      ta.style.cssText="position:fixed;left:-9999px;top:0";document.body.appendChild(ta);
+      ta.select();try{ta.setSelectionRange(0,txt.length)}catch(e){}
+      var ok=false;try{ok=document.execCommand("copy")}catch(e){}
+      document.body.removeChild(ta);res(ok);
+    }
+    if(navigator.clipboard&&navigator.clipboard.writeText&&window.isSecureContext){
+      navigator.clipboard.writeText(txt).then(function(){res(true)},fb);
+    }else fb();
+  });
+}
 </script>
 </body>
 </html>

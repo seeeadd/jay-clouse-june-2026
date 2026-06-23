@@ -154,10 +154,10 @@
     <p class="goal"><b>Goal</b>A Promise so clear a stranger could read it and know what they'd become, and proof your audience actually wants it.</p>
     <ul class="rlist" data-ck="A1">
       <li><span class="bx"></span><span><b>Write your Promise in one sentence.</b> One verb, one outcome, a recurring frame. "A community for [niche]" is a category, not a promise. Rewrite it until it names what a member <em>becomes</em>, not what room they're in.</span></li>
-      <li><span class="bx"></span><span><b>Send the three-question survey to your audience this week.</b> What they want help with, what they've tried that didn't stick, whether they'd take a five-minute call. Even three replies beats three months of guessing.</span></li>
+      <li><span class="bx"></span><span><b>Send the five-question survey to your audience this week.</b> What they want help with, what would make a room worth joining, what they've tried that didn't stick, what it's worth monthly, whether they'd take a five-minute call. Even three replies beats three months of guessing.</span></li>
       <li><span class="bx"></span><span><b>Book three of those five-minute calls.</b> Listen for the exact words people use for their problem. Those words become your page later.</span></li>
       <li><span class="bx"></span><span><b>Decide what this is NOT.</b> Not a course, not a content vault. Shared, not parallel. Members do things together or it isn't a membership.</span></li>
-      <li><span class="bx"></span><span><b>Choose your smallest viable room and set that as your launch target.</b> Belonging happens in rooms of eight to fifteen. Design for that, not for scale.</span></li>
+      <li><span class="bx"></span><span><b>Choose your smallest viable room and cap it on purpose.</b> Belonging happens in rooms of eight to fifteen. Design for that, not for scale.</span></li>
     </ul>
     <div class="chk2">
       <div class="mst"><b>Done when</b>You can say your Promise in one sentence and at least five people have told you, in their words, they'd pay for it.</div>
@@ -299,7 +299,7 @@
     <ul class="rlist" data-ck="D1">
       <li><span class="bx"></span><span><b>Write the recurring Promise.</b> What a member becomes over twelve months, not what they finish in a six-week course. Recurring revenue requires recurring value.</span></li>
       <li><span class="bx"></span><span><b>Map your assets.</b> Which courses become benefits inside the room, which get sunset. The room is the product. The courses are no longer the front door.</span></li>
-      <li><span class="bx"></span><span><b>Survey your buyer list with the three questions.</b> Your course buyers are the warmest waitlist you'll ever have. Treat them like one.</span></li>
+      <li><span class="bx"></span><span><b>Survey your buyer list with the five questions.</b> Your course buyers are the warmest waitlist you'll ever have. Treat them like one.</span></li>
       <li><span class="bx"></span><span><b>Price for staying, not the drop.</b> Launch-spike pricing is the course habit talking. <span class="iftarget">Sanity-check against your Pricing tool's <span class="rt"></span>.</span></span></li>
       <li><span class="bx"></span><span><b>Decide your bridge.</b> How the course revenue keeps running while you build the recurring engine, so you're not betting the business on month one.</span></li>
     </ul>
@@ -376,12 +376,11 @@ function gatePaint(){
 function snapPaint(){
   const s=store.all(),d=s.diag||{},p=s.pricing||{},rc=(s.retention||{}).checks||[];
   const num=v=>{const n=parseFloat(String(v||"").replace(/[^0-9.]/g,""));return isNaN(n)?0:n};
-  const PM={Monthly:1,Quarterly:3,Biannually:6,Annually:12};
-  const mrr=num(p.members)*num(p.price)/(PM[p.period]||1);
+  const mrr=num(p.members)*num(p.price);
   const on=document.querySelector(".panel.on");
   document.getElementById("sArch").textContent=on?on.dataset.p:"";
   document.getElementById("sWeak").textContent=d.weakest||"log the Diagnostic";
-  document.getElementById("sTarget").textContent=mrr>0?"$"+Math.round(mrr).toLocaleString()+"/mo":"not set yet";
+  document.getElementById("sTarget").textContent=mrr>0?"$"+mrr.toLocaleString()+"/mo":"not set yet";
   document.getElementById("sRet").textContent=rc.filter(Boolean).length+"/11";
 }
 document.getElementById("fold").addEventListener("click",()=>{
@@ -407,11 +406,10 @@ document.getElementById("tabs").addEventListener("click",e=>{
 function tokens(){
   const s=store.all(),d=s.diag||{},p=s.pricing||{};
   const num=v=>{const n=parseFloat(String(v||"").replace(/[^0-9.]/g,""));return isNaN(n)?0:n};
-  const PM={Monthly:1,Quarterly:3,Biannually:6,Annually:12},months=PM[p.period]||1;
-  const price=num(p.price)/months; /* per-member price, normalized to monthly — not the MRR */
+  const mrr=num(p.members)*num(p.price);
   document.querySelectorAll(".wk").forEach(el=>el.textContent=d.weakest||"your weakest mechanic");
   document.querySelectorAll(".iftarget").forEach(el=>{
-    if(price>0){el.style.display="";const rt=el.querySelector(".rt");if(rt)rt.textContent="$"+Math.round(price).toLocaleString()+"/mo"}
+    if(mrr>0){el.style.display="";const rt=el.querySelector(".rt");if(rt)rt.textContent="$"+mrr.toLocaleString()+"/mo"}
     else el.style.display="none";
   });
 }

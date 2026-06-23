@@ -16,7 +16,7 @@ window.MS = {
      calendar lock (the 30/60/90 gates on the two inputs instead).
      Team preview: open any page with ?preview=1 once to bypass locks in that browser. */
   DRIP: {
-    enabled: true,    /* LIVE: Diagnostic + Pricing open Wed Jun 24 4pm ET, Retention Thu Jun 25 3:15pm ET. Reviewers append ?review=1 (or ?preview=1) to bypass. */
+    enabled: true,   /* LIVE for attendees: drip schedule below is in effect. (For your own review, open any page with ?preview=1 or ?review=1 to bypass locks.) */
     diag:      "2026-06-24T20:00:00Z",   /* Wed Jun 24 · 4:00pm ET, after the Day 2 teaching */
     pricing:   "2026-06-24T20:00:00Z",   /* Wed Jun 24 · 4:00pm ET */
     retention: "2026-06-25T19:15:00Z"    /* Thu Jun 25 · 3:15pm ET, after the Day 3 close */

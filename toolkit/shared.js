@@ -61,10 +61,12 @@ let ft;
 function flag() { const f = document.getElementById("saveflag"); if (!f) return; f.classList.add("on"); clearTimeout(ft); ft = setTimeout(() => f.classList.remove("on"), 1100) }
 
 /* archetype mapping. Reads the verbatim form strings, never display copy */
-const ARCH = (stage) => {
+const ARCH = (stage, sells, months) => {
   if (!stage) return null;
-  if (stage.indexOf("No membership yet") === 0) return "Just Starting";
+  if (stage.indexOf("No membership yet") === 0) return /course/i.test(sells || "") ? "Pivoting From Courses" : "Just Starting";
   if (stage.indexOf("Launched") === 0) return "Recently Launched";
+  /* sustainable-or-better but running under ~12 months still reads as Recently Launched */
+  if (/^(0\u20133|4\u20136|7\u201312)/.test(months || "")) return "Recently Launched";
   return "Scaling";
 };
 

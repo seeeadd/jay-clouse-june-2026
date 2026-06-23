@@ -233,10 +233,27 @@ $("lkGo").addEventListener("click",async()=>{
   }catch(e){$("lkMsg").textContent=String(e.message||e)}
 });
 $("lkCopy").addEventListener("click",()=>{
-  navigator.clipboard.writeText(lkText).then(()=>{$("lkCopy").textContent="Copied";setTimeout(()=>$("lkCopy").textContent="Copy for AI",1400)});
+  msCopyText(lkText).then(()=>{$("lkCopy").textContent="Copied";setTimeout(()=>$("lkCopy").textContent="Copy for AI",1400)});
 });
 setInterval(()=>{if(cfg().token)poll()},60000);
 init();
+</script>
+<script>
+/* clipboard with execCommand fallback (clipboard API needs a secure context) */
+function msCopyText(txt){
+  return new Promise(function(res){
+    function fb(){
+      var ta=document.createElement("textarea");ta.value=txt;ta.setAttribute("readonly","");
+      ta.style.cssText="position:fixed;left:-9999px;top:0";document.body.appendChild(ta);
+      ta.select();try{ta.setSelectionRange(0,txt.length)}catch(e){}
+      var ok=false;try{ok=document.execCommand("copy")}catch(e){}
+      document.body.removeChild(ta);res(ok);
+    }
+    if(navigator.clipboard&&navigator.clipboard.writeText&&window.isSecureContext){
+      navigator.clipboard.writeText(txt).then(function(){res(true)},fb);
+    }else fb();
+  });
+}
 </script>
 </body>
 </html>
