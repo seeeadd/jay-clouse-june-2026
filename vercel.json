@@ -1,13 +1,42 @@
 {
   "redirects": [
-    { "source": "/lab-audit", "destination": "/toolkit/lab-audit.html", "statusCode": 301 },
-    { "source": "/diagnostic", "destination": "/toolkit/mechanics-diagnostic.html", "statusCode": 301 }
+    {
+      "source": "/lab-audit",
+      "destination": "/toolkit/lab-audit.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/diagnostic",
+      "destination": "/toolkit/mechanics-diagnostic.html",
+      "statusCode": 301
+    }
   ],
   "headers": [
     {
       "source": "/toolkit/(.*)",
       "headers": [
-        { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
+    {
+      "source": "/offer-review/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
+    {
+      "source": "/offer-short-review/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
       ]
     }
   ]
