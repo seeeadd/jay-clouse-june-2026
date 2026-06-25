@@ -1,0 +1,705 @@
+Three Days With Jay
+Day 1
+Full Transcript
+
+================================================
+
+Welcome, welcome. We're logging in early. We are going to ensure that the YouTube stream is working
+
+Go. Gotta make some updates to the webinar stream on YouTube Welcome, welcome. Come on in. Join us, join us, join us. We're gonna get started here in just a few minutes I believe that's working. Let me verify Great
+
+Hello, hello, Rachel. Hello, Clara. Hello, Anna, Sophie, Reese. Good to see you guys here in the chat already.
+
+Let's see how we doing. We got over 100 people here live already. Amazing. Good to see you guys. And we're early. We're three minutes early, so it's just us.
+
+Uh, let me know Yes, testing, testing, testing, Jeff. That's right. That's what we're doing. Um, let me know in the chat how your day's going. How we feeling? Tuesday, glad it's not Monday
+
+So we've got Stephanie from Texas. We've got Catherine from Vancouver Island. Atlanta, says Stacy Lynn
+
+Overwhelmed, Sheila. Okay, tell me why you're overwhelmed, overwhelmed. See if we can do something about that Two days away from launching, Margaret. Congrats
+
+I feel that as well. Oh man, we got people all over the world. We got some late night, some, some late work owls here. I love that
+
+Let's see. Gotta put my presentation thing up on the teleprompter. We got Andrew from the Boston area.
+
+We got folks in Amsterdam. Sophie, we have two team members here at Creator Science who are in the Netherlands. Crazy, crazy
+
+Speaking of team members, I should probably check our team Slack and see if anything is broken Mal says we're live. My wife says we're live. Good. Uh, evident to me now, which is great. Tubi in the house. Yes.
+
+We have our Creator Science mascot, Tubey, who is also our AI assistant here at Creator Science, and we have our own plushie
+
+And he sits here. I don't know if you guys have ever heard of the, uh, the rubber ducky theory. I don't know if it's a theory so much as like a process for engineers who are debugging code.
+
+The rubber ducky method is basically when you're looking at code and trying to understand what is broken, you read through each line of code and explain to a rubber duck on your desk what that line of code does. So sometimes my rubber duck method is talking to Tubey and saying, "Here's what I'm trying to do," especially liquid code in Kit. It's like, "Here's what I'm trying to do, and it's not quite working." Uh, and then we walk through it. Or I use my OpenClaw AI assistant, Tubey, and he just solves a problem for me sometimes.
+
+Stacy Lynn wants a plushie. Okay. Stacy Lynn, if you can rally another like 299 people, then we will have enough votes for a minimum order quantity of plushies
+
+Little known fact, we have a completed and functional Creator Science merch store that we have simply not yet published publicly for some of our more popular, uh, hoodie designs that I've been personally wearing. This was a hoodie that we designed for our, uh, in-person offline event for lab members this year, and Tubey is on the back.
+
+We got Tubey on the back of this. I wanna introduce him into our YouTube content because, uh, I think there's a lot of potential here. I don't know if, if anyone here is a fan of homestarrunner.com, like millennial, uh, Flash video content from early 2000s, but I have aspirations of making our YouTube content feel a little bit more like Homestar Runner and Strong Bad Emails, and my friend Tubi here would be a part of that
+
+Okay, I see some Homestar fans in the, in the audience here. Love that. Okay, great. Thank you Dominique for validating me. Uh, Trogdor.
+
+Yes. Uh, okay. Little known fact because I see we have some Homestar fans in the audience here.
+
+My sister Emily had a Strong Bad email that he answered, and you can find it on YouTube. If you watch the YouTube video, uh, the email was called Marzipan. So if you search Homestar Runner… Actually, you probably search Strong Bad Email Marzipan, you'll get my sister's Strong Bad email. Uh, it's written by Emily C. from Ohio or Ohio
+
+All right, we got Omir from Turkey. I'm sorry if I didn't pronounce that correctly
+
+We got folks trickling in. We love to see it. I'm going to, uh, just hold space for a couple more minutes here as folks trickle in
+
+Yes, Jason, those were real emails. Those were real emails that people sent and had answered
+
+What's Homestar is a valid question. Uh, you could, you could just, uh, look that up. It's kind of a trip down memory lane, but if you don't remember it, it's not much of a memory lane for you. And I, uh, I don't know if now is the time to get into Homestar Runner. Unsure.
+
+We got Maggie in the house. We got Tommy in the house. There's Laura in the Netherlands. Brandon from Pittsburgh. Caleb from Boise Great. Seeing multiple folks here from the lab. Love to see that I'm seeing a couple people reporting looping of audio. Is that more than just one person? Let me know Okay, why would that be happening?
+
+Okay. I'm not sure why it's happening for some folks. If it's happening for you, I would consider just refreshing and coming back in Okay.
+
+All right, guys. Uh, well, excited to have you here. We are gonna get started here in a moment. I'm going to start sharing my screen Here we are.
+
+Welcome to the Membership Summit, my friends. I am so excited to have you here
+
+So excited to have you with us. Excited to dig into this three-day event with you. My team and I have been working super, super hard on this, and I'm trying to make it as, uh, valuable and, um, contained yet thorough as possible. So throughout this summit, I am going to be answering questions that come up in the chat if I can catch them. Uh, I believe you can enter questions specifically in the chat and mark them as a question so that it goes into a special questions queue on my side as the presenter, and I will be able to, uh, come back and answer those more specifically.
+
+In the chat, we've already done a lot of this. I've, uh, been asking you where you're calling in from. We've seen a lot of this. So why don't we go here? Why don't you let me know why you are here today, what you're hoping, hoping to take away from this? I would love to hear a little bit about that. I'm gonna read some of these out. I'm gonna zoom in on the chat so I can read it a little bit easier as well France, Boston, Belgium, Maine
+
+We've got Elle launching her women's health community in September Liz wants to make her membership better.
+
+We got folks with high-ticket programs, revamping an existing membership structure. Keely, good to see you. I know we've interacted in email a little bit.
+
+Amy wants to increase her conversion. Kyle wants to make his membership as amazing as the Lab. Thank you for that, uh, hidden compliment. I just, I appreciate that.
+
+Hey, Tom's in the house. Tom is thinking about his next steps for starting a community
+
+Christian's looking for starting a good membership program for self-paced learning Great. Great, great, great.
+
+Matt says, "I think it's time to start a membership." Nino in the house. Nino, good to see you All right cool. Let's get started
+
+My name is Jay. I've been doing this content thing since 2017. Um, I spent a year leading community at SPI, Smart Passive Income, with Pat Flynn in 2021, and that was actually after six months of consulting in 2020, mid-pandemic. That was crazy, but I helped them launch SPI Pro in 2020, and that was a really awesome experience. It went so well that they asked me to come in and lead community for them in 2021, which I was, uh, excited to do. But my business kept growing, and in 2022, I went back out onto my own, started building behind the Creator Science brand, and launched my membership in 2022
+
+The lab is a place that I've been running, like I said, since twenty twenty-two. It's where creators experiment and learn together. We started that in twenty twenty-two. We're at about three hundred and forty members across different tiers this year. And in twenty twenty-five, we had our biggest year, uh, of the membership in terms of revenue, earning four hundred and ninety-six thousand dollars. Uh, on the right here, this is a photo from our most recent offline event in Boise. This happened just this month. Two weeks ago, we decided to take on organizing an in-person offline event the same month that we're doing this summit. It's been an intense month, guys. So as you're hanging with me over the next couple of days, excited, uh, to have you here, but also just know that, um, team's been working hard. We're trying to do our best for you. If something breaks, if audio is looping, hopefully we troubleshoot that here live in real time, and we have, have some grace for us here as well.
+
+Today is all about teaching. I've allocated ninety minutes here, and if we go over a little bit, we go over a little bit. It's all good. All I wanna do today is sit here and teach what I can. Um, if by the end of this week you've enjoyed this experience and you want some more help and support working with me to help you get started, you'll have, you'll have an opportunity for that to happen as well. But in the meantime, I'm gonna share as much as I possibly can over these next three days to give you a huge leg up from where you're coming from. You know, I know we're all starting at different points. We all have, uh, different goals. But my goal is that you leave these three days and you feel like I have so much more to work from, and I can, uh, skip over some of the issues that I might have otherwise stumbled through. That's my goal here for the next three days
+
+Also, I want you guys to say hello to Anna here in the chat. If you see Anna in the chat, Anna is a member of my team, and she is monitoring the chat. She's helping me, uh, manage some things. She is a part of the Career Science team. She's my integrator, and if she, uh, s- notices that I miss something, then you can absolutely, uh, know that she will be jumping in
+
+Okay. Real quick, I'd love to know which one of these four options sounds the most like you right now. Uh, A, you're considering a membership. B, you have no plans for a membership, but you're here to learn anyway. C, you have a membership, but it's struggling a little bit. And D, I have a membership or you have a membership and it's doing great. Which one sounds more like you? See a lot of As, some Cs
+
+I see a D and it's from Anna. I hope she's talking about the lab. A, C, lots of As and Cs. Okay, great. Joy, congrats.
+
+Anyone who's answering D, I see you. You're crushing it. I hope there's something of value here for you as well, but keep on keeping on. Keep doing your thing Great. Great, great, great, great, great
+
+So regardless, you're in the right place. Um, like I said, if you answered D on that, congrats, and feel free to share any thoughts in the chat of what's going well for you, because I think that's probably something we can all learn from as well.
+
+So we're about to start. We've, we've seemingly identified the looping issue. It seems to be if you leave the tab and come back. So, uh, consider closing the other tabs and just locking in with us here. We're about to get much, much more tactical than I've started. Um, and I hope that, uh, this is worth your time. So here's how the next three days look.
+
+Today we're talking about why memberships in twenty twenty six, why, uh, this is a great year to start a membership, why, um, this is a big opportunity, I believe, for creators like you and I.
+
+Tomorrow, day two, we're gonna be talking about designing your membership for retention and renewal.
+
+And then on day three, Thursday, we're gonna help you finish your roadmap over the next ninety days for your membership, regardless of where you're coming from.
+
+My goals for the summit, number one, I wanna help you decide if a membership is right for you. If you answered this and you're like, uh, "I was an A, and I was considering whether this makes sense for me," I hope that by the end of the summit you feel very clear on whether this does make sense for you and whether you want to move forward or not. And if you do, my second goal is to provide a scaffolding for you to work from to make your membership great, make it very, very successful.
+
+Number three, I wanna provide you with a literal roadmap to build from. This is something we're trying that's very new. It's extremely, uh, interactive and high-tech. I'm excited about it. We'll introduce that here at the end of this session, but we wanna give you a literal roadmap to build from. And then number four, I hope we have some fun.
+
+I hope we have a lot of fun here on the stream, in the chat, uh, in our Q&As. I'm gonna do some live audits for folks who want to come on screen on Thursday. So if that's you, uh, be prepared for that. I think it can all be very, very fun.
+
+So today we'll have a full overview of the summit, which we're, we're kind of doing right now. We'll talk about who this is for and not for, what's happening in education in twenty twenty six, uh, why I personally love memberships, the four reasons most memberships fail, what makes a great membership, and today at the end of this session, you'll get a link to start filling out an interactive audit for where you are right now.
+
+Tomorrow we'll start with a little bit of a recap of today. We'll have a fireside chat with my friend Chad Carson. Chad is a member of the lab. He's been a member of the lab for three years. When he came to me three years ago, he had a course that was doing very well. He was doing cohorts. They were doing about $200,000 per year, but he was doing a lot of launches, and he was thinking about shifting to a membership model. Over the course of really about a year, that first year, he shifted to a membership model, and in 2025, last I checked with him, he had earned more than $900,000 from that membership, which is crazy. A huge growth. And so we're gonna talk with Chad about the decisions he made, the changes he made, why that has worked particularly well from, for him, and what we can learn from that.
+
+We're also gonna talk about the six drivers of retention and renewal tomorrow that make your membership a little bit more sticky, make people wanna stick around month after month or year after year.
+
+Give you a preview of what I'm launching in July, and tomorrow you'll get an interactive diagnostic and pricing worksheet.
+
+Thursday, we'll have a brief recap of, uh, today, and tomorrow we'll talk about your year one roadmap. We'll finish building that out for you specifically. We'll do some live problem-solving audits. I wanna spend a lot of time actually going live with folks here and walking through some problems, and then I'll give you some more information on what our July initiative looks like if you wanna keep working together.
+
+For folks who are here and bought the VIP ticket for the summit, I wanna let you know that after this session, uh, our VIP Telegram will open for two-way communication. So over the next three days, I'm gonna be in there paying close attention and answering real questions from you. You'll be able to post messages to that Telegram and ask questions, and I'm going to respond to them as best as I can. This is a big experiment. Both, both Telegram groups are a big experiment. We've never done this before. I was really encouraged to try this out, um, and I'm having fun with it. I know Telegram can be a little, uh, spammy. So if you join the Telegram and you're suddenly getting spam messages from other people on Telegram, I'm sorry. It is a big bummer. It's not, uh, something I want to invite into your life, and I don't like that Telegram is set up, so you have to literally subscribe to a paid Telegram plan to prevent that from happening. So we'll learn. We'll see, is this worthwhile? Is the Telegram, uh, s- uh, session and Telegram chat really worthwhile? We will see.
+
+Uh, we'll let you know here at the end of this program. Like everything we do here at Creator Science, I am going to literally, like, take everything we've learned about this summit and create content around it, tell you what we've learned, help you, help you out with that. Uh, also for VIPs, we will have a live Q&A on Friday. So the summit, for the most part, is today through Thursday, but then on Friday at one o'clock, we're gonna have a live Q&A that'll actually be in Zoom, so everyone's just on one call. And, um, I'll stay there and answer questions for as long as I can.
+
+If you're not in VIP already, and this sounds like something that's interesting to you, you can still join and do that, um, with the QR code here or at membershipsummit.com/vip. You can go there and, and join us. Uh, I'm seeing some stuff in the chat asking about recordings. Recordings will be posted after each session. Um, for VIPs, you'll have permanent recordings. For folks who, uh, did not get VIP, the recordings will be available for forty-eight hours after they are posted.
+
+Okay? I'm gonna leave this on screen for one more second for anyone else that wants to join VIP, uh, but then we're gonna move forward. Five, four, three, two, one. Here we go.
+
+All right, let's talk about the product landscape here in 2026. And if you notice that subtle animation and gradient on these loops, that is my beautiful wife, Mallory, just making incredible, exquisite slides here in Canva. I cannot believe how good these slides are that Mal has made. So enjoy that. I'm gonna go back and I'm gonna go forward again just so you see it in case you missed it, okay? Keep an eye on these loops. We're going back, and here we go forward. Ah, so pleasing. So nice. So nice
+
+So my belief is that courses are in trouble, and this can be taken to an extreme in saying, like, courses are dead. I'm not here to say that courses are dead, and if courses are working in your business still in twenty twenty-six, ride that wave as long as you can. I think that courses are in trouble, um, for information that is less technical, less difficult to ascertain. So folks who might still have good success with courses. Uh, we have a member in the lab actually who has, like, very in-depth knowledge and experience in an industry that is difficult to get, and there's a lot of nuance there. So in situations like that, I think courses still have some room to go. Uh, but I do believe that the way that we have experienced and sold courses as educational creators for the past several years, I think we've probably reached a peak that we will never reach again. I think that overall, the opportunity with courses is probably in terminal decline
+
+It's not just that information is free and abundant, because that has always been true. Information has always been free and abundant. Information wants to be free.
+
+Derek Sivers, who's had-- who's been on my podcast, had a great interaction with him, by the way. He once said, "If information was all we needed, we'd all be rich and have six-pack abs." Information has always been free and abundant. It's the way that we access information that has changed. The way we access information has changed quite a bit.
+
+Here's what's changed here in twenty twenty-six. It used to be that information was free but scattered.
+
+Now, information is free and aggregated because LLMs have taken, like, all of human knowledge and aggregated it together so that instead of going to Google and searching something and then trying to sift through the results to find the best single result that we could find, we now interface with one of these LLMs
+
+who takes this information, puts it together, and provides a single response for us. We don't have to go and identify the stuff ourself. It used to be that information was extrapolated from a source. We would find a single source, we would read what they say, and we would try to extrapolate that information, that wisdom, to our own personal situation. But now with LLMs, information is super personalized to us. We don't have to extrapolate. We can ask a question, explain to it our situation, and have that information given to us in an extremely personalized way
+
+It used to be that courses were an efficient-ish solution. It used to be that we could take, uh, this course information and work through a linear journey that was kind of like a best fit version of the information. Because as a course creator, what I basically had to do is say, "Here's what I know about, um, my audience. Here's what I know they want to achieve, and here's where I know they typically start and where they're trip- typically trying to end." And I would create a, a linear journey to try and get most people from a standard starting point to the same end point.
+
+But now that everything can be personalized so much, courses don't feel very efficient at all. They feel depersonalized, and they feel like I'm being kind of shoved as a round peg through a square hole
+
+As course creators, it also used to be that you could give information away for free, but charge for the curation. So the model for a lot of us was like, we're creating free content all the time, and a lot of stuff that we sell in our courses is stuff that we have shared for free on our YouTube channel, in our essays, wherever. But the curation and ordering and sequencing of that was valuable and worth buying a paid course for.
+
+But now, savvy internet users can go to our entire catalog of free content and actually create personalized education with our own free content.
+
+It's just the way things are going. It's, it's a, it's a genie that I don't think we can put back in the bottle, but it's changing what we see value in
+
+You might have seen this essay that Tim Ferriss wrote, um, two weeks ago. It certainly made the rounds online and, uh, got a lot of people's attention. It was titled, "Has AI Already Killed How-To Nonfiction?" Talked about his sales trends, his personal data, and what it might mean for the future
+
+And this is what he shared. He shared his year-over-year book sales information. So he used twenty twenty-two as the baseline. In twenty twenty-three, his c- his book sales decreased five percent. In twenty twenty-four, they decreased thirteen percent.
+
+In twenty twenty-five, they decreased forty-six percent. And so far in twenty twenty-six, he's projecting a fifty-seven percent decrease over twenty twenty-five.
+
+So he has seen massive drop in book sales, and he extrapolates from this. He makes his own predictions and asks the question: Is prescriptive nonfiction the canary in the coal mine? And I'll call your attention to this, uh, highlighted bit here. He says, "My position, and I genuinely love to be wrong, is yes, prescriptive nonfiction is the canary in the coal mine, and the coal mine is enormous."
+
+His perspective, his, uh, belief is that prescriptive nonfiction, including how-to YouTube videos, prescriptive podcasts, online courses, newsletters, advice blogs, he think that-- he thinks that it's not that it's gonna disappear completely, but that this is gonna be source material that we interface with through LLMs, which, to read another way, is going to make it inherently more difficult to charge for this information.
+
+So where does that leave us as traditionally merchants of prescriptive non, uh, fiction information?
+
+There are a few, uh, product models that I'm personally bullish on. Uh, I shared this at the personal IPO summit that my friend Chanel ran earlier this month. There are some changes that I'm seeing to how, um, creators like us, mostly educational creators, are changing the way that we monetize. Excuse me.
+
+I think we're gonna see a lot more people moving from do it yourself style products to done with you or done for you style products. I have spent more time in the last couple of months tossing around and considering a world where I have a done for you agency style offering than I have in years, because people will never stop paying for outcomes, and there's no shorter line to an outcome than hiring somebody to get you personally, directly to the outcome. And, uh, there's gonna be a demand for that continuing.
+
+I think more people are gonna move towards it because it. They can feel that demand. Done with you is kind of the hybrid in the middle. It's a little bit like, um, a little bit like what we're doing here, where I'm giving you some information. You're still gonna have to take some action, but I'm gonna be there to give you feedback along the way. More so like a cohort-based course fits into this done with you sort of model.
+
+I'm bullish on time-bound experiences, experiences where we have a, a set start and end time. An example here, um, you guys might have seen Jessie Jean on Instagram. She's doing this Yap challenge right now.
+
+Time-bound challenge is alive and well because we like things in our mind that we can put into a clear box. Not everybody, but a lot of times people are like, "I want to commit to something, and I wanna commit to a certain period of time." I think community experiences are going to get more and more important because even if we are spending more time than ever interfacing with LLMs, with these chatbots on our phones, that's not going to eliminate our desire for socialization and social experiences, being around other people. In fact, I think it's going to heighten it. Personally, I have spent more time this year seeking out and building in-person community here in my, like, neighborhood with my friends than I have in a very long time. Like, I just crave being connected to more and more people.
+
+I think offline experiences, as I'm saying, uh, are a natural extension of that. Community experiences happen online and offline. I think offline experiences, even if they aren't community experiences, are really, really important.
+
+We're gonna see more AI-enabled products. A lot of folks in the lab are playing around with this right now. Uh, seeing more and more people say, "Okay, if AI is changing the way I deliver information, what if I become one with or work with AI to make a superior product delivery mechanism?" Sponsorships and partnerships. This has been a long-standing point, uh, part of, uh, a lot of creators online, especially, um, social media, entertainment, YouTube creators.
+
+I don't think that's going anywhere. In fact, I think this is increasing. We've seen just a growth in advertising spend from traditional TV and media to, uh, social media and content creators, so this is growing. This has become a larger part of our focus here at Creator Science
+
+And affiliates as well. Uh, affiliates is similar to sponsorship and partnerships, but there's, um, less risk on the f- on the front end for brands, and you get to share in the success of your campaigns.
+
+Both of these last two, sponsorships and partnerships and affiliates, they do not, um, come… Or they, they come with an element of dependency on a third party, which I don't love, but they're there. They are an opportunity
+
+So to kind of round out the Tim Ferriss story here, he concluded with some predictions that he thinks the market for information is collapsing into the chatbot.
+
+The market for transformation, for sitting with one mind at length on a subject that has, it has bled for, might just get smaller, weirder, and more interesting.
+
+So how do you do that? He says his, uh, prediction is three points. Number one, find your thousand true fans.
+
+If you start off doing this well but have meandered, it's time to revisit. Be ve- get very clear on who those 1,000 people are. Number two, surprise and delight them. Over deliver again and again. And then number three, success.
+
+The team is thinking about this a lot here at Creator Science with, uh, our membership, The Lab.
+
+In essence, this is the space where we serve our thousand true fans, and we will never run out of appetite and ability to surprise and delight those people. Like, if you have customers, it serves you well to just spend more time thinking, "How can I over deliver and better deliver for my customers?" Versus trying to find new customers over and over and over again.
+
+All of this, in my opinion, points to memberships being a big opportunity, a great product model, and typically or, or, uh, genuinely what I'm looking at for a lot of creators here in twenty twenty-six.
+
+Because memberships combine a lot of these things I was pointing to. I didn't even highlight in this the done with you, which memberships offer done with you style education in a lot of cases. You could have AI enable aspects of your membership. Uh, you can work with brands and partners and have them come into and serve your audience inside a membership as well. Same with affiliates. So memberships represent a lot of what I'm bullish about moving forward, and I assume that's why you're here as well. I think you see this opportunity a little bit intuitively, but this might have given you a little bit more, um, rigor and strength behind why we're thinking about this So why do I specifically love memberships? First, let's do the most obvious reason.
+
+If we look at-- this is my P&L for the business since it started in twenty seventeen.
+
+Okay? So we can see pretty clearly here that we had an inflection point in twenty twenty-two, which continued in twenty twenty-three and twenty twenty-four, followed by a short drop off last year in twenty twenty-five.
+
+The lab started in twenty twenty-two. That's the spoiler of this image. The lab started in twenty twenty-two and put us on a major new trajectory.
+
+But what happened in twenty twenty-five? Why did we have a step back last year?
+
+In twenty twenty-five, we saw a decrease in digital product revenue by seventy-four percent.
+
+We saw a decrease in sponsorship revenue at thirty-eight percent.
+
+We saw an increase in affiliate revenue, a hundred and forty-eight percent.
+
+We saw an increase in membership revenue by eighteen percent. So even though twenty twenty-five was a step back in overall revenue, our membership revenue continued to grow in twenty twenty-five. Our membership revenue has grown year over year
+
+The Lab, our membership, has been the stabilizer of the business. Through having a child and, like, learning what it's like to run a business while being a parent, uh, through, uh, just the chaos that has been twenty twenty-six, The Lab, our membership, has been the stabilizer for our business.
+
+I recently attended a author's retreat in Tennessee with a bunch of fancy people. I had no business being in this room, by the way. I truly do not know why I was invited to this room, but I was so glad to be there. You see me in the front here, uh, also centered in this picture somehow. But one night over dinner, I was seated between Nathan Barry from Kit and James Clear, and they're longtime friends. I'm friends with both of them. They've been friends for much longer than I've known, uh, either of them. And so I'm sitting there at dinner with the two of them, and the subject goes to what is the ultimate business model? Like, the two of them just were having fun talking about what is the ultimate business model to build the, like, best business possible. And, uh, ultimately, spoiler, we, we landed on banks.
+
+None of us are going to build banks, but the two aspects that they talked about that make a really strong, really valuable business: number one, recurring revenue, revenue that once you earn it, it's going to repeat over time; and number two, expansion revenue, meaning that once you have a customer, there's a genuine reason or mechanism why their spend with you would increase over time. So it's when you, when you have a customer, number one, they wanna keep paying you, and number two, they are willing to pay more over time because of the value you are providing.
+
+Okay? So this is something that we can take and say memberships provide both of these things. That's part of the reason why memberships are so value-valuable. The recurring revenue part is obvious, but depending on how you design the membership itself, you might have multiple tiers, you might have add-ons, different experiences that are optional that represent some expansion revenue as well.
+
+For most businesses, for most products, you have this pay once sort of, uh, arrangement. You know, courses, digital products, affiliates, one-off services, those things are pay once and then it's over. You deliver the outcome, hopefully both parties are happy, but that relationship ends.
+
+And then number two, the second model is a recurring model where the transaction, the relationship doesn't end. They pay again. Memberships, retainers, subscriptions.
+
+When you have this pay again model, this recurring revenue model, revenue compounds over time. It just grows and grows and grows. And let's, let's put some math and, and numbers to this to make this, uh, a lot more obvious
+
+A one-time purchase when it's made in month one, let's say you have a $50 digital product or a course.
+
+If that purch- product is purchased, month one you earn $50.
+
+By month 12, that $50 is still the same $50, and by month 24, that $50 is the same $50 because they made the one-time purchase.
+
+But if somebody purchased a membership that was $50 a month and they had a good experience and they wanted to stick around, by month 12, that's $600 in revenue, and by month 24, that's $1,200 in revenue. Like, it's just pretty nutty how different these scenarios are when you, um, have recurring versus one-time payments
+
+Memberships provide predictability, and predictability changes how you run your business
+
+Let me show you why predictable income changes the way you run your business and what you build.
+
+Number one, predictable revenue gives you permission to hire. I recently had a conversation with, uh, Rob Walling, who's the founder of, uh, MicroConf. Before that, he actually built Drip, which is an email marketing platform. Uh, but now he's doing MicroConf. He has a, um, investment tool called TinySeed. He has a media empire, and we're talking about hiring.
+
+And he told me he's-- he said that the great thing about recurring revenue in software and in memberships is that this gives you the confidence to hire and build a team. Which again, from my own experience, 100% can agree, uh, that now that, um, I see, okay, I have literal years' worth of data of how much revenue the membership generates, I feel so much more comfortable hiring
+
+Number two, it gives you permission to build and make longer term bets. When you aren't so worried about rev- where revenue is coming from next month, it allows you to make decisions that are longer term. You're not saying, "What do I do this week to generate re- uh, revenue next month?" It's, uh, number one, how do I continue serving my customers so that they have a good experience and they wanna keep renewing? We'll talk a lot about that tomorrow. And number two, what is the best long-term decisions we can make for the business this month?
+
+And number three, and this is one of my favorites, having predictable income changes what you can say no to. You know, it changes your options. It gives you more options, and there's nothing more important, I think, than feeling the freedom to say no to things that you simply don't want to do. Because in our businesses as creators, nothing matters more than the trust we have with our audience, and if we are making decisions that are short term and not in alignment with our audience because we feel like we have to, we can't say no to the opportunity, that's a big problem. Um, I often see partnerships that to me feel out of alignment, inauthentic,
+
+and I think it's because the revenue opportunity is there, and people aren't comfortable saying no.
+
+So having recurring revenue in your business gives you that permission, that ability to say no
+
+But this is about more than money. I wanted to start there because it's obvious and it's kind of an elephant in the room and I can show it very visually like, yes, the membership that I have has fundamentally changed my business, has changed my life, but this is about more than money. Communities shape who we are.
+
+And I wanna tell you a little bit of a story. And here in a minute we're gonna get to some of the Q&A in the chat, uh, just to take a little bit of a breather. But I wanna start with a little bit of a story here.
+
+When I was in high school, um, we would every summer get our equipment checked for, uh, the upcoming football season. They would measure us for shoulder pads and, and, uh, thigh pads, but also helmets.
+
+And every year when I went in to have my head measured for a helmet, it was the same guy and he didn't remember me but I remembered him every year.
+
+Every year he would say, "Hmm," and he would measure and remeasure and he would say, "Okay, you're too big for a medium I think but you're also too small for a large."
+
+One year he said, "You're a tweener." And I just felt like that term so perfectly described the way that I have always felt as a person . Meaning that I have always felt like I'm in the space between different groups. Uh, I never felt like I belonged perfectly to one, uh, one friend group or one professional group. I always felt like I could blend in places but like I never fully felt like I was in a specific place
+
+So for as long as I can remember, I have found or built communities.
+
+It started when I was in college. Um, I found this organization called the Business Builders Club. It was the entrepreneurship club at Ohio State, and it was incredible. These people were so welcoming, and I just made that my home for like four years. So this photo in particular, I was, uh, in much better shape and kind of ripped.
+
+This is my senior year, and I was leading the, the entrepreneurship club at Ohio State. And between our executive team and the, the, the club as a whole, this felt like a place that I could start to belong
+
+And then towards the end of college and just out of college, I organized a lot of startup weekend events in Columbus, Ohio. Um, so I would, I would run these three-day… I see some patterns here. This was a three-day, uh, live event, uh, called Startup Weekend, where we would help people ideate and start startup companies, like software companies.
+
+We would have designers, developers, entrepreneurs. People would come with ideas, and over the course of the weekend, it was Friday evening through Sunday evening, we would build out a prototype, and we would talk to customers, and we would, like, have a competition. It was awesome. Um, and so the, the Columbus startup ecosystem was my community.
+
+And then I started exploring the online world around 2017, and the first thing I did after I quit my tech job to go out on my own was I joined Seth Godin's Alt MBA program.
+
+And this was, uh, a Zoom call in that Alt MBA program, early cohort-based course. We would literally have, like, six-hour sessions on a Saturday. It was crazy that we were spending this much time. These people were so committed to it, and these people, like, really identified with Alt MBA, the program.
+
+Uh, man, I'm seeing some chat, some chatter in the chat. People are recognizing folks from, uh, Columbus. Love that.
+
+But yeah, this, um, this Alt MBA program was so eye-opening to me. I was like, "I can't believe how much these people, like, love and identify with this space and this community." And it's because a lot of the people in the program, they felt like tweeners in their work life. They felt like they were ambitious and, uh, committed and working really hard, but they just didn't… couldn't meet other people like them in their day-to-day life. And f- s-suddenly in Alt MBA, these were people who just felt like their people
+
+On the back of that, I started my first community called Unreal Collective. It was a community for founders and freelancers. Um, we built this over… This was essentially, uh, facilitated mastermind groups. I would work with groups of five, and we would have three or four groups at a time, and I would do that cycle two or three times a year.
+
+So from 2017 to 20- to 2020, I worked with about 120 founders and freelancers through these mastermind programs, and on the back end of that, we had a Slack community. Now, this is gonna sound kinda crazy, but in 2017, I had to teach people how to download and use Zoom. Okay? Like, nobody had used Zoom before in 2017. When I shifted from Google Hangouts to Zoom, people were like, "What is this? How do I do this?" And we used Zoom for the calls, and we had a Slack for in-between calls, and after people had finished the 12-week program, they stuck around in Slack.
+
+And one of the people that I met through that experience was Matt Gartland, who lived in Columbus as well. He was running a creative agency, and he had an idea that he was working on. But he experienced this cohort, he experienced what I did in Slack, and shortly after we did that program together, his agency was acquired by Smart Passive Income, and he became the COO, eventually co-CEO, of Smart Passive Income.
+
+And in 2020, when they were starting to build SPI Pro, their membership community, he asked me to come in and consult and help them build out a community on this brand-new tool they had access to in beta called Circle. I think we were within the first five, uh, accounts that existed on Circle.
+
+So we did that. We launched it. We had great success. I led the community team for SPI through 2021, as I shared, and then in 2022, I went back out on my own and started building The Lab, which as I shared, we just had our in-person event in Boise this month. It's been life-changing. Um, so, you know, that's my story with community, because it's just so important to me, and this is just, uh, what our offline experience looked like last year in Boise. We had a little video commission.
+
+It's, it's just so powerful. Like, communities shape the way we, we think, who we are, what we wanna do. It's incredible
+
+Communities have changed my life, and I imagine they've changed yours as well. So I'd love to hear from you in the chat what communities have impacted you, changed your life, shaped who you are today
+
+I'm gonna look here in the chat and read some of these out because I'm always curious to do this, this research Hey, I see the lab. Thanks, Kyle. Running
+
+Esports, Generalist World, Wandering Aimfully, Toastmasters, Rental Property Mastery, Future Pro, Ali Abdaal's live YouTube cohort, SPI Pro, Nova Scribes, World Domination Summit, Neurodiversion Summit. I never got into Chris Guillebeau's stuff. It was, it was before my time. Church communities, totally.
+
+Learn dot community, Tom's community, that's amazing. Wandering Aimfully, improv, Ship 30 for 30, Self-Care Society, the ADHD community, local mothers support group, LinkedIn, Write Grow Sell, Safe Space,
+
+Accountability Success Circle, All NDA, Vistage. I'm not sure what NOLS is, but I'm gonna look it up. Priya Parker, great book.
+
+Hiking, Wandering Aimfully, Akimbo, inner development goals. Okay, this is so fun. This is so fun. Look how diverse this is.
+
+Look how wide-ranging this is. That is the amazing, magical thing about community So bottom line, community isn't new.
+
+We've always wanted belonging and becoming. But the hard thing about community, this isn't in my slide deck, the reason that I stopped doing a lot of like the local community stuff like startup weekends, it's a lot of work. And a lot of times it's thankless work, and you can get burned out because you have to be-- you have to hold space for people. If you're empathic, it can take a toll on you. And if there's not a sustainable model behind it, people just get burned out, you know? And that's why I think memberships are a great alignment of incentives between you and your members because the, the payment required to join the membership is also what makes the program inherently sustainable. And we want a community that is sustainable, that continues, that persists, because if we love that space, we want it to continue to exist.
+
+You can create that transformation for people, and that's what I wanna help you do over the next two-plus days
+
+It's something I've been talking a lot about recently. I was on Ali Abdaal's podcast a couple years ago to help him launch his membership. Um, and then last year at Craft and Commerce, I spoke with Nathan Barry about the future of education, kind of predicted where things were going with, with courses. I think we're still gonna see some of that play out, but this is, this is what I'm doing. This is what I wanna help you with.
+
+Before we talk about parallel versus shared experiences, I wanna do a quick time check, okay? And I'm gonna jump in and look at some of the questions that we had in the Q&A real quick
+
+To everyone asking about the recording, we will send the recording after the event, okay? We will have, we will have recordings
+
+Okay, this is an interesting question from Anthony that I'm going to, uh, broadcast to the room. He asked, "Do memberships make sense for people that want to be a career coach?" Memberships, as we'll talk about, are extremely flexible. I am of the mind that as creative people, we can create memberships for just about any, uh, vertical or niche or experience. I think there can be a membership there. The question is going to become, when you think about your own, uh, needs and desires for how you wanna interface with the thing, can we find a shape that makes sense for you? And it's all a design exercise. We'll talk more about that here, uh, later today and tomorrow as well. Um, ch-ch-ch We had a question from Amaris that I'll share here.
+
+"Curious about any thoughts, insights on memberships for ac- for academies, i.e., it includes an ex- an extensive multi-year curriculum, community space, monthly calls, et cetera, so a bit of everything. Because it's unique, and I'm struggling to nail down pricing and structures."
+
+Yes, I think this is possible, but the trap that you might fall into with this line of thinking is you don't want to make a membership that just feels like a bunch of stuff. Like, we need to unite the idea of all the stuff you get underneath a very legible promise that you're making, and we'll talk more about that here shortly. So I'm just gonna keep pressing forward here. Thank you guys for sharing your questions. We'll have lots of time at the end to answer more of these.
+
+Okay, let's talk about parallel versus shared experiences because this is something that I'm thinking about a lot these days. There are two ways to experience the same thing.
+
+There's parallel experiences, and there are shared experiences, and let's, let's think of it this way.
+
+I love the NFL, and I can't wait for the season to start, and when the season starts, I'm going to sit down and, uh, watch Red Zone for possibly seven or eight hours a day, and I'm gonna love that. But what I love more than watching Red Zone on a Sunday is being active in my fantasy football group chats, where everyone else is also watching Red Zone, and we're reacting to the same things at the same time, and we have shared stakes because we're in that fantasy football league together.
+
+So fundamentally, whether I'm watching that broadcast alone or with other people, I'm watching the broadcast. The content is the same.
+
+But the experience is super different because the experience that I truly love is less about the content, the thing, and more about the shared experience of watching it with other people.
+
+That is the ultimate fun that I have, and I do it for a lot of things, you know? When I watch, uh, The Bachelor on a Monday night with my wife, part of that is like The Bachelor is a train wreck, and I see someone in the chat saying Love Island, same concept. It's a train wreck, and it's fun to watch. But I love watching it with my wife. I love having that shared experience, and we have friends who watch it too, and now we're in a group chat with them, texting them about it and having that shared experience. That is the magic of shared experiences.
+
+Whether you're watching a football game or, uh, listening to a new album that was dropped or watching a TV series or eating, you know, having a meal, reading a book, doing these things with other people makes for a different overall experience and outcome and fun. It's just better Most courses historically have been parallel experiences. People who are doing the same thing. Like you might have dozens or hundreds of students who are going through your course, but they're all doing it in parallel.
+
+You might have hundreds of people reading your, uh, paid newsletter, but they're doing it in parallel.
+
+Um, YouTube is kind of an interesting in-between here where, you know, people watching your videos, they're probably having an individual experience unless they're in the comments. But if they're in the comments, are they truly having a conversation or are they talking at each other? Like are they coming back? Are they building relationships?
+
+Most things that creators produce are parallel experiences. Uh
+
+And to me, that is suboptimal. It's, it's just, um, it's not that it's completely suboptimal, it's that there's a missed opportunity here.
+
+Memberships with a real community element are designed to create shared experiences. They take these parallel things and basically open up a through line, um, a conversation between people that has a shared experience then. And when you have shared experiences, they provide things that parallel experiences can't.
+
+Shared experiences add this level of accountability that makes it more likely that people finish what they've committed to
+
+They add an element of real-time feedback between other people who are doing the thing.
+
+If you get stuck, if you have a question, people can answer that question. We see this with the difference between a pre-recorded course and a cohort-based course, both of these things. You know, real-time feedback is, "Hey, I, I'm trying to do this exercise, but I hit this wall. I have this question, I'm having this problem. Can you help me solve it?" In a pre-recorded course, you hope that they leave a comment, and then you can respond to them and get them help, but that not only slows down the timeline, it just doesn't always happen reliably. Having this real-time feedback can be really, really helpful.
+
+Number three, and this is a huge one, when you have shared experiences, you can build actual friendships. There can be actual connections that are made between people that otherwise just wouldn't happen
+
+If you have this, this experience of people building real relationships around the thing that you're doing, you start to build an actual community.
+
+Inside the lab, we have a whole host of shared experiences. This past year we had our first inaugural fantasy football season. Uh, congrats Chanelle. I don't think she's here on the stream here today, but Chanelle Basilio of Growth Universe won our fantasy football league. She beat me in the championship fair and square. Congrats to Chanelle. Thank you to James, who organized this and made sure that actually got off the ground. This was member-led. This is a member-led initiative, people saying, "Hey, we're in this community. I care about football. If anyone here wants to put a league together, I'm going to do that." We have a wellness group that Matt in our community is running, where he said, "I used to run this for a company that I worked for. I wanna help people, uh, improve their health and wellness. We are creators, we're stressed, we have lots on our plate, but that doesn't mean that we should give up on our health and wellness. So I'm gonna run a challenge inside the community to help people get more steps or be more mindful." That's fantastic. Another member-led effort.
+
+We had a fantasy Survivor league for folks in the community who watch Survivor. We found a website that does like fantasy football, except for Survivor attendance or Survivor, uh, players. And that was a really fun thing that just added to my experience of watching Survivor. It added to my experience of being in the lab. That was awesome. Stan, congrats on winning, if you're here.
+
+We had a morning wake-up crew. This was led by a man named Cal. He noticed that a lot of folks in the community were talking about trying to be morning people. He was ex-military. He wakes up every day at four thirty. He said, "I wanna help you guys wake up." He put together a small group experience inside the community, and we had a bunch of people who were waking up earlier than ever before and getting a lot of work done and feeling like, "I have changed, uh, what this is like."
+
+These are shared experiences inside of our shared experience. I saw a great question in the chat from Joy, "How are members who are running these things getting compensated?" Uh, it depends on the experience. For people who are just motivated and wanna do it and they're like, "Hey, can I do this?" Yes, you can absolutely do that. If there are shared experiences that I want to exist and I'm trying to find somebody to run it, I will sometimes offer compensation for that. Um, that could be in cash, that could be in exchange for membership dues, it could be in exchange for a credit towards next year's membership. I've seen this done in lots of different ways. Uh, it kinda depends on you, your community, your relationship to the person, uh, what that experience is supposed to be like. I think it's super flexible and between the two of you to figure out
+
+Not everything, uh, needs to be shared. Like a reference mandable, uh, reference manual, that's not really a shared experience by design. People just referencing things doesn't need to be a shared experience. If you have a membership that is creating a community experience, but you wanna put evergreen education and courses inside of it, great. Like not everything has to be a shared experience, but certain things can be more enjoyable and, um, more transformational if they're shared
+
+Shared experiences are sticky. It's one of the reasons that people want to stick around with your membership
+
+So I, I've said a few different types of words here, and I wanna get, um, on the same page in terms of vocabulary.
+
+I'm using the term membership a lot. This is called a membership summit, and I'm using that term very specifically. Okay? My mom's an English teacher. My older sister's an English teacher. I grew up with a, a, a love of the English language. So let me, let me talk about this real quick.
+
+I see memberships as distinct from communities, courses, and subscriptions. There are similarities, but I think the differences are important.
+
+Subscriptions are paid products or experiences with ongoing benefits and recurring payments. The value of a subscription is generally one-to-one and top-down. For example, Netflix, premium podcast feeds.
+
+I do think memberships are technically a subcategory of subscriptions, and I'll explain that here in a moment.
+
+Communities are peer-to-peer networks built around a common interest.
+
+As creators, a lot of what we create, again, as parallel experiences, are one-to-one broadcast communications
+
+When we start being a curator around a certain interest group, we naturally attract people who care about that thing. Like, I think as creators, we are also naturally curators, and curators are people who say like, "Hey, this is something I care about, this is something I have knowledge about, this is something I'm gonna keep exploring and studying and sharing about." And that is what organizes people around you because they have a shared interest around that thing. But it's still one-to-one until you become a community builder and you start to connect people to one another.
+
+All of these lines between these circles, these are bridges and valuable, um, these, these are valuable interactions that become possible in a community space where no longer do we have to go through you to talk with one another. This is actually where we connect with one another Peer-to-peer networks are not a broadcast channel.
+
+Peer-to-peer networks generate value from the other members, and peer-to-peer networks are in service to the nodes of that network.
+
+They exist to serve all of the different nodes in that network.
+
+So a community is a place where people can connect and learn from one another. It can be free, it can be paid, it can be a part of another product, like a course or a membership. Um, an example here might be a listener community for your podcast. Community just means a group of people who are connecting around a common interest
+
+A course is a paid product or experience with one specific desired outcome. It's typically a linear journey, a prescriptive linear journey that is a singular individual experience.
+
+Courses can be re- prerecorded and self-paced, or they can be live, like a cohort-based course, which is kind of a hybrid.
+
+And then memberships, as I was saying, I would actually place this, um, as a subcategory of subscription because it's a subscription product. It's a recurring transaction that provides access to typically community and other kinds of courses. So like you'll sometimes hear things called a membership that I would just call a subscription. Like to me, a membership means there is a community experience. Is, um, having a AAA membership a membership?
+
+In my mind, it's more of a subscription. You know, it's more of a content and perks subscription. If I am not connecting with other people, to me, that's not a membership, it's simply a subscription. A purely content-based membership where there's not communication, to me, again, feels like a content subscription more than a membership.
+
+So to me, the value of a membership includes a peer-to-peer aspect, which means that the value of a membership is a little bit out of your hands. It changes all the time.
+
+Um, a community is typically a major part of a membership, but it doesn't have to be all of it. But to me, a membership needs to have a community aspect to truly be a membership and not just a subscription.
+
+A little bit of this is semantics, but this is how I'm using my vocabulary in this presentation over the next few days.
+
+So communities versus memberships, 'cause I'm seeing some questions. Is a paid membership community different from a membership and a community?
+
+To me, communities promise connection and the value is from the members.
+
+Memberships promise value. Value can and probably does come from members, but it might also include access to the creator, uh, workshops, course discounts, software discounts, additional free content, affiliate opportunities. Like to me, memberships can have a lot of aspects of value within them outside of the community, or it could just be the community itself
+
+Memberships as a form factor have a lot of variability then.
+
+A lot of the questions I had leading up to this summit, and even in the chat here so far today, are around this idea of like, will memberships work for my situation? I don't want it to eat up all of my time.
+
+I get it. I hear all of that. These are super valid concerns, but I think they're all solvable concerns through the way you design the experience
+
+So before we talk about, uh, how to design the experience and how to make a great membership, I wanna talk about why most memberships fail
+
+There are four reasons why most memberships fail number one is lacking a clear promise. We're gonna talk about all four of these number two is lacking care from the creator
+
+Number three is lack of direction and number four is lack of villagers. We're gonna dive into all of those
+
+Uh, I see a question in the chat from Deborah. Could Jay give an example of what circle community is not a membership community? Again, part of this is, is a little bit semantics.
+
+Um, if you have a circle community that is completely free, to me that is just a community. I don't see that as a membership because it's not a paid, uh, product. It's not a paid subscription Okay, let's keep moving forward on these
+
+So what does it mean to have lack of a clear promise? This means if people don't know what your membership does for them, they won't buy. If it's not clear what you're doing for me, I'm not gonna buy it. I'm not gonna be interested
+
+Potential customers aren't going to work that hard to try and understand the thing that you sell. Like, we're, we're simply not walking around saying like, "Gosh, I just wanna spend money on something. Somebody give me something to spend money on." We're inundated with options for spending money, so our default is trying to, um, uh, disqualify things.
+
+Like, I want to very quickly feel like this is not for me, so I can not think about do I wanna spend money on that thing? So your community, your membership needs to be so clear in what it offers to people that they can't disqualify it because it's clearly something they value and they want. At least some people, okay? If you're not clear very quickly, people just won't purchase because they don't care enough to do the work to understand why they should care.
+
+They're trying to answer the question why should I care? When you are marketing your thing, when you're making your thing, when you're designing your membership, people need to know why should I care?
+
+Because if they don't know why they should care, they're not going to care Problem number two, lack of care from the creator.
+
+Sales and content, I would say, is a transfer of emotion and enthusiasm.
+
+Our audiences naturally care about the things that we obviously care about because our enthusiasm, our emotion transfers to those people. And this is true after the sale as much as it is before the sale. If we can tell that you or your team aren't excited about the thing that you've made, i.e. your membership, we're not gonna be excited about it either. Why should we care about something that clearly you don't care about or don't wanna spend a lot of time within?
+
+It doesn't mean that you always have to be available, by the way. If you have a design constraint that you don't wanna spend every day in the community or all day in the community, we can solve for that. But your level of care should shine through in the way the design of the experience is made. Even if you're not always available, when you are available, the way that you've created the space, the way it provides value to your members, it should be clear that there was care put into the design of that experience and what people are doing there.
+
+Otherwise, the experience that pe- a lot of people have in that space is like, "Is anybody in charge here? What's going on? Why is it, why does it feel like this is, uh, directionless, aimless, uh, kind of a free-for-all? What's going on here?" Speaking of directionless, this is one of our other points of failure, having a lack of direction.
+
+A lot of memberships feel like a sandbox, and some memberships feel more like a map.
+
+Sandboxes aren't necessarily bad. They give you, like, the space to explore and try things out.
+
+But to get value out of a sandbox, you need to have, like, natural time and curiosity. You have to want to explore and spend time indulging your curiosity
+
+But in a lot of spaces, people like to be told what to do. It just feels easier. They want to be given the direction for where they should go, what they should do next.
+
+The more direction you give people, the more likely they are to be successful.
+
+Without any direction, you're probably gonna deal with confusion, which leads to inaction, which leads to inactivity, which leads to churn. So more direction is usually good. It doesn't mean it has to be totally prescriptive, because there are people who will naturally want to spend more time exploring their curiosity, trying things out. But if you have a pure sandbox without direction, without a map, this will lead to a lot of problems.
+
+It's kind of like saying like, "Okay, here is, uh, the key to our gym. It's open 24 hours. Good luck." Like, "Here's your key. Go in and explore." People can do that. Like, they can take the key and they can learn things on their own. But, um, they might be a little bit uncomfortable the first time they're encountering different things within that space. They might even, might not even be aware of everything that's available to them. There might be doors and machines and, and elements of the experience that they don't even know they have access to Number four, the issue of having a lack of villagers.
+
+I think about this a lot with memberships and communities broadly right now. We hear this phrase, everyone wants a village, but no one wants to be a villager, and it's so true. And one of the things that I-- uh, one of the mantras that I've been holding for myself this year is be more of a villager in the spaces, in the communities that I inhabit and I value and I want to be strong and sustaining. How do I do more of my part? I certainly feel this as a parent. I read some statistic that, um, it was like early, uh, early humans who lived in tribes would average, like I said, like twelve or fifteen different people spending time with a baby, an infant per day.
+
+And here we are, like, living in a suburb and like most days we have a part-time nanny here. So our daughter is seeing my wife, me, and a part-time nanny. But a lot of times it's just me and my wife, and that's why parenting feels hard. The, the, the idea with parenting has always been it takes a village. But if you don't have a village because nobody wants to be a villager, then you don't have community.
+
+So in an online space, this looks like you have a lot of posts with zero replies or slow responses.
+
+This often happens if you set an expectation that the value of this membership is based on content and consumption. If I come in expecting that the way I extract value from the space is consuming what is posted here, I'm gonna come in as a consumer and not as a villager. I'm gonna come in as a taker and not as a giver.
+
+These spaces have no reciprocation. They feel like, well, you don't care about me, so I don't care about you. It's a lot of two-dimensional names and faces, a lot of talking at one another rather than talking to one another I had one, uh, email leading up to this where a reader named Andrea said, "I haven't succeeded in making the community feel alive. It's not the go-to place for parents' questions, even though they love our live classes, emails, and social content." My gut, and it would take more exploration here, but my gut is these people came in with an expectation that the value of this membership is in consuming this content. They didn't come in expecting to be a villager, and so turning that expectation around is gonna take a little bit of work. It actually happens before the sale.
+
+You need people coming in expecting that this is a community where we are giving, we're helping, we are as much villagers as we are, uh, villager, I guess. We're, we're helping as much as we are, are, uh, taking away.
+
+So if these are the things that make memberships fail, what makes a great membership?
+
+All we have to do is invert these failures to see what a great membership looks like.
+
+So if failing memberships lack a clear promise, a successful membership has a clear promise.
+
+If a failing membership lacks care from the creator, a successful membership shows care from the creator.
+
+If a failing membership lacks direction, a successful membership has a clear direction.
+
+And if a failing membership lacks villagers, a successful membership is full of villagers
+
+So I'm gonna touch on each of these. I'm keeping an eye on the clock. I do wanna leave some time for Q&A, but we're getting, uh, a little close on time, and I recognize that. Thanks for hanging with me. So number one, designing a clear promise.
+
+Your promise needs to be the intersection of legible, meaning it's easy to understand. Something legible is I hear it and I get it. An example is, "I help people lose weight." Okay, I get it.
+
+Compelling, something your target audience truly cares about
+
+An example might be I help people lose ten percent of their body weight in thirty days.
+
+That feels pretty compelling. Maybe I wanna lose ten percent of my body weight. That's actually pretty big. I probably wanna lose a little less than ten percent. Differentiated, how you're different or better.
+
+Example here would be, I help people lose ten percent of their body weight in thirty days without giving up their favorite snacks.
+
+So you can see how these things start to stack on each other, and by the time we get to the end here, it's just a lot more clear and a lot more, uh, compelling, you know? So this can actually be used as a really helpful diagnostic if we think about, um, this- these three aspects. So let me pull up my, my pointer here.
+
+When you are legible, differentiated, and compelling, that puts you in a place where it's like, okay, I'm in a good spot, and I'm poised for growth. But if you're missing one of these three, then this is a big problem.
+
+Um, and you can use this as a diagnostic. So if you're legible and compelling but not differentiated, you have entered a competitive hellscape. People get what you do, and they want what you do, but they don't know how you're different, so you have to out-compete other people.
+
+If you're legible and differentiated but not compelling, nobody cares.
+
+Like, I get it, and I see how you're different, but it's not compelling to me, so I just don't care.
+
+And if you're differentiated and compelling but not legible, nobody gets it. It's like, okay, that sounds different and maybe kind of interesting, but, uh, I… What? What do you do? So depending on where you feel like you are getting negative feedback from the market, do you feel like you're dying of competition? Do you feel like nobody cares when you talk about what you do? Do you feel like nobody gets what you're saying your membership does? These things point to one of these three aspects failing.
+
+So in the chat, we can try this out. I would love to hear from you. Who do you help?
+
+The second question will be, how do you make their lives better? And the third question will be, how are you different?
+
+So I'm gonna pause here and read some of this. Julissa helps creative women. Catherine helps creatives who are using their art in all its forms to change the world. Jen helps older populations.
+
+Marina helps homeschooling moms of middle schoolers. I see expecting parents, millennial women navigating the challenges of dating.
+
+Ah, Amy, I thought that might be you. Good to see you here, Amy
+
+Post-menopausal women, burnout attorneys, artists and creatives, educat- educators and students professionals in mindfulness Teachers, ICU nurses Great
+
+This is the type of thing that I would keep just working on and workshopping, trying to get as legible, compelling, and differentiated as you can while also being short. That's a challenge. Can I say these things quickly in a short burst? The old elevator test
+
+I have some examples here. These aren't gonna be all perfect, but they're examples that I like, that I think are diverse, that, um, might give you some direction here.
+
+I think Dr. Becky is doing a really good job, and it's really impressive. The scale of her community is pretty crazy. There are more than 100,000 people in her, uh, membership
+
+And her promise is, "Parenting is hard. Our app makes it easier." So she helps parents, very legible.
+
+Um, our app makes it easier. Our app makes parenting easier.
+
+It's not differentiated. I would say this isn't clearly differentiated, but if we get down a little bit more, "This helps you handle the hardest parenting moments built by clinical psychologist Dr. Becky." Of course, she has a little bit of a benefit of being Dr. Becky. Like, she's kind of broken through. So being built by Dr. Becky and her, um, uh, IP is differentiated.
+
+We don't all have that benefit of being a known person, but I like this, I like this example.
+
+Uh, example number two from Tamara Grzyminski, Lab member, awesome human being. Her business or her membership's called PMM Camp.
+
+PMM Camp is where product marketing, product marketers build leadership range so they can move beyond execution to influence decisions, shape strategy, and build a trusted team. But if you go up a level higher, become an indispensable product marketing leader. I think that is legible, compelling.
+
+Uh, differentiation is always hard to nail in the language, but she's in a space that isn't super competitive, so she gets to be differentiated again by being her, by having, like, an obviously clear brand, by working with some known quantities We have, uh, Vojta.
+
+He is one of the leading experts on the circular economy, I think the biggest LinkedIn, uh, creator around the circular economy.
+
+His membership helps you plan, build, and grow a profitable career in the circular economy
+
+I found this one on the Circle Discover Mar- Marketplace. This is new to me, but I liked it. Uh, Modern Makers where sewists find their people, build skills, and sew with joy together
+
+And last, I think Deborah's actually here hanging out, um, if I'm guessing the right Deborah from the first, first name here. Goats 365: Raising Goats Without Losing Your Mind.
+
+I love that. Living with, learning about, and loving goats 365 days a year. Deborah's got a fascinating business, but this is, like, just another great example of how creators are everywhere. We can do anything, and any one of us has opportunity. Like, yeah, if I'm having the experience of raising goats and I'm losing my mind and I don't know what I'm doing because I got so… Oh, wrong Deborah. Okay. Sorry, Deborah, I thought it might be you. Um, if, if I'm having experience with a goat because someone on TikTok convinced me that I could have a goat as a pet, um, maybe I need to learn how to raise goats All right. Lastly, showing that you care
+
+This requires you to, uh, have a lot of intellectual honesty.
+
+And what I'm gonna ask you to do is look at every aspect of your membership through your members' eyes.
+
+Your sales language, how you check in with them, how you onboard them, the introductions that they make and how you respond to them, or the introductions you make for them, the welcome messages that you send to them. Do these things show that you care?
+
+Do you clearly show th- through this experience that you have put thought and intention and care into this experience?
+
+Another thing I think a lot about is time to first win, TTFW. When somebody joins your membership, they have taken all of the risk because at that moment they have paid and they have not extracted any of the value yet. So when somebody joins, they're fundamentally shouldering all the risk of that transaction. And so it should be your biggest priority to help them achieve their first win as quickly as possible to start to shift or eliminate some of that risk and get them excited about whatever effort is required for them to extract the value you've promised from that membership.
+
+I think about surprise and delight a lot. There's no way to surprise and delight without pretty clearly caring about your people and about the experience.
+
+The way you show up personally, again, doesn't mean that you're available all the time, but the way you show up when you do show up matters a lot. Ultimately, keeping your promise matters a lot.
+
+Whatever you're promising to do with your membership, keeping it shows that you care.
+
+Creating clear direction At every turn, when somebody joins your membership, they're asking themselves, and you indirectly, "Now what? Now what do I do? I just paid for this thing. Now what do I do?" The longer you can string together answers to the now what question, the better. So here's an example. This is what we do in the lab.
+
+You make your purchase, the first thing I ask you to do, complete your profile. After that, finish your onboarding.
+
+After that, welcome a new member. This is how I'm trying to plug in the be a villager, uh, aspect early on. It used to be it would say, "Okay, you just completed your profile, uh, introduce yourself." But actually, what we found through analyzing the behavior of our members, members who comment-- uh, or I should say, our most successful members, the ones that are happiest, that have stuck with us the longest, they have like a five to one comment to post ratio. And so I thought, okay, what if I could build this into onboarding, that before you introduce yourself, what we actually want you to do is welcome someone else who has recently introduced themselves.
+
+Then introduce yourself, then schedule a one-on-one welcome call with me, then subscribe to the private podcast, then create your plan, then attend our next live session. You know, you can push this as far as you can push this. It's a good exercise to see where is the upper limit on how many times can I answer the now what question to get people to their first win, to feel like they have de-risked their purchase and like they are on their way to getting the thing that you promised.
+
+Most memberships are great for the first few days or weeks and then fizzle out, and that is what we want to avoid. We want to not fizzle for as long as possible, and the more you can answer this question and give people a string of wins, the better
+
+And then lastly, cultivating a village. How do we do this? How do we get people to want to be villagers? Memberships are like gardens.
+
+You can't really make them grow, but you can create the right conditions
+
+We care for people we feel like we know. So the biggest reason that people, um, feel disconnected from a space is that they never feel like they've connected a real human being to the other side of a two-dimensional name and photo.
+
+We care for the people that we feel like we know. So you need to get beyond names and photos using things like live calls, small group experiences, one-to-one introductions, offline experiences.
+
+In the beginning, that means that you need to model what it means to be a villager. So let me go back one point real quick.
+
+I really cannot recommend enough finding ways to connect people one-to-one quickly after they join. This is another thing we're working on in the lab right now as part of our, like, revamped onboarding experience, is I send one automated email… Sorry, one automated direct message when folks join the lab, and what I'm trying to do is identify who is the best person I can connect them to as quickly as possible that's going to help them, um, get through their next challenge and feel like they have a friend here in the community
+
+That's what I'm trying to do. So when you can get people to see names and faces in a forum as a real person that they care about and they want to see succeed, like there's no way around it, being active in a forum means that there's some effort that you're putting in. Why would we do that? We do it because we care about those people. But if we don't care about those people, I'm not gonna do that. So we have to create actual exchanges between people to build that care. And in the beginning, it's on you to show what that looks like
+
+So I'm gonna share next steps for us here in a moment. Um, but I wanna hear in the chat, after all we've shared today so far, do you feel like you're up to the challenge? We're gonna wrap up here in a couple minutes, and I'll share what happens next. But do you feel like you are up to the challenge that is building, cultivating, growing a membership? Are you more interested in building a membership than you were when you joined? Let me know
+
+And while you do that, I'm gonna tell you a little bit about tomorrow
+
+Tomorrow we're going to talk about what separates memberships people stay in from memberships they drift away from
+
+We'll have a brief recap of today, a very brief recap of today. Again, we'll talk with Chad Carson, talk about how his business went from courses to a thriving, thriving, thriving membership We're gonna cover the six drivers of retention and renewal. I'm gonna give you a preview of what I'm launching in July
+
+And you're gonna have an interactive diagnostic and pricing worksheet. So save the time and place. We'll start again tomorrow at the same time. Same link will work for you. I hope you save it. Chad is genuinely awesome.
+
+He's gonna kick things off for us. He is the man, and I think you're gonna love learning from him. So definitely come in early to meet and hear from Chad.
+
+Immediately following this broadcast, I'm going to be sharing an interactive worksheet with you in Telegram, and then a little bit later in email. We have an email going out later with the recording. But immediately after this ends, I'll share it in Telegram. I'm about to show you what that looks like.
+
+Uh, I'm gonna open up the two-way communication in our VIP Telegram so that you can, uh, chat with me throughout.
+
+And if you did still wanna join VIP, here is the link again to do that. It's membershipsummit.com/vip. I think I can even put that on
+
+To the pa… I know I don't, I don't have that loaded up. Um, yeah, so th- these are our next steps.
+
+This interactive worksheet is very, very cool. This is what's gonna come in Telegram. So we have a backend toolkit built into the membership, Membership Summit website, where we're gonna ask you to fill in some questions, answer some questions, and over the course of the next two days, this is literally going to start building out your plan for you
+
+The worksheet is not only for VIPs. No. Worksheet is for everybody. That'll come, but if you're not in the Telegram group, you'll have to wait for my email later to get it, which is gonna be after the replay is processed. So it's gonna take a minute.
+
+Um, worksheet's gonna go to everybody, and this is gonna start building out your roadmap over the next three days. Oh, yes. See? There's Ana in the chat Here is our Telegram for everybody where this link will go Okay. Um, that's what's coming next.
+
+Here's that link again. I know we are at time, so feel free to jump if you need to. I'm gonna stick through, and I'm gonna answer questions that were in the Q&A here for the next few minutes.
+
+Um, again, this is the Telegram link for everybody. Anybody has access to this Telegram, and that's where we're gonna drop the interactive worksheet here shortly. Um- And I'm gonna go to Q&A All right Here we go. Question from Chelsea.
+
+Mostly for tomorrow, but thinking about how to retain people if your offer is life stage based, i.e., I focus on expecting couples. Obviously, they end up having the baby. I'm considering just two communities, and they can move to the current parent one, but not sure if that's too confusing too much.
+
+This is difficult from a sales perspective, um, because obviously people who are expecting are in like a nine-month window you gotta capture them in
+
+I think there are multiple ways to design this, and it's worth designing different avenues and playing with it. Like, you could have two communities, but when you have two communities, there is certainly a degree of doubling of the effort.
+
+Like, there's just twice as much stuff to maintain. If there are assets that you want to make available to both communities, now you're uploading it twice. So when possible, I try to design for one community space, one membership, because also when you have two things, you now have to market two things. So any piece of content you create could be geared towards one or the other, but not effectively both. Whereas if you have one membership with one community, that is just one thing that you can benefit from repetition to talk about over and over and over again. So I would think what is true about both of these two life stages that I can tie together in one membership offering and just sell the one thing, and maybe there are different spaces within it. I gave the example of Dr. Becky's Good Inside app a little bit ago for parents, and they have, um, you know, parenting is kind of like the overarching thing, which in your case, parenting could also be an overarching thing.
+
+And for them, they have like, okay, there are, there are identity groups within it, like I'm a dad versus I'm a mom, or I'm African American, or I'm Caucasian. Like, they have all these different groups within it where they say, okay, parents is a big umbrella.
+
+What is true for multiple groups within it that we can give them their own small space to benefit from? And I think in your case, Chelsea, there's probably a version of that as well Okay, question from Jeanette. Let me put this up
+
+I love the idea of people welcoming another member. I don't have a lot of members coming in. Would this work the same way if I ask them to con- to comment on someone's post? Totally. Yeah, totally. I think, um, number one, when new people are coming into your membership and introducing themselves, I think it's incumbent on you as the creator of the space to have somebody on your team welcoming everyone.
+
+Um, I think a core differentiator for the lab, this has been historically true, I think it's been more true at times in the past than it has been in the very recent past, but I really-- I view speed of response as a competitive advantage.
+
+Because if somebody posts in your space, especially an introduction post, they are taking time, they are making effort, they are being vulnerable, and once they do that, they have, like, kind of an uncomfortable feeling of uncertainty of, "How am I going to be received? Am I gonna feel welcomed? Am I gonna feel like people care about me?" And the longer they wait before getting any response or, like, a truly welcoming response, the harder that feels, and it makes them less likely to post again.
+
+So I see this as a point of failure for a lot of memberships, is they do a really good job of getting people to introduce themselves, but then the experience after introducing myself is so bad that now I no longer wanna use the space 'cause I don't feel welcome, and I feel like posting here is not productive. So, uh, any way that you can model the behavior of welcoming other people, and then even thanking people who are being villagers. This is also important. This is something I, I should call out. If you see people in your community who are being kind to one another and exhibiting the behavior you wish more people exhibited, thank them privately, maybe even thank them publicly to show, like, this is allowed and appreciated behavior Paula asked, uh, let me broadcast this
+
+Do you give them the whole onboarding journey upfront or drip it over time? Um, kind of both. So we have a, a brief, uh, like orientation course when people come in, and so the onboarding that I send them when they come in, they start getting a drip, uh, direct message, uh, series, which is I think now narrowed down to two messages, but they also get a drip email series.
+
+And when they come in, both the first direct message, both the, both the first direct message and the first email is saying, "Go complete this orientation course," basically, and it should take them no more than 15 minutes. So if they do that, they're effectively onboarded.
+
+But the email drip kind of assumes that, like, they may not get all the way through it, and we wanna reinforce some of the most important aspects of it, which for us is subscribing to the private podcast feed, um, and scheduling your one-on-one call.
+
+'Cause I know if you do those two things, uh, you're gonna stay more connected to the space, and I'm gonna have the opportunity to, um, triage any issues that you're having and get to know a little bit more ab- a lot- a little bit more about you
+
+Uh, John asks, "It looks like a lot of this is entrepreneurs and self-help creators. Will this course be valuable for purely entertainers?"
+
+John, my bias is towards the education and transformation side. I think there's certainly, um, benefit over the next two days for someone in your position, uh, more entertainment. But a lot of the examples and the way I think about this is on a more educational and transformational side. It just is. It's, it's my experience. Uh, I think it is harder to do memberships, uh, from an entertainment lens. It tends to look a lot more like a, uh, content subscription, but I also think there's opportunity to, uh, extrapolate what we're sharing in education to an entertainment setting to stand out and be a little bit different
+
+Marina asks… I love that you guys are continuing to stick around and ask questions. We have a good group still sticking around, so I'm gonna keep hanging out and answering more of these questions.
+
+Marina asks, "Can you talk more about how you use a private podcast to engage your members?" We, through the natural, um, course of doing, uh, the membership, we end up creating a lot of assets, a lot of videos. Like we have live sessions where I'm teaching. We have live sessions that are social sessions. We have workshops from external guests. We have like sprints that we do. So we end up having a lot of net new assets.
+
+But computer time is limited for everybody, you know? And I, I shouldn't need to sit down at my computer to watch a recording if I could listen to it and get 90-plus percent of the value. So the private podcast is a way for me to say, "Hey, we're all busy." Like everyone in the Lab, we are professional, mostly full-time creators, and I recognize that when you're at the computer, you're probably working on your business, and being in the forum every single day may not be your highest priority. But if you saw something on the calendar that you wished you had attended but couldn't make work, or if you just wanna like get in and get more of what was shared there, the private podcast is a way to do that on the go, in the car, on a walk, on a run, whatever you wanna do. Um, so I know that the private podcast makes members happier and more connected to the space because it allows them to connect to the space without being in the literal forum
+
+Catherine asks, "How long is that one-on-one call, the onboarding call?" So at this point it's 20 minutes, Catherine. It used to be 30 minutes, but I found that when I shrank it down to 20 minutes, we still got like almost all of the same value. We just got into things a little bit more quickly. And a little secret is that I still block off the last 10 minutes most of the time. So if we go over the 20 minutes, I'm happy to go over. But what I didn't like was having an onboarding call where we got to like the 20 minute mark and it kind of felt like we were dragging things out to the 30 minute. So right now, those are 20 minutes This is a fun question. This is from Daniella.
+
+If you have learning content, how do you position that so that it's a shared experience? Is it as simple as instructing them to have watch parties or do we create that? So I think there are multiple ways to do this, and I'm going to try to not to limit your thinking, because I think this question will allow you to come up with creative solutions.
+
+But when I was at SPI, we did, uh, boot camps, live cohorts around Pat's preexisting courses, and we did a flipped classroom model most of the time, where instead of having Pat reteach something that was already in course format that you could pause, uh, watch at one and a half speed, bounce around in, we did it reversed, uh, flipped classroom format, where we paced out the material over a period of time.
+
+So we said, "Okay, we're gonna do a power-up podcasting boot camp, and it's six weeks long, and in week one, we want you to watch these five videos and be done with them by Monday. Come in Monday, we're gonna answer your questions about them. And then Thursday, we're gonna, um, answer more…" I forget exactly how we did that between Monday and Thursday.
+
+I'm pretty sure, I'm pretty sure… Oh, here's what I remember. Okay. So it was watch the videos. Monday was instructor Q&A, and the Thursday was small groups. So we, we had them watch the videos. We did Q&A on Mondays. On Thursdays, we had a small group that they were placed in that was their small group for the whole cohort, and they would work on their homework together on Thursday. So that was one way to turn preexisting content into a shared experience was, yes, we made it a time-bound experience. It's like we're all gonna focus on doing this course together over the next two weeks. We're gonna start here, and we're gonna pace it out for you, and if you stick up with it, we're gonna be at this endpoint together by the end of it Let's see here Okay, this is great.
+
+Is there a rule of thumb you use in allowing members to post in a specific space instead of limit to admins? I'm worrying about members posting something that is not really of value to others, which then causes other members to turn off notifications for future posts. Depending on the tool you use, and personally I'm a huge advocate for Circle, you can control default notifications. So for example, when I run, uh, cohort-based courses, I will design them so that there is homework that you complete before our next call it lecture, okay?
+
+And that goes into a homework space, and I set that homework space to not have notifications, because somebody posting their homework probably doesn't add a ton of value to somebody else in the program.
+
+So to me, it's, it's not totally about… I mean, there are, there are questions to be asked, like in announcement spaces in the lab or in a cohort, members can't post there. It's admin only, and so I set the notifications on by default.
+
+Um, some spaces though I want to be community communication spaces, and I want people to post.
+
+If you find that people are posting things that are low value or detracting from the community, what you wanna do is try to identify why is this a net negative to the community experience, and can I create a policy around that for our guidelines and, like, um, terms of use so that if that behavior persists, I can then point to it and say, "You're breaking our guidelines, and I'm gonna give you one more chance, uh, but you can't do this thing anymore."
+
+Mia asks… I'm gonna answer two more of these questions, and then we're gonna take a break for tomorrow. But Mia asks, "Will you talk about membership pricing at some point? I love the idea of a welcome call, but my price is too low to manage that." Yeah, great question. Uh, we will talk about pricing specifically tomorrow.
+
+Talk about pricing tomorrow. Um, yeah, tomorrow's our, our big day on pricing
+
+Okay, here's a great question from Elaine, and then I'm gonna call it for the day. Elaine asks, "How to reengage the community?
+
+I have about 200 members, would love to get people engaging and sharing. How to start that up? Me as an admin, I post questions weekly, and if nobody answers them…" Dot, dot, dot. So my big thing for a space that is disengaged is you need to point to the elephant in the room. You need to own it. You need to name it, because these people came into the space and they were hopeful that this would work and that they would get a lot out of it. They wanted this to be good, okay? They wanted this to be good, but their experience has shown them that this is not good. They are let down by this experience Chances are they still want us to be good, but they need to see some evidence or some reason to believe that things will change.
+
+And so I think it's incumbent on you to step forward and be like, "Hey, I just want to step forward and own what I think a lot of us are seeing.
+
+Things have not been very active. Things have been pretty quiet. This has not been the experience any of us truly wanted, so I am creating a moment to reset. Here is my plan moving forward for this community.
+
+Here is my hope for what we do together. Here is how I, as the creator, uh, and curator of this space, am going to act differently, and what I'm asking for you or of you is this." This gives people a reason to believe that things will change if they try again.
+
+Because ultimately, that's what you're asking them to do. You're saying like, "Hey, I know that your experience hasn't been what you wanted, and so you've kind of written this off, but I wanna get this going. I wanna try again." So do that moment of reset, and my, my favorite way of doing this is to say like, "We are going to have a town hall." I do this once a year in the lab. We do it every either late January or early February, where it's the most important live session we do every year, and I try to get as many members as possible to attend that live session because in that session, I basically say, "Okay. Whether you've been really active lately or not, here's what's changed over the last year.
+
+Here are some wins that I wanna point out. I wanna pour love on folks that are, like, being villagers in the community.
+
+Um, and I also wanna point to things we are definitely going to be doing moving forward and create a discussion for things that you suggest and would like to see moving forward." It's, it's a conversation. Like, some things you'll, you'll already be saying like, "We're definitely gonna change this and do this because I've heard this feedback," but then you wanna open up space to say, "What ideas do you have? What thoughts, questions, concerns do you have?" After that town hall, I send a member feedback survey that is completely anonymous, and I have people rate the different, like, projects and initiatives that we're talking about doing, and then we use that as our guide for making changes throughout the year. So it starts with, uh, it starts with stepping forward and saying like, "Hey, I know this hasn't been what you wanted, but we're changing it," and then actually following through on that.
+
+You probably don't get a ton of chances to do this, like, reset sort of thing, so you really wanna do it well the first time. So think about it, make the post, follow through on it, have that experience, and you should be good to go. Um, okay.
+
+I'm gonna call it for today. I need to take, uh, a drink of water. I need to take a breath. I need to take a little bit of a break. I hope that this has been super, super, uh, beneficial and worth your time here today. Tomorrow, more of the same. More teaching, except tomorrow we're talking about retention specifically. We will talk about pricing a lot tomorrow, and tomorrow I'm gonna reveal some of the things that we're working on that if you wanna work with us further to build out your membership, you can do that. I'm excited to share that with you.
+
+Uh, thank you everybody who was here live. Had a really great time chatting with you, learning from you, answering your questions, and would love to see you again tomorrow Thank you, everybody
