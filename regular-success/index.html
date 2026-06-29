@@ -11773,5 +11773,31 @@ Object.assign(window, {
   }
   createRoot(document.getElementById('root')).render(<App />);
 </script>
+
+<!-- ===== Dropbox VSL (autoplay muted loop, native controls, pausable) ===== -->
+<style>.vsl-frame .gdv{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;background:#000;z-index:30}</style>
+<script>
+(function(){
+  var SRC="https://www.dropbox.com/scl/fo/ts5llmxcraomzwurb1hby/ALvGTZAbnQjagrXbRLoYDX4/VSL-3_Confirmation.mov?rlkey=p45y62zj040spqbvi3u026ic7&raw=1";
+  function findHost(){ return document.querySelector(".vsl-frame")||document.querySelector('[class*="vsl-frame"]')||document.querySelector('[class*="vsl-bunny-wrap"]')||(function(){var e=document.querySelector('iframe[src*="youtube"],video');return e?e.parentElement:null;})(); }
+  function mountInto(host){
+    if(host.querySelector("video.gdv")) return;
+    if(getComputedStyle(host).position==="static") host.style.position="relative";
+    [].forEach.call(host.children,function(c){ try{ c.style.display="none"; }catch(e){} });
+    var v=document.createElement("video"); v.className="gdv";
+    v.src=SRC; v.muted=true; v.loop=true; v.autoplay=true; v.playsInline=true; v.controls=true;
+    v.setAttribute("playsinline",""); v.setAttribute("webkit-playsinline","");
+    host.appendChild(v);
+    var touched=false;
+    v.addEventListener("pointerdown",function(){ touched=true; });
+    var go=function(){ var p=v.play(); if(p&&p.catch) p.catch(function(){}); };
+    go();
+    v.addEventListener("pause",function(){ if(!touched && v.muted) go(); });
+  }
+  function tryMount(n){ var h=findHost(); if(h){ mountInto(h); return; } if(n>0) setTimeout(function(){ tryMount(n-1); },250); }
+  if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",function(){ tryMount(240); }); else tryMount(240);
+})();
+</script>
+<!-- ===== /Dropbox VSL ===== -->
 </body>
 </html>
