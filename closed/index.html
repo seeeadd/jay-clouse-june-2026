@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Enrollment Closed &middot; Build A Beloved Membership</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="This cohort is now closed. Something more affordable is on the way.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --ink:#1E1E1E; --paper:#FFFCF7; --blue:#0061FF; --orange:#FF4F14;
+      --cream:#F2E5B9; --rule:#E8DEBF; --muted:#54524c;
+    }
+    *{ margin:0; padding:0; box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      min-height:100%; background:var(--paper); color:var(--ink);
+      font-family:'Familjen Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      display:flex; align-items:center; justify-content:center; padding:28px;
+      -webkit-font-smoothing:antialiased;
+      background-image:radial-gradient(var(--rule) 1px, transparent 1px);
+      background-size:26px 26px;
+    }
+    .card{
+      position:relative; width:100%; max-width:600px; background:#fff;
+      border:2.5px solid var(--ink); border-radius:24px; box-shadow:11px 11px 0 var(--ink);
+      padding:48px 44px 42px;
+    }
+    .kick{
+      display:inline-flex; align-items:center; gap:9px;
+      font-family:'Space Mono', ui-monospace, monospace; font-size:12px; font-weight:700;
+      letter-spacing:.15em; text-transform:uppercase; color:var(--ink); opacity:.8; margin-bottom:24px;
+    }
+    .kick .dot{
+      width:9px; height:9px; border-radius:50%; background:var(--orange);
+      animation:pulse 1.9s ease-out infinite;
+    }
+    @keyframes pulse{
+      0%{ box-shadow:0 0 0 0 rgba(255,79,20,.45); }
+      70%{ box-shadow:0 0 0 11px rgba(255,79,20,0); }
+      100%{ box-shadow:0 0 0 0 rgba(255,79,20,0); }
+    }
+    h1{
+      font-size:clamp(30px, 6.2vw, 46px); line-height:1.06; font-weight:700;
+      letter-spacing:-.02em; margin-bottom:22px;
+    }
+    h1 em{ font-style:normal; color:var(--blue); }
+    .msg{
+      font-size:clamp(17px, 2.6vw, 19.5px); line-height:1.62; color:var(--muted);
+      max-width:50ch; font-weight:450;
+    }
+    .msg b{ color:var(--ink); font-weight:600; }
+    .rule{ height:0; border-top:1.5px solid var(--rule); margin:30px 0 0; }
+    .foot{
+      display:flex; align-items:center; gap:8px; margin-top:22px;
+      font-family:'Space Mono', ui-monospace, monospace; font-size:11.5px; font-weight:700;
+      letter-spacing:.14em; text-transform:uppercase; color:var(--ink); opacity:.55;
+    }
+    .foot svg{ width:15px; height:15px; }
+    @media (max-width:520px){ .card{ padding:36px 26px 32px; box-shadow:8px 8px 0 var(--ink); } }
+  </style>
+</head>
+<body>
+  <main class="card" role="main">
+    <span class="kick"><span class="dot"></span>Build A Beloved Membership</span>
+    <h1>Sorry! This cohort is now <em>closed</em>&hellip;</h1>
+    <p class="msg">but if you still want help on building a membership, I&rsquo;ve got something coming for you in the next few days that is more affordable &amp; accesible!</p>
+    <div class="rule"></div>
+    <div class="foot">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7v5l3 2"></path><circle cx="12" cy="12" r="9"></circle></svg>
+      Something new is on the way
+    </div>
+  </main>
+</body>
+</html>
