@@ -9,26 +9,6 @@
       "source": "/diagnostic",
       "destination": "/toolkit/mechanics-diagnostic.html",
       "statusCode": 301
-    },
-    {
-      "source": "/offer",
-      "destination": "/closed",
-      "statusCode": 307
-    },
-    {
-      "source": "/offer/",
-      "destination": "/closed",
-      "statusCode": 307
-    },
-    {
-      "source": "/offer-short",
-      "destination": "/closed",
-      "statusCode": 307
-    },
-    {
-      "source": "/offer-short/",
-      "destination": "/closed",
-      "statusCode": 307
     }
   ],
   "headers": [
