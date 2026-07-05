@@ -12,22 +12,22 @@
     },
     {
       "source": "/offer",
-      "destination": "/closed",
+      "destination": "/self-paced/",
       "statusCode": 307
     },
     {
       "source": "/offer/",
-      "destination": "/closed",
+      "destination": "/self-paced/",
       "statusCode": 307
     },
     {
       "source": "/offer-short",
-      "destination": "/closed",
+      "destination": "/self-paced/",
       "statusCode": 307
     },
     {
       "source": "/offer-short/",
-      "destination": "/closed",
+      "destination": "/self-paced/",
       "statusCode": 307
     }
   ],
