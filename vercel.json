@@ -12,22 +12,32 @@
     },
     {
       "source": "/offer",
-      "destination": "/self-paced/",
+      "destination": "/closed/",
       "statusCode": 307
     },
     {
       "source": "/offer/",
-      "destination": "/self-paced/",
+      "destination": "/closed/",
       "statusCode": 307
     },
     {
       "source": "/offer-short",
-      "destination": "/self-paced/",
+      "destination": "/closed/",
       "statusCode": 307
     },
     {
       "source": "/offer-short/",
-      "destination": "/self-paced/",
+      "destination": "/closed/",
+      "statusCode": 307
+    },
+    {
+      "source": "/self-paced",
+      "destination": "/closed/",
+      "statusCode": 307
+    },
+    {
+      "source": "/self-paced/",
+      "destination": "/closed/",
       "statusCode": 307
     }
   ],
