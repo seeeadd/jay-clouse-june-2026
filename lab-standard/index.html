@@ -1243,13 +1243,8 @@ code, kbd, samp, pre {
   .std-card .cal-slot { position: relative; padding: 0; display: block; background: radial-gradient(125% 130% at 72% 8%, #EEF3FF 0%, #D9E4FB 52%, #C2D3F6 100%); overflow: hidden; }
   .std-card .cal-slot::before { content: ""; position: absolute; inset: 0; background-image: radial-gradient(circle, rgba(0,52,132,.09) 1px, transparent 1.3px); background-size: 16px 16px; pointer-events: none; }
   .cal-glow { position: absolute; left: 52%; top: 44%; width: 84%; height: 82%; transform: translate(-50%,-50%); background: radial-gradient(closest-side, rgba(255,255,255,.55), transparent 72%); pointer-events: none; }
-  .cal-rig { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%) rotate(-1.6deg); width: 82%; border-radius: 12px; overflow: hidden; background: #fff; border: 1px solid rgba(20,22,27,.1); box-shadow: 0 26px 46px -20px rgba(16,36,88,.55), inset 0 1px 0 rgba(255,255,255,.7); }
-  .cal-bar { display: flex; align-items: center; gap: 8px; padding: 9px 13px; background: linear-gradient(180deg, #F8FAFF, #EDF2FC); border-bottom: 1px solid rgba(20,22,27,.08); }
-  .cal-bar .cal-ic { display: flex; width: 17px; height: 17px; color: var(--blue); }
-  .cal-bar .cal-mo { font-family: var(--disp); font-weight: 700; font-size: 12px; color: var(--ink); letter-spacing: -.005em; }
-  .cal-bar .cal-nav { margin-left: auto; display: flex; align-items: center; gap: 12px; color: #9AA4B6; font-size: 13px; }
-  .cal-bar .cal-nav b { font-family: var(--disp); font-weight: 700; font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--blue); }
-  .cal-rig img { display: block; width: 100%; aspect-ratio: 16 / 11; object-fit: cover; object-position: center top; background: #fff; }
+  .cal-rig { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%) rotate(-1.6deg); width: 92%; border-radius: 12px; overflow: hidden; background: #fff; border: 1px solid rgba(20,22,27,.1); box-shadow: 0 26px 46px -20px rgba(16,36,88,.55), inset 0 1px 0 rgba(255,255,255,.7); }
+  .cal-rig img { display: block; width: 100%; aspect-ratio: 1600 / 819; object-fit: cover; object-position: center top; background: #fff; }
   /* hot seat composed photo card */
   .std-card .seat-slot { position: relative; padding: 0; display: block; overflow: hidden; background: #0A0E17; }
   .seat-slot .seat-main { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 40%; }
@@ -1269,19 +1264,19 @@ code, kbd, samp, pre {
   .tier.vip .tier-note b { color: #FF9A73; }
 
   /* VIP inline graphic */
-  .vip-gfx { position: relative; margin: 12px 0 2px; border-radius: 12px; padding: 8px 11px 9px; background: linear-gradient(162deg, rgba(255,255,255,.08), rgba(255,255,255,.015)); border: 1px solid rgba(255,255,255,.13); box-shadow: inset 0 1px 0 rgba(255,255,255,.09); overflow: hidden; }
+  .vip-gfx { position: relative; margin: 14px 0 4px; border-radius: 13px; padding: 14px 15px 15px; background: linear-gradient(162deg, rgba(255,255,255,.08), rgba(255,255,255,.015)); border: 1px solid rgba(255,255,255,.13); box-shadow: inset 0 1px 0 rgba(255,255,255,.09); overflow: hidden; }
   .vip-gfx::after { content: ""; position: absolute; right: -30%; top: -60%; width: 260px; height: 220px; background: radial-gradient(closest-side, rgba(255,122,71,.2), transparent 70%); pointer-events: none; }
-  .vg-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 6px; }
-  .vg-tag { font-family: var(--disp); font-weight: 700; font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.6); }
+  .vg-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 12px; }
+  .vg-tag { font-family: var(--disp); font-weight: 700; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.58); }
   .vg-live { display: inline-flex; align-items: center; gap: 6px; font-family: var(--disp); font-weight: 700; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: #FF9A73; }
   .vg-live i { width: 6px; height: 6px; border-radius: 50%; background: var(--orange); animation: vgpulse 1.9s ease-in-out infinite; }
   @keyframes vgpulse { 0%, 100% { box-shadow: 0 0 0 2px rgba(255,79,20,.3); } 50% { box-shadow: 0 0 0 7px rgba(255,79,20,0); } }
-  .vg-row { position: relative; display: flex; align-items: center; gap: 10px; }
-  .vg-av { width: 26px; height: 26px; border-radius: 50%; object-fit: cover; border: 1.5px solid rgba(255,122,71,.55); flex: 0 0 auto; }
+  .vg-row { position: relative; display: flex; align-items: center; gap: 12px; }
+  .vg-av { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(255,122,71,.55); flex: 0 0 auto; }
   .vg-meta { flex: 1; min-width: 0; }
-  .vg-meta b { display: block; font-family: var(--disp); font-weight: 600; font-size: 13.5px; color: #fff; }
-  .vg-meta span { font-size: 11.5px; color: rgba(255,255,255,.56); }
-  .vg-wave { display: flex; align-items: center; gap: 3px; height: 20px; flex: 0 0 auto; }
+  .vg-meta b { display: block; font-family: var(--disp); font-weight: 700; font-size: 17px; line-height: 1.2; color: #fff; }
+  .vg-meta span { display: block; margin-top: 2px; font-size: 13px; color: rgba(255,255,255,.64); }
+  .vg-wave { display: flex; align-items: center; gap: 3.5px; height: 24px; flex: 0 0 auto; }
   .vg-wave i { width: 3px; height: 7px; border-radius: 2px; background: linear-gradient(180deg, #FFB48C, #FF6A2E); animation: vgwave 1s ease-in-out infinite; }
   .vg-wave i:nth-child(2) { animation-delay: .15s; }
   .vg-wave i:nth-child(3) { animation-delay: .32s; }
@@ -1289,12 +1284,8 @@ code, kbd, samp, pre {
   .vg-wave i:nth-child(5) { animation-delay: .26s; }
   .vg-wave i:nth-child(6) { animation-delay: .05s; }
   @keyframes vgwave { 0%, 100% { height: 6px; } 50% { height: 22px; } }
-  .vg-q { position: relative; display: flex; align-items: center; gap: 8px; margin-top: 7px; padding: 6px 9px; border-radius: 9px; background: rgba(255,122,71,.11); border: 1px solid rgba(255,122,71,.26); font-size: 12.5px; color: #fff; }
-  .vg-num { width: 17px; height: 17px; border-radius: 5px; background: var(--orange); color: #fff; display: flex; align-items: center; justify-content: center; font-family: var(--disp); font-weight: 700; font-size: 11px; flex: 0 0 auto; }
-  .vg-meta b { font-size: 12.5px; }
-  .vg-meta span { font-size: 11px; }
-  .vg-wave { transform: scale(.8); transform-origin: right center; }
-  .vg-q span:not(.vg-num) { font-size: 12px; }
+  .vg-q { position: relative; display: flex; align-items: center; gap: 10px; margin-top: 12px; padding: 10px 12px; border-radius: 10px; background: rgba(255,122,71,.12); border: 1px solid rgba(255,122,71,.28); font-family: var(--disp); font-weight: 500; font-size: 14px; color: #fff; }
+  .vg-num { width: 22px; height: 22px; border-radius: 6px; background: var(--orange); color: #fff; display: flex; align-items: center; justify-content: center; font-family: var(--disp); font-weight: 700; font-size: 13px; flex: 0 0 auto; }
   @media (prefers-reduced-motion: reduce) { .vg-live i, .vg-wave i { animation: none; } }
   @media (max-width: 760px) { .tiers { grid-template-columns: 1fr; gap: 20px; } .tier-price b { font-size: 46px; } }
   .guar { max-width: 900px; margin: 54px auto 0; background: #fff; border: 1px solid var(--line); border-radius: 20px; padding: 30px 34px; display: flex; gap: 26px; align-items: center; box-shadow: 0 30px 64px -46px rgba(20,22,27,.34); }
@@ -1943,7 +1934,7 @@ code, kbd, samp, pre {
         <div class="std-body"><h4>Curated masterminds, 4x a year</h4><p>Jay hand-matches you into a small group at your level, four times a year. The relationships usually outlast the membership.</p></div>
       </div>
       <div class="std-card rv">
-        <div class="std-slot cal-slot"><span class="cal-glow" aria-hidden="true"></span><div class="cal-rig"><div class="cal-bar"><span class="cal-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><rect x="3.5" y="5" width="17" height="15" rx="2.5"></rect><path d="M3.5 9.5h17M8 3.5v3M16 3.5v3"></path></svg></span><span class="cal-mo">This month</span><span class="cal-nav"><span>‹</span><b>Live</b><span>›</span></span></div><img src="assets/b542d4e3-2c58-4d37-9a0d-c200bf8c761d.jpg" alt="The Lab calendar showing Office Hours with Jay, Thursday Q&amp;A, and Friday Coworking"></div><span class="std-badge">Standard</span></div>
+        <div class="std-slot cal-slot"><span class="cal-glow" aria-hidden="true"></span><div class="cal-rig"><img src="assets/office-hours-calendar.jpg" alt="The Lab monthly calendar, packed with Office Hours, Thursday Q&amp;A, and Friday Coworking sessions"></div><span class="std-badge">Standard</span></div>
         <div class="std-body"><h4>Twice-monthly Office Hours</h4><p>Bring a real question every two weeks and get Jay's answer built around your actual situation.</p></div>
       </div>
       <div class="std-card rv">
