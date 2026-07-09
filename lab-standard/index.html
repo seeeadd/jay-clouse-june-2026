@@ -1244,7 +1244,12 @@ code, kbd, samp, pre {
   .std-card .cal-slot::before { content: ""; position: absolute; inset: 0; background-image: radial-gradient(circle, rgba(0,52,132,.09) 1px, transparent 1.3px); background-size: 16px 16px; pointer-events: none; }
   .cal-glow { position: absolute; left: 52%; top: 44%; width: 84%; height: 82%; transform: translate(-50%,-50%); background: radial-gradient(closest-side, rgba(255,255,255,.55), transparent 72%); pointer-events: none; }
   .cal-rig { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%) rotate(-1.6deg); width: 92%; border-radius: 12px; overflow: hidden; background: #fff; border: 1px solid rgba(20,22,27,.1); box-shadow: 0 26px 46px -20px rgba(16,36,88,.55), inset 0 1px 0 rgba(255,255,255,.7); }
-  .cal-rig img { display: block; width: 100%; aspect-ratio: 1600 / 819; object-fit: cover; object-position: center top; background: #fff; }
+  .cal-bar { display: flex; align-items: center; gap: 8px; padding: 9px 13px; background: linear-gradient(180deg, #F8FAFF, #EDF2FC); border-bottom: 1px solid rgba(20,22,27,.08); }
+  .cal-bar .cal-ic { display: flex; width: 17px; height: 17px; color: var(--blue); }
+  .cal-bar .cal-mo { font-family: var(--disp); font-weight: 700; font-size: 12px; color: var(--ink); letter-spacing: -.005em; }
+  .cal-bar .cal-nav { margin-left: auto; display: flex; align-items: center; gap: 12px; color: #9AA4B6; font-size: 13px; }
+  .cal-bar .cal-nav b { font-family: var(--disp); font-weight: 700; font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--blue); }
+  .cal-rig img { display: block; width: 100%; aspect-ratio: 1600 / 731; object-fit: cover; object-position: center bottom; background: #fff; }
   /* hot seat composed photo card */
   .std-card .seat-slot { position: relative; padding: 0; display: block; overflow: hidden; background: #0A0E17; }
   .seat-slot .seat-main { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 40%; }
@@ -1934,7 +1939,7 @@ code, kbd, samp, pre {
         <div class="std-body"><h4>Curated masterminds, 4x a year</h4><p>Jay hand-matches you into a small group at your level, four times a year. The relationships usually outlast the membership.</p></div>
       </div>
       <div class="std-card rv">
-        <div class="std-slot cal-slot"><span class="cal-glow" aria-hidden="true"></span><div class="cal-rig"><img src="assets/office-hours-calendar.jpg" alt="The Lab monthly calendar, packed with Office Hours, Thursday Q&amp;A, and Friday Coworking sessions"></div><span class="std-badge">Standard</span></div>
+        <div class="std-slot cal-slot"><span class="cal-glow" aria-hidden="true"></span><div class="cal-rig"><div class="cal-bar"><span class="cal-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><rect x="3.5" y="5" width="17" height="15" rx="2.5"></rect><path d="M3.5 9.5h17M8 3.5v3M16 3.5v3"></path></svg></span><span class="cal-mo">This month</span><span class="cal-nav"><span>‹</span><b>Live</b><span>›</span></span></div><img src="assets/office-hours-calendar.jpg" alt="The Lab monthly calendar, packed with Office Hours, Thursday Q&amp;A, and Friday Coworking sessions"></div><span class="std-badge">Standard</span></div>
         <div class="std-body"><h4>Twice-monthly Office Hours</h4><p>Bring a real question every two weeks and get Jay's answer built around your actual situation.</p></div>
       </div>
       <div class="std-card rv">
